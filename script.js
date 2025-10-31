@@ -310,9 +310,66 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// ===== FORM VALIDATION & SUBMISSION (NETLIFY) =====
+// ===== FORM VALIDATION FUNCTIONS (MUSÍ BÝT PRVNÍ) =====
+function validateField(field) {
+    const formGroup = field.closest('.form-group');
+    if (!formGroup) return true;
+    
+    // Remove previous error message
+    const existingError = formGroup.querySelector('.error-msg');
+    if (existingError) {
+        existingError.remove();
+    }
+    
+    // Remove previous states
+    formGroup.classList.remove('error', 'success');
+    
+    // Checkbox validation
+    if (field.type === 'checkbox') {
+        if (!field.checked && field.required) {
+            formGroup.classList.add('error');
+            showErrorMessage(formGroup, 'Toto pole je povinné');
+            return false;
+        }
+        formGroup.classList.add('success');
+        return true;
+    }
+    
+    // Required field validation
+    if (field.required && !field.value.trim()) {
+        formGroup.classList.add('error');
+        showErrorMessage(formGroup, 'Toto pole je povinné');
+        return false;
+    }
+    
+    // Email validation
+    if (field.type === 'email' && field.value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(field.value)) {
+            formGroup.classList.add('error');
+            showErrorMessage(formGroup, 'Zadejte platnou emailovou adresu');
+            return false;
+        }
+    }
+    
+    // Success state
+    if (field.value.trim()) {
+        formGroup.classList.add('success');
+    }
+    
+    return true;
+}
+
+function showErrorMessage(formGroup, message) {
+    const errorMsg = document.createElement('span');
+    errorMsg.className = 'error-msg';
+    errorMsg.textContent = message;
+    formGroup.appendChild(errorMsg);
+}
+
+// ===== NETLIFY FORMS - Real-time validation =====
 const contactForm = document.querySelector('#contact-form');
-const formInputs = document.querySelectorAll('#contact-form input:not([type="hidden"]), #contact-form textarea');
+const formInputs = document.querySelectorAll('#contact-form input:not([type="hidden"]):not([name="bot-field"]), #contact-form textarea');
 
 if (contactForm) {
     // Real-time validation
@@ -328,13 +385,11 @@ if (contactForm) {
         });
     });
     
-    // Form submission pro Netlify
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
+    // Form submission - necháme Netlify zpracovat
+    contactForm.addEventListener('submit', (e) => {
         let isValid = true;
         
-        // Validate all fields
+        // Validace před odesláním
         formInputs.forEach(input => {
             if (!validateField(input)) {
                 isValid = false;
@@ -342,49 +397,12 @@ if (contactForm) {
         });
         
         if (!isValid) {
-            return;
+            e.preventDefault(); // Zastavíme pouze pokud validace selhala
+            return false;
         }
         
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="spinner" style="display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.6s linear infinite; margin-right: 8px;"></span>Odesílám...';
-        
-        try {
-            const response = await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(new FormData(contactForm)).toString()
-            });
-            
-            if (response.ok) {
-                // Success
-                contactForm.innerHTML = `
-                    <div class="success-message">
-                        <svg class="checkmark" viewBox="0 0 52 52">
-                            <circle cx="26" cy="26" r="25" fill="none"/>
-                            <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                        </svg>
-                        <h3>Děkuji za zprávu!</h3>
-                        <p>Ozvu se vám do 24 hodin.</p>
-                    </div>
-                `;
-            } else {
-                throw new Error('Odeslání selhalo');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
-            
-            const errorDiv = document.createElement('div');
-            errorDiv.style.cssText = 'padding: 16px; background: #ffe6e6; border-radius: 8px; margin-top: 16px; color: #c00; font-size: 14px;';
-            errorDiv.textContent = '❌ Omlouváme se, něco se pokazilo. Zkuste to prosím znovu nebo mě kontaktujte přímo na emailu.';
-            contactForm.appendChild(errorDiv);
-            
-            setTimeout(() => errorDiv.remove(), 5000);
-        }
+        // Pokud validace prošla, necháme formulář normálně odeslat
+        // Netlify ho automaticky zachytí díky data-netlify="true"
     });
 }
 

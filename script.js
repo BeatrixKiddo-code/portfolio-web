@@ -310,21 +310,19 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// ===== FORM VALIDATION FUNCTIONS (MUSÍ BÝT PRVNÍ) =====
+// ===== HELPER FUNCTIONS (musí být PRVNÍ) =====
 function validateField(field) {
     const formGroup = field.closest('.form-group');
     if (!formGroup) return true;
     
-    // Remove previous error message
     const existingError = formGroup.querySelector('.error-msg');
     if (existingError) {
         existingError.remove();
     }
     
-    // Remove previous states
     formGroup.classList.remove('error', 'success');
     
-    // Checkbox validation
+    // Checkbox
     if (field.type === 'checkbox') {
         if (!field.checked && field.required) {
             formGroup.classList.add('error');
@@ -335,14 +333,14 @@ function validateField(field) {
         return true;
     }
     
-    // Required field validation
+    // Required
     if (field.required && !field.value.trim()) {
         formGroup.classList.add('error');
         showErrorMessage(formGroup, 'Toto pole je povinné');
         return false;
     }
     
-    // Email validation
+    // Email
     if (field.type === 'email' && field.value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(field.value)) {
@@ -352,7 +350,6 @@ function validateField(field) {
         }
     }
     
-    // Success state
     if (field.value.trim()) {
         formGroup.classList.add('success');
     }
@@ -367,12 +364,13 @@ function showErrorMessage(formGroup, message) {
     formGroup.appendChild(errorMsg);
 }
 
-// ===== NETLIFY FORMS - Real-time validation =====
+// ===== FORM VALIDATION ONLY (Netlify zpracuje odeslání) =====
 const contactForm = document.querySelector('#contact-form');
-const formInputs = document.querySelectorAll('#contact-form input:not([type="hidden"]):not([name="bot-field"]), #contact-form textarea');
 
 if (contactForm) {
-    // Real-time validation
+    const formInputs = contactForm.querySelectorAll('input:not([type="hidden"]):not([name="bot-field"]), textarea');
+    
+    // Real-time validace při opuštění pole
     formInputs.forEach(input => {
         input.addEventListener('blur', () => {
             validateField(input);
@@ -385,24 +383,34 @@ if (contactForm) {
         });
     });
     
-    // Form submission - necháme Netlify zpracovat
+    // Před odesláním zkontrolujeme validaci
     contactForm.addEventListener('submit', (e) => {
         let isValid = true;
         
-        // Validace před odesláním
         formInputs.forEach(input => {
             if (!validateField(input)) {
                 isValid = false;
             }
         });
         
+        // Pouze pokud validace SELHALA, zastavíme odeslání
         if (!isValid) {
-            e.preventDefault(); // Zastavíme pouze pokud validace selhala
+            e.preventDefault();
+            
+            // Scroll na první chybu
+            const firstError = contactForm.querySelector('.form-group.error');
+            if (firstError) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            
             return false;
         }
         
-        // Pokud validace prošla, necháme formulář normálně odeslat
-        // Netlify ho automaticky zachytí díky data-netlify="true"
+        // Pokud validace PROŠLA, necháme formulář NORMÁLNĚ odeslat
+        // NEPOUŽÍVÁME e.preventDefault() ani fetch()
+        // Netlify automaticky zachytí díky data-netlify="true"
+        
+        console.log('Formulář se odesílá...');
     });
 }
 

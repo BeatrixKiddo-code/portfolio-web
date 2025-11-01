@@ -98,10 +98,12 @@ window.addEventListener('scroll', () => {
 
 // ===== LOGO BOUNCER =====
 const logo = document.querySelector('.logo');
-logo.addEventListener('click', () => {
-    logo.classList.add('logo-bounce');
-    setTimeout(() => logo.classList.remove('logo-bounce'), 1000);
-});
+if (logo) {
+    logo.addEventListener('click', () => {
+        logo.classList.add('logo-bounce');
+        setTimeout(() => logo.classList.remove('logo-bounce'), 1000);
+    });
+}
 
 
 // ===== SPARKLE TLAČÍTKO =====
@@ -263,7 +265,8 @@ if (filterBtns.length > 0) {
 // ===== RIPPLE EFFECT =====
 document.querySelectorAll('.btn-ripple').forEach(btn => {
     btn.addEventListener('click', function(e) {
-        e.preventDefault(); // zastaví okamžité přesměrování
+        // Pokud je tlačítko typu submit uvnitř formu, necháme submit proběhnout
+        if (this.type !== 'submit') e.preventDefault();
 
         const ripple = document.createElement('span');
         ripple.className = 'ripple-effect';
@@ -279,14 +282,13 @@ document.querySelectorAll('.btn-ripple').forEach(btn => {
         
         this.appendChild(ripple);
 
-        // po animaci přesměruj
-        const href = this.getAttribute('href');
+        // Po animaci odstraň ripple
         setTimeout(() => {
             ripple.remove();
-            if(href) window.location.href = href;
-        }, 1000); // 1s = délka animace
+        }, 1000);
     });
 });
+
 
 
 // ===== INTERSECTION OBSERVER FOR FADE-IN =====

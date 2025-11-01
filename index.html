@@ -396,28 +396,25 @@
                     <div class="contact-form-wrap">
                         <h2>Pojďme tvořit společně</h2>
                         <p>Máte nápad nebo projekt? Napište mi a já se vám ozvu do 24 hodin.</p>
-                        
-                    <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
+                                            
+                    <form id="contact-form" class="contact-form" method="POST" action="https://formspree.io/f/meoplgre">
+                        <input type="hidden" name="_next" value="/portfolio-web/thank-you.html">
+
+
                     
-                    <input type="hidden" name="form-name" value="contact">
-
-                    <p style="display: none;">
-                        <label>Nevyplňujte: <input name="bot-field"></label>
-                    </p>
-
                     <div class="form-group">
                         <label for="name">Jméno *</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" placeholder="Tvé jméno" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" placeholder="tvuj@email.cz" required>
                     </div>
 
                     <div class="form-group">
                         <label for="message">Zpráva *</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Tvoje zpráva" required></textarea>
                     </div>
 
                     <div class="form-group checkbox">
@@ -425,8 +422,10 @@
                         <label for="gdpr">Souhlasím se zpracováním osobních údajů</label>
                     </div>
 
+                    <!-- Tlačítko s ripple / sparkle efektem -->
                     <button type="submit" class="btn-primary btn-ripple">Odeslat kouzelnou zprávu ✨</button>
                     </form>
+
 
 
                     </div>
@@ -522,7 +521,7 @@
         </div>
     </footer>
 
-    <!-- Scripts 
-    <script src="script.js"></script-->
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>

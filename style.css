@@ -1384,3 +1384,15 @@ footer {
 .text-center {
     text-align: center;
 }
+/* MOBILNÍ FIX */
+@media (max-width: 768px) {
+    .fade-in {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    
+    section {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}

@@ -425,7 +425,7 @@ nav a.active {
         rgba(235, 235, 126, 0.6) 40%,
         transparent 80%
     );
-    pointer-events: none;
+    pointer-events: none !important;
     z-index: 9998;
     filter: blur(4px);
     animation: sparkle-fade 0.8s ease-out forwards;
@@ -1395,4 +1395,63 @@ footer {
         opacity: 1 !important;
         visibility: visible !important;
     }
+}
+/* ===== FIX: Fade-in sekce musí být interaktivní ===== */
+.fade-in {
+    pointer-events: auto !important;
+}
+
+.fade-in.visible {
+    pointer-events: auto !important;
+}
+
+/* ===== FIX: Tlačítka musí být nad všemi efekty ===== */
+.btn-primary,
+.btn-secondary,
+.btn-hero {
+    position: relative;
+    z-index: 100 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* Hero content musí být nad blobs */
+.hero-content {
+    position: relative;
+    z-index: 50;
+}
+
+/* Blob pozadí pod vším */
+.blob {
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Sparkle efekt nesmí blokovat kliky */
+.sparkle {
+    pointer-events: none !important;
+    z-index: 9998 !important;
+}
+
+/* About sekce tlačítka */
+.about-text {
+    position: relative;
+    z-index: 10;
+}
+
+/* Pricing karty tlačítka */
+.pricing-card {
+    position: relative;
+    z-index: 10;
+}
+
+.pricing-card .btn-primary,
+.pricing-card .btn-secondary {
+    z-index: 20 !important;
+}
+
+/* Ripple efekt pod tlačítkem */
+.ripple-effect {
+    z-index: -1 !important;
+    pointer-events: none !important;
 }

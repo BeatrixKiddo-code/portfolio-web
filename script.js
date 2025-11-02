@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
     }
 });
 
-// ===== MOBILE MENU & SMOOTH SCROLL =====
+// ===== MOBILE MENU =====
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -26,35 +26,11 @@ if (menuToggle && navMenu) {
 
     // Kliknutí na odkaz v menu
     document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault(); // vždy zastavíme výchozí chování
-            e.stopPropagation();
-            
-            const targetId = link.getAttribute('href');
-            console.log('Kliknuto na:', targetId); // DEBUG
-            
-            const targetEl = document.querySelector(targetId);
-            console.log('Nalezený element:', targetEl); // DEBUG
-
-            // Zavřít menu HNED
+        link.addEventListener('click', () => {
+            // Zavřít menu
             menuToggle.classList.remove('active');
             navMenu.classList.remove('active');
             menuToggle.setAttribute('aria-expanded', 'false');
-
-            // Scroll s malým zpožděním (aby se menu stihlo zavřít)
-            setTimeout(() => {
-                if (targetEl) {
-                    const headerHeight = header ? header.offsetHeight : 80;
-                    const targetPosition = targetEl.offsetTop - headerHeight;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    console.warn('Element nenalezen:', targetId);
-                }
-            }, 100);
         });
     });
 
@@ -71,25 +47,21 @@ if (menuToggle && navMenu) {
 // ===== STICKY HEADER =====
 const header = document.querySelector('header');
 let lastScroll = 0;
-const scrollThreshold = 200; // od kdy začne header reagovat
-const scrollTolerance = 50;  // minimální rozdíl scrollu, aby se header měnil
+const scrollThreshold = 200;
+const scrollTolerance = 50;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    // Přidání nebo odstranění scrolled třídy
     if (currentScroll > scrollThreshold) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
 
-    // Schování / zobrazení podle směru scrollu jen při větším rozdílu
     if (currentScroll - lastScroll > scrollTolerance && currentScroll > scrollThreshold) {
-        // scroll dolů → schovej header
         header.classList.add('hidden');
     } else if (lastScroll - currentScroll > scrollTolerance) {
-        // scroll nahoru → zobraz header
         header.classList.remove('hidden');
     }
 
@@ -105,9 +77,8 @@ if (logo) {
     });
 }
 
-
 // ===== SPARKLE TLAČÍTKO =====
-const sparkleButtons = document.querySelectorAll('.btn-primary'); // všechna tlačítka
+const sparkleButtons = document.querySelectorAll('.btn-primary');
 
 const sparkleColors = [
     'radial-gradient(circle, #a8def0 0%, #fbc4d4 50%, #d9b3ff 80%)',
@@ -116,23 +87,20 @@ const sparkleColors = [
 ];
 
 sparkleButtons.forEach(btn => {
-    // Sparkle na mousemove (desktop)
     btn.addEventListener('mousemove', (e) => {
         if (Math.random() > 0.7) {  
             createSparkleOnButton(btn, e.clientX, e.clientY);
         }
     });
 
-    // Touch verze (mobil) - BEZ preventDefault
     btn.addEventListener('touchmove', (e) => {
-        if (Math.random() > 0.8) { // menší frekvence na mobilu
+        if (Math.random() > 0.8) {
             const touch = e.touches[0];
             createSparkleOnButton(btn, touch.clientX, touch.clientY);
         }
-    }, { passive: true }); // passive = neblokuje scroll
+    }, { passive: true });
 });
 
-// Pomocná funkce pro vytvoření sparkle
 function createSparkleOnButton(button, clientX, clientY) {
     const sparkle = document.createElement('div');
     sparkle.className = 'sparkle-hover';
@@ -151,16 +119,15 @@ function createSparkleOnButton(button, clientX, clientY) {
 }
 
 // ===== PROJECT OVERLAY MOBILE =====
-if (window.innerWidth <= 768) { // jen mobil / tablety
+if (window.innerWidth <= 768) {
     const projectCards = document.querySelectorAll('.project-card');
 
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
             const overlay = card.querySelector('.project-overlay');
-            if (!overlay) return;
-
-            // toggle třídu "visible" pro fade-in / fade-out
-            overlay.classList.toggle('visible');
+            if (overlay) {
+                overlay.classList.toggle('visible');
+            }
         });
     });
 }
@@ -169,21 +136,18 @@ if (window.innerWidth <= 768) { // jen mobil / tablety
 const heroTitle = document.querySelector('.sparkle-text');
 
 if (heroTitle) {
-    // Desktop - sparkle při pohybu myši
     heroTitle.addEventListener('mousemove', (e) => {
         if (Math.random() > 0.7) createSparkle(e.clientX, e.clientY);
     });
 
-    // Mobil/Tablet - sparkle při podržení a pohybu prstu
     if (window.innerWidth <= 768) {
         heroTitle.addEventListener('touchmove', (e) => {
-            if (Math.random() > 0.6) { // trochu častěji než na desktopu
+            if (Math.random() > 0.6) {
                 const touch = e.touches[0];
                 createSparkle(touch.clientX, touch.clientY);
             }
-        }, { passive: true }); // neblokuje scroll
+        }, { passive: true });
 
-        // Bonus: sparkle i při touchstart (první dotek)
         heroTitle.addEventListener('touchstart', (e) => {
             const touch = e.touches[0];
             createSparkle(touch.clientX, touch.clientY);
@@ -196,6 +160,7 @@ function createSparkle(x, y) {
     sparkle.className = 'sparkle';
     sparkle.style.left = x + 'px';
     sparkle.style.top = y + 'px';
+    sparkle.style.pointerEvents = 'none';
     
     document.body.appendChild(sparkle);
     
@@ -222,7 +187,6 @@ if (typewriterElement) {
         }
     }
     
-    // Spustit po načtení stránky s malým zpožděním
     setTimeout(typeChar, 500);
 }
 
@@ -235,17 +199,14 @@ if (filterBtns.length > 0) {
         btn.addEventListener('click', () => {
             const filter = btn.dataset.filter;
             
-            // Update active button
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
-            // Filter projects
             projects.forEach(project => {
                 const category = project.dataset.category;
                 
                 if (filter === 'all' || category === filter) {
                     project.style.display = 'block';
-                    // Trigger reflow for animation
                     setTimeout(() => {
                         project.style.opacity = '1';
                         project.style.transform = 'translateY(0)';
@@ -262,12 +223,11 @@ if (filterBtns.length > 0) {
     });
 }
 
-// ===== RIPPLE EFFECT =====
+// ===== RIPPLE EFFECT (OPRAVENÝ - bez preventDefault) =====
 document.querySelectorAll('.btn-ripple').forEach(btn => {
     btn.addEventListener('click', function(e) {
-        // Pokud je tlačítko typu submit uvnitř formu, necháme submit proběhnout
-        if (this.type !== 'submit') e.preventDefault();
-
+        // NEBLOKUJEME kliknutí - necháme link fungovat normálně
+        
         const ripple = document.createElement('span');
         ripple.className = 'ripple-effect';
         
@@ -282,37 +242,48 @@ document.querySelectorAll('.btn-ripple').forEach(btn => {
         
         this.appendChild(ripple);
 
-        // Po animaci odstraň ripple
         setTimeout(() => {
             ripple.remove();
         }, 1000);
     });
 });
 
-
-
 // ===== INTERSECTION OBSERVER FOR FADE-IN =====
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-};
+if ('IntersectionObserver' in window) {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Odpojit po animaci (performance)
-            observer.unobserve(entry.target);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+} else {
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.classList.add('visible');
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+    });
+}
+
+window.addEventListener('load', () => {
+    document.querySelectorAll('.fade-in').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add('visible');
         }
     });
-}, observerOptions);
-
-// Observe všechny fade-in elementy
-document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
 });
 
-// ===== HELPER FUNCTIONS (musí být PRVNÍ) =====
+// ===== FORM VALIDATION =====
 function validateField(field) {
     const formGroup = field.closest('.form-group');
     if (!formGroup) return true;
@@ -324,7 +295,6 @@ function validateField(field) {
     
     formGroup.classList.remove('error', 'success');
     
-    // Checkbox
     if (field.type === 'checkbox') {
         if (!field.checked && field.required) {
             formGroup.classList.add('error');
@@ -335,14 +305,12 @@ function validateField(field) {
         return true;
     }
     
-    // Required
     if (field.required && !field.value.trim()) {
         formGroup.classList.add('error');
         showErrorMessage(formGroup, 'Toto pole je povinné');
         return false;
     }
     
-    // Email
     if (field.type === 'email' && field.value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(field.value)) {
@@ -366,13 +334,11 @@ function showErrorMessage(formGroup, message) {
     formGroup.appendChild(errorMsg);
 }
 
-// ===== FORM VALIDATION ONLY (Netlify zpracuje odeslání) =====
 const contactForm = document.querySelector('#contact-form');
 
 if (contactForm) {
     const formInputs = contactForm.querySelectorAll('input:not([type="hidden"]):not([name="bot-field"]), textarea');
     
-    // Real-time validace při opuštění pole
     formInputs.forEach(input => {
         input.addEventListener('blur', () => {
             validateField(input);
@@ -385,7 +351,6 @@ if (contactForm) {
         });
     });
     
-    // Před odesláním zkontrolujeme validaci
     contactForm.addEventListener('submit', (e) => {
         let isValid = true;
         
@@ -395,11 +360,9 @@ if (contactForm) {
             }
         });
         
-        // Pouze pokud validace SELHALA, zastavíme odeslání
         if (!isValid) {
             e.preventDefault();
             
-            // Scroll na první chybu
             const firstError = contactForm.querySelector('.form-group.error');
             if (firstError) {
                 firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -408,15 +371,11 @@ if (contactForm) {
             return false;
         }
         
-        // Pokud validace PROŠLA, necháme formulář NORMÁLNĚ odeslat
-        // NEPOUŽÍVÁME e.preventDefault() ani fetch()
-        // Netlify automaticky zachytí díky data-netlify="true"
-        
         console.log('Formulář se odesílá...');
     });
 }
 
-// ===== PARALLAX EFFECT (Optional - pouze pro desktop) =====
+// ===== PARALLAX EFFECT =====
 if (window.innerWidth > 768) {
     const blobs = document.querySelectorAll('.blob');
     
@@ -431,41 +390,16 @@ if (window.innerWidth > 768) {
     });
 }
 
-// ===== LAZY LOADING IMAGES =====
-if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        img.src = img.dataset.src;
-    });
-} else {
-    // Fallback pro starší prohlížeče
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
-}
-
-// ===== PERFORMANCE MONITORING (Dev only) =====
-if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    window.addEventListener('load', () => {
-        if ('performance' in window) {
-            const perfData = window.performance.timing;
-            const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-            console.log(`⚡ Čas načtení stránky: ${pageLoadTime}ms`);
-        }
-    });
-}
 // ===== FOOTER SPARKLE EFFECT =====
 const footer = document.querySelector('footer');
 
 if (footer) {
-    // Desktop - sparkle při pohybu myši
     footer.addEventListener('mousemove', (e) => {
-        if (Math.random() > 0.85) { // méně často než u hero
+        if (Math.random() > 0.85) {
             createFooterSparkle(e.clientX, e.clientY);
         }
     });
 
-    // Mobil/Tablet - sparkle při pohybu prstu
     if (window.innerWidth <= 768) {
         footer.addEventListener('touchmove', (e) => {
             if (Math.random() > 0.75) {
@@ -486,6 +420,7 @@ function createFooterSparkle(x, y) {
     sparkle.className = 'sparkle-footer';
     sparkle.style.left = x + 'px';
     sparkle.style.top = y + 'px';
+    sparkle.style.pointerEvents = 'none';
     
     document.body.appendChild(sparkle);
     

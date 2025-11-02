@@ -457,7 +457,68 @@ document.addEventListener('keydown', (e) => {
         console.log('🎉 Konami Code aktivován! Našli jste velikonoční vajíčko!');
     }
 });
+// ===== COOKIE CONSENT =====
+(function() {
+    const cookieBanner = document.getElementById('cookie-consent');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+    
+    // Zkontroluj, jestli už uživatel rozhodl
+    const consent = localStorage.getItem('cookie-consent');
+    
+    if (!consent) {
+        // Zobraz banner po 1 sekundě
+        setTimeout(() => {
+            cookieBanner.style.display = 'block';
+            setTimeout(() => {
+                cookieBanner.classList.add('show');
+            }, 100);
+        }, 1000);
+    } else if (consent === 'accepted') {
+        // Načti Google Analytics
+        loadGoogleAnalytics();
+    }
+    
+    // Přijmout cookies
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookie-consent', 'accepted');
+        hideBanner();
+        loadGoogleAnalytics();
+    });
+    
+    // Odmítnout cookies
+    declineBtn.addEventListener('click', () => {
+        localStorage.setItem('cookie-consent', 'declined');
+        hideBanner();
+    });
+    
+    function hideBanner() {
+        cookieBanner.classList.remove('show');
+        setTimeout(() => {
+            cookieBanner.style.display = 'none';
+        }, 400);
+    }
+    
+    function loadGoogleAnalytics() {
 
+        const script1 = document.createElement('script');
+        script1.async = true;
+        script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-G-29FCKKCGYR'; 
+        document.head.appendChild(script1);
+        
+        script1.onload = () => {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-29FCKKCGYR', { 
+                'anonymize_ip': true,
+                'cookie_flags': 'SameSite=None;Secure'
+            });
+            
+            console.log('✅ Google Analytics načteno');
+        };
+    }
+})();
 // ===== CONSOLE MESSAGE =====
 console.log('%c✨ Ahoj! 👋', 'font-size: 24px; font-weight: bold; color: #E7B2C8;');
 console.log('%cDíky, že jste tu! Pokud hledáte vývojářku/designérku, napište mi na zaneta.janacova@gmail.com', 'font-size: 14px; color: #6E6A86;');

@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio projektů | Žaneta Janáčová</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Použití stávajícího CSS z homepage -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== PŘIDANÝ SPECIFICKÝ CSS PRO PROJECTS ===== */
+
+        /* Základní nastavení pro fullscreen layout */
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Header styling */
+        header {
+            background: rgba(247, 245, 239, 0.98);
+            border-bottom: 1px solid rgba(110, 106, 134, 0.1);
+        }
+
+        .projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .back-link {
+            color: var(--color-purple);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--color-pink);
+        }
+
+        /* Pill Navigation (horizontální tabs) */
+        .pill-navigation {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(247, 245, 239, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(83, 43, 109, 0.15);
+            z-index: 900;
+            display: flex;
+            gap: 8px;
+        }
+
+        .pill-tab {
+            padding: 10px 24px;
+            background: transparent;
+            border: 2px solid transparent;
+            border-radius: 50px;
+            color: var(--color-purple);
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all var(--transition);
+            cursor: pointer;
+        }
+
+        .pill-tab:hover {
+            background: rgba(200, 195, 237, 0.3);
+        }
+
+        .pill-tab.active {
+            background: #532b6d;
+            color: white;
+            box-shadow: 0 0 20px rgba(83, 43, 109, 0.4);
+        }
+
+        /* Project Section (fullscreen blocks) */
+        .project-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 24px 80px;
+            position: relative;
+            scroll-margin-top: 100px;
+        }
+
+        /* Alternativní pozadí pro projekty */
+        .project-section:nth-child(odd) {
+            background: var(--color-cream);
+        }
+
+        .project-section:nth-child(even) {
+            background: linear-gradient(135deg, rgba(200, 195, 237, 0.1) 0%, var(--color-cream) 50%);
+        }
+
+        /* Blobs z homepage (použity pro pozadí) */
+        .project-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .project-blob-1 {
+            width: 600px;
+            height: 600px;
+            background: #532b6d;
+            top: -100px;
+            right: -100px;
+        }
+
+        .project-blob-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--color-pink);
+            bottom: -50px;
+            left: -50px;
+        }
+
+        /* Project Container */
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Project Header */
+        .project-title {
+            font-family: var(--font-heading);
+            font-size: clamp(40px, 5vw, 56px);
+            color: #21112c;
+            margin-bottom: 48px;
+        }
+
+        /* Main Layout: Dvousloupcový */
+        .project-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 48px;
+        }
+
+        /* Levý sloupec - Popis */
+        .project-description {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .project-description h3 {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            color: #2a1637;
+            margin-bottom: 8px;
+        }
+
+        .project-description p {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #321a41;
+        }
+
+        .project-description strong {
+            color: #532b6d;
+        }
+
+        /* Pravý sloupec - Carousel */
+        .project-carousel {
+            position: relative;
+        }
+
+        /* Carousel Container */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(83, 43, 109, 0.2);
+            background: white;
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide video,
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Carousel Navigation */
+        .carousel-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid white;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .carousel-dot.active {
+            background: #532b6d;
+            transform: scale(1.2);
+        }
+
+        .carousel-dot:hover {
+            background: rgba(83, 43, 109, 0.7);
+        }
+
+        /* Carousel Arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition);
+            z-index: 10;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-arrow:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-arrow.prev {
+            left: 16px;
+        }
+
+        .carousel-arrow.next {
+            right: 16px;
+        }
+
+        .carousel-arrow svg {
+            color: #532b6d;
+        }
+
+        /* Metadata sekce pod layoutem */
+        .project-metadata {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .metadata-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .metadata-title {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            color: #532b6d;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .palette-colors {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            cursor: pointer;
+            transition: transform var(--transition);
+        }
+
+        .color-swatch:hover {
+            transform: scale(1.1);
+        }
+
+        .color-code {
+            position: absolute;
+            bottom: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            font-family: 'Courier New', monospace;
+            color: var(--color-purple);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .color-swatch:hover .color-code {
+            opacity: 1;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, rgba(83, 43, 109, 0.1) 0%, rgba(200, 195, 237, 0.2) 100%);
+            color: #532b6d;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(83, 43, 109, 0.2);
+        }
+
+        /* CTA sekce */
+        .project-cta-section {
+            background: linear-gradient(135deg, rgba(83, 43, 109, 0.05) 0%, rgba(200, 195, 237, 0.1) 100%);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .cta-price {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            color: #532b6d;
+            margin-bottom: 24px;
+        }
+
+        .cta-price .gold-accent {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        /* Responsive pro nový layout */
+        @media (max-width: 1024px) {
+            .project-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .project-metadata {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .btn-premium {
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #532b6d 0%, #6E6A86 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all var(--transition);
+            box-shadow: 0 4px 20px rgba(83, 43, 109, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-premium:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(83, 43, 109, 0.4);
+        }
+
+        .btn-premium span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-outline {
+            padding: 16px 40px;
+            background: transparent;
+            color: #532b6d;
+            border: 2px solid #532b6d;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all var(--transition);
+        }
+
+        .btn-outline:hover {
+            background: #532b6d;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Golden Accent */
+        .gold-accent {
+            color: #D4AF37;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .pill-navigation {
+                top: 70px;
+                padding: 10px 16px;
+            }
+
+            .pill-tab {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+
+            .project-info {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pill-navigation {
+                left: 0;
+                right: 0;
+                transform: none;
+                border-radius: 0;
+                padding: 12px;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .pill-tab {
+                display: inline-block;
+            }
+
+            .project-section {
+                padding: 120px 16px 60px;
+            }
+
+            .project-mockup {
+                margin-bottom: 40px;
+            }
+
+            .lighthouse-badge {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .project-cta {
+                flex-direction: column;
+            }
+
+            .btn-premium,
+            .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header role="banner">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Domů">
+                <img src="images/logo.png" alt="logo">
+                <span>Žaneta Janáčová</span>
+            </a>
+            <a href="index.html#portfolio" class="nav-menu">
+                <span class="btn-primary">Zpět na hlavní stránku</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Pill Navigation -->
+    <nav class="pill-navigation">
+        <a href="#caffe-limone" class="pill-tab active">Caffé Limone</a>
+        <a href="#astroflora" class="pill-tab">AstroFlora</a>
+        <a href="#coming-soon" class="pill-tab">Coming Soon</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- PROJECT 1: Caffé Limone -->
+        <section id="caffe-limone" class="project-section">
+            <!-- Background Blobs -->
+            <div class="blob blob-1" style="background: #D4AF37;"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+
+            <div class="project-container">
+                <!-- Project Header -->
+                <h1 class="project-title">Caffé Limone</h1>
+
+                <!-- Main Layout: Popis vlevo, Carousel vpravo -->
+                <div class="project-layout">
+                    <!-- Levý sloupec - Popis -->
+                    <div class="project-description">
+                        <div>
+                            <h3>O projektu</h3>
+                            <p>Cílem bylo vytvořit svěží, moderní online přítomnost, která odráží slunnou a přívětivou
+                                atmosféru kavárny. Hlavní funkcí je rychlé poskytnutí klíčových informací (menu,
+                                otevírací doba, kontakt, rezervace)</p>
+                        </div>
+
+                        <div>
+                            <h3>Řešení</h3>
+                            <p>Vytvořila jsem <strong>responzivní, jednoduchý a elegantní web</strong> s důrazem na
+                                fotografie, denní
+                                menu a snadnou navigaci. Teplé barvy evokují italskou atmosféru.</p>
+                        </div>
+
+                        <div>
+                            <h3>Výsledek</h3>
+                            <p><strong>↑35%</strong> nárůst rezervací za první měsíc<br>
+                                <strong>1,2s</strong> rychlost načtení<br>
+                                <strong>Zvýšená</strong> důvěryhodnost u zákazníků
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pravý sloupec - Carousel -->
+                    <div class="project-carousel">
+                        <div class="carousel-container" data-carousel="caffe-limone">
+                            <div class="carousel-slides">
+                                <!-- Slide 1: Desktop mockup -->
+                                <div class="carousel-slide">
+                                    <img src="images/Limone_tablet.svg"
+                                        alt="Caffé Limone tablet mockup">
+                                </div>
+                                <!-- Slide 2: Mobile mockup -->
+                                <div class="carousel-slide">
+                                    <img src="images/Limone_mobile.svg" alt="Caffé Limone mobile mockup">
+                                </div>
+                                <!-- Slide 3: GIF/Animation -->
+                                <div class="carousel-slide">
+                                    <video controls preload="metadata" poster="images/video-poster.jpg"
+                                        class="project-video">
+                                        <source src="videos/mockup.mp4" type="video/mp4">
+                                        Váš prohlížeč nepodporuje video přehrávání.
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Navigation -->
+                            <button class="carousel-arrow prev" aria-label="Předchozí">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <button class="carousel-arrow next" aria-label="Další">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active" data-slide="0"></span>
+                                <span class="carousel-dot" data-slide="1"></span>
+                                <span class="carousel-dot" data-slide="2"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metadata: Color Palette, Performance, Tech Stack -->
+                <div class="project-metadata">
+                    <!-- Color Palette -->
+                    <div class="metadata-card">
+                        <h4 class="metadata-title">Barevná paleta</h4>
+                        <div class="palette-colors">
+                            <div class="color-swatch" style="background: #f6ce64;">
+                                <span class="color-code">#f6ce64</span>
+                            </div>
+                            <div class="color-swatch" style="background: #ea8c0a;">
+                                <span class="color-code">#ea8c0a</span>
+                            </div>
+                            <div class="color-swatch" style="background: #5a7779">
+                                <span class="color-code">#5a7779</span>
+                            </div>
+                            <div class="color-swatch" style="background: #a87a4a">
+                                <span class="color-code">#a87a4a</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance -->
+                    <div class="metadata-card">
+                        <h4 class="metadata-title">Performance</h4>
+                        <div class="lighthouse-badge" style="padding: 0;">
+                            <div class="lighthouse-item">
+                                <span class="lighthouse-score">98</span>
+                                <span class="lighthouse-label">Lighthouse</span>
+                            </div>
+                            <div class="lighthouse-item">
+                                <span class="lighthouse-score">100</span>
+                                <span class="lighthouse-label">SEO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div class="metadata-card">
+                        <h4 class="metadata-title">Technologie</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA s cenou -->
+                <div class="project-cta-section">
+                    <p class="cta-price">
+                        Podobný projekt od <span class="gold-accent">12 000 Kč</span>
+                    </p>
+                    <div class="project-cta">
+                        <a href="index.html#contact" class="btn-premium">
+                            <span>Chci podobný projekt</span>
+                        </a>
+                        <a href="#" class="btn-outline">
+                            <span>Zobrazit živý web</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT 2: AstroFlora -->
+        <section id="astroflora" class="project-section">
+            <div class="project-blob project-blob-1" style="background: var(--color-green);"></div>
+            <div class="project-blob project-blob-2" style="background: #532b6d;"></div>
+
+            <div class="project-container">
+                <h1 class="project-title">AstroFlora</h1>
+
+                <div class="project-layout">
+                    <div class="project-description">
+                        <div>
+                            <h3>O projektu</h3>
+                            <p>Klient chtěl výrazný e-shop, který se odliší od všech ostatních květinářství. Standard
+                                Shoptetu byl příliš nudný a generický.</p>
+                        </div>
+
+                        <div>
+                            <h3>Řešení</h3>
+                            <p>Vytvořila jsem <strong>futuristický design</strong> s neonovými barvami, custom scroll
+                                animacemi a interaktivními produktovými kartami. E-shop vypadá jako z jiného světa.</p>
+                        </div>
+
+                        <div>
+                            <h3>Výsledek</h3>
+                            <p><strong>↑52%</strong> nárůst konverze<br>
+                                <strong>4:20 min</strong> průměrný čas na webu<br>
+                                <strong>Virální</strong> sdílení na soc. sítích
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="project-carousel">
+                        <div class="carousel-container" data-carousel="astroflora">
+                            <div class="carousel-slides">
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/600x450/0D1B2A/7209B7?text=Desktop+E-shop"
+                                        alt="AstroFlora desktop">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/600x450/7209B7/00F5FF?text=Mobile+E-shop"
+                                        alt="AstroFlora mobile">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/600x450/F72585/FFFFFF?text=GSAP+Animations"
+                                        alt="AstroFlora animace">
+                                </div>
+                            </div>
+
+                            <button class="carousel-arrow prev" aria-label="Předchozí">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <button class="carousel-arrow next" aria-label="Další">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+
+                            <div class="carousel-nav">
+                                <span class="carousel-dot active" data-slide="0"></span>
+                                <span class="carousel-dot" data-slide="1"></span>
+                                <span class="carousel-dot" data-slide="2"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-metadata">
+                    <div class="metadata-card">
+                        <h4 class="metadata-title">Barevná paleta</h4>
+                        <div class="palette-colors">
+                            <div class="color-swatch" style="background: #0D1B2A;">
+                                <span class="color-code">#0D1B2A</span>
+                            </div>
+                            <div class="color-swatch" style="background: #7209B7;">
+                                <span class="color-code">#7209B7</span>
+                            </div>
+                            <div class="color-swatch" style="background: #00F5FF;">
+                                <span class="color-code">#00F5FF</span>
+                            </div>
+                            <div class="color-swatch" style="background: #F72585;">
+                                <span class="color-code">#F72585</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metadata-card">
+                        <h4 class="metadata-title">Performance</h4>
+                        <div class="lighthouse-badge" style="padding: 0;">
+                            <div class="lighthouse-item">
+                                <span class="lighthouse-score" style="color: #ffa400;">87</span>
+                                <span class="lighthouse-label">Lighthouse</span>
+                            </div>
+                            <div class="lighthouse-item">
+                                <span class="lighthouse-score">100</span>
+                                <span class="lighthouse-label">SEO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metadata-card">
+                        <h4 class="metadata-title">Technologie</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Shoptet</span>
+                            <span class="tech-tag">Custom CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">GSAP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-cta-section">
+                    <p class="cta-price">
+                        Podobný e-shop od <span class="gold-accent">25 000 Kč</span>
+                    </p>
+                    <div class="project-cta">
+                        <a href="index.html#contact" class="btn-premium">
+                            <span>Chci podobný projekt</span>
+                        </a>
+                        <a href="#" class="btn-outline">
+                            <span>Zobrazit e-shop</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT 3: Coming Soon -->
+        <section id="coming-soon" class="project-section">
+            <div class="project-blob project-blob-1" style="background: var(--color-green);"></div>
+
+            <div class="project-container">
+                <h1 class="project-title">Další projekt brzy...</h1>
+                <p class="project-subtitle">Pracuji na něčem <span class="gold-accent">speciálním</span></p>
+
+                <div style="text-align: center; padding: 80px 20px;">
+                    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#532b6d" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <p style="margin-top: 32px; font-size: 18px; color: var(--color-purple); opacity: 0.6;">Stay tuned!
+                        🚀</p>
+                </div>
+
+                <div class="project-cta">
+                    <a href="index.html#contact" class="btn-premium">
+                        <span>Mám projekt pro vás</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // ===== CAROUSEL FUNCTIONALITY =====
+        document.querySelectorAll('[data-carousel]').forEach(carouselEl => {
+            const slides = carouselEl.querySelector('.carousel-slides');
+            const dots = carouselEl.querySelectorAll('.carousel-dot');
+            const prevBtn = carouselEl.querySelector('.carousel-arrow.prev');
+            const nextBtn = carouselEl.querySelector('.carousel-arrow.next');
+
+            let currentSlide = 0;
+            const totalSlides = carouselEl.querySelectorAll('.carousel-slide').length;
+
+            function goToSlide(n) {
+                currentSlide = (n + totalSlides) % totalSlides;
+                slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToSlide(index));
+            });
+
+            // Arrow navigation
+            prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+            nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+            // Keyboard navigation
+            carouselEl.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') goToSlide(currentSlide - 1);
+                if (e.key === 'ArrowRight') goToSlide(currentSlide + 1);
+            });
+
+            // Touch swipe (mobile)
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carouselEl.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carouselEl.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) goToSlide(currentSlide + 1);
+                if (touchEndX - touchStartX > 50) goToSlide(currentSlide - 1);
+            });
+        });
+
+        // ===== ACTIVE TAB HIGHLIGHTING =====
+        const sections = document.querySelectorAll('.project-section');
+        const tabLinks = document.querySelectorAll('.pill-tab');
+
+        function updateActiveTab() {
+            const scrollPos = window.scrollY + 200;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    tabLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        // Scroll listener
+        window.addEventListener('scroll', updateActiveTab);
+        window.addEventListener('load', updateActiveTab);
+
+        // Smooth scroll na klik
+        tabLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 100;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

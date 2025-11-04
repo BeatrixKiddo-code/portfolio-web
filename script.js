@@ -463,11 +463,9 @@ document.addEventListener('keydown', (e) => {
     const acceptBtn = document.getElementById('cookie-accept');
     const declineBtn = document.getElementById('cookie-decline');
     
-    // Zkontroluj, jestli už uživatel rozhodl
     const consent = localStorage.getItem('cookie-consent');
     
     if (!consent) {
-        // Zobraz banner po 1 sekundě
         setTimeout(() => {
             cookieBanner.style.display = 'block';
             setTimeout(() => {
@@ -475,18 +473,15 @@ document.addEventListener('keydown', (e) => {
             }, 100);
         }, 1000);
     } else if (consent === 'accepted') {
-        // Načti Google Analytics
         loadGoogleAnalytics();
     }
     
-    // Přijmout cookies
     acceptBtn.addEventListener('click', () => {
         localStorage.setItem('cookie-consent', 'accepted');
         hideBanner();
         loadGoogleAnalytics();
     });
     
-    // Odmítnout cookies
     declineBtn.addEventListener('click', () => {
         localStorage.setItem('cookie-consent', 'declined');
         hideBanner();
@@ -503,7 +498,7 @@ document.addEventListener('keydown', (e) => {
 
         const script1 = document.createElement('script');
         script1.async = true;
-        script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-G-29FCKKCGYR'; 
+        script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-29FCKKCGYR'; 
         document.head.appendChild(script1);
         
         script1.onload = () => {

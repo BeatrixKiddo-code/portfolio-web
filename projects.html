@@ -11,8 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Použití stávajícího CSS z homepage -->
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <style>
         /* ===== PŘIDANÝ SPECIFICKÝ CSS PRO PROJECTS ===== */
@@ -107,32 +107,6 @@
 
         .project-section:nth-child(even) {
             background: linear-gradient(135deg, rgba(200, 195, 237, 0.1) 0%, var(--color-cream) 50%);
-        }
-
-        /* Blobs z homepage (použity pro pozadí) */
-        .project-blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.12;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .project-blob-1 {
-            width: 600px;
-            height: 600px;
-            background: #532b6d;
-            top: -100px;
-            right: -100px;
-        }
-
-        .project-blob-2 {
-            width: 400px;
-            height: 400px;
-            background: var(--color-pink);
-            bottom: -50px;
-            left: -50px;
         }
 
         /* Project Container */
@@ -295,6 +269,13 @@
             box-shadow: var(--shadow);
         }
 
+        .metadata-card.palette {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+
         .metadata-title {
             font-family: var(--font-heading);
             font-size: 16px;
@@ -310,17 +291,17 @@
         }
 
         .color-swatch {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            cursor: pointer;
-            transition: transform var(--transition);
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
 
         .color-swatch:hover {
-            transform: scale(1.1);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
         }
 
         .color-code {
@@ -337,6 +318,68 @@
 
         .color-swatch:hover .color-code {
             opacity: 1;
+        }
+
+        .lighthouse-badge {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .lighthouse-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 12px 14px;
+            flex: 1 1 200px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .lighthouse-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .score-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: #333333;
+            flex-shrink: 0;
+        }
+
+        .score-info .label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: #1c1c1c;
+        }
+
+        .score-info .desc {
+            display: block;
+            font-size: 13px;
+            color: #555555;
+            margin-top: 2px;
+            line-height: 1.3;
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .lighthouse-badge {
+                flex-direction: column;
+            }
+
+            .lighthouse-item {
+                width: 100%;
+            }
         }
 
         /* Tech Stack */
@@ -422,7 +465,7 @@
             width: 0;
             height: 0;
             border-radius: 50%;
-            background: rgba(212, 175, 55, 0.3);
+            background: rgba(17, 1, 12, 0.3);
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
@@ -595,8 +638,7 @@
                             <div class="carousel-slides">
                                 <!-- Slide 1: Desktop mockup -->
                                 <div class="carousel-slide">
-                                    <img src="images/Limone_tablet.svg"
-                                        alt="Caffé Limone tablet mockup">
+                                    <img src="images/Limone_tablet.svg" alt="Caffé Limone tablet mockup">
                                 </div>
                                 <!-- Slide 2: Mobile mockup -->
                                 <div class="carousel-slide">
@@ -658,18 +700,26 @@
 
                     <!-- Performance -->
                     <div class="metadata-card">
-                        <h4 class="metadata-title">Performance</h4>
-                        <div class="lighthouse-badge" style="padding: 0;">
+                        <h4 class="metadata-title">Webové výsledky</h4>
+                        <div class="lighthouse-badge">
                             <div class="lighthouse-item">
-                                <span class="lighthouse-score">98</span>
-                                <span class="lighthouse-label">Lighthouse</span>
+                                <div class="score-circle">98</div>
+                                <div class="score-info">
+                                    <span class="label">Rychlost načítání</span>
+                                    <span class="desc">Stránka se načte okamžitě, návštěvníci nečekají.</span>
+                                </div>
                             </div>
                             <div class="lighthouse-item">
-                                <span class="lighthouse-score">100</span>
-                                <span class="lighthouse-label">SEO</span>
+                                <div class="score-circle">100</div>
+                                <div class="score-info">
+                                    <span class="label">SEO</span>
+                                    <span class="desc">Web je optimalizovaný pro vyhledávače, snadno vás najdou.</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
 
                     <!-- Tech Stack -->
                     <div class="metadata-card">
@@ -692,7 +742,7 @@
                         <a href="index.html#contact" class="btn-premium">
                             <span>Chci podobný projekt</span>
                         </a>
-                        <a href="#" class="btn-outline">
+                        <a href="https://beatrixkiddo-code.github.io/portfolio-eshop/index.html" class="btn-outline">
                             <span>Zobrazit živý web</span>
                         </a>
                     </div>
@@ -702,8 +752,9 @@
 
         <!-- PROJECT 2: AstroFlora -->
         <section id="astroflora" class="project-section">
-            <div class="project-blob project-blob-1" style="background: var(--color-green);"></div>
-            <div class="project-blob project-blob-2" style="background: #532b6d;"></div>
+            <div class="blob blob-1" style="background: #D700FF;"></div>
+            <div class="blob blob-2" style="background: #168f84d1;"></div>
+            <div class="blob blob-3" style="background: #140564;"></div>
 
             <div class="project-container">
                 <h1 class="project-title">AstroFlora</h1>
@@ -712,8 +763,9 @@
                     <div class="project-description">
                         <div>
                             <h3>O projektu</h3>
-                            <p>Klient chtěl výrazný e-shop, který se odliší od všech ostatních květinářství. Standard
-                                Shoptetu byl příliš nudný a generický.</p>
+                            <p>Cílem bylo transformovat generickou šablonu Shoptet na moderní dark-mode e-shop s
+                                výraznou, nezapomenutelnou vizuální identitou a implementací specifických neonových
+                                hover efektů</p>
                         </div>
 
                         <div>
@@ -735,16 +787,10 @@
                         <div class="carousel-container" data-carousel="astroflora">
                             <div class="carousel-slides">
                                 <div class="carousel-slide">
-                                    <img src="https://placehold.co/600x450/0D1B2A/7209B7?text=Desktop+E-shop"
-                                        alt="AstroFlora desktop">
+                                    <img src="images/astroflora_tablet.png" alt="AstroFlora tablet">
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="https://placehold.co/600x450/7209B7/00F5FF?text=Mobile+E-shop"
-                                        alt="AstroFlora mobile">
-                                </div>
-                                <div class="carousel-slide">
-                                    <img src="https://placehold.co/600x450/F72585/FFFFFF?text=GSAP+Animations"
-                                        alt="AstroFlora animace">
+                                    <img src="images/astroflora_mobil.svg" alt="AstroFlora mobile">
                                 </div>
                             </div>
 
@@ -771,34 +817,45 @@
                 </div>
 
                 <div class="project-metadata">
-                    <div class="metadata-card">
+                    <div class="metadata-card pallete">
                         <h4 class="metadata-title">Barevná paleta</h4>
                         <div class="palette-colors">
-                            <div class="color-swatch" style="background: #0D1B2A;">
-                                <span class="color-code">#0D1B2A</span>
+                            <div class="color-swatch"
+                                style="background: #D5F6E8;box-shadow: 0 0 10px 3px rgba(213, 246, 232, 0.9);">
+                                <span class="color-code">#D5F6E8</span>
                             </div>
-                            <div class="color-swatch" style="background: #7209B7;">
-                                <span class="color-code">#7209B7</span>
+                            <div class="color-swatch"
+                                style="background: #8a2be2; box-shadow:0 0 20px 5px rgba(215, 0, 255, 0.8)">
+                                <span class="color-code">#8A2BE2;</span>
                             </div>
-                            <div class="color-swatch" style="background: #00F5FF;">
-                                <span class="color-code">#00F5FF</span>
+                            <div class="color-swatch"
+                                style="background: #D700FF;box-shadow: 0 0 10px 3px rgba(215, 0, 255, 0.8)">
+                                <span class="color-code">#D700FF</span>
                             </div>
-                            <div class="color-swatch" style="background: #F72585;">
-                                <span class="color-code">#F72585</span>
+                            <div class="color-swatch"
+                                style="background: #00ff80; box-shadow: 0 0 10px 3px rgba(0, 255, 128, 0.8)">
+                                <span class="color-code">#00FF80;</span>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Performance -->
                     <div class="metadata-card">
-                        <h4 class="metadata-title">Performance</h4>
-                        <div class="lighthouse-badge" style="padding: 0;">
+                        <h4 class="metadata-title">Webové výsledky</h4>
+                        <div class="lighthouse-badge">
                             <div class="lighthouse-item">
-                                <span class="lighthouse-score" style="color: #ffa400;">87</span>
-                                <span class="lighthouse-label">Lighthouse</span>
+                                <div class="score-circle">??</div>
+                                <div class="score-info">
+                                    <span class="label">Rychlost načítání</span>
+                                    <span class="desc">...</span>
+                                </div>
                             </div>
                             <div class="lighthouse-item">
-                                <span class="lighthouse-score">100</span>
-                                <span class="lighthouse-label">SEO</span>
+                                <div class="score-circle">100</div>
+                                <div class="score-info">
+                                    <span class="label">SEO</span>
+                                    <span class="desc">W...</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -915,7 +972,7 @@
         const tabLinks = document.querySelectorAll('.pill-tab');
 
         function updateActiveTab() {
-            const scrollPos = window.scrollY + 200;
+            const scrollPos = window.scrollY + window.innerHeight / 3;;
 
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;

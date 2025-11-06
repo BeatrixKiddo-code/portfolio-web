@@ -44,29 +44,30 @@ if (menuToggle && navMenu) {
     });
 }
 
-// ===== STICKY HEADER =====
-const header = document.querySelector('header');
-let lastScroll = 0;
-const scrollThreshold = 200;
-const scrollTolerance = 50;
+// ===== STICKY HEADER (stable) =====
+const header = document.querySelector("header");
+let lastScrollY = window.scrollY;
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+function handleScroll() {
+    const currentScrollY = window.scrollY;
 
-    if (currentScroll > scrollThreshold) {
-        header.classList.add('scrolled');
+    if (currentScrollY > 100) {
+        header.classList.add("scrolled");
     } else {
-        header.classList.remove('scrolled');
+        header.classList.remove("scrolled");
     }
 
-    if (currentScroll - lastScroll > scrollTolerance && currentScroll > scrollThreshold) {
-        header.classList.add('hidden');
-    } else if (lastScroll - currentScroll > scrollTolerance) {
-        header.classList.remove('hidden');
+    if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        header.classList.add("hidden");
+    } else {
+        header.classList.remove("hidden");
     }
 
-    lastScroll = currentScroll;
-});
+    lastScrollY = currentScrollY;
+}
+
+window.addEventListener("scroll", handleScroll);
+
 
 // ===== LOGO BOUNCER =====
 const logo = document.querySelector('.logo');

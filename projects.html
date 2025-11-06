@@ -12,7 +12,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <style>
         /* ===== PŘIDANÝ SPECIFICKÝ CSS PRO PROJECTS ===== */
@@ -972,7 +972,7 @@
         const tabLinks = document.querySelectorAll('.pill-tab');
 
         function updateActiveTab() {
-            const scrollPos = window.scrollY + window.innerHeight / 3;;
+            const scrollPos = window.scrollY + window.innerHeight / 3;
 
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -989,6 +989,10 @@
                 }
             });
         }
+
+        window.addEventListener('scroll', updateActiveTab);
+        updateActiveTab();
+
 
         // Scroll listener
         window.addEventListener('scroll', updateActiveTab);

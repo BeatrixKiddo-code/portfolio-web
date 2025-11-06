@@ -47,26 +47,41 @@ if (menuToggle && navMenu) {
 // ===== STICKY HEADER (stable) =====
 const header = document.querySelector("header");
 let lastScrollY = window.scrollY;
+let ticking = false;
 
 function handleScroll() {
     const currentScrollY = window.scrollY;
-
+    
+    if (currentScrollY < 0) return;
+    
     if (currentScrollY > 100) {
         header.classList.add("scrolled");
     } else {
         header.classList.remove("scrolled");
     }
-
+    
     if (currentScrollY > lastScrollY && currentScrollY > 200) {
         header.classList.add("hidden");
     } else {
         header.classList.remove("hidden");
     }
-
+    
     lastScrollY = currentScrollY;
+    ticking = false;
 }
 
-window.addEventListener("scroll", handleScroll);
+function requestTick() {
+    if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
+    }
+}
+
+window.addEventListener("scroll", requestTick, { passive: true });
+
+window.addEventListener("resize", () => {
+    lastScrollY = window.scrollY;
+});
 
 
 // ===== LOGO BOUNCER =====

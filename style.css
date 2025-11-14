@@ -1052,6 +1052,36 @@ section p {
     width: 100%;
     text-align: center;
 }
+/* ===== PRICING NOTE / EXTRAS ===== */
+.pricing-note {
+    background: rgba(247, 245, 239, 0.9); /* jemně šedé, průhledné */
+    padding: 32px 24px;
+    margin-top: 32px;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    color: var(--color-purple);
+    box-shadow: var(--shadow);
+}
+
+.pricing-note p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.pricing-note ul {
+    padding-left: 20px;
+    margin: 10px 0 12px 0;
+}
+
+.pricing-note ul li {
+    display: list-item;           /* klasické tečky */
+    list-style-type: disc;        /* typ tečky */
+    margin-left: 20px;            /* odsazení od okraje boxu */
+    margin-bottom: 6px;
+    color: var(--color-purple);
+    font-weight: 400;
+    line-height: 1.5;
+}
 
 /* ===== CONTACT SECTION ===== */
 .contact {
@@ -1428,33 +1458,6 @@ footer {
     }
 }
 
-/* Responsive - menší na mobilu */
-@media (max-width: 768px) {
-    .spot-1 {
-        width: 180px;
-        height: 180px;
-        top: 10%;
-        left: 5%;
-    }
-    
-    .spot-2 {
-        width: 150px;
-        height: 150px;
-        bottom: 15%;
-        right: 5%;
-    }
-    
-    .spot-3 {
-        width: 120px;
-        height: 120px;
-    }
-}
-@media (max-width: 768px) {
-    .spot-contact {
-        width: 150px;
-        height: 150px;
-    }
-}
 
 /* Vypnout animace pro accessibility */
 @media (prefers-reduced-motion: reduce) {
@@ -1488,6 +1491,30 @@ footer {
 }
 
 @media (max-width: 768px) {
+        .spot-1 {
+        width: 180px;
+        height: 180px;
+        top: 10%;
+        left: 5%;
+    }
+    
+    .spot-2 {
+        width: 150px;
+        height: 150px;
+        bottom: 15%;
+        right: 5%;
+    }
+    
+    .spot-3 {
+        width: 120px;
+        height: 120px;
+    }
+
+    .spot-contact {
+        width: 150px;
+        height: 150px;
+    }
+
     section {
         padding: 60px 0;
     }
@@ -1570,6 +1597,14 @@ footer {
     .btn-hero {
         padding: 12px 24px;
         font-size: 14px;
+    }
+        .pricing-note {
+        padding: 24px 16px;
+        font-size: 0.9rem;
+    }
+
+    .pricing-note ul {
+        padding-left: 16px;
     }
 }
 

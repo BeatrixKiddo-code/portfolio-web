@@ -530,6 +530,114 @@ document.addEventListener('keydown', (e) => {
         };
     }
 })();
+// Pricing Contact Form Handling
+const pricingForm = document.getElementById('pricing-contact-form');
+
+if (pricingForm) {
+    pricingForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            package: document.getElementById('package').value,
+            message: document.getElementById('message').value,
+            gdpr: document.getElementById('gdpr').checked
+        };
+        
+        // Basic validation
+        let isValid = true;
+        
+        if (!formData.name.trim()) {
+            showError('name', 'Vyplňte prosím jméno');
+            isValid = false;
+        }
+        
+        if (!formData.email.trim() || !isValidEmail(formData.email)) {
+            showError('email', 'Zadejte platnou emailovou adresu');
+            isValid = false;
+        }
+        
+        if (!formData.message.trim()) {
+            showError('message', 'Popište prosím váš projekt');
+            isValid = false;
+        }
+        
+        if (!formData.gdpr) {
+            showError('gdpr', 'Musíte souhlasit se zpracováním údajů');
+            isValid = false;
+        }
+        
+        if (!isValid) return;
+        
+        // Show loading state
+        const submitBtn = pricingForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Odesílám...';
+        submitBtn.disabled = true;
+        
+        // Simulate form submission (replace with actual backend call)
+        setTimeout(() => {
+            // Success
+            alert('✅ Děkuji za poptávku! Ozveme se vám co nejdříve na ' + formData.email);
+            pricingForm.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            
+            // In production, you would send data to your backend:
+            /*
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle success
+            })
+            .catch(error => {
+                // Handle error
+            });
+            */
+        }, 1500);
+    });
+}
+
+// Helper functions
+function showError(fieldName, message) {
+    const field = document.getElementById(fieldName);
+    const formGroup = field.closest('.form-group');
+    const errorMsg = formGroup.querySelector('.error-msg');
+    
+    formGroup.classList.add('error');
+    if (errorMsg) {
+        errorMsg.textContent = message;
+    }
+    
+    // Remove error on input
+    field.addEventListener('input', function() {
+        formGroup.classList.remove('error');
+        if (errorMsg) {
+            errorMsg.textContent = '';
+        }
+    }, { once: true });
+}
+
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// Smooth scroll to contact form
+document.querySelectorAll('a[href="#contact-form"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector('#contact-form');
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
 // ===== CONSOLE MESSAGE =====
 console.log('%c✨ Ahoj! 👋', 'font-size: 24px; font-weight: bold; color: #E7B2C8;');
 console.log('%cDíky, že jste tu! Pokud hledáte vývojářku/designérku, napište mi na zaneta.janacova@gmail.com', 'font-size: 14px; color: #6E6A86;');

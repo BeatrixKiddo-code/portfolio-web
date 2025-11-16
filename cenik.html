@@ -552,21 +552,24 @@
                 </div>
                 
                 <div class="cta-form">
-                    <form id="pricing-contact-form" class="contact-form">
+                    <form id="pricing-contact-form" class="contact-form" action="https://formspree.io/f/meoplgre" method="POST">
+                        <!-- Hidden redirect field -->
+                        <input type="hidden" name="_next" value="https://beatrixkiddo-code.github.io/portfolio-web/thank-you.html">
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Jméno *</label>
                                 <input type="text" id="name" name="name" required>
                                 <span class="error-msg"></span>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="email">Email *</label>
                                 <input type="email" id="email" name="email" required>
                                 <span class="error-msg"></span>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="package">Zajímá vás balíček</label>
                             <select id="package" name="package">
@@ -579,19 +582,19 @@
                                 <option value="jine">Něco jiného</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">Popište váš projekt *</label>
                             <textarea id="message" name="message" rows="5" required placeholder="Napište mi o vašem projektu, cílech, představách..."></textarea>
                             <span class="error-msg"></span>
                         </div>
-                        
+
                         <div class="form-group checkbox">
                             <input type="checkbox" id="gdpr" name="gdpr" required>
                             <label for="gdpr">Souhlasím se zpracováním osobních údajů *</label>
                             <span class="error-msg"></span>
                         </div>
-                        
+
                         <button type="submit" class="btn-primary btn-ripple">Odeslat poptávku</button>
                     </form>
 

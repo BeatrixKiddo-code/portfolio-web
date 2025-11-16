@@ -530,79 +530,8 @@ document.addEventListener('keydown', (e) => {
         };
     }
 })();
-// Pricing Contact Form Handling
-const pricingForm = document.getElementById('pricing-contact-form');
-
-if (pricingForm) {
-    pricingForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            package: document.getElementById('package').value,
-            message: document.getElementById('message').value,
-            gdpr: document.getElementById('gdpr').checked
-        };
-        
-        // Basic validation
-        let isValid = true;
-        
-        if (!formData.name.trim()) {
-            showError('name', 'Vyplňte prosím jméno');
-            isValid = false;
-        }
-        
-        if (!formData.email.trim() || !isValidEmail(formData.email)) {
-            showError('email', 'Zadejte platnou emailovou adresu');
-            isValid = false;
-        }
-        
-        if (!formData.message.trim()) {
-            showError('message', 'Popište prosím váš projekt');
-            isValid = false;
-        }
-        
-        if (!formData.gdpr) {
-            showError('gdpr', 'Musíte souhlasit se zpracováním údajů');
-            isValid = false;
-        }
-        
-        if (!isValid) return;
-        
-        // Show loading state
-        const submitBtn = pricingForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Odesílám...';
-        submitBtn.disabled = true;
-        
-        // Simulate form submission (replace with actual backend call)
-        setTimeout(() => {
-            // Success
-            alert('✅ Děkuji za poptávku! Ozveme se vám co nejdříve na ' + formData.email);
-            pricingForm.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            
-            // In production, you would send data to your backend:
-            /*
-            fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Handle success
-            })
-            .catch(error => {
-                // Handle error
-            });
-            */
-        }, 1500);
-    });
-}
+// Pricing Contact Form - uses native Formspree submission with redirect
+// Form will automatically redirect to thank-you.html after successful submission
 
 // Helper functions
 function showError(fieldName, message) {

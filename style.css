@@ -138,6 +138,14 @@ header .container {
     margin-bottom: -1rem;
 }
 
+/* Prevence přetékání dlouhého textu v logu */
+.logo span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px;
+}
+
 nav ul {
     display: flex;
     gap: 32px;
@@ -923,6 +931,9 @@ section p {
     font-size: 28px;
     color: white;
     margin-bottom: 12px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .project-overlay p {
@@ -930,6 +941,8 @@ section p {
     color: white;
     opacity: 0.9;
     margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .project-tag {
@@ -1131,6 +1144,9 @@ section p {
     color: var(--color-purple);
     background: white;
     transition: all var(--transition);
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -1598,7 +1614,13 @@ footer {
         padding: 12px 24px;
         font-size: 14px;
     }
-        .pricing-note {
+
+    /* Skrýt text loga na malých mobilech pro úsporu místa */
+    .logo span {
+        display: none;
+    }
+
+    .pricing-note {
         padding: 24px 16px;
         font-size: 0.9rem;
     }

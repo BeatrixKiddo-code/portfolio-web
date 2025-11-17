@@ -367,27 +367,61 @@ if (contactForm) {
         });
     });
     
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
         let isValid = true;
-        
+
         formInputs.forEach(input => {
             if (!validateField(input)) {
                 isValid = false;
             }
         });
-        
+
         if (!isValid) {
-            e.preventDefault();
-            
             const firstError = contactForm.querySelector('.form-group.error');
             if (firstError) {
                 firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
-            
             return false;
         }
-        
-        console.log('Formulář se odesílá...');
+
+        // Get submit button
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+
+        // Show loading state
+        submitBtn.textContent = 'Odesílám...';
+        submitBtn.disabled = true;
+
+        try {
+            // Get form data
+            const formData = new FormData(contactForm);
+
+            // Send to Formspree
+            const response = await fetch('https://formspree.io/f/meoplgre', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Success - redirect to thank-you page
+                window.location.href = 'thank-you.html';
+            } else {
+                // Error handling
+                alert('Něco se pokazilo. Zkuste to prosím znovu nebo nás kontaktujte přímo emailem.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        } catch (error) {
+            // Network error
+            alert('Chyba při odesílání. Zkontrolujte připojení k internetu.');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
     });
 }
 

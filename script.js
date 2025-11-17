@@ -530,8 +530,50 @@ document.addEventListener('keydown', (e) => {
         };
     }
 })();
-// Pricing Contact Form - uses native Formspree submission with redirect
-// Form will automatically redirect to thank-you.html after successful submission
+// Pricing Contact Form - custom redirect after Formspree submission
+const pricingForm = document.getElementById('pricing-contact-form');
+
+if (pricingForm) {
+    pricingForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const submitBtn = pricingForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+
+        // Show loading state
+        submitBtn.textContent = 'Odesílám...';
+        submitBtn.disabled = true;
+
+        try {
+            // Get form data
+            const formData = new FormData(pricingForm);
+
+            // Send to Formspree
+            const response = await fetch('https://formspree.io/f/meoplgre', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Success - redirect to thank-you page
+                window.location.href = 'thank-you.html';
+            } else {
+                // Error handling
+                alert('Něco se pokazilo. Zkuste to prosím znovu nebo nás kontaktujte přímo emailem.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        } catch (error) {
+            // Network error
+            alert('Chyba při odesílání. Zkontrolujte připojení k internetu.');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
 
 // Helper functions
 function showError(fieldName, message) {

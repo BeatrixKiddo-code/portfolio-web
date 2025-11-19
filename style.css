@@ -1,4 +1,3 @@
-/* ===== CSS VARIABLES ===== */
 :root {
     --color-cream: #F7F5EF;
     --color-pink: #E7B2C8;
@@ -138,7 +137,6 @@ header .container {
     margin-bottom: -1rem;
 }
 
-/* Prevence přetékání dlouhého textu v logu */
 .logo span {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -267,8 +265,6 @@ nav a.active {
     box-shadow: var(--shadow-hover);
 }
 
-
-/* Ripple Effect */
 .btn-ripple {
     position: relative;
     overflow: hidden;
@@ -337,7 +333,7 @@ nav a.active {
     right: 20%;
     animation-delay: 8s;
 }
-/* Kouzlo pohybu: trochu zvětšit, trochu posunout, trochu rotovat */
+
 @keyframes blobMove {
     0% {
         transform: translate(0, 0) scale(1);
@@ -408,7 +404,7 @@ nav a.active {
         transform: translateX(-50%) translateY(-5px);
     }
 }
-/* Logo Bouncer */
+
 @keyframes bounce {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1) rotate(2deg); }
@@ -423,8 +419,6 @@ nav a.active {
   }
 }
 
-
-/* Sparkle Effect */
 .sparkle {
     position: absolute;
     width: 20px;
@@ -456,7 +450,7 @@ nav a.active {
         transform: scale(0.8) rotate(360deg);
     }
 }
-/* Sparkle efekt pro tlačítko */
+
 .sparkle-hover {
     position: absolute;
     width: 10px;
@@ -482,9 +476,9 @@ nav a.active {
         transform: scale(0.8) rotate(360deg);
     }
 }
-/* Sparkle efekt pro footer */
+
 .sparkle-footer {
-    position: fixed; /* fixed místo absolute pro správnou pozici */
+    position: fixed; 
     width: 20px;
     height: 20px;
     background: radial-gradient(
@@ -545,7 +539,6 @@ section p {
     opacity: 0.8;
 }
 
-/* Fade-in Animation */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -725,7 +718,6 @@ section p {
     opacity: 0.8;
 }
 
-/* Skills section spacing */
 .skills-section {
     margin-top: 80px;
 }
@@ -734,7 +726,6 @@ section p {
     margin-bottom: 48px;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
     .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -780,7 +771,6 @@ section p {
         height: 40px;
     }
 }
-/* Skills Grid */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -878,7 +868,7 @@ section p {
 }
 .project-card a.project-link {
     display: block;
-    color: inherit; /* zachová barvy textu */
+    color: inherit; 
     text-decoration: none;
     height: 100%;
     width: 100%;
@@ -955,22 +945,12 @@ section p {
     font-weight: 500;
 }
 
-/* Browser Window Style */
 .browser-window {
     position: relative;
     background: linear-gradient(135deg, #C8C3ED 0%, #E7B2C8 100%);
     border-radius: 12px 12px 0 0;
     overflow: hidden;
 }
-/*
-.browser-header {
-    background: rgba(110, 106, 134, 0.15);
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    backdrop-filter: blur(10px);
-}
-*/
 .browser-window img {
     width: 100%;
     display: block;
@@ -1067,7 +1047,7 @@ section p {
 }
 /* ===== PRICING NOTE / EXTRAS ===== */
 .pricing-note {
-    background: rgba(247, 245, 239, 0.9); /* jemně šedé, průhledné */
+    background: rgba(247, 245, 239, 0.9);
     padding: 32px 24px;
     margin-top: 32px;
     border-radius: 16px;
@@ -1087,9 +1067,9 @@ section p {
 }
 
 .pricing-note ul li {
-    display: list-item;           /* klasické tečky */
-    list-style-type: disc;        /* typ tečky */
-    margin-left: 20px;            /* odsazení od okraje boxu */
+    display: list-item;
+    list-style-type: disc; 
+    margin-left: 20px;
     margin-bottom: 6px;
     color: var(--color-purple);
     font-weight: 400;
@@ -1196,7 +1176,6 @@ section p {
     margin-top: 8px;
 }
 
-/* Contact Info */
 .contact-info {
     background: white;
     padding: 48px;
@@ -1240,7 +1219,6 @@ section p {
     opacity: 0.5;
 }
 
-/* Success Message */
 .success-message {
     text-align: center;
     padding: 60px 20px;
@@ -1416,7 +1394,6 @@ footer {
     animation-delay: 3s;
 }
 
-/* Animace: plovoucí rotace */
 @keyframes float-rotate {
     0%, 100% {
         transform: translate(0, 0) rotate(0deg) scale(1);
@@ -1436,7 +1413,6 @@ footer {
     }
 }
 
-/* Animace: opačný směr */
 @keyframes float-rotate-reverse {
     0%, 100% {
         transform: translate(0, 0) rotate(0deg) scale(1);
@@ -1452,7 +1428,6 @@ footer {
     }
 }
 
-/* Animace: pulzování a plovoucí */
 @keyframes pulse-float {
     0%, 100% {
         transform: translate(-50%, -50%) scale(1);
@@ -1475,7 +1450,6 @@ footer {
 }
 
 
-/* Vypnout animace pro accessibility */
 @media (prefers-reduced-motion: reduce) {
     .watercolor-spot {
         animation: none !important;
@@ -1615,7 +1589,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Skrýt text loga na malých mobilech pro úsporu místa */
     .logo span {
         display: none;
     }
@@ -1654,7 +1627,7 @@ footer {
 .text-center {
     text-align: center;
 }
-/* MOBILNÍ FIX */
+
 @media (max-width: 768px) {
     .fade-in {
         opacity: 1 !important;
@@ -1666,7 +1639,6 @@ footer {
         visibility: visible !important;
     }
 }
-/* ===== FIX: Fade-in sekce musí být interaktivní ===== */
 .fade-in {
     pointer-events: auto !important;
 }
@@ -1675,7 +1647,6 @@ footer {
     pointer-events: auto !important;
 }
 
-/* ===== FIX: Tlačítka musí být nad všemi efekty ===== */
 .btn-primary,
 .btn-secondary,
 .btn-hero {
@@ -1685,31 +1656,26 @@ footer {
     cursor: pointer !important;
 }
 
-/* Hero content musí být nad blobs */
 .hero-content {
     position: relative;
     z-index: 50;
 }
 
-/* Blob pozadí pod vším */
 .blob {
     z-index: 0 !important;
     pointer-events: none !important;
 }
 
-/* Sparkle efekt nesmí blokovat kliky */
 .sparkle {
     pointer-events: none !important;
     z-index: 9998 !important;
 }
 
-/* About sekce tlačítka */
 .about-text {
     position: relative;
     z-index: 10;
 }
 
-/* Pricing karty tlačítka */
 .pricing-card {
     position: relative;
     z-index: 10;
@@ -1720,7 +1686,6 @@ footer {
     z-index: 20 !important;
 }
 
-/* Ripple efekt pod tlačítkem */
 .ripple-effect {
     z-index: -1 !important;
     pointer-events: none !important;
@@ -1797,7 +1762,6 @@ footer {
     font-size: 14px;
 }
 
-/* Responzivní */
 @media (max-width: 768px) {
     .cookie-consent {
         padding: 20px;
@@ -1829,7 +1793,6 @@ footer {
 }
 /* ===== PRICING PAGE SPECIFIC STYLES ===== */
 
-/* Pricing Hero Section */
 .pricing-hero {
     min-height: 60vh;
     display: flex;
@@ -1927,7 +1890,6 @@ footer {
     }
 }
 
-/* Sparkle effect for pricing hero */
 .pricing-hero .sparkle-pricing {
     position: fixed;
     width: 20px;
@@ -1959,7 +1921,6 @@ footer {
     }
 }
 
-/* Floating price tags */
 .floating-price-tags {
     position: absolute;
     width: 100%;
@@ -2007,7 +1968,6 @@ footer {
     }
 }
 
-/* Pricing Packages Section */
 .pricing-packages {
     padding: 100px 0;
     background: linear-gradient(180deg, rgba(200, 195, 237, 0.05) 0%, rgba(247, 245, 239, 0) 100%);
@@ -2021,7 +1981,6 @@ footer {
     margin-bottom: 24px;
 }
 
-/* Price card fade-up animation */
 .price-fade-up {
     opacity: 0;
     transform: translateY(40px);
@@ -2035,7 +1994,6 @@ footer {
     }
 }
 
-/* Additional Services */
 .additional-services {
     margin-top: 80px;
     padding: 48px;
@@ -2095,7 +2053,6 @@ footer {
     font-weight: 600;
 }
 
-/* Comparison Table Section */
 .comparison-section {
     padding: 100px 0;
     background: var(--color-cream);
@@ -2185,7 +2142,6 @@ footer {
     font-size: 20px;
 }
 
-/* Not Included Section */
 .not-included-section {
     padding: 100px 0;
     background: linear-gradient(180deg, rgba(167, 196, 160, 0.05) 0%, rgba(247, 245, 239, 0) 100%);
@@ -2263,7 +2219,6 @@ footer {
     line-height: 1.6;
 }
 
-/* Process Timeline Section */
 .process-section {
     padding: 100px 0;
     background: var(--color-cream);
@@ -2403,7 +2358,6 @@ footer {
     color: var(--color-gold);
 }
 
-/* FAQ Section */
 .faq-section {
     padding: 100px 0;
     background: linear-gradient(180deg, rgba(231, 178, 200, 0.05) 0%, rgba(247, 245, 239, 0) 100%);
@@ -2467,7 +2421,7 @@ footer {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 1000px; /* Increased from 500px */
+    max-height: 1000px;
     padding: 0 32px 24px;
 }
 
@@ -2483,7 +2437,6 @@ footer {
     font-weight: 600;
 }
 
-/* Contact CTA Section */
 .contact-cta-section {
     padding: 100px 0;
     background: linear-gradient(135deg, var(--color-purple) 0%, #5a4a6b 100%);
@@ -2583,7 +2536,6 @@ footer {
     color: var(--color-pink);
 }
 
-/* Responsive Styles */
 @media (max-width: 1024px) {
     .timeline::before {
         left: 30px;
@@ -2613,7 +2565,7 @@ footer {
     }
     
     .floating-price-tags {
-        display: none; /* Hide on mobile for cleaner look */
+        display: none; 
     }
     
     .pricing-packages,

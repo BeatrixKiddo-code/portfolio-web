@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Security headers -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io https://www.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -21,14 +20,11 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <style>
-        /* ===== PŘIDANÝ SPECIFICKÝ CSS PRO PROJECTS ===== */
 
-        /* Základní nastavení pro fullscreen layout */
         body {
             overflow-x: hidden;
         }
 
-        /* Header styling */
         header {
             background: rgba(247, 245, 239, 0.98);
             border-bottom: 1px solid rgba(110, 106, 134, 0.1);
@@ -57,7 +53,6 @@
             color: var(--color-pink);
         }
 
-        /* Pill Navigation (horizontální tabs) */
         .pill-navigation {
             position: fixed;
             top: 80px;
@@ -71,6 +66,13 @@
             z-index: 900;
             display: flex;
             gap: 8px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .pill-navigation.hidden {
+            transform: translateX(-50%) translateY(-120%);
+            opacity: 0;
+            pointer-events: none;
         }
 
         .pill-tab {
@@ -96,7 +98,6 @@
             box-shadow: 0 0 20px rgba(83, 43, 109, 0.4);
         }
 
-        /* Project Section (fullscreen blocks) */
         .project-section {
             min-height: 100vh;
             display: flex;
@@ -106,7 +107,6 @@
             scroll-margin-top: 100px;
         }
 
-        /* Alternativní pozadí pro projekty */
         .project-section:nth-child(odd) {
             background: var(--color-cream);
         }
@@ -115,7 +115,6 @@
             background: linear-gradient(135deg, rgba(200, 195, 237, 0.1) 0%, var(--color-cream) 50%);
         }
 
-        /* Project Container */
         .project-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -123,7 +122,6 @@
             z-index: 1;
         }
 
-        /* Project Header */
         .project-title {
             font-family: var(--font-heading);
             font-size: clamp(40px, 5vw, 56px);
@@ -131,7 +129,6 @@
             margin-bottom: 48px;
         }
 
-        /* Main Layout: Dvousloupcový */
         .project-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -139,7 +136,6 @@
             margin-bottom: 48px;
         }
 
-        /* Levý sloupec - Popis */
         .project-description {
             display: flex;
             flex-direction: column;
@@ -163,12 +159,10 @@
             color: #532b6d;
         }
 
-        /* Pravý sloupec - Carousel */
         .project-carousel {
             position: relative;
         }
 
-        /* Carousel Container */
         .carousel-container {
             position: relative;
             overflow: hidden;
@@ -194,7 +188,6 @@
             display: block;
         }
 
-        /* Carousel Navigation */
         .carousel-nav {
             position: absolute;
             bottom: 20px;
@@ -224,7 +217,6 @@
             background: rgba(83, 43, 109, 0.7);
         }
 
-        /* Carousel Arrows */
         .carousel-arrow {
             position: absolute;
             top: 50%;
@@ -260,7 +252,6 @@
             color: #532b6d;
         }
 
-        /* Metadata sekce pod layoutem */
         .project-metadata {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -377,7 +368,6 @@
             line-height: 1.3;
         }
 
-        /* Responsive */
         @media (max-width: 500px) {
             .lighthouse-badge {
                 flex-direction: column;
@@ -388,7 +378,6 @@
             }
         }
 
-        /* Tech Stack */
         .tech-stack {
             background: white;
             padding: 24px;
@@ -412,7 +401,6 @@
             border: 1px solid rgba(83, 43, 109, 0.2);
         }
 
-        /* CTA sekce */
         .project-cta-section {
             background: linear-gradient(135deg, rgba(83, 43, 109, 0.05) 0%, rgba(200, 195, 237, 0.1) 100%);
             padding: 40px;
@@ -432,7 +420,6 @@
             font-weight: 600;
         }
 
-        /* Responsive pro nový layout */
         @media (max-width: 1024px) {
             .project-layout {
                 grid-template-columns: 1fr;
@@ -512,12 +499,10 @@
             transform: translateY(-3px);
         }
 
-        /* Golden Accent */
         .gold-accent {
             color: #D4AF37;
         }
 
-        /* Responsive */
         @media (max-width: 1024px) {
             .pill-navigation {
                 top: 70px;
@@ -603,18 +588,14 @@
 
         <!-- PROJECT 1: Caffé Limone -->
         <section id="caffe-limone" class="project-section">
-            <!-- Background Blobs -->
             <div class="blob blob-1" style="background: #D4AF37;"></div>
             <div class="blob blob-2"></div>
             <div class="blob blob-3"></div>
 
             <div class="project-container">
-                <!-- Project Header -->
                 <h1 class="project-title">Caffé Limone</h1>
 
-                <!-- Main Layout: Popis vlevo, Carousel vpravo -->
                 <div class="project-layout">
-                    <!-- Levý sloupec - Popis -->
                     <div class="project-description">
                         <div>
                             <h3>O projektu</h3>
@@ -639,19 +620,15 @@
                         </div>
                     </div>
 
-                    <!-- Pravý sloupec - Carousel -->
                     <div class="project-carousel">
                         <div class="carousel-container" data-carousel="caffe-limone">
                             <div class="carousel-slides">
-                                <!-- Slide 1: Desktop mockup -->
                                 <div class="carousel-slide">
                                     <img src="images/Limone_tablet.svg" alt="Caffé Limone tablet mockup">
                                 </div>
-                                <!-- Slide 2: Mobile mockup -->
                                 <div class="carousel-slide">
                                     <img src="images/Limone_mobile.svg" alt="Caffé Limone mobile mockup">
                                 </div>
-                                <!-- Slide 3: GIF/Animation -->
                                 <div class="carousel-slide">
                                     <video controls preload="metadata" poster="images/video-poster.jpg"
                                         class="project-video">
@@ -661,7 +638,6 @@
                                 </div>
                             </div>
 
-                            <!-- Navigation -->
                             <button class="carousel-arrow prev" aria-label="Předchozí">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
@@ -684,9 +660,7 @@
                     </div>
                 </div>
 
-                <!-- Metadata: Color Palette, Performance, Tech Stack -->
                 <div class="project-metadata">
-                    <!-- Color Palette -->
                     <div class="metadata-card">
                         <h4 class="metadata-title">Barevná paleta</h4>
                         <div class="palette-colors">
@@ -705,7 +679,6 @@
                         </div>
                     </div>
 
-                    <!-- Performance -->
                     <div class="metadata-card">
                         <h4 class="metadata-title">Webové výsledky</h4>
                         <div class="lighthouse-badge">
@@ -728,7 +701,6 @@
 
 
 
-                    <!-- Tech Stack -->
                     <div class="metadata-card">
                         <h4 class="metadata-title">Technologie</h4>
                         <div class="tech-tags">
@@ -740,7 +712,6 @@
                     </div>
                 </div>
 
-                <!-- CTA s cenou -->
                 <div class="project-cta-section">
                     <p class="cta-price">
                         Podobný projekt od <span class="gold-accent">8 900 Kč</span>
@@ -850,7 +821,6 @@
                         </div>
                     </div>
 
-                    <!-- Performance -->
                     <div class="metadata-card">
                         <h4 class="metadata-title">Webové výsledky</h4>
                         <div class="lighthouse-badge">
@@ -978,9 +948,7 @@
                     </div>
                 </div>
 
-                <!-- Metadata: Color Palette, Performance, Tech Stack -->
                 <div class="project-metadata">
-                    <!-- Color Palette -->
                     <div class="metadata-card">
                         <h4 class="metadata-title">Barevná paleta</h4>
                         <div class="palette-colors">
@@ -999,7 +967,6 @@
                         </div>
                     </div>
 
-                    <!-- Performance -->
                     <div class="metadata-card">
                         <h4 class="metadata-title">Webové výsledky</h4>
                         <div class="lighthouse-badge">
@@ -1020,7 +987,6 @@
                         </div>
                     </div>
 
-                    <!-- Tech Stack -->
                     <div class="metadata-card">
                         <h4 class="metadata-title">Technologie</h4>
                         <div class="tech-tags">
@@ -1120,9 +1086,7 @@
                     </div>
                 </div>
 
-                <!-- Metadata: Color Palette, Performance, Tech Stack -->
                 <div class="project-metadata">
-                    <!-- Color Palette -->
                     <div class="metadata-card">
                         <h4 class="metadata-title">Barevná paleta</h4>
                         <div class="palette-colors">
@@ -1141,7 +1105,6 @@
                         </div>
                     </div>
 
-                    <!-- Performance -->
                     <div class="metadata-card">
                         <h4 class="metadata-title">Webové výsledky</h4>
                         <div class="lighthouse-badge">
@@ -1162,7 +1125,6 @@
                         </div>
                     </div>
 
-                    <!-- Tech Stack -->
                     <div class="metadata-card">
                         <h4 class="metadata-title">Technologie</h4>
                         <div class="tech-tags">
@@ -1191,7 +1153,6 @@
             </div>
         </section>
 
-        <!-- PROJECT 5: Coming Soon -->
         <section id="coming-soon" class="project-section">
             <div class="project-blob project-blob-1" style="background: var(--color-green);"></div>
 
@@ -1235,28 +1196,23 @@
                 currentSlide = (n + totalSlides) % totalSlides;
                 slides.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-                // Update dots
                 dots.forEach((dot, index) => {
                     dot.classList.toggle('active', index === currentSlide);
                 });
             }
 
-            // Dot navigation
             dots.forEach((dot, index) => {
                 dot.addEventListener('click', () => goToSlide(index));
             });
 
-            // Arrow navigation
             prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
             nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
 
-            // Keyboard navigation
             carouselEl.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowLeft') goToSlide(currentSlide - 1);
                 if (e.key === 'ArrowRight') goToSlide(currentSlide + 1);
             });
 
-            // Touch swipe (mobile)
             let touchStartX = 0;
             let touchEndX = 0;
 
@@ -1298,11 +1254,9 @@
         updateActiveTab();
 
 
-        // Scroll listener
         window.addEventListener('scroll', updateActiveTab);
         window.addEventListener('load', updateActiveTab);
 
-        // Smooth scroll na klik
         tabLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1317,6 +1271,39 @@
                     });
                 }
             });
+        });
+
+        // ===== HIDE PILL NAVIGATION ON SCROLL DOWN =====
+        const pillNav = document.querySelector('.pill-navigation');
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function handlePillNavScroll() {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY < 0) return;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                pillNav.classList.add('hidden');
+            } else {
+                pillNav.classList.remove('hidden');
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        function requestTickPill() {
+            if (!ticking) {
+                window.requestAnimationFrame(handlePillNavScroll);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestTickPill, { passive: true });
+
+        window.addEventListener('resize', () => {
+            lastScrollY = window.scrollY;
         });
     </script>
 </body>

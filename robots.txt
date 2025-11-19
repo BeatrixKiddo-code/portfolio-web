@@ -1,0 +1,10 @@
+# robots.txt pro https://zjanacova.cz
+
+User-agent: *
+Allow: /
+
+# Zakázat indexování poděkovací stránky
+Disallow: /thank-you.html
+
+# Sitemap
+Sitemap: https://zjanacova.cz/sitemap.xml

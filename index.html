@@ -4,673 +4,648 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfolio front-end vývojářky a designérky. Vytvářím weby, které dýchají magií – moderní design, čistý kód a špetka kreativity.">
-    <title>Kouzlo kódu | Front-end & Web Design</title>
 
-    <!-- Preload fonts -->
+    <title>Webdesign na míru | Tvorba webů a Shoptet e-shopů | Žaneta Janáčová</title>
+    <meta name="description"
+        content="Zakázkový webdesign a vývoj na míru. Moderní weby a Shoptet e-shopy bez limitů šablon – rychlé, bezpečné a unikátní řešení pro váš byznys.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Žaneta Janáčová">
+    <link rel="canonical" href="https://zjanacova.cz/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zjanacova.cz/">
+    <meta property="og:title" content="Webdesign na míru | Tvorba webů a e-shopů | Žaneta Janáčová">
+    <meta property="og:description"
+        content="Zakázkový webdesign a vývoj. Moderní weby a Shoptet e-shopy bez limitů šablon.">
+    <meta property="og:image" content="https://zjanacova.cz/images/ogpicture.png">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Žaneta Janáčová – Webdesign">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Webdesign na míru | Žaneta Janáčová">
+    <meta name="twitter:description" content="Zakázkový webdesign a vývoj. Moderní weby a Shoptet e-shopy.">
+    <meta name="twitter:image" content="https://zjanacova.cz/images/ogpicture.png">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="preload" href="style.css" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-
-    <style>
-        /* Sale badge pro náhled projektu */
-        .project-card .sale-tag {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: linear-gradient(135deg, #D4AF37 0%, #f6ce64 100%);
-            color: #21112c;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            z-index: 10;
-            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Žaneta Janáčová – Webdesign",
+        "description": "Zakázkový webdesign a vývoj webů a Shoptet e-shopů na míru. Moderní, rychlé a SEO optimalizované weby bez šablon.",
+        "url": "https://zjanacova.cz",
+        "telephone": "+420736231196",
+        "email": "zaneta.janacova@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mělník",
+            "addressCountry": "CZ"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.3505",
+            "longitude": "14.4744"
+        },
+        "priceRange": "8900-22900 CZK",
+        "areaServed": {
+            "@type": "Country",
+            "name": "CZ"
+        },
+        "serviceType": ["Webdesign", "Tvorba webů", "Shoptet e-shopy", "Redesign webu"],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Webové služby",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Tvorba moderních webů",
+                        "description": "Responzivní web od nuly s SEO optimalizací, rychlým načítáním a kontaktními formuláři"
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "priceCurrency": "CZK",
+                        "price": "8900",
+                        "minPrice": "8900"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "E-shopy na Shoptetu",
+                        "description": "Unikátní Shoptet e-shop s vlastním designem, optimalizací pro konverze a školením obsluhy"
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "priceCurrency": "CZK",
+                        "price": "14900",
+                        "minPrice": "14900"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Redesign webu",
+                        "description": "Modernizace designu, optimalizace rychlosti a zlepšení konverzí stávajícího webu"
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "priceCurrency": "CZK",
+                        "price": "8900",
+                        "minPrice": "8900"
+                    }
+                }
+            ]
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Žaneta Janáčová",
+            "jobTitle": "Webdesignérka a vývojářka",
+            "image": "https://zjanacova.cz/images/portrait.png"
         }
-    </style>
+    }
+    </script>
 
+    <!-- Structured Data: WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Žaneta Janáčová – Webdesign",
+        "url": "https://zjanacova.cz",
+        "description": "Zakázkový webdesign a vývoj na míru",
+        "inLanguage": "cs"
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Úvod",
+                "item": "https://zjanacova.cz/"
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
+    <!-- Skip Link pro přístupnost -->
+    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+
     <!-- Loader -->
-    <div class="loader" role="status" aria-live="polite" aria-label="Načítání">
+    <div class="loader" role="status" aria-live="polite" aria-label="Načítání stránky">
         <div class="spinner"></div>
     </div>
 
     <!-- Header -->
     <header role="banner">
         <div class="container">
-            <a href="#home" class="logo" aria-label="Domů">
-                <img src="images/logo.png" alt="logo">
-                <span>Žaneta Janáčová</span>
+            <a href="/" class="logo" aria-label="Žaneta Janáčová – Úvodní stránka">
+                <img src="images/signature.png" alt="Žaneta Janáčová – webdesign na míru" width="150" height="50">
             </a>
             <nav aria-label="Hlavní navigace">
-                <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false">
+                <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <ul class="nav-menu">
-                    <li><a href="#home">Domů</a></li>
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="/">Domů</a></li>
                     <li><a href="/projects.html">Portfolio</a></li>
                     <li><a href="/cenik.html">Ceník</a></li>
                     <li><a href="#about">O mně</a></li>
                     <li><a href="#contact" class="btn-primary">Kontakt</a></li>
-
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-            <div class="blob blob-3"></div>
+            <div class="blob blob-1" aria-hidden="true"></div>
+            <div class="blob blob-2" aria-hidden="true"></div>
+            <div class="blob blob-3" aria-hidden="true"></div>
 
             <div class="container hero-content">
                 <h1 class="hero-title">
-                    <span class="sparkle-text">Kouzlo kódu:<br>
-                        Kreativita, která inspiruje</span>
+                    <span class="sparkle-text">Osobní přístup k webům,<br>které fungují.</span>
                 </h1>
-                <p class="hero-subtitle typewriter"><span class="sparkle-text">Vytvářím weby, které dýchají magií</span>
-                </p>
-                <a href="#portfolio" class="btn-hero btn-ripple">Podívejte se na projekty</a>
-                <div class="scroll-indicator" aria-hidden="true">
-                    <img src="images/dolu.svg" alt="Scroll down" />
-                </div>
-
-
+                <p class="hero-subtitle">
+                    Tvořím weby pro malé podnikatele, kteří chtějí růst.<br>
+                    Žádné šablony, jen řešení šitá na míru. <br>
+                    Váš web, vaše pravidla, váš růst.
+                </p> <a href="#portfolio" class="btn-hero btn-ripple">Prohlédnout projekty</a>
+            </div>
             </div>
         </section>
-        <!-- ===== CO PRO VÁS UDĚLÁM ===== -->
+
+        <!-- Services Section - PŮVODNÍ STRUKTURA -->
         <div class="services-section">
-            <div class="section-header centered">
-                <h2>Pomůžu vám růst online</h2>
-                <p>Vyberte si, co právě potřebujete — od úplně nového webu po vylepšení toho stávajícího</p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Služba 1: Tvorba webů -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                        </svg>
-                    </div>
-                    <h3>Tvorba moderních webů</h3>
-                    <p>Vytvoříme web od nuly — rychlý, responzivní a&nbsp;připravený přivádět zákazníky. Ideální pro
-                        živnostníky, malé firmy a&nbsp;osobní značky.</p>
-                    <ul class="service-features">
-                        <li>✓ Responzivní design pro všechna zařízení</li>
-                        <li>✓ SEO optimalizace od začátku</li>
-                        <li>✓ Rychlé načítání (pod 2 sekundy)</li>
-                        <li>✓ Kontaktní formuláře a Google Mapy</li>
-                    </ul>
-                    <a href="#contact" class="service-link">Zjistit více →</a>
+            <div class="container">
+                <div class="section-header centered">
+                    <h2>Společně vytvoříme web, který odráží vaše nápady a cíle.</h2>
+                    <p>Vyberte si, co právě potřebujete – od úplně nového webu po vylepšení toho stávajícího</p>
                 </div>
 
-                <!-- Služba 2: E-shopy Shoptet -->
-                <div class="service-card featured">
-                    <div class="service-badge">Nejoblíbenější</div>
-                    <div class="service-icon">
-                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <circle cx="9" cy="21" r="1" />
-                            <circle cx="20" cy="21" r="1" />
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                        </svg>
+                <div class="services-grid">
+                    <!-- Služba 1: E-shopy Shoptet -->
+                    <div class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                        </div>
+                        <h3>E-shopy na Shoptetu</h3>
+                        <p>Vytvořím vám unikátní e-shop na platformě Shoptet&nbsp;–&nbsp;s vlastním designem, který se
+                            nepodobá ostatním a&nbsp;pomůže vám prodávat více.</p>
+                        <ul class="service-features">
+                            <ul class="service-features">
+                                <li>Vlastní design (ne šablona)</li>
+                                <li>Školení obsluhy e-shopu</li>
+                            </ul>
+                        </ul>
+                        <a href="#contact" class="service-link">Poptat e-shop →</a>
                     </div>
-                    <h3>E-shopy na Shoptetu</h3>
-                    <p>Vytvořím vám unikátní e-shop na platformě Shoptet&nbsp;—&nbsp;s vlastním designem, který se
-                        nepodobá
-                        ostatním a&nbsp;pomůže vám prodávat více.</p>
-                    <ul class="service-features">
-                        <li>✓ Vlastní design (ne šablona)</li>
-                        <li>✓ Optimalizace pro konverze</li>
-                        <li>✓ Integrované platby a doprava</li>
-                        <li>✓ Školení obsluhy e-shopu</li>
-                    </ul>
-                    <a href="#contact" class="service-link">Zjistit více →</a>
+
+                    <!-- Služba 2: Tvorba webů -->
+                    <div class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                            </svg>
+                        </div>
+                        <h3>Tvorba moderních webů</h3>
+                        <p>Vytvoříme web od nuly – rychlý, responzivní a&nbsp;připravený přivádět zákazníky. Ideální pro
+                            živnostníky, malé firmy a&nbsp;osobní značky.</p>
+                        <ul class="service-features">
+                            <li>Responzivní design pro všechna zařízení</li>
+                            <li>SEO optimalizace od začátku</li>
+                            <li>Rychlé načítání (pod 2 sekundy)</li>
+                            <li>Kontaktní formuláře a Google Mapy</li>
+                        </ul>
+                        <a href="#contact" class="service-link">Poptat web →</a>
+                    </div>
+
+                    <!-- Služba 3: Redesign -->
+                    <div class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <polyline points="23 4 23 10 17 10" />
+                                <polyline points="1 20 1 14 7 14" />
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                            </svg>
+                        </div>
+                        <h3>Redesign a vylepšení webu</h3>
+                        <p>Už máte web nebo e-shop, ale nefunguje, jak by měl? Zmodernizuji design, zrychlím načítání
+                            a&nbsp;zlepším uživatelský zážitek.</p>
+                        <ul class="service-features">
+                            <li>Analýza současného stavu</li>
+                            <li>Modernizace designu</li>
+                            <li>Optimalizace rychlosti</li>
+                            <li>Zlepšení konverzí</li>
+                        </ul>
+                        <a href="#contact" class="service-link">Poptat redesign →</a>
+                    </div>
                 </div>
 
-                <!-- Služba 3: Redesign -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <polyline points="23 4 23 10 17 10" />
-                            <polyline points="1 20 1 14 7 14" />
-                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
-                        </svg>
-                    </div>
-                    <h3>Redesign & vylepšení</h3>
-                    <p>Už máte web nebo e-shop, ale nefunguje, jak by měl? Zmodernizuji design, zrychlím načítání
-                        a&nbsp;zlepším uživatelský zážitek.</p>
-                    <ul class="service-features">
-                        <li>✓ Analýza současného stavu</li>
-                        <li>✓ Modernizace designu</li>
-                        <li>✓ Optimalizace rychlosti</li>
-                        <li>✓ Zlepšení konverzí</li>
-                    </ul>
-                    <a href="#contact" class="service-link">Zjistit více →</a>
-                </div>
             </div>
         </div>
-
-        <!-- Skills -->
-        <div class="skills-grid">
-            <div class="skill-card">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="16 18 22 12 16 6" />
-                    <polyline points="8 6 2 12 8 18" />
-                </svg>
-                <h3>HTML/CSS/JS</h3>
-                <p>Čistý, sémantický kód, responzivní design a&nbsp;funkční weby</p>
-            </div>
-            <div class="skill-card">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10" />
-                    <path
-                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                </svg>
-                <h3>React</h3>
-                <p>Moderní frontendové aplikace s&nbsp;interaktivními komponentami</p>
-            </div>
-            <div class="skill-card">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <path d="M21 15l-5-5L5 21" />
-                </svg>
-                <h3>UI/UX design</h3>
-                <p>Wireframy, vizuální návrhy a&nbsp;jednoduché, funkční rozhraní</p>
-            </div>
-            <div class="skill-card">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-                <h3>Git & Hosting</h3>
-                <p>Správa verzí, nasazení webů a&nbsp;úpravy Shoptet e-shopů</p>
-            </div>
-        </div>
-        </div>
-        </section>
 
         <!-- Portfolio Section -->
         <section id="portfolio" class="portfolio fade-in">
             <div class="container">
                 <div class="section-header">
-                    <h2>Vybrané projekty</h2>
-                    <div class="filter-buttons">
-                        <button class="filter-btn active" data-filter="all">Všechny</button>
-                        <button class="filter-btn" data-filter="prezentacni">Prezentační weby</button>
-                        <button class="filter-btn" data-filter="eshop">E-shopy</button>
-                        <button class="filter-btn" data-filter="redesign">Redesign</button>
+                    <h2>Portfolio – ukázky webů a e-shopů</h2>
+                    <div class="filter-buttons" role="group" aria-label="Filtrování projektů">
+                        <button class="filter-btn active" data-filter="all" aria-pressed="true">Vše</button>
+                        <button class="filter-btn" data-filter="prezentacni" aria-pressed="false">Prezentační
+                            weby</button>
+                        <button class="filter-btn" data-filter="eshop" aria-pressed="false">E-shopy</button>
+                        <button class="filter-btn" data-filter="redesign" aria-pressed="false">Redesign</button>
                     </div>
                 </div>
 
                 <div class="portfolio-grid">
-                    <!-- Project 1: Caffé Limone - UPDATED -->
+                    <!-- Project 1: Caffé Limone -->
                     <article class="project-card featured" data-category="prezentacni">
                         <a href="projects.html#caffe-limone" class="project-link">
-                            <span class="sale-tag">🏷️ K prodeji</span>
+                            <span class="sale-tag">Šablona k prodeji</span>
                             <div class="project-image browser-window">
-                                <img src="images/Caffè Limone.png" alt="Caffe Limone - screenshot" loading="lazy">
+                                <img src="images/Caffè Limone.png"
+                                    alt="Caffè Limone – webová stránka pro italskou kavárnu s online menu"
+                                    loading="lazy" width="600" height="400">
                             </div>
                             <div class="project-overlay">
-                                <h3>Web pro kavárnu</h3>
+                                <h3>Caffè Limone</h3>
                                 <p>Full-stack web s admin sekcí pro správu menu</p>
                                 <span class="project-tag">Node.js · Express · Admin panel</span>
                             </div>
                         </a>
                     </article>
 
-
-                    <!-- Project 2 -->
+                    <!-- Project 2: Astroflora -->
                     <article class="project-card" data-category="eshop">
                         <a href="projects.html#astroflora" class="project-link">
                             <div class="project-image browser-window">
-                                <img src="images/astroflora.png" alt="Astroflora eshop - screenshot" loading="lazy">
+                                <img src="images/astroflora.png" alt="Astroflora – Shoptet e-shop s unikátním designem"
+                                    loading="lazy" width="600" height="400">
                             </div>
                             <div class="project-overlay">
-                                <h3>Shoptet e-shop</h3>
-                                <p>Futuristický design a&nbsp;příjemný nákupní zážitek</p>
+                                <h3>Astroflora</h3>
+                                <p>Shoptet e-shop s vlastním designem</p>
                                 <span class="project-tag">Shoptet · Webdesign · Styling</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Project 3 -->
+                    <!-- Project 3: Pro Váš Klid -->
                     <article class="project-card" data-category="prezentacni">
                         <a href="projects.html#provasklid" class="project-link">
                             <div class="project-image browser-window">
-                                <img src="images/provasklid.png" alt="Pro Váš klid eshop - screenshot" loading="lazy">
+                                <img src="images/provasklid.png"
+                                    alt="Pro Váš Klid – responzivní web pro asistenční služby" loading="lazy"
+                                    width="600" height="400">
                             </div>
                             <div class="project-overlay">
                                 <h3>Pro Váš Klid</h3>
                                 <p>Elegantní web pro lokální asistenční služby</p>
-                                <span class="project-tag">HTML · CSS · JS · Responsive Design · UX/UI · Form
-                                    Validation</span>
+                                <span class="project-tag">HTML · CSS · JS · Responsive Design</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Project 3b: Péče o hroby -->
+                    <!-- Project 4: Péče o hroby -->
                     <article class="project-card" data-category="prezentacni">
                         <a href="projects.html#hrbitov" class="project-link">
                             <div class="project-image browser-window">
-                                <img src="images/peceohroby.png" alt="Péče o hroby - screenshot" loading="lazy">
+                                <img src="images/peceohroby.png" alt="Péče o hroby – web s interaktivní kalkulačkou cen"
+                                    loading="lazy" width="600" height="400">
                             </div>
                             <div class="project-overlay">
                                 <h3>Péče o hroby</h3>
-                                <p>Citlivý web pro péči o hrobová místa</p>
-                                <span class="project-tag">HTML · CSS · JS · Interactive Pricing · Custom Fonts · UX/UI</span>
+                                <p>Web s interaktivní kalkulačkou cen</p>
+                                <span class="project-tag">HTML · CSS · JS · Interactive Pricing</span>
                             </div>
                         </a>
-                    </article>
-
-                    <!-- Project 4 -->
-                    <article class="project-card featured" data-category="prezentacni">
-                        <div class="project-image">
-                            <div class="image-placeholder">
-                                <svg viewBox="0 0 600 450" fill="none">
-                                    <rect width="600" height="450" fill="#E7B2C8" />
-                                    <circle cx="150" cy="150" r="60" fill="#F7F5EF" opacity="0.4" />
-                                    <circle cx="450" cy="300" r="80" fill="#F7F5EF" opacity="0.4" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="project-overlay">
-                            <h3>SaaS Dashboard</h3>
-                            <p>Analytická platforma pro marketing</p>
-                            <span class="project-tag">React · Chart.js · Node.js</span>
-                        </div>
-                    </article>
-
-                    <!-- Project 5 -->
-                    <article class="project-card" data-category="prezentacni">
-                        <div class="project-image">
-                            <div class="image-placeholder">
-                                <svg viewBox="0 0 380 450" fill="none">
-                                    <rect width="380" height="450" fill="#6E6A86" />
-                                    <rect x="90" y="125" width="200" height="200" rx="100" fill="#C8C3ED"
-                                        opacity="0.5" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="project-overlay">
-                            <h3>Kavárna Vintage</h3>
-                            <p>Retro web s online objednávkami</p>
-                            <span class="project-tag">WordPress · WooCommerce</span>
-                        </div>
-                    </article>
-
-                    <!-- Project 6 -->
-                    <article class="project-card" data-category="prezentacni">
-                        <div class="project-image">
-                            <div class="image-placeholder">
-                                <svg viewBox="0 0 380 450" fill="none">
-                                    <rect width="380" height="450" fill="#A7C4A0" />
-                                    <path d="M50 225 L330 225 M190 75 L190 375" stroke="#F7F5EF" stroke-width="40"
-                                        opacity="0.6" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="project-overlay">
-                            <h3>Yoga Studio</h3>
-                            <p>Klidný design pro online lekce</p>
-                            <span class="project-tag">HTML/CSS · Video BG</span>
-                        </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Section - Homepage Version -->
         <section id="pricing" class="pricing fade-in">
             <div class="container">
                 <div class="section-header centered">
-                    <h2>Transparentní ceník</h2>
-                    <p>Vyberte si balíček, který vám sedne. Všechny ceny jsou orientační a&nbsp;upravíme je podle vašich
-                        potřeb.</p>
+                    <h2>Ceník tvorby webů</h2>
+                    <p>Orientační ceny pro představu. Každý projekt oceňuji individuálně podle rozsahu.</p>
                 </div>
 
                 <div class="pricing-grid">
-                    <!-- Package 1 -->
                     <div class="pricing-card">
-                        <h3>Jednoduchý web</h3>
-                        <div class="price">8 900 Kč</div>
+                        <h3>Start</h3>
+                        <div class="price">od 8 900 Kč</div>
+                        <div class="price-note">Ideální pro osobní značky a živnostníky</div>
                         <ul class="features">
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                3-5 podstránek
+                                3–5 podstránek
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                                 Responzivní design
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                                 Kontaktní formulář
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                                 SEO základ
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                1 měsíc podpora
+                                1 měsíc podpory
                             </li>
                         </ul>
-                        <a href="cenik.html" class="btn-secondary btn-ripple">Zjistit více</a>
+                        <a href="cenik.html" class="btn-secondary btn-ripple">Zobrazit ceník</a>
                     </div>
 
-                    <!-- Package 2 - Popular -->
-                    <div class="pricing-card popular">
-                        <div class="badge">⭐ Populární</div>
-                        <h3>Profesionální web</h3>
-                        <div class="price">14 900 Kč</div>
+                    <div class="pricing-card">
+                        <h3>Růst</h3>
+                        <div class="price">od 14 900 Kč</div>
+                        <div class="price-note">Pro firmy, které chtějí růst online</div>
                         <ul class="features">
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                5-8 podstránek
+                                5–8 podstránek
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                Vlastní styling a grafika
+                                Vlastní grafický návrh
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                                 Pokročilé formuláře
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                                 SEO + Google Analytics
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                2 měsíce podpora
+                                2 měsíce podpory
                             </li>
                         </ul>
-                        <a href="cenik.html" class="btn-primary btn-ripple">Zjistit více</a>
+                        <a href="cenik.html" class="btn-primary btn-ripple">Zobrazit ceník</a>
                     </div>
 
-                    <!-- Package 3 -->
                     <div class="pricing-card">
-                        <h3>Kompletní web</h3>
-                        <div class="price">22 900 Kč</div>
+                        <h3>Komplex</h3>
+                        <div class="price">od 22 900 Kč</div>
+                        <div class="price-note">Komplexní řešení s admin panelem</div>
                         <ul class="features">
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                8-12 podstránek
+                                8–12 podstránek
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                Kompletní designový koncept
+                                Kompletní branding
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                                 Pokročilé animace
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                Galerie / reference
+                                Admin panel / CMS
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                3 měsíce podpora
+                                3 měsíce podpory
                             </li>
                         </ul>
-                        <a href="cenik.html" class="btn-secondary btn-ripple">Zjistit více</a>
+                        <a href="cenik.html" class="btn-secondary btn-ripple">Zobrazit ceník</a>
                     </div>
                 </div>
 
-                <!-- CTA to full pricing page -->
                 <div style="text-align: center; margin-top: 48px;">
                     <a href="cenik.html" class="btn-hero btn-ripple">
-                        Celý ceník a srovnání →
+                        Kompletní ceník a srovnání →
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="about fade-in">
             <div class="container">
                 <div class="about-grid">
                     <div class="about-text">
-                        <h2>Ahoj, jsem Žaneta</h2>
-                        <h3 class="mb-4">Tvořím moderní weby a&nbsp;upravuji Shoptet e-shopy, které fungují pro vaše
-                            zákazníky i&nbsp;pro vás.
-                            Pomohu vám vytvořit osobní portfolio nebo profesionální web na míru. Poskytuji služby po
-                            celé ČR online, osobně se můžeme potkat na Mělníku.</h3>
-                        <p>Během své kariéry ve vedení provozu restaurací jsem nasbírala zkušenosti s&nbsp;řízením týmu,
-                            procesů a&nbsp;zákaznické péče. Po čase jsem cítila, že chci uplatnit kreativitu a technické
-                            dovednosti a&nbsp;tak jsem se začala věnovat webdesignu a&nbsp;vývoji – absolvovala jsem
-                            kurz „Tvorba
-                            webových aplikací" a&nbsp;nyní vytvářím moderní weby a&nbsp;e-shopy.</p>
-                        <p>Když právě nekóduji, hledám inspiraci v přírodě a&nbsp;na zahradě – protože magie je všude
-                            kolem
-                            nás...🌿✨</p>
-                        <a href="#contact" class="btn-secondary btn-ripple">Pojďme tvořit společně</a>
+                        <h2>Webdesignérka Žaneta Janáčová</h2>
+                        <p class="mb-4" style="color: var(--color-text-secondary); font-size: 20px; line-height: 1.6;">
+                            Tvořím moderní weby a Shoptet e-shopy, které fungují pro vaše zákazníky i&nbsp;pro vás.
+                        </p>
+                        <p>Roky jsem vedla restauraci, takže rozumím provozu, zákazníkům i tomu, že čas jsou peníze. Web
+                            vám udělám rychle, bez zbytečných průtahů a přesně podle toho, co potřebujete..</p>
+                        <p>Pracuji online po celé ČR. Pokud jste z okolí Mělníka, ráda se potkám i osobně.</p>
+                        <a href="#contact" class="btn-secondary btn-ripple">Domluvit konzultaci</a>
                     </div>
                     <div class="about-image">
                         <div class="image-placeholder">
-                            <img src="images/portrait.png" alt="portrét Žanety Janáčové">
+                            <img src="images/portrait.png" alt="Žaneta Janáčová – webdesignérka a vývojářka z Mělníka"
+                                width="400" height="500" loading="lazy">
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Contact Section -->
-                <section id="contact" class="contact fade-in">
-                    <div class="container">
-                        <div class="contact-grid">
-                            <div class="contact-form-wrap">
-                                <h2>Pojďme tvořit společně</h2>
-                                <p>Máte nápad nebo projekt? Napište mi a&nbsp;já se vám ozvu do 24 hodin.</p>
+        <section id="contact" class="contact fade-in">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-form-wrap">
+                        <h2>Nezávazná poptávka webu</h2>
+                        <p>Máte nápad nebo projekt? Napište mi a ozvu se do 24 hodin.</p>
 
-                                <form id="contact-form" class="contact-form" method="POST"
-                                    action="https://formspree.io/f/meoplgre">
-
-
-
-                                    <div class="form-group">
-                                        <label for="name">Jméno *</label>
-                                        <input type="text" id="name" name="name" placeholder="Tvé jméno" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="email">Email *</label>
-                                        <input type="email" id="email" name="email" placeholder="tvuj@email.cz"
-                                            required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="message">Zpráva *</label>
-                                        <textarea id="message" name="message" rows="5" placeholder="Tvoje zpráva"
-                                            required></textarea>
-                                    </div>
-
-                                    <div class="form-group checkbox">
-                                        <input type="checkbox" id="gdpr" name="gdpr" required>
-                                        <label for="gdpr">Souhlasím se zpracováním osobních údajů</label>
-                                    </div>
-
-                                    <!-- Tlačítko s ripple / sparkle efektem -->
-                                    <button type="submit" class="btn-primary btn-ripple">Odeslat kouzelnou zprávu
-                                        ✨</button>
-                                </form>
-
-
-
+                        <form id="contact-form" class="contact-form" method="POST"
+                            action="https://formspree.io/f/meoplgre">
+                            <div class="form-group">
+                                <label for="name">Jméno *</label>
+                                <input type="text" id="name" name="name" placeholder="Vaše jméno" required
+                                    autocomplete="name">
                             </div>
 
-                            <div class="contact-info">
-                                <div class="contact-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path
-                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                        <polyline points="22,6 12,13 2,6" />
-                                    </svg>
-                                    <div>
-                                        <h4>Email</h4>
-                                        <a href="mailto:zaneta.janacova@gmail.com">zaneta.janacova@gmail.com</a>
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" placeholder="vas@email.cz" required
+                                    autocomplete="email">
+                            </div>
 
-                                <div class="contact-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path
-                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                                    </svg>
-                                    <div>
-                                        <h4>Telefon</h4>
-                                        <a href="tel:+420736231196">+420 736 231 196</a>
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <label for="message">Zpráva *</label>
+                                <textarea id="message" name="message" rows="5"
+                                    placeholder="Popište váš projekt nebo dotaz..." required></textarea>
+                            </div>
 
-                                <div class="contact-item">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path
-                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                                        <rect x="2" y="9" width="4" height="12" />
-                                        <circle cx="4" cy="4" r="2" />
-                                    </svg>
-                                    <div>
-                                        <h4>LinkedIn</h4>
-                                        <a href="https://linkedin.com" target="_blank" rel="noopener">Spojme se</a>
-                                    </div>
-                                </div>
-                                <div class="decorative-element">
-                                    <div class="watercolor-spot spot-contact"></div>
-                                </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="gdpr" name="gdpr" required>
+                                <label for="gdpr">Souhlasím se zpracováním osobních údajů</label>
+                            </div>
+
+                            <button type="submit" class="btn-primary btn-ripple">Odeslat poptávku</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <div>
+                                <h4>Email</h4>
+                                <a id="emailme"></a>
                             </div>
                         </div>
+
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            <div>
+                                <h4>Telefon</h4>
+                                <a href="tel:+420736231196">+420 736 231 196</a>
+                            </div>
+                        </div>
+
+                        <!-- LinkedIn 
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <a href="https://linkedin.com/in/T" target="_blank" rel="noopener noreferrer">Spojme se na LinkedIn</a>
+                            </div>
+                        </div>
+                        -->
                     </div>
-                </section>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/signature.png" alt="podpis Žaneta J." width="200px">
-                    <p>Vytvářím weby s&nbsp;duší a&nbsp;špetkou magie.</p>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Navigace</h4>
-                    <ul>
-                        <li><a href="#about">O mně</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="cenik.html">Ceník</a></li>
-                        <li><a href="#contact">Kontakt</a></li>
-                    </ul>
-                </div>
-
+            <div class="footer-logo">
+                <img src="images/signature.png" alt="Žaneta Janáčová – podpis" width="200" height="60" loading="lazy">
+                <p>Weby s péčí o detail a bez kompromisů.</p>
             </div>
 
+            <nav class="footer-nav" aria-label="Patičková navigace">
+                <a href="/">Domů</a>
+                <a href="/projects.html">Portfolio</a>
+                <a href="/cenik.html">Ceník</a>
+                <a href="/#contact">Kontakt</a>
+                <a href="/privacy.html">Ochrana údajů</a>
+            </nav>
+
             <div class="footer-bottom">
-                <p>&copy; 2025 Portfolio -- Žaneta Janáčová -- Vytvořeno s ✨ a spoustou kávy.</p>
+                <p>&copy; 2025 Žaneta Janáčová · Všechna práva vyhrazena</p>
             </div>
         </div>
     </footer>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent" class="cookie-consent" style="display: none;">
+    <div id="cookie-consent" class="cookie-consent" role="dialog" aria-labelledby="cookie-title" style="display: none;">
         <div class="cookie-content">
             <div class="cookie-text">
-                <p><strong>🍪 Tento web používá cookies</strong></p>
-                <p>Používám cookies pro zlepšení vašeho zážitku a analytiku webu. Více informací najdete v <a
-                        href="privacy.html" class="cookie-link">zásadách ochrany osobních údajů</a>.</p>
+                <p id="cookie-title"><strong>Cookies</strong></p>
+                <p>Používám cookies pro analytiku webu. <a href="privacy.html" class="cookie-link">Více info</a></p>
             </div>
             <div class="cookie-buttons">
-                <button id="cookie-accept" class="btn-primary btn-ripple">Přijmout vše</button>
+                <button id="cookie-accept" class="btn-primary btn-ripple">Přijmout</button>
                 <button id="cookie-decline" class="btn-secondary">Odmítnout</button>
             </div>
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 

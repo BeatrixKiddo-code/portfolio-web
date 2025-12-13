@@ -14,27 +14,22 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
 if (menuToggle && navMenu) {
-    // Toggle menu
     menuToggle.addEventListener('click', (e) => {
         e.stopPropagation();
         menuToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
-
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
         menuToggle.setAttribute('aria-expanded', !isExpanded);
     });
 
-    // Kliknutí na odkaz v menu
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
-            // Zavřít menu
             menuToggle.classList.remove('active');
             navMenu.classList.remove('active');
             menuToggle.setAttribute('aria-expanded', 'false');
         });
     });
 
-    // Zavřít menu při kliku mimo něj
     document.addEventListener('click', (e) => {
         if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
             menuToggle.classList.remove('active');
@@ -44,28 +39,30 @@ if (menuToggle && navMenu) {
     });
 }
 
-// ===== STICKY HEADER (stable) =====
+// ===== STICKY HEADER =====
 const header = document.querySelector("header");
+const pillNav = document.querySelector('.pill-navigation');
 let lastScrollY = window.scrollY;
 let ticking = false;
 
 function handleScroll() {
     const currentScrollY = window.scrollY;
-    
     if (currentScrollY < 0) return;
-    
+
     if (currentScrollY > 100) {
         header.classList.add("scrolled");
     } else {
         header.classList.remove("scrolled");
     }
-    
+
     if (currentScrollY > lastScrollY && currentScrollY > 200) {
         header.classList.add("hidden");
+        if (pillNav) pillNav.classList.add("hidden");
     } else {
         header.classList.remove("hidden");
+        if (pillNav) pillNav.classList.remove("hidden");
     }
-    
+
     lastScrollY = currentScrollY;
     ticking = false;
 }
@@ -78,11 +75,7 @@ function requestTick() {
 }
 
 window.addEventListener("scroll", requestTick, { passive: true });
-
-window.addEventListener("resize", () => {
-    lastScrollY = window.scrollY;
-});
-
+window.addEventListener("resize", () => { lastScrollY = window.scrollY; });
 
 // ===== LOGO BOUNCER =====
 const logo = document.querySelector('.logo');
@@ -93,13 +86,13 @@ if (logo) {
     });
 }
 
-// ===== SPARKLE TLAČÍTKO =====
+// ===== SPARKLE TLAČÍTKO - ZLATÉ BARVY =====
 const sparkleButtons = document.querySelectorAll('.btn-primary');
 
 const sparkleColors = [
-    'radial-gradient(circle, #a8def0 0%, #fbc4d4 50%, #d9b3ff 80%)',
-    'radial-gradient(circle, #a8e6cf 0%, #d0f0fd 50%, transparent 80%)',
-    'radial-gradient(circle, #fff4e1 0%, #ffd6d6 50%, #fefefe 80%)'
+    'radial-gradient(circle, #fff3b3 0%, #e6d98a 50%, transparent 80%)',
+    'radial-gradient(circle, #fffde6 0%, #fff3b3 50%, transparent 80%)',
+    'radial-gradient(circle, #FFFFFF 0%, #fff3b3 50%, transparent 80%)'
 ];
 
 sparkleButtons.forEach(btn => {
@@ -120,7 +113,6 @@ sparkleButtons.forEach(btn => {
 function createSparkleOnButton(button, clientX, clientY) {
     const sparkle = document.createElement('div');
     sparkle.className = 'sparkle-hover';
-    
     sparkle.style.background = sparkleColors[Math.floor(Math.random() * sparkleColors.length)];
     
     const rect = button.getBoundingClientRect();
@@ -130,25 +122,21 @@ function createSparkleOnButton(button, clientX, clientY) {
     sparkle.style.top = y + 'px';
     
     button.appendChild(sparkle);
-    
     setTimeout(() => sparkle.remove(), 600);
 }
 
 // ===== PROJECT OVERLAY MOBILE =====
 if (window.innerWidth <= 768) {
     const projectCards = document.querySelectorAll('.project-card');
-
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
             const overlay = card.querySelector('.project-overlay');
-            if (overlay) {
-                overlay.classList.toggle('visible');
-            }
+            if (overlay) overlay.classList.toggle('visible');
         });
     });
 }
 
-// ===== HERO SPARKLE EFFECT =====
+// ===== HERO SPARKLE EFFECT - ZLATÉ JISKRY =====
 const heroTitle = document.querySelector('.sparkle-text');
 
 if (heroTitle) {
@@ -177,12 +165,8 @@ function createSparkle(x, y) {
     sparkle.style.left = x + 'px';
     sparkle.style.top = y + 'px';
     sparkle.style.pointerEvents = 'none';
-    
     document.body.appendChild(sparkle);
-    
-    setTimeout(() => {
-        sparkle.remove();
-    }, 800);
+    setTimeout(() => sparkle.remove(), 800);
 }
 
 // ===== TYPEWRITER EFFECT =====
@@ -239,11 +223,9 @@ if (filterBtns.length > 0) {
     });
 }
 
-// ===== RIPPLE EFFECT (OPRAVENÝ - bez preventDefault) =====
+// ===== RIPPLE EFFECT =====
 document.querySelectorAll('.btn-ripple').forEach(btn => {
     btn.addEventListener('click', function(e) {
-        // NEBLOKUJEME kliknutí - necháme link fungovat normálně
-        
         const ripple = document.createElement('span');
         ripple.className = 'ripple-effect';
         
@@ -257,10 +239,7 @@ document.querySelectorAll('.btn-ripple').forEach(btn => {
         ripple.style.top = y + 'px';
         
         this.appendChild(ripple);
-
-        setTimeout(() => {
-            ripple.remove();
-        }, 1000);
+        setTimeout(() => ripple.remove(), 1000);
     });
 });
 
@@ -279,9 +258,7 @@ if ('IntersectionObserver' in window) {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-    });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 } else {
     document.querySelectorAll('.fade-in').forEach(el => {
         el.classList.add('visible');
@@ -305,9 +282,7 @@ function validateField(field) {
     if (!formGroup) return true;
     
     const existingError = formGroup.querySelector('.error-msg');
-    if (existingError) {
-        existingError.remove();
-    }
+    if (existingError) existingError.remove();
     
     formGroup.classList.remove('error', 'success');
     
@@ -336,10 +311,7 @@ function validateField(field) {
         }
     }
     
-    if (field.value.trim()) {
-        formGroup.classList.add('success');
-    }
-    
+    if (field.value.trim()) formGroup.classList.add('success');
     return true;
 }
 
@@ -356,69 +328,48 @@ if (contactForm) {
     const formInputs = contactForm.querySelectorAll('input:not([type="hidden"]):not([name="bot-field"]), textarea');
     
     formInputs.forEach(input => {
-        input.addEventListener('blur', () => {
-            validateField(input);
-        });
-        
+        input.addEventListener('blur', () => validateField(input));
         input.addEventListener('input', () => {
-            if (input.classList.contains('error')) {
-                validateField(input);
-            }
+            if (input.classList.contains('error')) validateField(input);
         });
     });
     
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-
         let isValid = true;
 
         formInputs.forEach(input => {
-            if (!validateField(input)) {
-                isValid = false;
-            }
+            if (!validateField(input)) isValid = false;
         });
 
         if (!isValid) {
             const firstError = contactForm.querySelector('.form-group.error');
-            if (firstError) {
-                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
+            if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
             return false;
         }
 
-        // Get submit button
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-
-        // Show loading state
         submitBtn.textContent = 'Odesílám...';
         submitBtn.disabled = true;
 
         try {
-            // Get form data
             const formData = new FormData(contactForm);
-
-            // Send to Formspree
             const response = await fetch('https://formspree.io/f/meoplgre', {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             });
 
             if (response.ok) {
-                // Success - redirect to thank-you page
                 window.location.href = 'thank-you.html';
             } else {
-                // Error handling
-                alert('Něco se pokazilo. Zkuste to prosím znovu nebo nás kontaktujte přímo emailem.');
+                alert('Něco se pokazilo. Zkuste to prosím znovu.');
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             }
         } catch (error) {
-            // Network error
-            alert('Chyba při odesílání. Zkontrolujte připojení k internetu.');
+            alert('Chyba při odesílání. Zkontrolujte připojení.');
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
         }
@@ -428,10 +379,8 @@ if (contactForm) {
 // ===== PARALLAX EFFECT =====
 if (window.innerWidth > 768) {
     const blobs = document.querySelectorAll('.blob');
-    
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
-        
         blobs.forEach((blob, index) => {
             const speed = 0.5 + (index * 0.2);
             const yPos = -(scrolled * speed);
@@ -440,14 +389,12 @@ if (window.innerWidth > 768) {
     });
 }
 
-// ===== FOOTER SPARKLE EFFECT =====
+// ===== FOOTER SPARKLE EFFECT - ZLATÉ =====
 const footer = document.querySelector('footer');
 
 if (footer) {
     footer.addEventListener('mousemove', (e) => {
-        if (Math.random() > 0.85) {
-            createFooterSparkle(e.clientX, e.clientY);
-        }
+        if (Math.random() > 0.85) createFooterSparkle(e.clientX, e.clientY);
     });
 
     if (window.innerWidth <= 768) {
@@ -456,11 +403,6 @@ if (footer) {
                 const touch = e.touches[0];
                 createFooterSparkle(touch.clientX, touch.clientY);
             }
-        }, { passive: true });
-
-        footer.addEventListener('touchstart', (e) => {
-            const touch = e.touches[0];
-            createFooterSparkle(touch.clientX, touch.clientY);
         }, { passive: true });
     }
 }
@@ -471,12 +413,8 @@ function createFooterSparkle(x, y) {
     sparkle.style.left = x + 'px';
     sparkle.style.top = y + 'px';
     sparkle.style.pointerEvents = 'none';
-    
     document.body.appendChild(sparkle);
-    
-    setTimeout(() => {
-        sparkle.remove();
-    }, 800);
+    setTimeout(() => sparkle.remove(), 800);
 }
 
 // ===== EASTER EGG: Konami Code =====
@@ -489,66 +427,67 @@ document.addEventListener('keydown', (e) => {
     
     if (konamiCode.join('') === konamiSequence.join('')) {
         document.body.style.animation = 'rainbow 2s infinite';
-        
         const style = document.createElement('style');
-        style.textContent = `
-            @keyframes rainbow {
-                0% { filter: hue-rotate(0deg); }
-                100% { filter: hue-rotate(360deg); }
-            }
-        `;
+        style.textContent = `@keyframes rainbow { 0% { filter: hue-rotate(0deg); } 100% { filter: hue-rotate(360deg); } }`;
         document.head.appendChild(style);
-        
-        setTimeout(() => {
-            document.body.style.animation = '';
-            style.remove();
-        }, 4000);
-        
-        console.log('🎉 Konami Code aktivován! Našli jste velikonoční vajíčko!');
+        setTimeout(() => { document.body.style.animation = ''; style.remove(); }, 4000);
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const parts = ['zaneta', '.', 'janacova', '@', 'gmail', '.', 'com'];
+  const email = parts.join('');
+
+  const el = document.getElementById('emailme');
+  if (!el) return;
+
+  el.href = 'mailto:' + email;
+  el.textContent = email;
+});
+
 // ===== COOKIE CONSENT =====
 (function() {
     const cookieBanner = document.getElementById('cookie-consent');
     const acceptBtn = document.getElementById('cookie-accept');
     const declineBtn = document.getElementById('cookie-decline');
     
+    if (!cookieBanner) return;
+    
     const consent = localStorage.getItem('cookie-consent');
     
     if (!consent) {
         setTimeout(() => {
             cookieBanner.style.display = 'block';
-            setTimeout(() => {
-                cookieBanner.classList.add('show');
-            }, 100);
+            setTimeout(() => cookieBanner.classList.add('show'), 100);
         }, 1000);
     } else if (consent === 'accepted') {
         loadGoogleAnalytics();
     }
     
-    acceptBtn.addEventListener('click', () => {
-        localStorage.setItem('cookie-consent', 'accepted');
-        hideBanner();
-        loadGoogleAnalytics();
-    });
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie-consent', 'accepted');
+            hideBanner();
+            loadGoogleAnalytics();
+        });
+    }
     
-    declineBtn.addEventListener('click', () => {
-        localStorage.setItem('cookie-consent', 'declined');
-        hideBanner();
-    });
+    if (declineBtn) {
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie-consent', 'declined');
+            hideBanner();
+        });
+    }
     
     function hideBanner() {
         cookieBanner.classList.remove('show');
-        setTimeout(() => {
-            cookieBanner.style.display = 'none';
-        }, 400);
+        setTimeout(() => cookieBanner.style.display = 'none', 400);
     }
     
     function loadGoogleAnalytics() {
-
         const script1 = document.createElement('script');
         script1.async = true;
-        script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-29FCKKCGYR'; 
+        script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-29FCKKCGYR';
         document.head.appendChild(script1);
         
         script1.onload = () => {
@@ -559,91 +498,10 @@ document.addEventListener('keydown', (e) => {
                 'anonymize_ip': true,
                 'cookie_flags': 'SameSite=None;Secure'
             });
-            
-            console.log('✅ Google Analytics načteno');
         };
     }
 })();
-// Pricing Contact Form - custom redirect after Formspree submission
-const pricingForm = document.getElementById('pricing-contact-form');
 
-if (pricingForm) {
-    pricingForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        const submitBtn = pricingForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-
-        // Show loading state
-        submitBtn.textContent = 'Odesílám...';
-        submitBtn.disabled = true;
-
-        try {
-            // Get form data
-            const formData = new FormData(pricingForm);
-
-            // Send to Formspree
-            const response = await fetch('https://formspree.io/f/meoplgre', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                // Success - redirect to thank-you page
-                window.location.href = 'thank-you.html';
-            } else {
-                // Error handling
-                alert('Něco se pokazilo. Zkuste to prosím znovu nebo nás kontaktujte přímo emailem.');
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
-        } catch (error) {
-            // Network error
-            alert('Chyba při odesílání. Zkontrolujte připojení k internetu.');
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }
-    });
-}
-
-// Helper functions
-function showError(fieldName, message) {
-    const field = document.getElementById(fieldName);
-    const formGroup = field.closest('.form-group');
-    const errorMsg = formGroup.querySelector('.error-msg');
-    
-    formGroup.classList.add('error');
-    if (errorMsg) {
-        errorMsg.textContent = message;
-    }
-    
-    // Remove error on input
-    field.addEventListener('input', function() {
-        formGroup.classList.remove('error');
-        if (errorMsg) {
-            errorMsg.textContent = '';
-        }
-    }, { once: true });
-}
-
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-// Smooth scroll to contact form
-document.querySelectorAll('a[href="#contact-form"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector('#contact-form');
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
-});
 // ===== CONSOLE MESSAGE =====
-console.log('%c✨ Ahoj! 👋', 'font-size: 24px; font-weight: bold; color: #E7B2C8;');
-console.log('%cDíky, že jste tu! Pokud hledáte vývojářku/designérku, napište mi na zaneta.janacova@gmail.com', 'font-size: 14px; color: #6E6A86;');
-console.log('%cPS: Zkuste zadat Konami Code... 🎮', 'font-size: 12px; color: #A7C4A0; font-style: italic;');
+console.log('%c Ahoj! ', 'font-size: 24px; font-weight: bold; color: #FFD700;');
+console.log('%cDíky, že jste tu! Pokud hledáte vývojářku/designérku, napište mi na zaneta.janacova@gmail.com', 'font-size: 14px; color: #9370DB;');

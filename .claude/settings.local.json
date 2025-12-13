@@ -1,11 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nVylepšení projektu Pro Váš klid v portfoliu\n\n- Přidána kompletní metadata sekce (barevná paleta, výsledky, technologie)\n- Barevná paleta získána přímo z CSS projektu (#F5F1E8, #3E3C2F, #4E4B40, #BCA56A)\n- Aktualizovány reálné Lighthouse výsledky (85 výkon, 100 SEO)\n- Vylepšen motivační text sekce \"Výsledek\"\n- Opraven odkaz na web (https://www.provasklid.cz)\n- Projekt nyní konzistentní se stylem ostatních projektů\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(git push)",
-      "Bash(ls:*)",
-      "Bash(git commit:*)"
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []

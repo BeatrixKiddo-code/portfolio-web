@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vzdělání a certifikáty | Webdesign založený na znalostech | Žaneta Janáčová</title>
+    <meta name="description"
+        content="Profesionální vzdělání v oblasti webového vývoje. Rekvalifikační kurz Python (193 hodin), certifikáty z React, Django, JavaScript, SQL a AI. ITnetwork.cz.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Žaneta Janáčová">
+    <link rel="canonical" href="https://zjanacova.cz/vzdelani.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zjanacova.cz/vzdelani.html">
+    <meta property="og:title" content="Vzdělání a certifikáty | Žaneta Janáčová">
+    <meta property="og:description"
+        content="Profesionální vzdělání v oblasti webového vývoje. Rekvalifikační kurz, certifikáty z moderních technologií.">
+    <meta property="og:image" content="https://zjanacova.cz/images/ogpicture.png">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Žaneta Janáčová – Webdesign">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vzdělání a certifikáty | Žaneta Janáčová">
+    <meta name="twitter:description" content="Profesionální vzdělání v oblasti webového vývoje a moderních technologií.">
+    <meta name="twitter:image" content="https://zjanacova.cz/images/ogpicture.png">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Úvod",
+                "item": "https://zjanacova.cz/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Vzdělání",
+                "item": "https://zjanacova.cz/vzdelani.html"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Žaneta Janáčová",
+        "jobTitle": "Webdesignérka a vývojářka",
+        "url": "https://zjanacova.cz",
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Tvorba WWW aplikací v Pythonu",
+                "credentialCategory": "Rekvalifikační kurz",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "ITnetwork.cz"
+                },
+                "dateCreated": "2025"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        /* ===== EDUCATION PAGE STYLES ===== */
+        
+        .education-hero {
+            min-height: 65vh;
+            display: flex;
+            align-items: center;
+            padding: 160px 0 100px;
+            background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(147, 112, 219, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .education-hero-content {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .education-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(36px, 5vw, 56px);
+            color: var(--color-text-primary);
+            margin-bottom: 28px;
+            line-height: 1.2;
+        }
+
+        .education-hero-subtitle {
+            font-size: clamp(17px, 2.5vw, 19px);
+            color: var(--color-text-secondary);
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .education-hero-nav {
+            font-size: 15px;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        /* Section divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(168, 124, 82, 0.3) 20%, 
+                rgba(168, 124, 82, 0.5) 50%, 
+                rgba(168, 124, 82, 0.3) 80%, 
+                transparent 100%
+            );
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Main Certificate Section */
+        .main-cert-section {
+            padding: 80px 0;
+            background: var(--color-bg-primary);
+        }
+
+        .main-cert-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .main-cert-card:hover {
+            border-color: var(--color-accent-gold);
+        }
+
+        .main-cert-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-accent-gold), var(--color-accent-glow));
+            color: var(--color-bg-primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .main-cert-card h3 {
+            font-family: var(--font-heading);
+            font-size: clamp(24px, 4vw, 32px);
+            color: var(--color-accent-gold);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .main-cert-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            color: var(--color-text-secondary);
+        }
+
+        .meta-item svg {
+            color: var(--color-accent-gold);
+            flex-shrink: 0;
+        }
+
+        .main-cert-card > p {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .view-cert-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: transparent;
+            border: 2px solid var(--color-accent-gold);
+            border-radius: 4px;
+            color: var(--color-accent-gold);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-decoration: none;
+        }
+
+        .view-cert-btn:hover {
+            background: var(--color-accent-gold);
+            color: var(--color-bg-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--glow);
+        }
+
+        /* Certificates Grid Section */
+        .certs-section {
+            padding: 80px 0;
+            background: var(--color-bg-secondary);
+        }
+
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .cert-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 28px;
+            cursor: pointer;
+            transition: all var(--transition);
+            position: relative;
+        }
+
+        .cert-card:hover {
+            border-color: var(--color-accent-purple);
+            transform: translateY(-4px);
+            box-shadow: 0 0 25px rgba(147, 112, 219, 0.15);
+        }
+
+        .cert-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .cert-year {
+            background: rgba(168, 124, 82, 0.15);
+            color: var(--color-accent-gold);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .cert-view-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-bg-secondary);
+            border-radius: 50%;
+            color: var(--color-text-muted);
+            transition: all var(--transition);
+        }
+
+        .cert-card:hover .cert-view-icon {
+            background: var(--color-accent-gold);
+            color: var(--color-bg-primary);
+        }
+
+        .cert-card h3 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            color: var(--color-text-primary);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .cert-desc {
+            font-size: 14px;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .education-cta {
+            padding: 100px 0;
+            background: var(--color-bg-primary);
+            text-align: center;
+        }
+
+        .education-cta-content {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .education-cta h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(24px, 4vw, 32px);
+            color: var(--color-text-primary);
+            margin-bottom: 16px;
+        }
+
+        .education-cta p {
+            font-size: 17px;
+            color: var(--color-text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        /* Certificate Lightbox */
+        .cert-lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cert-lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cert-lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            transition: all var(--transition);
+            z-index: 10;
+        }
+
+        .cert-lightbox-close:hover {
+            background: var(--color-accent-gold);
+            color: var(--color-bg-primary);
+        }
+
+        .cert-lightbox-image {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Carousel for multi-page certs */
+        .cert-carousel {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cert-carousel-arrow {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            transition: all var(--transition);
+            flex-shrink: 0;
+        }
+
+        .cert-carousel-arrow:hover {
+            background: var(--color-accent-gold);
+            color: var(--color-bg-primary);
+        }
+
+        .cert-carousel-arrow:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .cert-carousel-arrow:disabled:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .cert-carousel-counter {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--color-text-muted);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .education-hero {
+                padding: 130px 0 70px;
+                min-height: auto;
+            }
+
+            .main-cert-card {
+                padding: 28px 24px;
+            }
+
+            .main-cert-meta {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .certs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-carousel-arrow {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <header role="banner">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Žaneta Janáčová – Úvodní stránka">
+                <img src="images/signature.png" alt="Žaneta Janáčová – webdesign na míru" width="150" height="50">
+            </a>
+            <nav aria-label="Hlavní navigace">
+                <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="/">Domů</a></li>
+                    <li><a href="/#about">O mně</a></li>
+                    <li><a href="/projects.html">Portfolio</a></li>
+                    <li><a href="/cenik.html">Ceník</a></li>
+                    <li><a href="/vzdelani.html" class="active" aria-current="page">Vzdělání</a></li>
+                    <li><a href="/#contact" class="btn-primary btn-ripple">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="education-hero" aria-labelledby="education-hero-title">
+            <div class="container">
+                <div class="education-hero-content fade-in">
+                    <h1 id="education-hero-title" class="education-hero-title sparkle-text">Vzdělání, které promlouvá do praxe</h1>
+                    <p class="education-hero-subtitle">
+                        Nesbírám certifikáty do šuplíku. Každý kurz mi dal konkrétní nástroje, 
+                        které dnes používám při návrhu a tvorbě webů pro klienty.
+                    </p>
+                    <p class="education-hero-nav">
+                        Níže najdete přehled vzdělání, které tvoří technický a myšlenkový základ mé práce.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="section-divider" aria-hidden="true"></div>
+
+        <!-- Main Certificate Section -->
+        <section class="main-cert-section fade-in" aria-labelledby="main-cert-heading">
+            <div class="container">
+                <div class="section-header centered">
+                    <h2 id="main-cert-heading">Rekvalifikační kurz</h2>
+                </div>
+
+                <div class="main-cert-card">
+                    <span class="main-cert-badge">Akreditovaný MŠMT</span>
+                    
+                    <h3>Tvorba WWW aplikací v Pythonu</h3>
+                    
+                    <div class="main-cert-meta">
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>193 hodin</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            <span>2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                            </svg>
+                            <span>ITnetwork.cz</span>
+                        </div>
+                    </div>
+
+                    <p>Intenzivní program pokrývající Python, práci s databázemi, backend frameworky a nasazení aplikací do produkce. Díky tomu umím vytvářet weby s admin panelem, kde si klient sám spravuje obsah.</p>
+
+                    <button class="view-cert-btn" data-cert-pages="certs/rekvalifikace-1.png,certs/rekvalifikace-2.png">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Zobrazit certifikát
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Grid Section -->
+        <section class="certs-section fade-in" aria-labelledby="certs-heading">
+            <div class="container">
+                <div class="section-header centered">
+                    <h2 id="certs-heading">Další certifikáty</h2>
+                </div>
+
+                <div class="certs-grid">
+                    <article class="cert-card" data-cert="certs/zaklady-ai.png">
+                        <div class="cert-card-header">
+                            <span class="cert-year">2025</span>
+                            <div class="cert-view-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3>Základy umělé inteligence</h3>
+                        <p class="cert-desc">Principy fungování AI, prompt engineering, praktické využití</p>
+                    </article>
+
+                    <article class="cert-card" data-cert="certs/produktivita-ai.png">
+                        <div class="cert-card-header">
+                            <span class="cert-year">2025</span>
+                            <div class="cert-view-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3>Mistrovství produktivity s AI</h3>
+                        <p class="cert-desc">Efektivní workflow s AI nástroji, automatizace úkolů</p>
+                    </article>
+
+                    <article class="cert-card" data-cert="certs/javascript.png">
+                        <div class="cert-card-header">
+                            <span class="cert-year">2025</span>
+                            <div class="cert-view-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3>Základy JavaScriptu</h3>
+                        <p class="cert-desc">Interaktivní prvky, validace formulářů, DOM manipulace</p>
+                    </article>
+
+                    <article class="cert-card" data-cert="certs/react.png">
+                        <div class="cert-card-header">
+                            <span class="cert-year">2025</span>
+                            <div class="cert-view-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3>Základy React</h3>
+                        <p class="cert-desc">Komponenty, state management, moderní UI</p>
+                    </article>
+
+                    <article class="cert-card" data-cert="certs/webdesign.png">
+                        <div class="cert-card-header">
+                            <span class="cert-year">2025</span>
+                            <div class="cert-view-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3>Moderní webdesign</h3>
+                        <p class="cert-desc">CSS Grid, Flexbox, responzivní design, přístupnost</p>
+                    </article>
+
+                    <article class="cert-card" data-cert="certs/django.png">
+                        <div class="cert-card-header">
+                            <span class="cert-year">2025</span>
+                            <div class="cert-view-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3>Základy Django</h3>
+                        <p class="cert-desc">Python framework, šablony, routing, backend</p>
+                    </article>
+
+                    <article class="cert-card" data-cert="certs/kolekce-python.png">
+                        <div class="cert-card-header">
+                            <span class="cert-year">2025</span>
+                            <div class="cert-view-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3>Kolekce v Pythonu</h3>
+                        <p class="cert-desc">Práce s daty, seznamy, slovníky, zpracování informací</p>
+                    </article>
+
+                    <article class="cert-card" data-cert="certs/oop.png">
+                        <div class="cert-card-header">
+                            <span class="cert-year">2025</span>
+                            <div class="cert-view-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3>OOP v Pythonu</h3>
+                        <p class="cert-desc">Objektově orientované programování, třídy, dědičnost</p>
+                    </article>
+
+                    <article class="cert-card" data-cert="certs/sql.png">
+                        <div class="cert-card-header">
+                            <span class="cert-year">2025</span>
+                            <div class="cert-view-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3>SQL Databáze</h3>
+                        <p class="cert-desc">Návrh databází, dotazy, propojení s aplikací</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="education-cta fade-in" aria-labelledby="cta-heading">
+            <div class="container">
+                <div class="education-cta-content">
+                    <h2 id="cta-heading">Máte projekt, který potřebuje řešení?</h2>
+                    <p>Jestli vám to dává smysl, pojďme se bavit.</p>
+                    <a href="mailto:zaneta.janacova@gmail.com?subject=Nezávazná%20poptávka%20webu" class="btn-secondary btn-ripple">
+                        Napsat email
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Certificate Lightbox -->
+    <div class="cert-lightbox" id="certLightbox" role="dialog" aria-modal="true" aria-label="Zobrazení certifikátu">
+        <button class="cert-lightbox-close" aria-label="Zavřít">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <div class="cert-carousel" id="certCarousel">
+            <button class="cert-carousel-arrow" id="prevPage" aria-label="Předchozí strana">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+            </button>
+            <img class="cert-lightbox-image" id="lightboxImage" src="" alt="Certifikát">
+            <button class="cert-carousel-arrow" id="nextPage" aria-label="Další strana">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </button>
+            <div class="cert-carousel-counter" id="pageCounter"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="images/signature.png" alt="Žaneta Janáčová – podpis" width="200" height="60" loading="lazy">
+                <p>Weby s péčí o detail a bez kompromisů.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Patičková navigace">
+                <a href="/">Domů</a>
+                <a href="/projects.html">Portfolio</a>
+                <a href="/cenik.html">Ceník</a>
+                <a href="/vzdelani.html">Vzdělání</a>
+                <a href="/#contact">Kontakt</a>
+                <a href="/privacy.html">Ochrana údajů</a>
+            </nav>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Žaneta Janáčová · Všechna práva vyhrazena</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-consent" class="cookie-consent" role="dialog" aria-labelledby="cookie-title" style="display: none;">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p id="cookie-title"><strong>Cookies</strong></p>
+                <p>Používám cookies pro analytiku webu. <a href="/privacy.html" class="cookie-link">Více info</a></p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="btn-primary btn-ripple">Přijmout</button>
+                <button id="cookie-decline" class="btn-secondary">Odmítnout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // ===== LIGHTBOX WITH CAROUSEL =====
+        (function() {
+            const lightbox = document.getElementById('certLightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const closeBtn = lightbox.querySelector('.cert-lightbox-close');
+            const prevBtn = document.getElementById('prevPage');
+            const nextBtn = document.getElementById('nextPage');
+            const pageCounter = document.getElementById('pageCounter');
+            
+            let currentPages = [];
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                lightboxImage.src = currentPages[currentIndex];
+                
+                if (currentPages.length <= 1) {
+                    prevBtn.style.display = 'none';
+                    nextBtn.style.display = 'none';
+                    pageCounter.style.display = 'none';
+                } else {
+                    prevBtn.style.display = 'flex';
+                    nextBtn.style.display = 'flex';
+                    pageCounter.style.display = 'block';
+                    pageCounter.textContent = (currentIndex + 1) + ' / ' + currentPages.length;
+                    prevBtn.disabled = currentIndex === 0;
+                    nextBtn.disabled = currentIndex === currentPages.length - 1;
+                }
+            }
+
+            function openLightbox(pages) {
+                currentPages = Array.isArray(pages) ? pages : [pages];
+                currentIndex = 0;
+                updateCarousel();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                closeBtn.focus();
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+                lightboxImage.src = '';
+                currentPages = [];
+            }
+
+            document.querySelectorAll('[data-cert-pages]').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pages = this.dataset.certPages.split(',');
+                    openLightbox(pages);
+                });
+            });
+
+            document.querySelectorAll('.cert-card[data-cert]').forEach(card => {
+                card.addEventListener('click', function() {
+                    openLightbox(this.dataset.cert);
+                });
+            });
+
+            prevBtn.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+
+            nextBtn.addEventListener('click', function() {
+                if (currentIndex < currentPages.length - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+                if (e.key === 'ArrowRight' && currentIndex < currentPages.length - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

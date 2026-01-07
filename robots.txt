@@ -1,14 +1,9 @@
-# robots.txt pro zjanacova.cz
-# Povoluje indexaci všech stránek kromě thank-you
 
 User-agent: *
 Allow: /
 
-# Zakázat indexaci děkovací stránky
 Disallow: /thank-you.html
 
-# Sitemap
 Sitemap: https://zjanacova.cz/sitemap.xml
 
-# Crawl-delay pro šetrné procházení (volitelné)
-Crawl-delay: 1
+

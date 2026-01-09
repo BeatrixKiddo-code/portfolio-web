@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(for file in index.html cenik.html projects.html vzdelani.html privacy.html thank-you.html)",
+      "Bash(do perl -i -pe 's/<!--.*?-->//gs' \"$file\")",
+      "Bash(done)",
+      "Bash(perl:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nKompletní SEO optimalizace webu\n\nPřidány OpenGraph a Twitter Card tagy na všechny stránky pro lepší sdílení na sociálních sítích. Vytvořena sitemap.xml a robots.txt pro optimalizaci indexování vyhledávači. Odstraněny HTML komentáře ze všech souborů pro čistší kód.\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
     ],
     "deny": [],
     "ask": []

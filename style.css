@@ -984,12 +984,10 @@ section p {
 
 .about-image .image-placeholder {
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
     aspect-ratio: 1;
     border-radius: 8px;
     overflow: hidden;
-    border: 2px solid var(--color-border);
-    box-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
 }
 
 .about-image .image-placeholder img {

@@ -1,4 +1,3 @@
-// ===== LOADER =====
 window.addEventListener('load', () => {
     const loader = document.querySelector('.loader');
     if (loader) {
@@ -9,7 +8,6 @@ window.addEventListener('load', () => {
     }
 });
 
-// ===== MOBILE MENU =====
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -39,7 +37,6 @@ if (menuToggle && navMenu) {
     });
 }
 
-// ===== STICKY HEADER =====
 const header = document.querySelector("header");
 const pillNav = document.querySelector('.pill-navigation');
 let lastScrollY = window.scrollY;
@@ -77,7 +74,6 @@ function requestTick() {
 window.addEventListener("scroll", requestTick, { passive: true });
 window.addEventListener("resize", () => { lastScrollY = window.scrollY; });
 
-// ===== LOGO BOUNCER =====
 const logo = document.querySelector('.logo');
 if (logo) {
     logo.addEventListener('click', () => {
@@ -86,7 +82,6 @@ if (logo) {
     });
 }
 
-// ===== SPARKLE TLAČÍTKO - ZLATÉ BARVY =====
 const sparkleButtons = document.querySelectorAll('.btn-primary');
 
 const sparkleColors = [
@@ -125,7 +120,6 @@ function createSparkleOnButton(button, clientX, clientY) {
     setTimeout(() => sparkle.remove(), 600);
 }
 
-// ===== PROJECT OVERLAY MOBILE =====
 if (window.innerWidth <= 768) {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
@@ -136,7 +130,6 @@ if (window.innerWidth <= 768) {
     });
 }
 
-// ===== HERO SPARKLE EFFECT - ZLATÉ JISKRY =====
 const heroTitle = document.querySelector('.sparkle-text');
 
 if (heroTitle) {
@@ -169,7 +162,6 @@ function createSparkle(x, y) {
     setTimeout(() => sparkle.remove(), 800);
 }
 
-// ===== TYPEWRITER EFFECT =====
 const typewriterElement = document.querySelector('.typewriter');
 
 if (typewriterElement) {
@@ -190,40 +182,33 @@ if (typewriterElement) {
     setTimeout(typeChar, 500);
 }
 
-// ===== PORTFOLIO FILTER =====
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projects = document.querySelectorAll('.project-card');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.browser-mockup');
 
-if (filterBtns.length > 0) {
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const filter = btn.dataset.filter;
-            
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            projects.forEach(project => {
-                const category = project.dataset.category;
-                
-                if (filter === 'all' || category === filter) {
-                    project.style.display = 'block';
-                    setTimeout(() => {
-                        project.style.opacity = '1';
-                        project.style.transform = 'translateY(0)';
-                    }, 10);
-                } else {
-                    project.style.opacity = '0';
-                    project.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        project.style.display = 'none';
-                    }, 300);
-                }
-            });
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-pressed', 'true');
+
+        const filterValue = button.dataset.filter;
+
+        // Filter items
+        portfolioItems.forEach(item => {
+            if (filterValue === 'all' || item.dataset.category === filterValue) {
+                item.classList.remove('hidden');
+                item.style.animation = 'fadeInUp 0.4s ease forwards';
+            } else {
+                item.classList.add('hidden');
+            }
         });
     });
-}
+});
 
-// ===== RIPPLE EFFECT =====
 document.querySelectorAll('.btn-ripple').forEach(btn => {
     btn.addEventListener('click', function(e) {
         const ripple = document.createElement('span');
@@ -243,7 +228,6 @@ document.querySelectorAll('.btn-ripple').forEach(btn => {
     });
 });
 
-// ===== INTERSECTION OBSERVER FOR FADE-IN =====
 if ('IntersectionObserver' in window) {
     const observerOptions = {
         threshold: 0.1,
@@ -276,7 +260,6 @@ window.addEventListener('load', () => {
     });
 });
 
-// ===== FORM VALIDATION =====
 function validateField(field) {
     const formGroup = field.closest('.form-group');
     if (!formGroup) return true;
@@ -376,7 +359,6 @@ if (contactForm) {
     });
 }
 
-// ===== PARALLAX EFFECT =====
 if (window.innerWidth > 768) {
     const blobs = document.querySelectorAll('.blob');
     window.addEventListener('scroll', () => {
@@ -389,7 +371,6 @@ if (window.innerWidth > 768) {
     });
 }
 
-// ===== FOOTER SPARKLE EFFECT - ZLATÉ =====
 const footer = document.querySelector('footer');
 
 if (footer) {
@@ -417,7 +398,6 @@ function createFooterSparkle(x, y) {
     setTimeout(() => sparkle.remove(), 800);
 }
 
-// ===== EASTER EGG: Konami Code =====
 let konamiCode = [];
 const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 
@@ -445,7 +425,6 @@ document.addEventListener('DOMContentLoaded', () => {
   el.textContent = email;
 });
 
-// ===== COOKIE CONSENT =====
 (function() {
     const cookieBanner = document.getElementById('cookie-consent');
     const acceptBtn = document.getElementById('cookie-accept');
@@ -502,6 +481,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })();
 
-// ===== CONSOLE MESSAGE =====
 console.log('%c Ahoj! ', 'font-size: 24px; font-weight: bold; color: #FFD700;');
 console.log('%cDíky, že jste tu! Pokud hledáte vývojářku/designérku, napište mi na zaneta.janacova@gmail.com', 'font-size: 14px; color: #9370DB;');
+

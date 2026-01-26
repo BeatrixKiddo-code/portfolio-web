@@ -964,6 +964,7 @@ section p {
     gap: 80px;
     align-items: center;
     margin-bottom: 80px;
+    max-height: calc(100vh - 200px); 
 }
 
 .about-text h2 {
@@ -978,14 +979,15 @@ section p {
 
 .about-image {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Zarovnání vpravo */
     align-items: center;
+    height: 100%;
 }
 
 .about-image .image-placeholder {
     width: 100%;
-    max-width: 600px;
-    aspect-ratio: 1;
+    max-width: 400px;
+    max-height: calc(100vh - 80px); /* Omezení výšky obrázku */
     border-radius: 8px;
     overflow: hidden;
 }
@@ -993,9 +995,28 @@ section p {
 .about-image .image-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    display: block;
+    object-fit: contain;
+    object-position: center right; /* Zarovnání obsahu vpravo */
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-height: none; /* Na menších obrazovkách zrušit limit */
+    }
+    
+    .about-image {
+        justify-content: center;
+        order: -1; /* Obrázek nad textem */
+    }
+    
+    .about-image .image-placeholder {
+        max-height: 50vh;
+    }
+}
 /* ===== CONTACT SECTION ===== */
 .contact {
     background: var(--color-bg-secondary);

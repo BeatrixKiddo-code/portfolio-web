@@ -1,57 +1,35 @@
-/* =====================================================
-   VERZE 1: PŮLNOČNÍ MAGIE
-   Tmavá prémiová paleta pro širší okruh klientů
-   ===================================================== */
-
 :root {
-    /* NOVÁ BAREVNÁ PALETA - Půlnoční magie */
-    --color-bg-primary: #0E0E1F;        /* Tmavě indigo - hlavní pozadí */
-    --color-bg-secondary: #1A1A2E;      /* O něco světlejší pro sekce */
-    --color-bg-card: #16213E;           /* Pozadí karet */
-    --color-accent-gold: #A87C52;       /* Zářivá zlatá - akcent */
-    --color-accent-purple: #9370DB;     /* Elektrická fialová - CTA */
-    --color-accent-glow: #B8860B;       /* Tmavší zlatá pro glow efekty */
-    --color-text-primary: #FFFFFF;      /* Bílý text */
-    --color-text-secondary: #E0E0E0;    /* Světle šedý text */
-    --color-text-muted: #A0A0B0;        /* Tlumený text */
-    --color-border: rgba(255, 215, 0, 0.2);  /* Zlatý border */
-    --color-success: #50C878;           /* Zelená pro check */
-    
-    /* Zachované původní pro kompatibilitu */
-    --color-cream: #FAFAFA;
-    --color-pink: #9370DB;              /* Nahrazeno elektrickou fialovou */
-    --color-green: #50C878;
-    --color-yellow: #A87C52;
-    --color-purple: #0E0E1F;
+    --color-bg-primary: #0E0E1F;
+    --color-bg-secondary: #1A1A2E;
+    --color-bg-card: #16213E;
+    --color-accent-gold: #A87C52;
+    --color-accent-purple: #9370DB;
+    --color-accent-glow: #B8860B;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #E0E0E0;
+    --color-text-muted: #A0A0B0;
+    --color-border: rgba(255, 215, 0, 0.2);
+    --color-success: #50C878;
     --color-lavender: #452A68;
-    --color-gold: #FFD700;
-    
-    /* Typografie - kombinace serif + sans-serif */
     --font-heading: 'Playfair Display', Georgia, serif;
     --font-body: 'Inter', system-ui, sans-serif;
-
-    /* Fluid Spacing - moderní responzivní hodnoty */
     --space-section: clamp(60px, 10vw, 120px);
     --space-section-small: clamp(40px, 6vw, 80px);
     --space-card: clamp(32px, 5vw, 48px);
     --space-card-inline: clamp(24px, 4vw, 40px);
     --space-component: clamp(24px, 4vw, 36px);
-
-    /* Fluid Typography */
     --text-hero: clamp(42px, 6vw, 80px);
     --text-display: clamp(36px, 5vw, 56px);
     --text-heading-lg: clamp(32px, 5vw, 48px);
     --text-heading-md: clamp(28px, 4vw, 40px);
     --text-heading-sm: clamp(20px, 3vw, 26px);
     --text-body-lg: clamp(18px, 2.5vw, 22px);
-
     --transition: 0.3s ease;
     --shadow: 0 4px 30px rgba(255, 215, 0, 0.1);
     --shadow-hover: 0 8px 40px rgba(255, 215, 0, 0.2);
     --glow: 0 0 20px rgba(255, 243, 179, 0.3);
 }
 
-/* ===== RESET & BASE ===== */
 * {
     margin: 0;
     padding: 0;
@@ -99,7 +77,6 @@ ul {
 
 .mb-4 { margin-bottom: 1rem; }
 
-/* ===== LOADER ===== */
 .loader {
     position: fixed;
     inset: 0;
@@ -130,7 +107,6 @@ ul {
     to { transform: rotate(360deg); }
 }
 
-/* ===== HEADER ===== */
 header {
     position: fixed;
     top: 0;
@@ -176,13 +152,6 @@ header .container {
     height: auto;
     margin-bottom: -2rem;
     filter: brightness(1.2);
-}
-
-.logo span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 200px;
 }
 
 nav ul {
@@ -244,7 +213,6 @@ nav a:not(.btn-primary):hover::after {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* ===== BUTTONS ===== */
 .btn-primary,
 .btn-secondary,
 .btn-hero {
@@ -320,7 +288,6 @@ nav a:not(.btn-primary):hover::after {
     }
 }
 
-/* ===== HERO SECTION ===== */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -332,7 +299,6 @@ nav a:not(.btn-primary):hover::after {
     background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
 }
 
-/* Animované hvězdy v pozadí */
 .hero::before {
     content: '';
     position: absolute;
@@ -437,7 +403,6 @@ nav a:not(.btn-primary):hover::after {
     60% { transform: translateX(-50%) translateY(-5px); }
 }
 
-/* Jiskry - NOVÉ BARVY */
 .sparkle {
     position: fixed;
     width: 20px;
@@ -478,43 +443,6 @@ nav a:not(.btn-primary):hover::after {
     100% { opacity: 0; transform: scale(0.8); }
 }
 
-/* ===== SOCIAL PROOF STRIP - NOVÁ SEKCE ===== */
-.social-proof {
-    background: var(--color-bg-secondary);
-    padding: 40px 0;
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-}
-
-.social-proof-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    flex-wrap: wrap;
-}
-
-.proof-item {
-    text-align: center;
-}
-
-.proof-number {
-    font-family: var(--font-heading);
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 600;
-    color: var(--color-accent-gold);
-    line-height: 1;
-}
-
-.proof-label {
-    font-size: 14px;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 8px;
-}
-
-/* ===== SECTIONS ===== */
 section {
     padding: clamp(60px, 10vw, 120px) 0;
     position: relative;
@@ -556,7 +484,6 @@ section p {
     transform: translateY(0);
 }
 
-/* ===== SERVICES SECTION ===== */
 .services-section {
     margin: 0;
     padding: clamp(60px, 10vw, 120px) clamp(16px, 3vw, 24px);
@@ -670,7 +597,6 @@ section p {
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
-/* ===== SKILLS GRID ===== */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -710,7 +636,6 @@ section p {
     color: var(--color-text-muted);
 }
 
-/* ===== PORTFOLIO SECTION ===== */
 .portfolio {
     background: var(--color-bg-primary);
     padding: clamp(60px, 10vw, 120px) 0;
@@ -854,7 +779,6 @@ section p {
     letter-spacing: 0.5px;
 }
 
-/* ===== PRICING SECTION ===== */
 .pricing {
     background: var(--color-bg-secondary);
     padding: clamp(60px, 10vw, 120px) 0;
@@ -952,7 +876,6 @@ section p {
     text-align: center;
 }
 
-/* ===== ABOUT SECTION ===== */
 .about {
     background: var(--color-bg-primary);
     padding: clamp(60px, 10vw, 120px) 0;
@@ -979,7 +902,7 @@ section p {
 
 .about-image {
     display: flex;
-    justify-content: flex-end; /* Zarovnání vpravo */
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
 }
@@ -987,7 +910,7 @@ section p {
 .about-image .image-placeholder {
     width: 100%;
     max-width: 400px;
-    max-height: calc(100vh - 80px); /* Omezení výšky obrázku */
+    max-height: calc(100vh - 80px);
     border-radius: 8px;
     overflow: hidden;
 }
@@ -997,27 +920,25 @@ section p {
     height: 100%;
     display: block;
     object-fit: contain;
-    object-position: center right; /* Zarovnání obsahu vpravo */
+    object-position: center right;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
     .about-grid {
         grid-template-columns: 1fr;
         gap: 40px;
-        max-height: none; /* Na menších obrazovkách zrušit limit */
+        max-height: none;
     }
     
     .about-image {
         justify-content: center;
-        order: -1; /* Obrázek nad textem */
+        order: -1;
     }
     
     .about-image .image-placeholder {
         max-height: 50vh;
     }
 }
-/* ===== CONTACT SECTION ===== */
 .contact {
     background: var(--color-bg-secondary);
     padding: clamp(60px, 10vw, 120px) 0;
@@ -1162,7 +1083,6 @@ section p {
     color: var(--color-accent-gold);
 }
 
-/* ===== FOOTER ===== */
 footer {
     background: var(--color-bg-primary);
     border-top: 1px solid var(--color-border);
@@ -1221,7 +1141,6 @@ footer {
     color: var(--color-text-muted);
 }
 
-/* ===== COOKIE BANNER ===== */
 .cookie-consent {
     position: fixed;
     bottom: 0;
@@ -1262,7 +1181,6 @@ footer {
     gap: 12px;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .about-grid,
     .contact-grid {
@@ -1333,15 +1251,7 @@ footer {
     .footer-nav {
         gap: 16px;
     }
-    
-    .social-proof-content {
-        gap: 40px;
-    }
-    
-    .proof-number {
-        font-size: 36px;
-    }
-    
+
     .cookie-content {
         flex-direction: column;
         text-align: center;
@@ -1370,15 +1280,6 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .logo span {
-        display: none;
-    }
-
-    .social-proof-content {
-        flex-direction: column;
-        gap: 24px;
-    }
-
     .cta-form {
         padding: 24px;
     }
@@ -1402,7 +1303,6 @@ footer {
     }
 }
 
-/* ===== ACCESSIBILITY ===== */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -1418,7 +1318,6 @@ footer {
     outline-offset: 2px;
 }
 
-/* Glow efekt pro interaktivní prvky při hover */
 .service-card:hover,
 .skill-card:hover,
 .pricing-card:hover,
@@ -1426,12 +1325,6 @@ footer {
     box-shadow: 0 0 0 1px var(--color-accent-gold), 0 0 30px rgba(255, 215, 0, 0.15);
 }
 
-/* =====================================================
-   PODSTRÁNKY - DARK MODE STYLY
-   Přidej na konec style.css
-   ===================================================== */
-
-/* ===== SKIP LINK (Přístupnost) ===== */
 .skip-link {
     position: absolute;
     top: -100%;
@@ -1450,11 +1343,6 @@ footer {
     top: 0;
 }
 
-/* =====================================================
-   CENÍK STRÁNKA
-   ===================================================== */
-
-/* ----- Pricing Hero ----- */
 .pricing-hero {
     min-height: 60vh;
     display: flex;
@@ -1500,7 +1388,6 @@ footer {
     margin-bottom: 40px;
 }
 
-/* Floating Price Tags */
 .floating-price-tags {
     display: flex;
     justify-content: center;
@@ -1528,7 +1415,6 @@ footer {
     50% { transform: translateY(-10px); }
 }
 
-/* ----- Pricing Packages Section ----- */
 .pricing-packages {
     padding: 100px 0;
     background: var(--color-bg-primary);
@@ -1556,7 +1442,6 @@ footer {
     }
 }
 
-/* ----- Additional Services ----- */
 .additional-services {
     margin-top: 80px;
     padding: 48px;
@@ -1617,7 +1502,6 @@ footer {
     font-size: 15px;
 }
 
-/* ----- Comparison Section ----- */
 .comparison-section {
     padding: 100px 0;
     background: var(--color-bg-secondary);
@@ -1689,7 +1573,6 @@ footer {
     font-size: 18px;
 }
 
-/* ----- Not Included Section ----- */
 .not-included-section {
     padding: 100px 0;
     background: var(--color-bg-primary);
@@ -1764,7 +1647,6 @@ footer {
     font-size: 16px;
 }
 
-/* ----- Process Section (Timeline) ----- */
 .process-section {
     padding: 100px 0;
     background: var(--color-bg-secondary);
@@ -1868,7 +1750,6 @@ footer {
     color: var(--color-text-primary);
 }
 
-/* ----- FAQ Section ----- */
 .faq-section {
     padding: 100px 0;
     background: var(--color-bg-primary);
@@ -1947,7 +1828,6 @@ footer {
     color: var(--color-accent-gold);
 }
 
-/* ----- Contact CTA Section ----- */
 .contact-cta-section {
     padding: 100px 0;
     background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
@@ -2113,7 +1993,6 @@ footer {
     color: var(--color-text-primary);
 }
 
-/* Project Carousel */
 .project-carousel {
     position: relative;
 }
@@ -2200,7 +2079,6 @@ footer {
     color: var(--color-bg-primary);
 }
 
-/* Project Metadata Cards */
 .project-metadata {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2304,7 +2182,6 @@ footer {
     border: 1px solid rgba(168, 124, 82, 0.3);
 }
 
-/* Sale Box */
 .sale-box {
     background: linear-gradient(135deg, rgba(168, 124, 82, 0.15) 0%, rgba(168, 124, 82, 0.05) 100%);
     border: 2px solid var(--color-accent-gold);
@@ -2354,7 +2231,6 @@ footer {
     margin-top: 8px;
 }
 
-/* Project CTA */
 .project-cta-section {
     background: var(--color-bg-card);
     padding: 40px;
@@ -2381,7 +2257,6 @@ footer {
     flex-wrap: wrap;
 }
 
-/* Project Buttons */
 .btn-premium {
     padding: 16px 36px;
     background: linear-gradient(135deg, var(--color-accent-gold) 0%, #D4A574 100%);
@@ -2446,7 +2321,6 @@ footer {
     box-shadow: 0 8px 30px rgba(168, 124, 82, 0.5);
 }
 
-/* ===== PILL NAVIGATION (Projects Page) ===== */
 .pill-navigation {
     position: fixed;
     top: 80px;
@@ -2782,7 +2656,6 @@ footer {
    Přidej na konec style.css
    ===================================================== */
 
-/* ----- Calculator Section ----- */
 .calculator-section {
     padding: 100px 0;
     background: var(--color-bg-secondary);
@@ -2939,7 +2812,6 @@ footer {
     white-space: nowrap;
 }
 
-/* Tooltip */
 .tooltip-trigger {
     width: 18px;
     height: 18px;
@@ -3028,7 +2900,6 @@ footer {
     margin: 0;
 }
 
-/* ----- Calculator Summary ----- */
 .calculator-summary {
     position: relative;
 }
@@ -3115,13 +2986,11 @@ footer {
     line-height: 1.5;
 }
 
-/* ----- Additional Section ----- */
 .additional-section {
     padding: 60px 0;
     background: var(--color-bg-primary);
 }
 
-/* ----- Responsive ----- */
 @media (max-width: 1024px) {
     .calculator-wrapper {
         grid-template-columns: 1fr;
@@ -3185,7 +3054,6 @@ footer {
    PROJECTS PAGE - SHOWCASE PANEL & INFO BAR
    ===================================================== */
 
-/* Project Layout */
 .project-layout {
     display: block;
     margin-bottom: 32px;
@@ -3210,7 +3078,6 @@ footer {
     color: var(--color-text-secondary);
 }
 
-/* Horizontal Info Bar */
 .project-info-bar {
     display: flex;
     align-items: center;
@@ -3287,7 +3154,6 @@ footer {
     flex-shrink: 0;
 }
 
-/* Showcase Panel */
 .showcase-panel {
     position: relative;
     margin-bottom: 48px;
@@ -3767,7 +3633,6 @@ footer {
     50% { transform: scale(1.05); }
 }
 
-/* ===== SHOWCASE PANEL RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .project-description {
         grid-template-columns: 1fr;
@@ -3906,7 +3771,6 @@ footer {
     }
 }
 
-/* Projects page - first section padding for pill navigation */
 .project-section:first-of-type {
     padding-top: 200px;
 }
@@ -3916,7 +3780,6 @@ footer {
    Přidat na konec style.css
    ===================================================== */
 
-/* Grid Layout */
 .browser-showcase-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -3924,7 +3787,6 @@ footer {
     margin-bottom: 48px;
 }
 
-/* Browser Mockup Container */
 .browser-mockup {
     position: relative;
     border-radius: 20px;
@@ -3943,9 +3805,6 @@ footer {
     color: inherit;
 }
 
-/* ===== PROJECT COLOR SCHEMES ===== */
-
-/* Malíř - Ice Blue / Dark Navy */
 .browser-mockup[data-project="malir"] {
     background: #0f172a;
     box-shadow: 0 8px 32px rgba(165, 243, 252, 0.12);
@@ -3969,7 +3828,6 @@ footer {
 .browser-mockup[data-project="malir"] .mockup-info p,
 .browser-mockup[data-project="malir"] .mockup-tag { color: rgba(165, 243, 252, 0.65); }
 
-/* Koučka - Gold / Navy */
 .browser-mockup[data-project="koucka"] {
     background: #1a2744;
     box-shadow: 0 8px 32px rgba(201, 169, 110, 0.12);
@@ -3993,7 +3851,6 @@ footer {
 .browser-mockup[data-project="koucka"] .mockup-info p,
 .browser-mockup[data-project="koucka"] .mockup-tag { color: rgba(201, 169, 110, 0.65); }
 
-/* Caffè Limone - Warm Gold / Brown */
 .browser-mockup[data-project="limone"] {
     background: #2a1f14;
     box-shadow: 0 8px 32px rgba(246, 206, 100, 0.12);
@@ -4017,7 +3874,6 @@ footer {
 .browser-mockup[data-project="limone"] .mockup-info p,
 .browser-mockup[data-project="limone"] .mockup-tag { color: rgba(246, 206, 100, 0.65); }
 
-/* Astroflora - Neon Purple / Dark */
 .browser-mockup[data-project="astro"] {
     background: #0d0a1a;
     box-shadow: 0 8px 32px rgba(215, 0, 255, 0.12);
@@ -4041,7 +3897,6 @@ footer {
 .browser-mockup[data-project="astro"] .mockup-info p,
 .browser-mockup[data-project="astro"] .mockup-tag { color: rgba(213, 246, 232, 0.65); }
 
-/* Pro Váš Klid - Soft Blue / Light */
 .browser-mockup[data-project="klid"] {
     background: #1e2a3a;
     box-shadow: 0 8px 32px rgba(62, 105, 157, 0.12);
@@ -4065,7 +3920,6 @@ footer {
 .browser-mockup[data-project="klid"] .mockup-info p,
 .browser-mockup[data-project="klid"] .mockup-tag { color: rgba(107, 159, 212, 0.7); }
 
-/* Péče o hroby - Earthy Green / Stone */
 .browser-mockup[data-project="hroby"] {
     background: #1a1f1a;
     box-shadow: 0 8px 32px rgba(94, 91, 61, 0.12);
@@ -4089,7 +3943,6 @@ footer {
 .browser-mockup[data-project="hroby"] .mockup-info p,
 .browser-mockup[data-project="hroby"] .mockup-tag { color: rgba(168, 168, 136, 0.7); }
 
-/* ===== BROWSER CHROME (Top Bar) ===== */
 .mockup-chrome {
     display: flex;
     align-items: center;
@@ -4127,28 +3980,25 @@ footer {
     letter-spacing: 0.5px;
 }
 
-/* ===== VIEWPORT (Screenshot Container) ===== */
 .mockup-viewport {
     position: relative;
-    height: 280px; /* Pevná výška "okna" */
+    height: 280px;
     overflow: hidden;
-    border-bottom-left-radius: 20px; /* Konzistence s tvým novým stylem */
+    border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
 .mockup-viewport img {
     width: 100%;
-    height: 100%; /* Zásadní změna: obrázek vyplní viewport */
-    object-fit: cover; /* Zajistí, že se obrázek nezdeformuje */
-    object-position: top; /* Začínáme nahoře */
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
     
-    /* Plynulost: 4 sekundy na cestu dolů, cubic-bezier pro "luxusní" setrvačnost */
     transition: object-position 6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Když uživatel najede myší na kartu */
 .browser-mockup:hover .mockup-viewport img {
-    object-position: bottom; /* Sjede přesně na konec nudle */
+    object-position: bottom;
 }
 
 /* Volitelné: Návrat nahoru může být o něco rychlejší (např. 1.5s) 
@@ -4160,7 +4010,6 @@ footer {
     pointer-events: none;
 }
 
-/* ===== PROJECT INFO ===== */
 .mockup-info {
     padding: 24px;
     position: relative;
@@ -4199,7 +4048,6 @@ footer {
     letter-spacing: 0.5px;
 }
 
-/* ===== SALE TAG ===== */
 .mockup-sale-tag {
     position: absolute;
     top: 16px;
@@ -4216,18 +4064,15 @@ footer {
     box-shadow: 0 4px 12px rgba(168, 124, 82, 0.4);
 }
 
-/* ===== PORTFOLIO CTA ===== */
 .portfolio-cta {
     text-align: center;
     margin-top: 40px;
 }
 
-/* ===== FILTER COMPATIBILITY ===== */
 .browser-mockup.hidden {
     display: none;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .browser-showcase-grid {
         gap: 28px;
@@ -4304,7 +4149,6 @@ footer {
     }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
     .browser-mockup,
     .mockup-viewport img,
@@ -4326,3 +4170,13 @@ footer {
          transform: translateY(0);
      }
  }
+@media (max-width: 400px) {
+    .about-image .image-placeholder {
+        max-height: none;
+        aspect-ratio: 3/4;
+    }
+    
+    .about-image .image-placeholder img {
+        height: auto;
+    }
+}

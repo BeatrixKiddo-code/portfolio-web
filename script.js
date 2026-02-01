@@ -480,6 +480,40 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 })();
+const typingTexts = ['nový web.', 'lepší viditelnost.', 'spolehlivého partnera.'];
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.querySelector('.typing-text');
+
+function type() {
+    if (!typingElement) return;
+    
+    const currentText = typingTexts[textIndex];
+    
+    if (isDeleting) {
+        typingElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+    }
+    
+    let delay = isDeleting ? 50 : 100;
+    
+    if (!isDeleting && charIndex === currentText.length) {
+        delay = 2000;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % typingTexts.length;
+        delay = 500;
+    }
+    
+    setTimeout(type, delay);
+}
+
+type();
 
 console.log('%c Ahoj! ', 'font-size: 24px; font-weight: bold; color: #FFD700;');
 console.log('%cDíky, že jste tu! Pokud hledáte vývojářku/designérku, napište mi na zaneta.janacova@gmail.com', 'font-size: 14px; color: #9370DB;');

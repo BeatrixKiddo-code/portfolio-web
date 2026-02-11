@@ -1496,6 +1496,7 @@ footer {
 
 .service-item {
     display: flex;
+    position: relative;
     align-items: center;
     gap: 16px;
     padding: 20px 24px;
@@ -1515,10 +1516,22 @@ footer {
     color: var(--color-accent-gold);
 }
 
-.service-item div {
+.service-item > div {
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+.service-item .tooltip-content {
+    display: none;
+}
+
+.service-item .tooltip-content.visible {
+    display: block;
+}
+
+.service-item:has(.tooltip-content.visible) {
+    z-index: 1000;
 }
 
 .service-item strong {
@@ -2873,7 +2886,7 @@ footer {
     border: 1px solid var(--color-accent-gold);
     border-radius: 12px;
     padding: 20px;
-    z-index: 100;
+    z-index: 900;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -3019,6 +3032,8 @@ footer {
 .additional-section {
     padding: 60px 0;
     background: var(--color-bg-primary);
+    position: relative;
+    z-index: 10;
 }
 
 @media (max-width: 1024px) {

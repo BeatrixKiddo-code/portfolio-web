@@ -897,7 +897,6 @@ section p {
     gap: 80px;
     align-items: center;
     margin-bottom: 80px;
-    max-height: calc(100vh - 200px); 
 }
 
 .about-text h2 {
@@ -937,7 +936,6 @@ section p {
     .about-grid {
         grid-template-columns: 1fr;
         gap: 40px;
-        max-height: none;
     }
     
     .about-image {

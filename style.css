@@ -4240,6 +4240,41 @@ details.faq-item[open] .faq-answer {
     margin-top: 8px;
 }
 
+/* ===== SCROLL TO TOP ===== */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.3s ease, transform 0.3s ease, border-color var(--transition), background var(--transition);
+    pointer-events: none;
+}
+.scroll-top-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.scroll-top-btn:hover {
+    background: var(--color-accent-gold);
+    border-color: var(--color-accent-gold);
+}
+.scroll-top-btn svg { color: var(--color-accent-gold); transition: color var(--transition); }
+.scroll-top-btn:hover svg { color: var(--color-bg-primary); }
+@media (max-width: 768px) {
+    .scroll-top-btn { bottom: 20px; right: 16px; width: 44px; height: 44px; }
+}
+
 .typing-text {
     color: var(--color-accent-gold);
 }

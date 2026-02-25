@@ -515,6 +515,21 @@ function type() {
 
 type();
 
+// ===== SCROLL TO TOP =====
+const scrollTopBtn = document.createElement('button');
+scrollTopBtn.className = 'scroll-top-btn';
+scrollTopBtn.setAttribute('aria-label', 'Zpět nahoru');
+scrollTopBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>';
+document.body.appendChild(scrollTopBtn);
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+
 console.log('%c Ahoj! ', 'font-size: 24px; font-weight: bold; color: #FFD700;');
 console.log('%cDíky, že jste tu! Pokud hledáte vývojářku/designérku, napište mi na zaneta.janacova@gmail.com', 'font-size: 14px; color: #9370DB;');
 

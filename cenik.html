@@ -11,6 +11,7 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Žaneta Janáčová">
     <link rel="canonical" href="https://zjanacova.cz/cenik.html">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zjanacova.cz/cenik.html">
@@ -101,10 +102,42 @@
         "mainEntity": [
             {
                 "@type": "Question",
+                "name": "Jak probíhá převod WordPress webu na statický web?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Převod probíhá ve 4 krocích: 1) Analýza stávajícího webu a obsahu. 2) Přepis do čistého HTML/CSS/JS bez závislostí na WordPressu a pluginech. 3) Nastavení bezplatného hostingu na Netlify nebo GitHub Pages. 4) Přesměrování domény a spuštění. Celý proces trvá obvykle 1–3 týdny a stojí od 6 000 Kč."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Musím platit za hosting, když mám statický web?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ne. Statické weby (HTML/CSS/JS bez databáze) lze hostovat zdarma na platformách Netlify, GitHub Pages nebo Cloudflare Pages. Platíte pouze za doménu – přibližně 200–400 Kč za rok. Oproti WordPress hostingu ušetříte 1 200–2 500 Kč ročně."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Co je AEO optimalizace a proč ji potřebuji?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AEO (Answer Engine Optimization) je optimalizace webu pro AI vyhledávače jako ChatGPT, Perplexity nebo Google AI Overview. Tyto nástroje neposkytují seznam odkazů, ale přímo odpovídají na otázky a citují konkrétní weby. Pokud váš web nemá správnou strukturu (Schema.org markup, FAQ sekci, jasnou hierarchii), AI vás přeskočí. Odhadem 40 % vyhledávání dnes probíhá přes AI nástroje."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Jaký je rozdíl mezi statickým webem a WordPressem?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "WordPress je dynamický systém s databází – každá návštěva generuje stránku za běhu, což je pomalejší a zranitelnější vůči útokům. Statický web je předem vygenerovaný HTML/CSS/JS kód – načítá se bleskově (pod 1 sekundu), nevyžaduje hosting s databází, pluginy ani pravidelné aktualizace. Výsledkem je bezpečnější, rychlejší a levnější web."
+                }
+            },
+            {
+                "@type": "Question",
                 "name": "Jak dlouho trvá vytvoření webu?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Běžně to trvá 2-4 týdny od schválení návrhu. Záleží na rozsahu projektu, rychlosti komunikace a poskytnutí potřebných materiálů."
+                    "text": "Běžně to trvá 2–4 týdny od schválení návrhu. Jednoduchý one-page web může být hotový i za 2 týdny, komplexnější projekty zabírají měsíc. Záleží na rychlosti komunikace a dodání podkladů."
                 }
             },
             {
@@ -112,7 +145,7 @@
                 "name": "Musím platit zálohu?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Ano, standardně požaduji zálohu 50% před zahájením prací. Zbývajících 50% uhradíte po dokončení a spuštění webu."
+                    "text": "Ano, standardně požaduji zálohu 50 % před zahájením prací. Zbývajících 50 % uhradíte po dokončení a spuštění webu."
                 }
             },
             {
@@ -120,7 +153,7 @@
                 "name": "Zajistíte také doménu a hosting?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Doménu a hosting si platíte sami (cca 200-400 Kč/rok za doménu, 1 200-2 500 Kč/rok za hosting). Ráda vám ale pomohu s výběrem, registrací a nastavením."
+                    "text": "Doménu a hosting si platíte sami (cca 200–400 Kč/rok za doménu, 1 200–2 500 Kč/rok za hosting – nebo zdarma při statickém webu). Ráda vám ale pomohu s výběrem, registrací a nastavením."
                 }
             },
             {
@@ -129,6 +162,14 @@
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Každý balíček zahrnuje 1 měsíc technické podpory zdarma. Poté je podpora účtována hodinovou sazbou 600 Kč/hod."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Pracujete i mimo Mělník?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ano, pracuji online po celé České republice. Klientům z Mělníka a okolí (Neratovice, Kralupy nad Vltavou, Litoměřice, Praha sever) se mohu setkat i osobně. Ostatní projekty řeším online přes video hovor."
                 }
             }
         ]
@@ -159,6 +200,7 @@
                     <li><a href="/#about">O mně</a></li>
                     <li><a href="/projects.html">Portfolio</a></li>
                     <li><a href="/cenik.html" class="active" aria-current="page">Ceník</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                     <li><a href="/#contact" class="btn-primary btn-ripple">Kontakt</a></li>
                 </ul>
             </nav>
@@ -641,8 +683,11 @@
                             </svg>
                         </div>
                         <h3>Doména a hosting</h3>
-                        <p>Doménu (~200–400 Kč/rok) a hosting (~1 200–2 500 Kč/rok) si platíte sami. Pomohu s výběrem a
-                            nastavením.</p>
+                        <ul>
+                            <li><strong>Statický web:</strong> Hosting 0 Kč/rok + doména (~300 Kč/rok)</li>
+                            <li><strong>Webová aplikace:</strong> Hosting ~1 500 Kč/rok + doména (~300 Kč/rok)</li>
+                            <li> Výběr domény a technické nastavení je vždy v ceně.</li>
+                        </ul>
                     </div>
 
                     <div class="not-included-card">
@@ -781,97 +826,174 @@
                 </div>
 
                 <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Jak probíhá převod WordPress webu na statický web?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Převod probíhá ve&nbsp;4 krocích: <strong>1)</strong> Analýza stávajícího webu
+                                a&nbsp;obsahu. <strong>2)</strong> Přepis do&nbsp;čistého HTML/CSS/JS bez závislostí
+                                na&nbsp;WordPressu a&nbsp;pluginech. <strong>3)</strong> Nastavení bezplatného hostingu
+                                na&nbsp;Netlify nebo GitHub Pages – platíte jen za&nbsp;doménu (~300&nbsp;Kč/rok).
+                                <strong>4)</strong> Přesměrování domény a&nbsp;spuštění. Celý proces trvá obvykle
+                                <strong>1–3 týdny</strong> a&nbsp;stojí od&nbsp;6&nbsp;000&nbsp;Kč.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Musím platit za hosting, když mám statický web?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p><strong>Ne.</strong> Statické weby (čistý HTML/CSS/JS bez databáze) lze hostovat
+                                <strong>zdarma</strong> na&nbsp;platformách Netlify, GitHub Pages nebo Cloudflare Pages.
+                                Platíte pouze za&nbsp;doménu – přibližně 200–400&nbsp;Kč za&nbsp;rok. Oproti WordPress
+                                hostingu ušetříte <strong>1&nbsp;200–2&nbsp;500&nbsp;Kč ročně</strong>.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Co je AEO optimalizace a proč ji potřebuji?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>AEO (Answer Engine Optimization) je optimalizace webu pro AI vyhledávače jako
+                                <strong>ChatGPT, Perplexity nebo Google AI Overview</strong>. Tyto nástroje neposkytují
+                                seznam odkazů, ale přímo odpovídají na&nbsp;otázky a&nbsp;citují konkrétní weby.
+                                Pokud váš web nemá správnou strukturu (Schema.org markup, FAQ sekci, jasnou hierarchii),
+                                AI vás přeskočí. <strong>Odhadem 40 % vyhledávání dnes probíhá přes AI
+                                    nástroje.</strong>
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
                             <span>Jak dlouho trvá vytvoření webu?</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                        </button>
+                        </summary>
                         <div class="faq-answer">
                             <p>Běžně to trvá <strong>2–4 týdny</strong> od schválení návrhu. Jednoduchý one-page web
                                 může být hotový i za 2 týdny, komplexnější projekty zabírají měsíc. Záleží na rychlosti
                                 komunikace a dodání podkladů.</p>
                         </div>
-                    </div>
+                    </details>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
+                    <details class="faq-item">
+                        <summary class="faq-question">
                             <span>Musím platit zálohu?</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                        </button>
+                        </summary>
                         <div class="faq-answer">
-                            <p>Ano, standardně požaduji <strong>zálohu 50%</strong> před zahájením prací. Zbývajících
-                                50% uhradíte po dokončení a spuštění webu.</p>
+                            <p>Ano, standardně požaduji <strong>zálohu 50&nbsp;%</strong> před zahájením prací.
+                                Zbývajících 50&nbsp;% uhradíte po dokončení a spuštění webu.</p>
                         </div>
-                    </div>
+                    </details>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
+                    <details class="faq-item">
+                        <summary class="faq-question">
                             <span>Co když se mi návrh nebude líbit?</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                        </button>
+                        </summary>
                         <div class="faq-answer">
                             <p>V ceně máte <strong>2 revize designu zdarma</strong>. Společně najdeme řešení, které vám
                                 bude vyhovovat.</p>
                         </div>
-                    </div>
+                    </details>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
+                    <details class="faq-item">
+                        <summary class="faq-question">
                             <span>Můžu si web sám upravovat?</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                        </button>
+                        </summary>
                         <div class="faq-answer">
                             <p>Standardní weby jsou statické – pro úpravy mě můžete kontaktovat (600 Kč/hod). Pokud
                                 potřebujete obsah měnit často sami, nabízím <strong>modul Admin panel</strong>, kde
                                 měníte texty přes jednoduché rozhraní bez znalosti programování.</p>
                         </div>
-                    </div>
+                    </details>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
+                    <details class="faq-item">
+                        <summary class="faq-question">
                             <span>Co je v technické podpoře zahrnuto?</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                        </button>
+                        </summary>
                         <div class="faq-answer">
                             <p>První měsíc po spuštění řeším drobné úpravy a případné technické problémy zdarma. Poté je
-                                podpora účtována hodinovou sazbou 600 Kč/hod.</p>
+                                podpora účtována hodinovou sazbou <strong>600 Kč/hod</strong>.</p>
                         </div>
-                    </div>
+                    </details>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
+                    <details class="faq-item">
+                        <summary class="faq-question">
                             <span>Můžete udělat e-shop?</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                        </button>
+                        </summary>
                         <div class="faq-answer">
-                            <p>Ano, dělám custom styling pro <strong>Shoptet</strong> e-shopy (od 12 900 Kč). Mohu vám
+                            <p>Ano, dělám custom styling pro <strong>Shoptet</strong> e-shopy (od 12&nbsp;900&nbsp;Kč).
+                                Mohu vám
                                 také e-shop nastavit, zprovoznit a vložit produkty.</p>
                         </div>
-                    </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Pracujete i mimo Mělník?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Ano, pracuji <strong>online po celé České republice</strong>. Klientům z Mělníka
+                                a&nbsp;okolí (Neratovice, Kralupy nad Vltavou, Litoměřice, Praha sever) se mohu setkat
+                                i&nbsp;osobně. Ostatní projekty řeším online přes video hovor.</p>
+                        </div>
+                    </details>
+
                 </div>
             </div>
         </section>
@@ -975,6 +1097,7 @@
                 <a href="/projects.html">Portfolio</a>
                 <a href="/cenik.html">Ceník</a>
                 <a href="/vzdelani.html">Vzdělání</a>
+                <a href="/blog/">Blog</a>
                 <a href="/#contact">Kontakt</a>
                 <a href="/privacy.html">Ochrana údajů</a>
             </nav>
@@ -1110,42 +1233,7 @@
             }
         })();
 
-        // ===== FAQ =====
-        (function () {
-            function setupFAQ() {
-                const faqItems = document.querySelectorAll('.faq-item');
-
-                if (faqItems.length === 0) return;
-
-                faqItems.forEach((item) => {
-                    const question = item.querySelector('.faq-question');
-
-                    if (question) {
-                        question.addEventListener('click', function (e) {
-                            e.preventDefault();
-
-                            const wasActive = item.classList.contains('active');
-
-                            faqItems.forEach(faqItem => {
-                                faqItem.classList.remove('active');
-                                faqItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                            });
-
-                            if (!wasActive) {
-                                item.classList.add('active');
-                                question.setAttribute('aria-expanded', 'true');
-                            }
-                        });
-                    }
-                });
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', setupFAQ);
-            } else {
-                setupFAQ();
-            }
-        })();
+        // FAQ je nyní řešeno nativním HTML <details>/<summary> – JS toggle odstraněn.
     </script>
 </body>
 

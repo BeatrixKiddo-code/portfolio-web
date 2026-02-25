@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog & Znalostní báze – Statické weby, AEO, hosting | Žaneta Janáčová</title>
+    <meta name="description"
+        content="Praktické průvodce o moderních statických webech, AEO/GEO optimalizaci pro AI vyhledávače a hostingu bez nákladů. Tipy a návody pro živnostníky a malé firmy.">
+    <link rel="canonical" href="https://zjanacova.cz/blog/">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Žaneta Janáčová">
+    <meta name="geo.region" content="CZ-ST">
+    <meta name="geo.placename" content="Mělník, Česká republika">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zjanacova.cz/blog/">
+    <meta property="og:title" content="Blog & Znalostní báze – Statické weby, AEO, hosting">
+    <meta property="og:description"
+        content="Průvodce statickými weby, AEO/GEO optimalizací a hostingem zdarma. Tipy od webdesignérky z Mělníka.">
+    <meta property="og:image" content="https://zjanacova.cz/images/ogpicture.png">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Žaneta Janáčová – Webdesign">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preload" href="../style.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": "https://zjanacova.cz/blog/",
+        "name": "Blog & Znalostní báze – Žaneta Janáčová",
+        "description": "Praktické průvodce o moderních statických webech, AEO/GEO optimalizaci pro AI vyhledávače a hostingu bez nákladů.",
+        "url": "https://zjanacova.cz/blog/",
+        "inLanguage": "cs",
+        "author": {
+            "@type": "Person",
+            "@id": "https://zjanacova.cz/#person",
+            "name": "Žaneta Janáčová",
+            "url": "https://zjanacova.cz"
+        },
+        "publisher": {"@id": "https://zjanacova.cz/#business"},
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "url": "https://zjanacova.cz/blog/jak-predelat-wordpress-na-staticky-web.html",
+                    "name": "Jak předělat WordPress na statický web: Kompletní průvodce (2026)"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "url": "https://zjanacova.cz/blog/jak-neplatit-za-hosting.html",
+                    "name": "Jak neplatit za hosting: Statické weby zdarma na Netlify a GitHub Pages (2026)"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "url": "https://zjanacova.cz/blog/jak-optimalizovat-web-pro-ai.html",
+                    "name": "Jak optimalizovat web pro AI: Kompletní průvodce AEO a GEO (2026)"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "url": "https://zjanacova.cz/blog/vyhody-statickeho-webu.html",
+                    "name": "Moderní statický web: 7 výhod oproti WordPress a CMS (2026)"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Úvod", "item": "https://zjanacova.cz/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zjanacova.cz/blog/"}
+        ]
+    }
+    </script>
+
+    <style>
+        .blog-listing-hero { padding: 140px 0 64px; background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%); position: relative; overflow: hidden; }
+        .blog-listing-hero::before { content: ''; position: absolute; top: 20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(147, 112, 219, 0.10) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+        .blog-listing-hero h1 { font-family: var(--font-heading); font-size: clamp(32px, 5vw, 56px); line-height: 1.15; color: var(--color-text-primary); margin-bottom: 16px; }
+        .blog-listing-hero p { font-size: 18px; color: var(--color-text-secondary); max-width: 600px; line-height: 1.7; }
+        .blog-grid-section { padding: 64px 0 96px; }
+        .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 16px; }
+        .blog-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; transition: border-color var(--transition), transform var(--transition); }
+        .blog-card:hover { border-color: var(--color-accent-gold); transform: translateY(-4px); }
+        .blog-card-tag { display: inline-block; background: rgba(168, 124, 82, 0.15); color: var(--color-accent-gold); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; align-self: flex-start; }
+        .blog-card h2 { font-family: var(--font-heading); font-size: clamp(17px, 2vw, 22px); color: var(--color-text-primary); line-height: 1.35; margin-bottom: 12px; }
+        .blog-card h2 a { color: inherit; text-decoration: none; }
+        .blog-card h2 a:hover { color: var(--color-accent-gold); }
+        .blog-card p { font-size: 15px; color: var(--color-text-secondary); line-height: 1.7; flex: 1; margin-bottom: 20px; }
+        .blog-card-meta { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--color-text-muted); margin-bottom: 20px; flex-wrap: wrap; }
+        .blog-card-meta span { display: flex; align-items: center; gap: 4px; }
+        .blog-card .card-link { color: var(--color-accent-gold); text-decoration: none; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; transition: gap var(--transition); }
+        .blog-card .card-link:hover { gap: 10px; }
+        @media (max-width: 768px) { .blog-listing-hero { padding: 110px 0 48px; } .blog-grid { grid-template-columns: 1fr; gap: 20px; } .blog-card { padding: 24px; } }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+    <div class="loader" id="loader"><div class="spinner"></div></div>
+
+    <header role="banner">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Žaneta Janáčová – Úvodní stránka">
+                <img src="../images/signature.png" alt="Žaneta Janáčová – tvorba webů Mělník" width="150" height="50">
+            </a>
+            <nav aria-label="Hlavní navigace">
+                <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="/">Domů</a></li>
+                    <li><a href="/projects.html">Portfolio</a></li>
+                    <li><a href="/cenik.html">Ceník</a></li>
+                    <li><a href="/vzdelani.html">Vzdělání</a></li>
+                    <li><a href="/blog/" class="active" aria-current="page">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary btn-ripple">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section class="blog-listing-hero" aria-labelledby="blog-title">
+            <div class="container">
+                <nav aria-label="Drobečková navigace" style="font-size: 14px; color: var(--color-text-muted); margin-bottom: 28px;">
+                    <a href="/" style="color: var(--color-text-muted); text-decoration: none;">Domů</a>
+                    <span style="margin: 0 8px; opacity: 0.5;" aria-hidden="true">›</span>
+                    <span aria-current="page">Blog</span>
+                </nav>
+                <h1 id="blog-title">Blog & <span style="color: var(--color-accent-gold);">Znalostní báze</span></h1>
+                <p>
+                    Praktické průvodce o moderních statických webech, optimalizaci pro AI vyhledávače
+                    a hostingu bez nákladů. Pro živnostníky a malé firmy.
+                </p>
+            </div>
+        </section>
+
+        <section class="blog-grid-section" aria-labelledby="articles-heading">
+            <div class="container">
+                <h2 id="articles-heading" style="font-family: var(--font-heading); font-size: clamp(20px, 3vw, 28px); color: var(--color-text-primary); margin-bottom: 32px;">Všechny články</h2>
+                <div class="blog-grid">
+
+                    <article class="blog-card">
+                        <span class="blog-card-tag">WordPress & Migrace</span>
+                        <h2><a href="/blog/jak-predelat-wordpress-na-staticky-web.html">Jak předělat WordPress na statický web: Kompletní průvodce (2026)</a></h2>
+                        <p>Převod WordPress webu na statický HTML/CSS/JS web krok za krokem. Analýza, tvorba kódu, nasazení na Netlify a přesměrování domény.</p>
+                        <div class="blog-card-meta">
+                            <time datetime="2026-02-25">25. února 2026</time>
+                            <span>·</span>
+                            <span>8 min čtení</span>
+                        </div>
+                        <a href="/blog/jak-predelat-wordpress-na-staticky-web.html" class="card-link">Číst článek →</a>
+                    </article>
+
+                    <article class="blog-card">
+                        <span class="blog-card-tag">Hosting & Úspory</span>
+                        <h2><a href="/blog/jak-neplatit-za-hosting.html">Jak neplatit za hosting: Statické weby zdarma na Netlify, GitHub Pages a Cloudflare (2026)</a></h2>
+                        <p>Srovnání tří bezplatných hostingových platforem pro statické weby. Vlastní doména, HTTPS a hosting – vše zdarma.</p>
+                        <div class="blog-card-meta">
+                            <time datetime="2026-02-25">25. února 2026</time>
+                            <span>·</span>
+                            <span>6 min čtení</span>
+                        </div>
+                        <a href="/blog/jak-neplatit-za-hosting.html" class="card-link">Číst článek →</a>
+                    </article>
+
+                    <article class="blog-card">
+                        <span class="blog-card-tag">AEO & GEO</span>
+                        <h2><a href="/blog/jak-optimalizovat-web-pro-ai.html">Jak optimalizovat web pro AI: Kompletní průvodce AEO a GEO (2026)</a></h2>
+                        <p>7 kroků k tomu, aby váš web citovaly AI vyhledávače (ChatGPT, Perplexity, Gemini). Structured data, FAQ schema, Speakable markup.</p>
+                        <div class="blog-card-meta">
+                            <time datetime="2026-02-25">25. února 2026</time>
+                            <span>·</span>
+                            <span>8 min čtení</span>
+                        </div>
+                        <a href="/blog/jak-optimalizovat-web-pro-ai.html" class="card-link">Číst článek →</a>
+                    </article>
+
+                    <article class="blog-card">
+                        <span class="blog-card-tag">Technologie</span>
+                        <h2><a href="/blog/vyhody-statickeho-webu.html">Moderní statický web: 7 výhod oproti WordPress a CMS (2026)</a></h2>
+                        <p>Rychlost pod 1 sekundu, hosting zdarma, nulová údržba a maximální bezpečnost. Proč statický web poráží WordPress pro firemní prezentace.</p>
+                        <div class="blog-card-meta">
+                            <time datetime="2026-02-25">25. února 2026</time>
+                            <span>·</span>
+                            <span>7 min čtení</span>
+                        </div>
+                        <a href="/blog/vyhody-statickeho-webu.html" class="card-link">Číst článek →</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../images/signature.png" alt="Žaneta Janáčová – tvorba webů Mělník" width="200" height="60" loading="lazy">
+                <p>Tvorba webů Mělník | Žaneta Janáčová</p>
+            </div>
+            <nav class="footer-nav" aria-label="Patičková navigace">
+                <a href="/">Domů</a>
+                <a href="/projects.html">Portfolio</a>
+                <a href="/cenik.html">Ceník</a>
+                <a href="/vzdelani.html">Vzdělání</a>
+                <a href="/blog/">Blog</a>
+                <a href="/#contact">Kontakt</a>
+                <a href="/privacy.html">Ochrana údajů</a>
+            </nav>
+            <div class="footer-bottom"><p>&copy; 2026 Žaneta Janáčová</p></div>
+        </div>
+    </footer>
+
+    <div id="cookie-consent" class="cookie-consent" role="dialog" aria-labelledby="cookie-title" style="display: none;">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p id="cookie-title"><strong>Cookies</strong></p>
+                <p>Používám cookies pro analytiku webu. <a href="/privacy.html" class="cookie-link">Více info</a></p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="btn-primary btn-ripple">Přijmout</button>
+                <button id="cookie-decline" class="btn-secondary">Odmítnout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

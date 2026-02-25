@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jak optimalizovat web pro AI: Kompletní průvodce AEO a GEO (2026) | Žaneta Janáčová</title>
+    <meta name="description"
+        content="Průvodce optimalizací webu pro AI vyhledávače (ChatGPT, Perplexity, Gemini). Naučte se AEO, GEO, structured data JSON-LD, FAQ schema a Speakable markup pro lepší viditelnost v AI odpovědích.">
+    <link rel="canonical" href="https://zjanacova.cz/blog/jak-optimalizovat-web-pro-ai.html">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Žaneta Janáčová">
+    <meta name="geo.region" content="CZ-ST">
+    <meta name="geo.placename" content="Mělník, Česká republika">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://zjanacova.cz/blog/jak-optimalizovat-web-pro-ai.html">
+    <meta property="og:title" content="Jak optimalizovat web pro AI: AEO a GEO průvodce (2026)">
+    <meta property="og:description"
+        content="Jak zajistit, aby váš web citovaly AI vyhledávače jako ChatGPT, Perplexity nebo Gemini. Structured data, FAQ schema, Speakable – krok za krokem.">
+    <meta property="og:image" content="https://zjanacova.cz/images/ogpicture.png">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Žaneta Janáčová – Webdesign">
+    <meta property="article:published_time" content="2026-02-25T09:00:00+01:00">
+    <meta property="article:modified_time" content="2026-02-25T09:00:00+01:00">
+    <meta property="article:author" content="Žaneta Janáčová">
+    <meta property="article:section" content="SEO & AI">
+    <meta property="article:tag" content="AEO, GEO, AI optimalizace, structured data, Schema.org, Speakable">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jak optimalizovat web pro AI: AEO a GEO průvodce (2026)">
+    <meta name="twitter:description"
+        content="ChatGPT, Perplexity, Gemini – naučte se, jak AI vyhledávače vybírají zdroje a jak tam dostat váš web.">
+    <meta name="twitter:image" content="https://zjanacova.cz/images/ogpicture.png">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preload" href="../style.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Jak optimalizovat web pro AI: Kompletní průvodce AEO a GEO optimalizací (2026)",
+        "description": "Průvodce optimalizací webu pro AI vyhledávače ChatGPT, Perplexity a Gemini. Structured data JSON-LD, FAQPage schema, Speakable markup, entity linking a Knowledge Base – 7 kroků k lepší viditelnosti v AI odpovědích.",
+        "image": "https://zjanacova.cz/images/ogpicture.png",
+        "datePublished": "2026-02-25",
+        "dateModified": "2026-02-25",
+        "inLanguage": "cs",
+        "keywords": "jak optimalizovat web pro AI, AEO, GEO, answer engine optimization, generative engine optimization, structured data, Schema.org, FAQ schema, Speakable schema",
+        "author": {
+            "@type": "Person",
+            "@id": "https://zjanacova.cz/#person",
+            "name": "Žaneta Janáčová",
+            "url": "https://zjanacova.cz"
+        },
+        "publisher": {
+            "@id": "https://zjanacova.cz/#business",
+            "name": "Žaneta Janáčová – Webdesign",
+            "logo": {"@type": "ImageObject", "url": "https://zjanacova.cz/images/signature.png"}
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://zjanacova.cz/blog/jak-optimalizovat-web-pro-ai.html"
+        },
+        "about": [
+            {"@type": "Thing", "name": "Answer Engine Optimization"},
+            {"@type": "Thing", "name": "Generative Engine Optimization"},
+            {"@type": "Thing", "name": "Strukturovaná data"},
+            {"@type": "Thing", "name": "Schema.org"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Jak optimalizovat web pro AI vyhledávače – 7 kroků",
+        "description": "Postup optimalizace webu pro AI vyhledávače (AEO a GEO). Zahrnuje implementaci structured data, FAQ sekce, Speakable schema, Knowledge Base a geo meta tagů.",
+        "totalTime": "PT4H",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Implementujte JSON-LD structured data (Schema.org)",
+                "text": "Přidejte do <head> stránky JSON-LD bloky s relevantními typy: LocalBusiness nebo ProfessionalService pro firmy, Person pro autora, Article pro blogové články, Product pro produkty. Každá entita by měla mít unikátní @id pro entity linking."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Vytvořte semantické FAQ v HTML pomocí <details>/<summary>",
+                "text": "Napište FAQ sekci s nejčastějšími otázkami cílové skupiny a odpovězte na ně vyčerpávajícím způsobem. Použijte nativní HTML element <details>/<summary> místo JS toggle – FAQ bude viditelné pro AI crawlery. Přidejte FAQPage JSON-LD schema s odpovídajícími otázkami."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Přidejte Speakable schema pro hlasové vyhledávání",
+                "text": "Implementujte WebPage schema se Speakable specifikací a cssSelector ukazujícím na klíčové textové bloky (h1, perex, FAQ odpovědi). Hlasové asistenty (Google Assistant, Siri) pak tyto pasáže přečtou uživatelům."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Budujte Knowledge Base – blog s konkrétními odpověďmi",
+                "text": "Pište článků cílené na konkrétní dotazy (long-tail keywords). Každý článek by měl jasně odpovídat na jednu otázku v prvních 2–3 větách. Struktura: otázka v H1, přímá odpověď v prvním odstavci, pak detailní vysvětlení, HowTo kroky, FAQ."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Propojte entity pomocí @id – entity linking",
+                "text": "Používejte konzistentní @id pro opakující se entity: stejný @id pro autora, firmu a web napříč všemi stránkami a schématy. AI modely tím lépe pochopí, kdo jste, co děláte a kde působíte – a snáze vás zahrnou do odpovědí."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 6,
+                "name": "Optimalizujte Core Web Vitals a technické SEO",
+                "text": "AI vyhledávače preferují autoritativní, rychlé weby. Optimalizujte LCP (Largest Contentful Paint), CLS (Cumulative Layout Shift) a FID/INP. Cílem je Lighthouse skóre 90+ ve všech kategoriích. Přidejte správné meta description, canonical URL a sitemap.xml."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 7,
+                "name": "Přidejte geo meta tagy a lokální signály",
+                "text": "Pro lokální podnikání přidejte geo.region, geo.placename, geo.position a ICBM meta tagy. V LocalBusiness schématu specifikujte areaServed. Pište obsah reflektující lokální kontext (město, region). AI pak váš web zahrne do lokálních odpovědí."
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Co je AEO (Answer Engine Optimization)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AEO (Answer Engine Optimization) je optimalizace webu pro to, aby AI vyhledávače (ChatGPT, Perplexity, Gemini) a hlasové asistenty (Google Assistant, Siri) citovaly váš obsah při odpovídání na otázky uživatelů. Zatímco klasické SEO cílí na pozice ve výsledcích vyhledávání, AEO cílí na přímé odpovědi bez kliknutí."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Co je GEO (Generative Engine Optimization)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GEO (Generative Engine Optimization) je rozšíření AEO zaměřené konkrétně na generativní AI modely. Jde o strukturování obsahu tak, aby ho jazykové modely (LLM) snadno pochopily, zpracovaly a zahrnuly do generovaných odpovědí. Klíčové techniky: strukturovaná data Schema.org, přímé odpovědi na otázky, jasná struktura nadpisů H1-H3 a citovatelné faktické výroky."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Jak AI vyhledávače (ChatGPT, Perplexity) vybírají zdroje?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI vyhledávače preferují zdroje, které: 1) jasně a přímo odpovídají na konkrétní otázku, 2) mají strukturovaná data JSON-LD (Schema.org), 3) jsou technicky bezchybné a rychlé (Core Web Vitals), 4) jsou autoritativní – mají E-E-A-T signály (zkušenost, odbornost, důvěryhodnost), 5) mají sémanticky správnou HTML strukturu s čitelnými nadpisy."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Jaká structured data jsou nejdůležitější pro AI optimalizaci?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pro AI optimalizaci jsou klíčové tyto typy Schema.org: FAQPage (nejdůležitější – AI přímo čte otázky a odpovědi), HowTo (pro návody krok za krokem), Article (pro blogové články), LocalBusiness/ProfessionalService (pro místní podnikání), Person (pro autora/experta), WebPage se Speakable (pro hlasové vyhledávání)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Jak rychle se projeví AEO/GEO optimalizace?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Na rozdíl od klasického SEO (3–6 měsíců) může AEO/GEO optimalizace přinést výsledky rychleji – AI modely indexují nový obsah průběžně. Structured data se projeví obvykle během 2–4 týdnů po zaindexování. Blogové články cílené na konkrétní dotazy mohou být citovány AI vyhledávači již do měsíce od publikování."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Úvod", "item": "https://zjanacova.cz/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zjanacova.cz/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Jak optimalizovat web pro AI", "item": "https://zjanacova.cz/blog/jak-optimalizovat-web-pro-ai.html"}
+        ]
+    }
+    </script>
+
+    <style>
+        .blog-hero { padding: 140px 0 60px; background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%); position: relative; overflow: hidden; }
+        .blog-hero::before { content: ''; position: absolute; top: 20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(147, 112, 219, 0.10) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+        .blog-breadcrumb { font-size: 14px; color: var(--color-text-muted); margin-bottom: 24px; }
+        .blog-breadcrumb a { color: var(--color-text-muted); text-decoration: none; transition: color var(--transition); }
+        .blog-breadcrumb a:hover { color: var(--color-accent-gold); }
+        .blog-breadcrumb span { margin: 0 8px; opacity: 0.5; }
+        .blog-hero-title { font-family: var(--font-heading); font-size: clamp(28px, 5vw, 52px); line-height: 1.2; color: var(--color-text-primary); margin-bottom: 20px; }
+        .blog-hero-meta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 14px; color: var(--color-text-muted); margin-bottom: 28px; }
+        .blog-hero-meta a { color: var(--color-accent-gold); text-decoration: none; }
+        .blog-tag { display: inline-block; background: rgba(168, 124, 82, 0.15); color: var(--color-accent-gold); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+        .article-body { max-width: 760px; margin: 0 auto; padding: 60px 0 80px; }
+        .article-body h2 { font-family: var(--font-heading); font-size: clamp(22px, 3.5vw, 32px); color: var(--color-text-primary); margin: 56px 0 20px; line-height: 1.3; scroll-margin-top: 100px; }
+        .article-body h3 { font-family: var(--font-heading); font-size: clamp(18px, 2.5vw, 24px); color: var(--color-text-primary); margin: 36px 0 14px; line-height: 1.4; }
+        .article-body p { font-size: 17px; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 20px; }
+        .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 24px; }
+        .article-body li { font-size: 17px; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 8px; }
+        .article-body strong { color: var(--color-text-primary); }
+        .article-body code { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 4px; padding: 2px 6px; font-size: 14px; font-family: monospace; color: var(--color-accent-gold); }
+        .howto-step { background: var(--color-bg-card); border: 1px solid var(--color-border); border-left: 4px solid var(--color-accent-gold); border-radius: 0 12px 12px 0; padding: 28px 32px; margin-bottom: 20px; scroll-margin-top: 100px; }
+        .howto-step-number { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--color-accent-gold); color: var(--color-bg-primary); border-radius: 50%; font-weight: 700; font-size: 16px; margin-bottom: 12px; }
+        .howto-step h3 { margin: 0 0 12px; font-size: 20px; }
+        .schema-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; display: flex; gap: 16px; align-items: flex-start; }
+        .schema-card-icon { font-size: 28px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+        .schema-card-content h3 { margin: 0 0 6px; font-size: 18px; color: var(--color-text-primary); }
+        .schema-card-content p { margin: 0; font-size: 15px; color: var(--color-text-secondary); line-height: 1.6; }
+        .schema-badge { display: inline-block; background: rgba(168, 124, 82, 0.15); color: var(--color-accent-gold); padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 700; font-family: monospace; margin-bottom: 6px; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 15px; }
+        .comparison-table th { background: var(--color-bg-card); color: var(--color-text-primary); padding: 14px 16px; text-align: left; border-bottom: 2px solid var(--color-accent-gold); font-weight: 600; }
+        .comparison-table td { padding: 12px 16px; color: var(--color-text-secondary); border-bottom: 1px solid var(--color-border); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .yes { color: #22c55e; font-weight: 600; }
+        .comparison-table .no { color: #ef4444; }
+        .comparison-table .ok { color: #f59e0b; font-weight: 500; }
+        .info-box { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+        .info-box-title { font-weight: 700; color: var(--color-accent-gold); font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .article-faq { margin-top: 60px; padding-top: 48px; border-top: 1px solid var(--color-border); }
+        .article-faq h2 { margin-top: 0; }
+        .article-faq details.faq-item { border: 1px solid var(--color-border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+        .article-faq details.faq-item summary.faq-question { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; cursor: pointer; font-weight: 600; color: var(--color-text-primary); background: var(--color-bg-card); }
+        .article-faq details.faq-item summary.faq-question::-webkit-details-marker { display: none; }
+        .article-faq details.faq-item[open] summary.faq-question { border-bottom: 1px solid var(--color-border); }
+        .article-faq details.faq-item .faq-answer { padding: 18px 22px; }
+        .article-faq details.faq-item .faq-answer p { margin: 0; font-size: 16px; }
+        .article-cta { background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-secondary) 100%); border: 1px solid var(--color-border); border-radius: 16px; padding: 40px; text-align: center; margin-top: 60px; }
+        .article-cta h2 { margin-top: 0; font-size: clamp(20px, 3vw, 28px); }
+        .article-author-box { display: flex; align-items: center; gap: 20px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; margin-top: 60px; }
+        .article-author-box img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+        .article-author-box h3 { margin: 0 0 6px; font-size: 18px; }
+        @media (max-width: 768px) { .blog-hero { padding: 110px 0 48px; } .howto-step { padding: 22px 20px; } .comparison-table { font-size: 13px; } .comparison-table th, .comparison-table td { padding: 10px 12px; } .article-author-box { flex-direction: column; text-align: center; } .schema-card { flex-direction: column; gap: 10px; } }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+    <div class="loader" id="loader"><div class="spinner"></div></div>
+
+    <header role="banner">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Žaneta Janáčová – Úvodní stránka">
+                <img src="../images/signature.png" alt="Žaneta Janáčová – tvorba webů Mělník" width="150" height="50">
+            </a>
+            <nav aria-label="Hlavní navigace">
+                <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="/">Domů</a></li>
+                    <li><a href="/projects.html">Portfolio</a></li>
+                    <li><a href="/cenik.html">Ceník</a></li>
+                    <li><a href="/vzdelani.html">Vzdělání</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary btn-ripple">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section class="blog-hero" aria-labelledby="article-title">
+            <div class="container">
+                <nav class="blog-breadcrumb" aria-label="Drobečková navigace">
+                    <a href="/">Domů</a><span aria-hidden="true">›</span>
+                    <a href="/blog/">Blog</a><span aria-hidden="true">›</span>
+                    <span aria-current="page">Jak optimalizovat web pro AI</span>
+                </nav>
+                <div class="blog-tag" style="margin-bottom: 16px;">AEO &amp; GEO</div>
+                <h1 id="article-title" class="blog-hero-title">
+                    Jak optimalizovat web pro AI:<br>
+                    <span style="color: var(--color-accent-gold);">Kompletní průvodce AEO a GEO (2026)</span>
+                </h1>
+                <div class="blog-hero-meta">
+                    <span>Autor: <a href="/" rel="author">Žaneta Janáčová</a></span>
+                    <span>·</span>
+                    <time datetime="2026-02-25">25. února 2026</time>
+                    <span>·</span>
+                    <span>8 min čtení</span>
+                </div>
+                <p style="font-size: 18px; color: var(--color-text-secondary); max-width: 700px; line-height: 1.7;">
+                    ChatGPT, Perplexity a Gemini mění způsob, jak lidé hledají informace. Aby váš web
+                    <strong>citovaly AI vyhledávače</strong> při odpovědích, nestačí klasické SEO –
+                    potřebujete <strong>AEO (Answer Engine Optimization)</strong> a
+                    <strong>GEO (Generative Engine Optimization)</strong>.
+                </p>
+            </div>
+        </section>
+
+        <article class="container">
+            <div class="article-body">
+
+                <h2>Co je AEO a GEO – a proč na tom záleží?</h2>
+                <p>
+                    <strong>AEO (Answer Engine Optimization)</strong> je optimalizace webu pro to, aby AI vyhledávače
+                    a hlasové asistenty váš obsah citovaly při přímých odpovědích na dotazy uživatelů.
+                    Uživatel se zeptá ChatGPT „Jak předělat WordPress na statický web?" –
+                    a AI buď cituje váš web, nebo ne.
+                </p>
+                <p>
+                    <strong>GEO (Generative Engine Optimization)</strong> je rozšíření AEO zaměřené konkrétně
+                    na generativní jazykové modely (LLM). Jde o strukturování obsahu tak, aby ho AI modely
+                    snadno pochopily, zpracovaly a zahrnuly do svých odpovědí.
+                </p>
+
+                <div class="info-box" role="note" aria-label="Klíčová statistika">
+                    <div class="info-box-title">Proč je to důležité právě teď?</div>
+                    <p style="margin: 0; font-size: 16px; color: var(--color-text-secondary);">
+                        Perplexity AI zpracovává přes 10 milionů dotazů denně. ChatGPT má přes 100 milionů
+                        aktivních uživatelů měsíčně. Tito uživatelé klikají na méně výsledků ve vyhledávačích –
+                        protože dostanou odpověď přímo. Weby, které AI cituje jako zdroj, získávají
+                        <strong>vysoce kvalifikovanou návštěvnost</strong>.
+                    </p>
+                </div>
+
+                <h2>Jak AI vyhledávače vybírají, které weby citují?</h2>
+                <p>
+                    AI modely neindexují weby jako Google – místo toho jsou trénovány na velkých datasetech
+                    a při odpovídání prohledávají web v reálném čase (Perplexity, Gemini s Search Grounding).
+                    Zdroje vybírají podle několika signálů:
+                </p>
+                <ul>
+                    <li><strong>Relevance obsahu</strong> – stránka přímo odpovídá na dotaz</li>
+                    <li><strong>Strukturovaná data</strong> – JSON-LD Schema.org (FAQPage, HowTo, Article)</li>
+                    <li><strong>Sémantická HTML struktura</strong> – správná hierarchie H1 → H2 → H3</li>
+                    <li><strong>E-E-A-T signály</strong> – zkušenost, odbornost, autoritativnost, důvěryhodnost</li>
+                    <li><strong>Technická kvalita</strong> – rychlost načítání, Core Web Vitals, žádné chyby</li>
+                    <li><strong>Citovatelné výroky</strong> – konkrétní fakta, čísla, krok za krokem postupy</li>
+                </ul>
+
+                <h2 id="postup">7 kroků k optimalizaci webu pro AI</h2>
+
+                <div class="howto-step">
+                    <div class="howto-step-number" aria-hidden="true">1</div>
+                    <h3>Implementujte JSON-LD structured data (Schema.org)</h3>
+                    <p>
+                        Přidejte do <code>&lt;head&gt;</code> stránky JSON-LD bloky s relevantními typy.
+                        Pro firmy: <code>LocalBusiness</code> nebo <code>ProfessionalService</code>.
+                        Pro autora: <code>Person</code>. Pro blog: <code>Article</code>.
+                        Každá entita by měla mít unikátní <code>@id</code> pro entity linking –
+                        například <code>"@id": "https://vasedomena.cz/#business"</code>.
+                    </p>
+                    <p>
+                        AI modely structured data aktivně čtou a využívají pro pochopení kontextu stránky,
+                        identitu autora a témata obsahu. Bez nich spoléháte pouze na to, že AI správně
+                        pochopí prostý text.
+                    </p>
+                </div>
+
+                <div class="howto-step">
+                    <div class="howto-step-number" aria-hidden="true">2</div>
+                    <h3>Vytvořte semantické FAQ pomocí <code>&lt;details&gt;/&lt;summary&gt;</code></h3>
+                    <p>
+                        FAQ sekce je <strong>nejsilnější nástroj pro AEO</strong>. AI vyhledávače přímo hledají
+                        otázku a odpověď ve strukturovaném formátu. Napište 5–10 otázek, na které se vaši
+                        zákazníci opravdu ptají, a odpovězte na ně vyčerpávajícím způsobem.
+                    </p>
+                    <p>
+                        Použijte nativní HTML element <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code>
+                        místo JS toggle – obsah je pak viditelný i pro crawlery bez JavaScriptu.
+                        Doplňte to o <code>FAQPage</code> JSON-LD schema se stejnými otázkami a odpověďmi.
+                    </p>
+                </div>
+
+                <div class="howto-step">
+                    <div class="howto-step-number" aria-hidden="true">3</div>
+                    <h3>Přidejte Speakable schema pro hlasové vyhledávání</h3>
+                    <p>
+                        Speakable schema říká hlasovým asistentům (Google Assistant, Siri), které části
+                        stránky jsou vhodné k přečtení. Implementujte <code>WebPage</code> schema
+                        s <code>SpeakableSpecification</code> a <code>cssSelector</code> ukazujícím
+                        na klíčové textové bloky:
+                    </p>
+                    <div class="info-box" role="note" aria-label="Příklad kódu">
+                        <div class="info-box-title">Příklad Speakable schema</div>
+                        <p style="margin: 0; font-size: 14px; color: var(--color-text-secondary); font-family: monospace; line-height: 1.6;">
+                            "speakable": &#123;<br>
+                            &nbsp;&nbsp;"@type": "SpeakableSpecification",<br>
+                            &nbsp;&nbsp;"cssSelector": [".hero-subtitle", ".about-text p", ".faq-answer p"]<br>
+                            &#125;
+                        </p>
+                    </div>
+                </div>
+
+                <div class="howto-step">
+                    <div class="howto-step-number" aria-hidden="true">4</div>
+                    <h3>Budujte Knowledge Base – blog s přímými odpověďmi</h3>
+                    <p>
+                        Každý blogový článek by měl cílit na jeden konkrétní dotaz (long-tail keyword)
+                        a <strong>odpovědět na něj přímo v prvních 2–3 větách</strong>. Pak teprve
+                        přicházejí detaily, HowTo kroky a FAQ.
+                    </p>
+                    <p>
+                        Ideální struktura AEO článku: otázka v H1 → přímá odpověď (1–2 věty) v prvním
+                        odstavci → kontextové vysvětlení → HowTo kroky → srovnávací tabulka → FAQ sekce.
+                        Právě takovou strukturu mají tyto blogové články.
+                    </p>
+                </div>
+
+                <div class="howto-step">
+                    <div class="howto-step-number" aria-hidden="true">5</div>
+                    <h3>Propojte entity pomocí <code>@id</code> – entity linking</h3>
+                    <p>
+                        Používejte konzistentní <code>@id</code> pro stejné entity napříč všemi stránkami
+                        a schématy. Autor článku má <code>"@id": "https://vasedomena.cz/#person"</code>
+                        na každé stránce, kde je uveden. Firma má <code>"@id": "https://vasedomena.cz/#business"</code>.
+                    </p>
+                    <p>
+                        AI modely tyto ID propojují a budují si znalostní graf – pochopí, kdo jste,
+                        co děláte, kde působíte a proč vám lze důvěřovat. To zvyšuje pravděpodobnost citace.
+                    </p>
+                </div>
+
+                <div class="howto-step">
+                    <div class="howto-step-number" aria-hidden="true">6</div>
+                    <h3>Optimalizujte Core Web Vitals a technické SEO</h3>
+                    <p>
+                        AI vyhledávače preferují autoritativní, rychlé weby. Cílem je <strong>Lighthouse
+                        skóre 90+</strong> ve všech kategoriích (Performance, Accessibility, Best Practices, SEO).
+                        Klíčové technické prvky: canonical URL, správný robots.txt, sitemap.xml s &lt;lastmod&gt;,
+                        <code>&lt;link rel="sitemap"&gt;</code> v hlavičce každé stránky.
+                    </p>
+                </div>
+
+                <div class="howto-step">
+                    <div class="howto-step-number" aria-hidden="true">7</div>
+                    <h3>Přidejte geo meta tagy pro lokální AI vyhledávání</h3>
+                    <p>
+                        Pro lokální podnikání jsou geo meta tagy klíčové. AI vyhledávač pak ví,
+                        kde fyzicky působíte, a zahrne vás do lokálních odpovědí jako
+                        „doporučte webdesignéra v Mělníce".
+                    </p>
+                    <div class="info-box" role="note" aria-label="Příklad kódu">
+                        <div class="info-box-title">Geo meta tagy do &lt;head&gt;</div>
+                        <p style="margin: 0; font-size: 14px; color: var(--color-text-secondary); font-family: monospace; line-height: 1.9;">
+                            &lt;meta name="geo.region" content="CZ-ST"&gt;<br>
+                            &lt;meta name="geo.placename" content="Mělník, Česká republika"&gt;<br>
+                            &lt;meta name="geo.position" content="50.3505;14.4744"&gt;<br>
+                            &lt;meta name="ICBM" content="50.3505, 14.4744"&gt;
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Typy Schema.org structured data pro AI optimalizaci</h2>
+                <p>Přehled nejdůležitějších typů a jejich použití:</p>
+
+                <div class="schema-card">
+                    <div class="schema-card-icon" aria-hidden="true">❓</div>
+                    <div class="schema-card-content">
+                        <div class="schema-badge">FAQPage</div>
+                        <h3>FAQPage – nejsilnější pro AEO</h3>
+                        <p>Strukturuje otázky a odpovědi přímo pro AI. Použijte na každé stránce, kde máte FAQ sekci. Kombinujte s <code>&lt;details&gt;/&lt;summary&gt;</code> HTML.</p>
+                    </div>
+                </div>
+
+                <div class="schema-card">
+                    <div class="schema-card-icon" aria-hidden="true">📋</div>
+                    <div class="schema-card-content">
+                        <div class="schema-badge">HowTo</div>
+                        <h3>HowTo – pro návody a postupy</h3>
+                        <p>Definuje krok za krokem postup s <code>HowToStep</code>, <code>supply</code> (potřebné věci) a <code>totalTime</code>. Google a AI vyhledávače zobrazují HowTo jako rich snippet.</p>
+                    </div>
+                </div>
+
+                <div class="schema-card">
+                    <div class="schema-card-icon" aria-hidden="true">🏢</div>
+                    <div class="schema-card-content">
+                        <div class="schema-badge">LocalBusiness</div>
+                        <h3>LocalBusiness + ProfessionalService</h3>
+                        <p>Pro lokální firmy a živnostníky. Definuje jméno, adresu, kontakt, oblast působení (<code>areaServed</code>) a otevírací dobu. Klíčové pro lokální AI odpovědi.</p>
+                    </div>
+                </div>
+
+                <div class="schema-card">
+                    <div class="schema-card-icon" aria-hidden="true">🎤</div>
+                    <div class="schema-card-content">
+                        <div class="schema-badge">WebPage + Speakable</div>
+                        <h3>Speakable – pro hlasové vyhledávání</h3>
+                        <p>Označí pasáže stránky vhodné pro přečtení hlasovým asistentem. <code>cssSelector</code> ukazuje na konkrétní CSS třídy s klíčovým obsahem.</p>
+                    </div>
+                </div>
+
+                <div class="schema-card">
+                    <div class="schema-card-icon" aria-hidden="true">📰</div>
+                    <div class="schema-card-content">
+                        <div class="schema-badge">Article</div>
+                        <h3>Article – pro blogové články</h3>
+                        <p>Definuje autora, datum publikování, klíčová slova a vydavatele. V kombinaci s <code>Person @id</code> propojuje obsah s konkrétní autoritou.</p>
+                    </div>
+                </div>
+
+                <h2>SEO vs AEO vs GEO – srovnání</h2>
+                <table class="comparison-table" role="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Kritérium</th>
+                            <th scope="col">Klasické SEO</th>
+                            <th scope="col">AEO</th>
+                            <th scope="col">GEO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cíl</td>
+                            <td>Pozice ve výsledcích</td>
+                            <td>Přímá odpověď AI</td>
+                            <td>Citace v generované odpovědi</td>
+                        </tr>
+                        <tr>
+                            <td>Klíčový signál</td>
+                            <td>Zpětné odkazy, obsah</td>
+                            <td>Structured data, FAQ</td>
+                            <td>Citovatelné výroky, entity</td>
+                        </tr>
+                        <tr>
+                            <td>Structured data</td>
+                            <td class="ok">Důležité</td>
+                            <td class="yes">Kritické</td>
+                            <td class="yes">Kritické</td>
+                        </tr>
+                        <tr>
+                            <td>Rychlost webu</td>
+                            <td class="yes">Důležitá</td>
+                            <td class="yes">Důležitá</td>
+                            <td class="ok">Méně kritická</td>
+                        </tr>
+                        <tr>
+                            <td>Doba projevu výsledků</td>
+                            <td class="no">3–6 měsíců</td>
+                            <td class="ok">2–8 týdnů</td>
+                            <td class="ok">2–8 týdnů</td>
+                        </tr>
+                        <tr>
+                            <td>Kliknutí uživatele nutné?</td>
+                            <td class="yes">Ano</td>
+                            <td class="no">Ne (nulové kliknutí)</td>
+                            <td class="ok">Někdy</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <section class="article-faq" aria-labelledby="faq-heading">
+                    <h2 id="faq-heading">Časté otázky o AI optimalizaci</h2>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Co je AEO (Answer Engine Optimization)?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>AEO je optimalizace webu tak, aby AI vyhledávače (ChatGPT, Perplexity, Gemini) a hlasové asistenty váš obsah <strong>citovaly při odpovídání na dotazy</strong> uživatelů. Zatímco SEO cílí na pozice ve výsledcích, AEO cílí na přímé odpovědi bez nutnosti kliknutí.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Musím mít blog, abych optimalizoval web pro AI?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Blog není podmínkou, ale výrazně pomáhá. I bez blogu lze na hlavních stránkách implementovat structured data, FAQ sekci a Speakable schema. Blog ale umožňuje cílit na <strong>konkrétní dotazy zákazníků</strong> – a ty jsou nejsilnějším signálem pro AEO.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Funguje AEO/GEO i pro malé lokální firmy?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p><strong>Ano, a pro lokální firmy je to obzvlášť výhodné.</strong> Velké korporace dominují obecným dotazům – ale lokální dotazy jako „webdesignér Mělník" nebo „instalatér Praha 5" jsou méně konkurenční. LocalBusiness schema, geo meta tagy a obsah reflektující lokální kontext vás dostanou na radar lokálních AI odpovědí.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Jaký je rozdíl mezi Speakable schema a FAQPage schema?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p><strong>FAQPage</strong> strukturuje konkrétní otázky a odpovědi pro AI i textové vyhledávání. <strong>Speakable</strong> označuje obecné pasáže stránky (ne nutně FAQ) vhodné pro přečtení hlasovým asistentem pomocí CSS selectorů. Obě schema se doplňují – FAQPage pro textové AI, Speakable pro hlasové asistenty.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Jak rychle se projeví výsledky AEO/GEO optimalizace?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Structured data (FAQPage, LocalBusiness) se projeví obvykle do <strong>2–4 týdnů</strong> po zaindexování stránky. Blogové články cílené na konkrétní dotazy mohou být citovány AI vyhledávači do měsíce od publikování. Pro srovnání: klasické SEO trvá 3–6 měsíců. AEO/GEO je v tomto ohledu výrazně rychlejší.</p>
+                        </div>
+                    </details>
+                </section>
+
+                <aside class="article-cta" aria-label="Výzva k akci">
+                    <h2>Chcete AEO/GEO optimalizaci svého webu?</h2>
+                    <p>Implementuji <strong>structured data, FAQ schema, Speakable markup a Knowledge Base</strong>
+                        tak, aby váš web citovaly AI vyhledávače. Konzultace je bezplatná a nezávazná.</p>
+                    <a href="/#contact" class="btn-hero btn-ripple">Nezávazná konzultace zdarma</a>
+                    <p style="margin-top: 12px; font-size: 14px; color: var(--color-text-muted);">Odpovím do 24 hodin · Mělník a celá ČR</p>
+                </aside>
+
+                <div class="article-author-box" role="complementary" aria-label="O autorce">
+                    <img src="../images/zaneta_portret.webp" alt="Žaneta Janáčová – webdesignérka z Mělníka" width="72" height="72" loading="lazy">
+                    <div>
+                        <h3>Žaneta Janáčová</h3>
+                        <p style="color: var(--color-text-secondary);">
+                            Webdesignérka a AEO/GEO specialistka z Mělníka. Implementuji AEO a GEO optimalizaci
+                            na všech projektech, které tvořím – structured data, Speakable schema a Knowledge Base.
+                            Výsledky: Lighthouse 99–100/100, viditelnost v AI odpovědích.
+                            <a href="/" style="color: var(--color-accent-gold); text-decoration: none;">→ zjanacova.cz</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../images/signature.png" alt="Žaneta Janáčová – tvorba webů Mělník" width="200" height="60" loading="lazy">
+                <p>Tvorba webů Mělník | Žaneta Janáčová</p>
+            </div>
+            <nav class="footer-nav" aria-label="Patičková navigace">
+                <a href="/">Domů</a>
+                <a href="/projects.html">Portfolio</a>
+                <a href="/cenik.html">Ceník</a>
+                <a href="/vzdelani.html">Vzdělání</a>
+                <a href="/blog/">Blog</a>
+                <a href="/#contact">Kontakt</a>
+                <a href="/privacy.html">Ochrana údajů</a>
+            </nav>
+            <div class="footer-bottom"><p>&copy; 2026 Žaneta Janáčová</p></div>
+        </div>
+    </footer>
+
+    <div id="cookie-consent" class="cookie-consent" role="dialog" aria-labelledby="cookie-title" style="display: none;">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p id="cookie-title"><strong>Cookies</strong></p>
+                <p>Používám cookies pro analytiku webu. <a href="/privacy.html" class="cookie-link">Více info</a></p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="btn-primary btn-ripple">Přijmout</button>
+                <button id="cookie-decline" class="btn-secondary">Odmítnout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1664,7 +1664,7 @@ footer {
     margin-bottom: 12px;
 }
 
-.not-included-card p {
+.not-included-card p, .not-included-card li {
     font-size: 14px;
     color: var(--color-text-secondary);
     line-height: 1.6;
@@ -1816,7 +1816,8 @@ footer {
     border-color: var(--color-accent-gold);
 }
 
-.faq-item.active {
+.faq-item.active,
+details.faq-item[open] {
     border-color: var(--color-accent-gold);
 }
 
@@ -1831,6 +1832,12 @@ footer {
     cursor: pointer;
     text-align: left;
     font-family: var(--font-body);
+    /* Potlačit nativní šipku <summary> ve všech prohlížečích */
+    list-style: none;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
 }
 
 .faq-question span {
@@ -1846,7 +1853,8 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.faq-item.active .faq-question svg {
+.faq-item.active .faq-question svg,
+details.faq-item[open] .faq-question svg {
     transform: rotate(180deg);
 }
 
@@ -1856,7 +1864,8 @@ footer {
     transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
-.faq-item.active .faq-answer {
+.faq-item.active .faq-answer,
+details.faq-item[open] .faq-answer {
     max-height: 500px;
     padding: 0 24px 24px;
 }

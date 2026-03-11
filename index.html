@@ -35,11 +35,10 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <link rel="preload" href="style.css" as="style">
+    <link rel="preload" as="font" href="/fonts/playfair-display-v40-latin-regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="/fonts/inter-v20-latin-regular.woff2" type="font/woff2" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
@@ -56,7 +55,7 @@
   "image": "https://zjanacova.cz/images/zaneta_portret.webp",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://zjanacova.cz/images/signature.png",
+    "url": "https://zjanacova.cz/images/signature.webp",
     "width": 200,
     "height": 60
   },
@@ -299,7 +298,7 @@
     <header role="banner">
         <div class="container">
             <a href="/" class="logo" aria-label="Žaneta Janáčová – Úvodní stránka">
-                <img src="images/signature.png" alt="Žaneta Janáčová – webdesign na míru" width="150" height="50">
+                <img src="images/signature.webp" alt="Žaneta Janáčová – webdesign na míru" width="150" height="50">
             </a>
             <nav aria-label="Hlavní navigace">
                 <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-menu">
@@ -566,7 +565,7 @@
                                 <div class="chrome-url">kavarnalimone.onrender.com</div>
                             </div>
                             <div class="mockup-viewport">
-                                <img src="images/Caffè Limone.png"
+                                <img src="images/Caffè Limone.webp"
                                     alt="Caffè Limone – webová stránka pro italskou kavárnu s online menu"
                                     style="transition-duration: 1.5s;" loading="lazy">
                                 <div class="mockup-gradient"></div>
@@ -591,7 +590,7 @@
                                 <div class="chrome-url">astroflora.shoptet.cz</div>
                             </div>
                             <div class="mockup-viewport">
-                                <img src="images/astroflora.png" alt="Astroflora – Shoptet e-shop s unikátním designem"
+                                <img src="images/astroflora.webp" alt="Astroflora – Shoptet e-shop s unikátním designem"
                                     style="transition-duration: 1.5s;" loading="lazy">
                                 <div class="mockup-gradient"></div>
                             </div>
@@ -615,7 +614,7 @@
                                 <div class="chrome-url">provasklid.cz</div>
                             </div>
                             <div class="mockup-viewport">
-                                <img src="images/provasklid.png"
+                                <img src="images/provasklid.webp"
                                     alt="Pro Váš Klid – responzivní web pro asistenční služby"
                                     style="transition-duration: 1.5s;" loading="lazy">
                                 <div class="mockup-gradient"></div>
@@ -640,7 +639,7 @@
                                 <div class="chrome-url">provasklid.cz/hrbitov.html</div>
                             </div>
                             <div class="mockup-viewport">
-                                <img src="images/peceohroby.png" alt="Péče o hroby – web s interaktivní kalkulačkou cen"
+                                <img src="images/peceohroby.webp" alt="Péče o hroby – web s interaktivní kalkulačkou cen"
                                     style="transition-duration: 1.5s;" loading="lazy">
                                 <div class="mockup-gradient"></div>
                             </div>
@@ -856,7 +855,7 @@
                                 <polyline points="22,6 12,13 2,6" />
                             </svg>
                             <div>
-                                <h4>Email</h4>
+                                <p class="contact-label">Email</p>
                                 <a href="#" id="email-link" class="email-protected">Napište email</a>
                             </div>
                         </div>
@@ -868,7 +867,7 @@
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                             </svg>
                             <div>
-                                <h4>Telefon</h4>
+                                <p class="contact-label">Telefon</p>
                                 <a href="tel:+420736231196">+420 736 231 196</a>
                                 <a href="https://wa.me/420736231196" title="Napsat na WhatsApp">💬</a>
                             </div>
@@ -882,7 +881,7 @@
     <footer>
         <div class="container">
             <div class="footer-logo">
-                <img src="images/signature.png" alt="Žaneta Janáčová – podpis" width="200" height="60" loading="lazy">
+                <img src="images/signature.webp" alt="Žaneta Janáčová – podpis" width="200" height="60" loading="lazy">
                 <p>Tvorba webů Mělník | Žaneta Janáčová</p>
             </div>
 
@@ -915,7 +914,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.min.js" defer></script>
 
 
     <script>

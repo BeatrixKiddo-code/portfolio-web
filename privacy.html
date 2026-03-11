@@ -28,11 +28,12 @@
 
     
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preload" as="font" href="/fonts/playfair-display-v40-latin-regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="/fonts/inter-v20-latin-regular.woff2" type="font/woff2" crossorigin>
 
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -43,7 +44,7 @@
     <header role="banner">
         <div class="container">
             <a href="/" class="logo" aria-label="Žaneta Janáčová – Úvodní stránka">
-                <img src="images/signature.png" alt="Žaneta Janáčová – webdesign na míru" width="150" height="50">
+                <img src="images/signature.webp" alt="Žaneta Janáčová – webdesign na míru" width="150" height="50">
             </a>
             <nav aria-label="Hlavní navigace">
                 <ul class="nav-menu" style="display: flex;">
@@ -113,7 +114,7 @@
     <footer>
         <div class="container">
             <div class="footer-logo">
-                <img src="images/signature.png" alt="Žaneta Janáčová – podpis" width="200" height="60" loading="lazy">
+                <img src="images/signature.webp" alt="Žaneta Janáčová – podpis" width="200" height="60" loading="lazy">
                 <p>Tvorba webů Mělník | Žaneta Janáčová.</p>
             </div>
 
@@ -145,6 +146,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.min.js" defer></script>
 </body>
 </html>

@@ -82,28 +82,11 @@ if (logo) {
     });
 }
 
-const sparkleButtons = document.querySelectorAll('.btn-primary');
-
 const sparkleColors = [
     'radial-gradient(circle, #fff3b3 0%, #e6d98a 50%, transparent 80%)',
     'radial-gradient(circle, #fffde6 0%, #fff3b3 50%, transparent 80%)',
     'radial-gradient(circle, #FFFFFF 0%, #fff3b3 50%, transparent 80%)'
 ];
-
-sparkleButtons.forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-        if (Math.random() > 0.7) {  
-            createSparkleOnButton(btn, e.clientX, e.clientY);
-        }
-    });
-
-    btn.addEventListener('touchmove', (e) => {
-        if (Math.random() > 0.8) {
-            const touch = e.touches[0];
-            createSparkleOnButton(btn, touch.clientX, touch.clientY);
-        }
-    }, { passive: true });
-});
 
 function createSparkleOnButton(button, clientX, clientY) {
     const sparkle = document.createElement('div');
@@ -130,27 +113,6 @@ if (window.innerWidth <= 768) {
     });
 }
 
-const heroTitle = document.querySelector('.sparkle-text');
-
-if (heroTitle) {
-    heroTitle.addEventListener('mousemove', (e) => {
-        if (Math.random() > 0.7) createSparkle(e.clientX, e.clientY);
-    });
-
-    if (window.innerWidth <= 768) {
-        heroTitle.addEventListener('touchmove', (e) => {
-            if (Math.random() > 0.6) {
-                const touch = e.touches[0];
-                createSparkle(touch.clientX, touch.clientY);
-            }
-        }, { passive: true });
-
-        heroTitle.addEventListener('touchstart', (e) => {
-            const touch = e.touches[0];
-            createSparkle(touch.clientX, touch.clientY);
-        }, { passive: true });
-    }
-}
 
 function createSparkle(x, y) {
     const sparkle = document.createElement('div');
@@ -179,7 +141,7 @@ if (typewriterElement) {
         }
     }
     
-    setTimeout(typeChar, 500);
+    setTimeout(typeChar, 800);
 }
 
 const filterButtons = document.querySelectorAll('.filter-btn');
@@ -361,32 +323,22 @@ if (contactForm) {
 
 if (window.innerWidth > 768) {
     const blobs = document.querySelectorAll('.blob');
+    let blobTicking = false;
     window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        blobs.forEach((blob, index) => {
-            const speed = 0.5 + (index * 0.2);
-            const yPos = -(scrolled * speed);
-            blob.style.transform = `translateY(${yPos}px)`;
-        });
-    });
+        if (!blobTicking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                blobs.forEach((blob, index) => {
+                    const speed = 0.5 + (index * 0.2);
+                    blob.style.transform = `translateY(${-(scrolled * speed)}px)`;
+                });
+                blobTicking = false;
+            });
+            blobTicking = true;
+        }
+    }, { passive: true });
 }
 
-const footer = document.querySelector('footer');
-
-if (footer) {
-    footer.addEventListener('mousemove', (e) => {
-        if (Math.random() > 0.85) createFooterSparkle(e.clientX, e.clientY);
-    });
-
-    if (window.innerWidth <= 768) {
-        footer.addEventListener('touchmove', (e) => {
-            if (Math.random() > 0.75) {
-                const touch = e.touches[0];
-                createFooterSparkle(touch.clientX, touch.clientY);
-            }
-        }, { passive: true });
-    }
-}
 
 function createFooterSparkle(x, y) {
     const sparkle = document.createElement('div');
@@ -397,6 +349,61 @@ function createFooterSparkle(x, y) {
     document.body.appendChild(sparkle);
     setTimeout(() => sparkle.remove(), 800);
 }
+
+requestIdleCallback(() => {
+    const sparkleButtons = document.querySelectorAll('.btn-primary');
+    sparkleButtons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.7) {
+                createSparkleOnButton(btn, e.clientX, e.clientY);
+            }
+        });
+
+        btn.addEventListener('touchmove', (e) => {
+            if (Math.random() > 0.8) {
+                const touch = e.touches[0];
+                createSparkleOnButton(btn, touch.clientX, touch.clientY);
+            }
+        }, { passive: true });
+    });
+
+    const heroTitle = document.querySelector('.sparkle-text');
+    if (heroTitle) {
+        heroTitle.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.7) createSparkle(e.clientX, e.clientY);
+        });
+
+        if (window.innerWidth <= 768) {
+            heroTitle.addEventListener('touchmove', (e) => {
+                if (Math.random() > 0.6) {
+                    const touch = e.touches[0];
+                    createSparkle(touch.clientX, touch.clientY);
+                }
+            }, { passive: true });
+
+            heroTitle.addEventListener('touchstart', (e) => {
+                const touch = e.touches[0];
+                createSparkle(touch.clientX, touch.clientY);
+            }, { passive: true });
+        }
+    }
+
+    const footer = document.querySelector('footer');
+    if (footer) {
+        footer.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.85) createFooterSparkle(e.clientX, e.clientY);
+        });
+
+        if (window.innerWidth <= 768) {
+            footer.addEventListener('touchmove', (e) => {
+                if (Math.random() > 0.75) {
+                    const touch = e.touches[0];
+                    createFooterSparkle(touch.clientX, touch.clientY);
+                }
+            }, { passive: true });
+        }
+    }
+});
 
 let konamiCode = [];
 const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
@@ -513,7 +520,11 @@ function type() {
     setTimeout(type, delay);
 }
 
-type();
+if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => type());
+} else {
+    setTimeout(type, 200);
+}
 
 // ===== SCROLL TO TOP =====
 const scrollTopBtn = document.createElement('button');

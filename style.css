@@ -1,3 +1,46 @@
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/playfair-display-v40-latin-600.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/inter-v20-latin-500.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/inter-v20-latin-600.woff2') format('woff2');
+}
+
 :root {
     --color-bg-primary: #0E0E1F;
     --color-bg-secondary: #1A1A2E;
@@ -593,7 +636,7 @@ section p {
 }
 
 .service-link {
-    color: var(--color-accent-gold);
+    color: #D4A853;
     font-weight: 600;
     font-size: 15px;
     transition: var(--transition);
@@ -1075,7 +1118,7 @@ section p {
     color: var(--color-accent-gold);
 }
 
-.contact-item h4 {
+.contact-item .contact-label {
     font-family: var(--font-heading);
     font-size: 18px;
     color: var(--color-text-primary);

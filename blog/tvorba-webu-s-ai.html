@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tvorba webu s AI: Co zvládne sama a kde potřebujete profesionála (2026) | Žaneta Janáčová</title>
+    <meta name="description"
+        content="AI nástroje dnes postaví web za odpoledne. Ale co z toho je opravdu připravené na produkci? Přehled toho, co AI u tvorby webu zvládne a kde se stále vyplatí oslovit profesionála.">
+    <link rel="canonical" href="https://zjanacova.cz/blog/tvorba-webu-s-ai.html">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Žaneta Janáčová">
+    <meta name="geo.region" content="CZ-ST">
+    <meta name="geo.placename" content="Mělník, Česká republika">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://zjanacova.cz/blog/tvorba-webu-s-ai.html">
+    <meta property="og:title" content="Tvorba webu s AI: Co zvládne sama a kde potřebujete profesionála (2026)">
+    <meta property="og:description"
+        content="AI postaví web za odpoledne. Ale rychlost pod 1 s, bezpečnost a UX? Tady ještě nestačí. Přehled limitů AI a důvodů, proč má profesionál stále smysl.">
+    <meta property="og:image" content="https://zjanacova.cz/images/ogpicture.png">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Žaneta Janáčová – Webdesign">
+    <meta property="article:published_time" content="2026-03-11T09:00:00+01:00">
+    <meta property="article:modified_time" content="2026-03-11T09:00:00+01:00">
+    <meta property="article:author" content="Žaneta Janáčová">
+    <meta property="article:section" content="Webdesign">
+    <meta property="article:tag" content="AI tvorba webu, webdesign, statický web, Core Web Vitals, profesionální web">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tvorba webu s AI: Co zvládne sama a kde potřebujete profesionála (2026)">
+    <meta name="twitter:description"
+        content="AI postaví web za odpoledne – ale Lighthouse 99/100, bezpečnost a UX vyžadují lidský zásah.">
+    <meta name="twitter:image" content="https://zjanacova.cz/images/ogpicture.png">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preload" href="../style.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Tvorba webu s AI: Co zvládne sama a kde potřebujete profesionála (2026)",
+        "description": "AI nástroje dnes postaví web za odpoledne. Přehled toho, co AI u tvorby webu opravdu zvládne – a kde se stále vyplatí oslovit profesionála: rychlost, bezpečnost, UX a SEO.",
+        "image": "https://zjanacova.cz/images/ogpicture.png",
+        "datePublished": "2026-03-11",
+        "dateModified": "2026-03-11",
+        "inLanguage": "cs",
+        "keywords": "AI tvorba webu, limity AI webdesign, Core Web Vitals, profesionální web, statický web AI, webdesignér vs AI",
+        "author": {
+            "@type": "Person",
+            "@id": "https://zjanacova.cz/#person",
+            "name": "Žaneta Janáčová",
+            "url": "https://zjanacova.cz",
+            "jobTitle": "Webdesignérka & AEO specialistka"
+        },
+        "publisher": {
+            "@id": "https://zjanacova.cz/#business",
+            "name": "Žaneta Janáčová – Webdesign",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://zjanacova.cz/images/signature.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://zjanacova.cz/blog/tvorba-webu-s-ai.html"
+        },
+        "about": [
+            {"@type": "Thing", "name": "Umělá inteligence ve webdesignu"},
+            {"@type": "Thing", "name": "Core Web Vitals"},
+            {"@type": "Thing", "name": "Statické webové stránky"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Může AI vytvořit kompletní profesionální web?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI dnes zvládne vytvořit funkční web s rozumnou strukturou, formuláři, galerií a základním SEO. Ale 'funkční' a 'profesionální' nejsou totéž. Chybí optimalizace rychlosti (Core Web Vitals), bezpečnostní hlavičky, UX strategie a personalizovaný design. Pro vizitku 'na přeskáčku' AI poslouží. Pro web, který má přivádět zákazníky, se vyplatí kombinace AI + profesionál."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Je web vygenerovaný AI bezpečný?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Web generovaný AI bývá funkční, ale bezpečnostně podprůměrný. Typicky chybí Content Security Policy, bezpečnostní HTTP hlavičky (X-Frame-Options, Referrer-Policy), formuláře bez ochrany proti spamu (honeypot) a HTTPS konfigurace. Statický web má výhodu – žádná databáze, žádné PHP, minimální útočná plocha. Ale nastavení bezpečnostních hlaviček na Netlify nebo GitHub Pages vyžaduje ruční zásah."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Jak rychlý je web vytvořený pomocí AI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI generuje funkční kód, ale ne optimální. Obrázky bývají bez WebP konverze a lazy loadingu, CSS bez kritické cesty, JavaScript bez optimalizace. Typický výsledek: Lighthouse 60–75/100. Profesionálně optimalizovaný statický web dosahuje 95–100/100 a načítá se pod 1 sekundu. Rozdíl je znát ve vyhledávačích i v konverzích."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Kdy se mi vyplatí oslovit webdesignéra místo použití AI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Oslovte profesionála, pokud chcete web, který: načítá pod 1 sekundu a Google to vidí v hodnocení, vypadá jako vy a ne jako šablona, je bezpečný bez nutnosti pravidelných oprav, a funguje bez problémů za rok i za tři roky. AI je skvělý nástroj pro prototypy a drafty – ale finální produkční web si zaslouží lidský zásah."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Jaký je rozdíl mezi webem z AI nástroje a statickým webem od profesionála?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Oba mohou být statické weby v HTML/CSS/JS. Rozdíl je v kvalitě provedení: optimalizace obrázků (WebP, správné rozměry), nastavení cache hlaviček, structured data pro AI vyhledávače (AEO/GEO), přístupnost (WCAG), bezpečnostní konfigurace a UX strategie. AI web bývá 70% hotový. Profesionální web je 100% hotový a připravený vydělávat."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Úvod",
+                "item": "https://zjanacova.cz/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://zjanacova.cz/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Tvorba webu s AI",
+                "item": "https://zjanacova.cz/blog/tvorba-webu-s-ai.html"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        .blog-hero { padding: 140px 0 60px; background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%); position: relative; overflow: hidden; }
+        .blog-hero::before { content: ''; position: absolute; top: 20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(147, 112, 219, 0.10) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+        .blog-breadcrumb { font-size: 14px; color: var(--color-text-muted); margin-bottom: 24px; }
+        .blog-breadcrumb a { color: var(--color-text-muted); text-decoration: none; transition: color var(--transition); }
+        .blog-breadcrumb a:hover { color: var(--color-accent-gold); }
+        .blog-breadcrumb span { margin: 0 8px; opacity: 0.5; }
+        .blog-hero-title { font-family: var(--font-heading); font-size: clamp(28px, 5vw, 52px); line-height: 1.2; color: var(--color-text-primary); margin-bottom: 20px; }
+        .blog-hero-meta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 14px; color: var(--color-text-muted); margin-bottom: 28px; }
+        .blog-hero-meta a { color: var(--color-accent-gold); text-decoration: none; }
+        .blog-tag { display: inline-block; background: rgba(168, 124, 82, 0.15); color: var(--color-accent-gold); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+        .article-body { max-width: 760px; margin: 0 auto; padding: 60px 0 80px; }
+        .article-body h2 { font-family: var(--font-heading); font-size: clamp(22px, 3.5vw, 32px); color: var(--color-text-primary); margin: 56px 0 20px; line-height: 1.3; scroll-margin-top: 100px; }
+        .article-body h3 { font-family: var(--font-heading); font-size: clamp(18px, 2.5vw, 24px); color: var(--color-text-primary); margin: 36px 0 14px; line-height: 1.4; }
+        .article-body p { font-size: 17px; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 20px; }
+        .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 24px; }
+        .article-body li { font-size: 17px; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 8px; }
+        .article-body strong { color: var(--color-text-primary); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 15px; }
+        .comparison-table th { background: var(--color-bg-card); color: var(--color-text-primary); padding: 14px 16px; text-align: left; border-bottom: 2px solid var(--color-accent-gold); font-weight: 600; }
+        .comparison-table td { padding: 12px 16px; color: var(--color-text-secondary); border-bottom: 1px solid var(--color-border); vertical-align: top; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .yes { color: #22c55e; font-weight: 600; }
+        .comparison-table .no { color: #ef4444; }
+        .comparison-table .ok { color: #f59e0b; font-weight: 500; }
+        .info-box { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+        .info-box-title { font-weight: 700; color: var(--color-accent-gold); font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .article-faq { margin-top: 60px; padding-top: 48px; border-top: 1px solid var(--color-border); }
+        .article-faq h2 { margin-top: 0; }
+        .article-faq details.faq-item { border: 1px solid var(--color-border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+        .article-faq details.faq-item summary.faq-question { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; cursor: pointer; font-weight: 600; color: var(--color-text-primary); background: var(--color-bg-card); }
+        .article-faq details.faq-item summary.faq-question::-webkit-details-marker { display: none; }
+        .article-faq details.faq-item[open] summary.faq-question { border-bottom: 1px solid var(--color-border); }
+        .article-faq details.faq-item .faq-answer { padding: 18px 22px; }
+        .article-faq details.faq-item .faq-answer p { margin: 0; font-size: 16px; }
+        .article-cta { background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-secondary) 100%); border: 1px solid var(--color-border); border-radius: 16px; padding: 40px; text-align: center; margin-top: 60px; }
+        .article-cta h2 { margin-top: 0; font-size: clamp(20px, 3vw, 28px); }
+        .article-author-box { display: flex; align-items: center; gap: 20px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; margin-top: 60px; }
+        .article-author-box img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+        .article-author-box h3 { margin: 0 0 6px; font-size: 18px; }
+        @media (max-width: 768px) { .blog-hero { padding: 110px 0 48px; } .comparison-table { font-size: 13px; } .comparison-table th, .comparison-table td { padding: 10px 12px; } .article-author-box { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+    <div class="loader" id="loader"><div class="spinner"></div></div>
+
+    <header role="banner">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Žaneta Janáčová – Úvodní stránka">
+                <img src="../images/signature.png" alt="Žaneta Janáčová – tvorba webů Mělník" width="150" height="50">
+            </a>
+            <nav aria-label="Hlavní navigace">
+                <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="/">Domů</a></li>
+                    <li><a href="/projects.html">Portfolio</a></li>
+                    <li><a href="/cenik.html">Ceník</a></li>
+                    <li><a href="/vzdelani.html">Vzdělání</a></li>
+                    <li><a href="/blog/" class="active">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary btn-ripple">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section class="blog-hero" aria-labelledby="article-title">
+            <div class="container">
+                <nav class="blog-breadcrumb" aria-label="Drobečková navigace">
+                    <a href="/">Domů</a><span aria-hidden="true">›</span>
+                    <a href="/blog/">Blog</a><span aria-hidden="true">›</span>
+                    <span aria-current="page">Tvorba webu s AI</span>
+                </nav>
+                <div class="blog-tag" style="margin-bottom: 16px;">AI &amp; Webdesign</div>
+                <h1 id="article-title" class="blog-hero-title">
+                    Tvorba webu s AI:<br>
+                    <span style="color: var(--color-accent-gold);">Co zvládne sama a kde potřebujete profesionála (2026)</span>
+                </h1>
+                <div class="blog-hero-meta">
+                    <span>Autor: <a href="/" rel="author">Žaneta Janáčová</a></span>
+                    <span>·</span>
+                    <time datetime="2026-03-11">11. března 2026</time>
+                    <span>·</span>
+                    <span>7 min čtení</span>
+                </div>
+                <p style="font-size: 18px; color: var(--color-text-secondary); max-width: 700px; line-height: 1.7;">
+                    AI nástroje dnes postaví slušně vypadající web za odpoledne. To je fakt a nebudu tvrdit opak.
+                    Ale „fungující" a „připravený na produkci" nejsou vždy totéž
+                    a&nbsp;rozdíl se projeví v&nbsp;Lighthouse skóre, v&nbsp;Google a&nbsp;v&nbsp;počtu zákazníků, kteří zůstanou.
+                </p>
+            </div>
+        </section>
+
+        <article class="container">
+            <div class="article-body">
+
+                <h2>Co dnes AI u tvorby webu opravdu zvládne</h2>
+                <p>
+                    Začneme férově. AI nástroje (ať už Wix AI, Framer AI nebo ChatGPT s dobrým promptem)
+                    dokážou v&nbsp;roce 2026 opravdu hodně. Tady je přehled bez přehánění:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Rychlá šablona za minuty.</strong> Zadáte obor, styl a&nbsp;barvy a AI vygeneruje
+                        funkční HTML/CSS strukturu s rozumným layoutem. Bez klikání, bez přesvědčování page-builderu.
+                    </li>
+                    <li>
+                        <strong>Formuláře a galerie.</strong> Kontaktní formulář, fotogalerie s&nbsp;lightboxem,
+                        mapa - to vše AI vloží bez problémů. Základní funkcionalita funguje hned.
+                    </li>
+                    <li>
+                        <strong>Responsive design.</strong> AI automaticky přizpůsobí layout pro mobil a&nbsp;tablet.
+                        Většinou to funguje napoprvé, přinejmenším jako solidní základ.
+                    </li>
+                    <li>
+                        <strong>Základní SEO metadata.</strong> Title tagy, meta description a&nbsp;open graph značky
+                        AI doplní, pokud jí dáte správné vstupy.
+                    </li>
+                    <li>
+                        <strong>Copywriting jako startovní bod.</strong> AI napíše první verzi textů rychle.
+                        Hodí se jako základ k&nbsp;dalšímu přepracování, ne jako výsledný text na webu.
+                    </li>
+                </ul>
+                <p>
+                    Jinými slovy: AI vám v&nbsp;roce 2026 postaví slušně vypadající web za odpoledne.
+                    To je fakt. Otázka je, co z&nbsp;toho odpoledne dostanete dál.
+                </p>
+
+                <h2>Kde AI naráží na limity</h2>
+                <p>
+                    Tady to začíná být zajímavé. Pro majitele malé firmy nebo živnostníka obzvlášť.
+                </p>
+
+                <h3>Core Web Vitals a rychlost načítání</h3>
+                <p>
+                    AI generuje funkční kód, ale ne nutně optimální. Obrázky bývají bez WebP konverze
+                    a&nbsp;lazy loadingu, CSS bez kritické cesty, JavaScript bez odložené inicializace.
+                    Výsledkem je web, který vypadá dobře, ale v&nbsp;Lighthouse dostane 60–70 ze 100.
+                    Google to vidí a&nbsp;promítá to do pořadí ve výsledcích vyhledávání.
+                </p>
+
+                <h3>Bezpečnost</h3>
+                <p>
+                    Inline styly, chybějící Content Security Policy, formuláře bez ochrany proti spamu.
+                    AI kód bývá predikovatelný a&nbsp;opakující se. Zkušený útočník to ví.
+                    Statický web má výhodu v&nbsp;tom, že nemá databázi ani PHP, ale bezpečnostní hlavičky
+                    nastavit musíte ručně. AI na to zapomene.
+                </p>
+
+                <h3>UX a konverzní flow</h3>
+                <p>
+                    AI neumí posoudit, jestli vaše CTA tlačítko stojí na správném místě. Neví, proč zákazník
+                    odchází po osmi sekundách. Nezná kontext vašeho byznysu natolik hluboko, aby navrhla
+                    správnou strukturu stránky pro váš konkrétní typ zákazníka.
+                </p>
+
+                <h3>Copywriting s hlasem značky</h3>
+                <p>
+                    AI píše plynule, ale genericky. Výsledkem je text, který se čte, ale nezůstane v&nbsp;paměti.
+                    Chybí konkrétnost, příběh, osobnost. „Jsme firma s&nbsp;dlouholetými zkušenostmi zaměřená
+                    na maximální spokojenost zákazníků." To napíše AI za tři sekundy a&nbsp;přečte to
+                    tisíc dalších webů.
+                </p>
+
+                <h3>Udržitelnost webu v čase</h3>
+                <p>
+                    Kdo web aktualizuje za rok? Kdo ho nasadí po změně domény? Kdo opraví rozbité přesměrování
+                    nebo formulář, který přestal odesílat e-maily? AI vám odpověď neodešle.
+                </p>
+
+                <h2>Proč má spolupráce s profesionálem stále hodnotu</h2>
+                <p>
+                    Nejde o&nbsp;to, že AI je špatná. Web prostě není jen sada souborů.
+                    Je to nástroj, který má vydělávat nebo přivádět zákazníky. A&nbsp;nástroje se kalibrují.
+                </p>
+
+                <h3>Strategie a struktura stránky</h3>
+                <p>
+                    Profesionál se vás zeptá: Kdo je váš zákazník? Jaká je jeho nejčastější otázka?
+                    Kam chcete, aby kliknul jako první? Na základě odpovědí navrhne strukturu,
+                    která zákazníka provede od přistání na stránce k&nbsp;poptávce. AI se nezeptá vůbec,
+                    nebo se zeptá povrchně a&nbsp;odpověď nezapracuje do strategie.
+                </p>
+
+                <h3>Optimalizace výkonu</h3>
+                <p>
+                    Dostat web na Lighthouse 99/100 není automatické. Vyžaduje to:
+                </p>
+                <ul>
+                    <li>Optimalizaci obrázků (WebP, správné rozměry, lazy load)</li>
+                    <li>Preload kritických fontů a&nbsp;stylů</li>
+                    <li><code>font-display: swap</code> pro eliminaci FOUT</li>
+                    <li>Minifikaci CSS a&nbsp;JS, odstranění nevyužitého kódu</li>
+                    <li>Nastavení cache hlaviček a&nbsp;nasazení na CDN</li>
+                </ul>
+                <p>
+                    AI tato opatření navrhne v&nbsp;kódu, ale zřídkakdy to celé dotáhne do finálního stavu
+                    bez lidského dohledu. A&nbsp;každé ze zmíněných opatření měřitelně ovlivňuje výkon.
+                </p>
+
+                <h3>SEO mimo základy</h3>
+                <p>
+                    Meta tagy jsou základ. Skutečné SEO zahrnuje strukturu stránek, interní prolinkování,
+                    <a href="/blog/jak-optimalizovat-web-pro-ai.html" style="color: var(--color-accent-gold);">Schema.org
+                    structured data pro AEO/GEO</a>, Core Web Vitals a&nbsp;obsahovou strategii.
+                    AI dá solidní start, ale celý výsledek sama nedodá.
+                </p>
+
+                <h3>Personalizovaný design</h3>
+                <p>
+                    Šablona z&nbsp;AI vypadá jako… šablona. Zkušený webdesignér přinese detaily,
+                    které dělají rozdíl: správné písmo pro váš obor, konzistentní vizuální jazyk,
+                    whitespace, který dýchá. Věci, které zákazník možná pojmenovat neumí,
+                    ale podvědomě vnímá jako signál kvality a&nbsp;důvěryhodnosti.
+                </p>
+
+                <h2>Co AI vygeneruje a co je potřeba dodělat: příklady z praxe</h2>
+                <p>
+                    Teorie je jedno – podívejme se na konkrétní situace z&nbsp;praxe.
+                </p>
+
+                <table class="comparison-table" role="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Co řešíte</th>
+                            <th scope="col">AI výsledek</th>
+                            <th scope="col">Po profesionálním zásahu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Kontaktní formulář</strong></td>
+                            <td class="ok">Funguje, jenže chybí anti-spam, potvrzovací zpráva a propojení s&nbsp;e-mailem</td>
+                            <td class="yes">Honeypot ochrana, okamžité potvrzení, odeslání do e-mailu + záloha</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fotogalerie</strong></td>
+                            <td class="ok">Lightbox funguje, ale obrázky jsou 3–5 MB, žádné alt texty, žádný WebP</td>
+                            <td class="yes">Obrázky pod 200 KB, WebP formát, lazy load, popisné alt texty pro SEO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rychlost načítání</strong></td>
+                            <td class="no">Lighthouse 60–75/100, LCP 2–4 s</td>
+                            <td class="yes">Lighthouse 97–100/100, LCP pod 1,2 s</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Animace</strong></td>
+                            <td class="ok">Efektní, ale spouštějí se bez <code>prefers-reduced-motion</code></td>
+                            <td class="yes">Animace respektují systémové nastavení, fungují pro všechny</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nasazení na CDN</strong></td>
+                            <td class="ok">Web jde online, jenže žádné cache hlavičky ani bezpečnostní konfigurace</td>
+                            <td class="yes">Cache headers, 301 přesměrování ze staré domény, bezpečnostní hlavičky</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box" role="note" aria-label="Z praxe">
+                    <div class="info-box-title">Z praxe</div>
+                    <p style="margin: 0; font-size: 16px; color: var(--color-text-secondary);">
+                        Na svých projektech rutinně dosahuji <strong>Lighthouse 99–100/100</strong>
+                        a&nbsp;LCP pod 1,2&nbsp;s. Ne díky magii. Díky <code>font-display: swap</code>,
+                        preloadu kritických zdrojů, optimalizovaným obrázkům a&nbsp;čistému
+                        <code>&lt;head&gt;</code> bez zbytečných závislostí.
+                        <a href="/blog/vyhody-statickeho-webu.html" style="color: var(--color-accent-gold);">
+                        Proč statický web přirozeně vede v&nbsp;rychlosti →</a>
+                    </p>
+                </div>
+
+                <h2>AI je spolupracovník, ne náhrada</h2>
+                <p>
+                    AI je skvělý nástroj pro rychlý prototyp, generování šablon nebo první draft textů.
+                    Pokud si chcete rychle otestovat nápad nebo potřebujete „web na přeskáčku",
+                    AI vám poslouží dobře.
+                </p>
+                <p>
+                    Ale pokud chcete web, který:
+                </p>
+                <ul>
+                    <li>načítá pod 1 sekundu a&nbsp;Google to vidí v&nbsp;hodnocení,</li>
+                    <li>je bezpečný a&nbsp;nevyžaduje každoměsíční opravy,</li>
+                    <li>vypadá jako vy a&nbsp;ne jako šablona číslo 47,</li>
+                    <li>a&nbsp;funguje bez problémů za rok i&nbsp;za tři,</li>
+                </ul>
+                <p>
+                    pak se vyplatí kombinovat AI s&nbsp;lidským zásahem. AI udělá 70&nbsp;% práce rychle.
+                    Zbývajících 30&nbsp;% je to, co rozhoduje o&nbsp;výsledku.
+                </p>
+                <p>
+                    Zajímá vás, kde stojí váš aktuální web? Nebo uvažujete o&nbsp;novém od základů?
+                    Napište mi. Ráda se podívám a&nbsp;řeknu vám na rovinu, co by pomohlo.
+                    Bez závazků.
+                </p>
+
+                <!-- FAQ SEKCE -->
+                <section class="article-faq" aria-labelledby="faq-heading">
+                    <h2 id="faq-heading">Časté otázky</h2>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Může AI vytvořit kompletní profesionální web?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>AI dnes zvládne vytvořit funkční web s&nbsp;rozumnou strukturou, formuláři, galerií a&nbsp;základním SEO. Ale „funkční" a&nbsp;„profesionální" nejsou totéž. Chybí optimalizace rychlosti (Core Web Vitals), bezpečnostní hlavičky, UX strategie a&nbsp;personalizovaný design. Pro vizitku „na přeskáčku" AI poslouží. Pro web, který má přivádět zákazníky, se vyplatí kombinace AI + profesionál.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Je web vygenerovaný AI bezpečný?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Web generovaný AI bývá funkční, ale bezpečnostně podprůměrný. Typicky chybí Content Security Policy, bezpečnostní HTTP hlavičky, ochrana formulářů proti spamu a&nbsp;správná HTTPS konfigurace. Statický web má výhodu – žádná databáze, žádné PHP, minimální útočná plocha. Ale bezpečnostní hlavičky na Netlify nebo GitHub Pages vyžadují ruční zásah.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Jak rychlý je web vytvořený pomocí AI?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>AI generuje funkční kód, ale ne optimální. Obrázky bývají bez WebP konverze a&nbsp;lazy loadingu, CSS bez kritické cesty. Typický výsledek: Lighthouse 60–75/100. Profesionálně optimalizovaný statický web dosahuje 95–100/100 a&nbsp;načítá se pod 1 sekundu. Rozdíl je znát ve vyhledávačích i&nbsp;v konverzích.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Kdy se mi vyplatí oslovit webdesignéra místo použití AI?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Oslovte profesionála, pokud chcete web, který načítá pod 1 sekundu a&nbsp;Google to vidí, vypadá jako vy a&nbsp;ne jako šablona, je bezpečný bez nutnosti pravidelných oprav a&nbsp;funguje bez problémů za rok i&nbsp;za tři. AI je skvělý nástroj pro prototypy a&nbsp;drafty – finální produkční web si zaslouží lidský zásah.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Jaký je rozdíl mezi webem z AI nástroje a statickým webem od profesionála?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Oba mohou být statické weby v&nbsp;HTML/CSS/JS. Rozdíl je v&nbsp;kvalitě provedení: optimalizace obrázků, cache hlavičky, structured data pro AI vyhledávače (AEO/GEO), přístupnost (WCAG) a&nbsp;bezpečnostní konfigurace. AI web bývá 70&nbsp;% hotový – profesionální web je 100&nbsp;% hotový a&nbsp;připravený vydělávat.</p>
+                        </div>
+                    </details>
+                </section>
+
+                <!-- CTA BOX -->
+                <aside class="article-cta" aria-label="Výzva k akci">
+                    <h2>Máte otázku ke svému webu?</h2>
+                    <p>
+                        Pokud řešíte, jestli váš web potřebuje opravu nebo nový základ,
+                        napište mi. Podívám se na něj a řeknu vám na rovinu, co funguje
+                        a&nbsp;co by šlo zlepšit. <strong>Bez závazků a&nbsp;zdarma.</strong>
+                    </p>
+                    <a href="/#contact" class="btn-hero btn-ripple">Napsat mi</a>
+                    <p style="margin-top: 12px; font-size: 14px; color: var(--color-text-muted);">
+                        Odpovím do 24 hodin · Mělník a celá ČR
+                    </p>
+                </aside>
+
+                <!-- AUTOR -->
+                <div class="article-author-box" role="complementary" aria-label="O autorce">
+                    <img src="../images/zaneta_portret.webp"
+                        alt="Žaneta Janáčová – webdesignérka z Mělníka"
+                        width="72" height="72" loading="lazy">
+                    <div>
+                        <h3>Žaneta Janáčová</h3>
+                        <p style="color: var(--color-text-secondary);">
+                            Webdesignérka a&nbsp;frontend vývojářka z&nbsp;Mělníka. Specializuji se na&nbsp;tvorbu
+                            moderních statických webů a&nbsp;AEO/GEO optimalizaci pro AI vyhledávače.
+                            Absolventka akreditovaného kurzu MŠMT (193 hodin, ITnetwork.cz, 2025).
+                            <a href="/" style="color: var(--color-accent-gold); text-decoration: none;">→ zjanacova.cz</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../images/signature.png" alt="Žaneta Janáčová – tvorba webů Mělník" width="200" height="60" loading="lazy">
+                <p>Tvorba webů Mělník | Žaneta Janáčová</p>
+            </div>
+            <nav class="footer-nav" aria-label="Patičková navigace">
+                <a href="/">Domů</a>
+                <a href="/projects.html">Portfolio</a>
+                <a href="/cenik.html">Ceník</a>
+                <a href="/vzdelani.html">Vzdělání</a>
+                <a href="/blog/">Blog</a>
+                <a href="/#contact">Kontakt</a>
+                <a href="/privacy.html">Ochrana údajů</a>
+            </nav>
+            <div class="footer-bottom"><p>&copy; 2026 Žaneta Janáčová</p></div>
+        </div>
+    </footer>
+
+    <div id="cookie-consent" class="cookie-consent" role="dialog" aria-labelledby="cookie-title" style="display: none;">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p id="cookie-title"><strong>Cookies</strong></p>
+                <p>Používám cookies pro analytiku webu. <a href="/privacy.html" class="cookie-link">Více info</a></p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="btn-primary btn-ripple">Přijmout</button>
+                <button id="cookie-decline" class="btn-secondary">Odmítnout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

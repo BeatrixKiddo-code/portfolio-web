@@ -27,7 +27,8 @@
     <meta property="article:modified_time" content="2026-02-25T10:00:00+01:00">
     <meta property="article:author" content="Žaneta Janáčová">
     <meta property="article:section" content="Webdesign">
-    <meta property="article:tag" content="statický web, WordPress alternativa, výhody statického webu, rychlost webu, hosting zdarma">
+    <meta property="article:tag"
+        content="statický web, WordPress alternativa, výhody statického webu, rychlost webu, hosting zdarma">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Moderní statický web: 7 výhod oproti WordPress (2026)">
@@ -39,7 +40,8 @@
     <link rel="preload" href="../style.css" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 
@@ -140,61 +142,383 @@
     </script>
 
     <style>
-        .blog-hero { padding: 140px 0 60px; background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%); position: relative; overflow: hidden; }
-        .blog-hero::before { content: ''; position: absolute; top: 20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(147, 112, 219, 0.10) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
-        .blog-breadcrumb { font-size: 14px; color: var(--color-text-muted); margin-bottom: 24px; }
-        .blog-breadcrumb a { color: var(--color-text-muted); text-decoration: none; transition: color var(--transition); }
-        .blog-breadcrumb a:hover { color: var(--color-accent-gold); }
-        .blog-breadcrumb span { margin: 0 8px; opacity: 0.5; }
-        .blog-hero-title { font-family: var(--font-heading); font-size: clamp(28px, 5vw, 52px); line-height: 1.2; color: var(--color-text-primary); margin-bottom: 20px; }
-        .blog-hero-meta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 14px; color: var(--color-text-muted); margin-bottom: 28px; }
-        .blog-hero-meta a { color: var(--color-accent-gold); text-decoration: none; }
-        .blog-tag { display: inline-block; background: rgba(168, 124, 82, 0.15); color: var(--color-accent-gold); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; }
-        .article-body { max-width: 760px; margin: 0 auto; padding: 60px 0 80px; }
-        .article-body h2 { font-family: var(--font-heading); font-size: clamp(22px, 3.5vw, 32px); color: var(--color-text-primary); margin: 56px 0 20px; line-height: 1.3; scroll-margin-top: 100px; }
-        .article-body h3 { font-family: var(--font-heading); font-size: clamp(18px, 2.5vw, 24px); color: var(--color-text-primary); margin: 36px 0 14px; line-height: 1.4; }
-        .article-body p { font-size: 17px; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 20px; }
-        .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 24px; }
-        .article-body li { font-size: 17px; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 8px; }
-        .article-body strong { color: var(--color-text-primary); }
-        .advantage-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 16px; padding: 32px; margin-bottom: 24px; position: relative; overflow: hidden; }
-        .advantage-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--color-accent-gold); }
-        .advantage-number { font-size: 48px; font-weight: 700; color: rgba(168, 124, 82, 0.15); position: absolute; top: 16px; right: 24px; line-height: 1; font-family: var(--font-heading); pointer-events: none; }
-        .advantage-card h3 { margin: 0 0 12px; font-size: clamp(18px, 2.5vw, 22px); color: var(--color-text-primary); padding-right: 40px; }
-        .advantage-card p { margin: 0; font-size: 16px; color: var(--color-text-secondary); line-height: 1.7; }
-        .advantage-card ul { margin: 12px 0 0; padding-left: 20px; }
-        .advantage-card li { font-size: 15px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 6px; }
-        .stat-highlight { display: inline-block; background: rgba(34, 197, 94, 0.1); color: #22c55e; font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: 15px; }
-        .stat-bad { display: inline-block; background: rgba(239, 68, 68, 0.1); color: #ef4444; font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: 15px; }
-        .comparison-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 15px; }
-        .comparison-table th { background: var(--color-bg-card); color: var(--color-text-primary); padding: 14px 16px; text-align: left; border-bottom: 2px solid var(--color-accent-gold); font-weight: 600; }
-        .comparison-table td { padding: 12px 16px; color: var(--color-text-secondary); border-bottom: 1px solid var(--color-border); }
-        .comparison-table tr:last-child td { border-bottom: none; }
-        .comparison-table .yes { color: #22c55e; font-weight: 600; }
-        .comparison-table .no { color: #ef4444; }
-        .comparison-table .ok { color: #f59e0b; font-weight: 500; }
-        .info-box { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
-        .info-box-title { font-weight: 700; color: var(--color-accent-gold); font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
-        .article-faq { margin-top: 60px; padding-top: 48px; border-top: 1px solid var(--color-border); }
-        .article-faq h2 { margin-top: 0; }
-        .article-faq details.faq-item { border: 1px solid var(--color-border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
-        .article-faq details.faq-item summary.faq-question { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; cursor: pointer; font-weight: 600; color: var(--color-text-primary); background: var(--color-bg-card); }
-        .article-faq details.faq-item summary.faq-question::-webkit-details-marker { display: none; }
-        .article-faq details.faq-item[open] summary.faq-question { border-bottom: 1px solid var(--color-border); }
-        .article-faq details.faq-item .faq-answer { padding: 18px 22px; }
-        .article-faq details.faq-item .faq-answer p { margin: 0; font-size: 16px; }
-        .article-cta { background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-secondary) 100%); border: 1px solid var(--color-border); border-radius: 16px; padding: 40px; text-align: center; margin-top: 60px; }
-        .article-cta h2 { margin-top: 0; font-size: clamp(20px, 3vw, 28px); }
-        .article-author-box { display: flex; align-items: center; gap: 20px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; margin-top: 60px; }
-        .article-author-box img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-        .article-author-box h3 { margin: 0 0 6px; font-size: 18px; }
-        @media (max-width: 768px) { .blog-hero { padding: 110px 0 48px; } .advantage-card { padding: 24px 20px; } .advantage-number { font-size: 36px; top: 12px; right: 16px; } .comparison-table { font-size: 13px; } .comparison-table th, .comparison-table td { padding: 10px 12px; } .article-author-box { flex-direction: column; text-align: center; } }
+        .blog-hero {
+            padding: 140px 0 60px;
+            background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(147, 112, 219, 0.10) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            pointer-events: none;
+        }
+
+        .blog-breadcrumb {
+            font-size: 14px;
+            color: var(--color-text-muted);
+            margin-bottom: 24px;
+        }
+
+        .blog-breadcrumb a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .blog-breadcrumb a:hover {
+            color: var(--color-accent-gold);
+        }
+
+        .blog-breadcrumb span {
+            margin: 0 8px;
+            opacity: 0.5;
+        }
+
+        .blog-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 5vw, 52px);
+            line-height: 1.2;
+            color: var(--color-text-primary);
+            margin-bottom: 20px;
+        }
+
+        .blog-hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: var(--color-text-muted);
+            margin-bottom: 28px;
+        }
+
+        .blog-hero-meta a {
+            color: var(--color-accent-gold);
+            text-decoration: none;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            background: rgba(168, 124, 82, 0.15);
+            color: var(--color-accent-gold);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .article-body {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 60px 0 80px;
+        }
+
+        .article-body h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(22px, 3.5vw, 32px);
+            color: var(--color-text-primary);
+            margin: 56px 0 20px;
+            line-height: 1.3;
+            scroll-margin-top: 100px;
+        }
+
+        .article-body h3 {
+            font-family: var(--font-heading);
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: var(--color-text-primary);
+            margin: 36px 0 14px;
+            line-height: 1.4;
+        }
+
+        .article-body p {
+            font-size: 17px;
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .article-body ul,
+        .article-body ol {
+            padding-left: 24px;
+            margin-bottom: 24px;
+        }
+
+        .article-body li {
+            font-size: 17px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .article-body strong {
+            color: var(--color-text-primary);
+        }
+
+        .advantage-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .advantage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-accent-gold);
+        }
+
+        .advantage-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: rgba(168, 124, 82, 0.15);
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            line-height: 1;
+            font-family: var(--font-heading);
+            pointer-events: none;
+        }
+
+        .advantage-card h3 {
+            margin: 0 0 12px;
+            font-size: clamp(18px, 2.5vw, 22px);
+            color: var(--color-text-primary);
+            padding-right: 40px;
+        }
+
+        .advantage-card p {
+            margin: 0;
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        .advantage-card ul {
+            margin: 12px 0 0;
+            padding-left: 20px;
+        }
+
+        .advantage-card li {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .stat-highlight {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .stat-bad {
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 28px 0;
+            font-size: 15px;
+        }
+
+        .comparison-table th {
+            background: var(--color-bg-card);
+            color: var(--color-text-primary);
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--color-accent-gold);
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 12px 16px;
+            color: var(--color-text-secondary);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table .yes {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        .comparison-table .no {
+            color: #ef4444;
+        }
+
+        .comparison-table .ok {
+            color: #f59e0b;
+            font-weight: 500;
+        }
+
+        .info-box {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 32px 0;
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            color: var(--color-accent-gold);
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .article-faq {
+            margin-top: 60px;
+            padding-top: 48px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .article-faq h2 {
+            margin-top: 0;
+        }
+
+        .article-faq details.faq-item {
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .article-faq details.faq-item summary.faq-question {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 22px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            background: var(--color-bg-card);
+        }
+
+        .article-faq details.faq-item summary.faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .article-faq details.faq-item[open] summary.faq-question {
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .article-faq details.faq-item .faq-answer {
+            padding: 18px 22px;
+        }
+
+        .article-faq details.faq-item .faq-answer p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .article-cta {
+            background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-secondary) 100%);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .article-cta h2 {
+            margin-top: 0;
+            font-size: clamp(20px, 3vw, 28px);
+        }
+
+        .article-author-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 60px;
+        }
+
+        .article-author-box img {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .article-author-box h3 {
+            margin: 0 0 6px;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero {
+                padding: 110px 0 48px;
+            }
+
+            .advantage-card {
+                padding: 24px 20px;
+            }
+
+            .advantage-number {
+                font-size: 36px;
+                top: 12px;
+                right: 16px;
+            }
+
+            .comparison-table {
+                font-size: 13px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px 12px;
+            }
+
+            .article-author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
 <body>
     <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
-    <div class="loader" id="loader"><div class="spinner"></div></div>
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
 
     <header role="banner">
         <div class="container">
@@ -239,9 +563,13 @@
                     <span>7 min čtení</span>
                 </div>
                 <p style="font-size: 18px; color: var(--color-text-secondary); max-width: 700px; line-height: 1.7;">
-                    WordPress pohání přes 40 % internetu – ale pro většinu firemních prezentací je zbytečně složitý,
-                    pomalý a drahý. <strong>Moderní statický web</strong> (HTML/CSS/JS) přináší 7 klíčových výhod,
-                    které se přímo projeví ve výkonu, bezpečnosti i na vašem účtu.
+                    WordPress dnes pohání více než 40 % webů na internetu. Pro mnoho firemních prezentací je ale
+                    paradoxně zbytečně složitým řešením. Každá stránka se při načtení skládá z databáze,
+                    PHP skriptů, témat a pluginů, což může zpomalovat web a zvyšovat nároky na hosting i údržbu.<br>
+
+                    <strong>Moderní statický web</strong> funguje jinak. Je tvořen pouze HTML, CSS a JavaScript
+                    soubory bez databáze a bez backendu. Díky tomu může být výrazně rychlejší, bezpečnější
+                    a často i levnější na provoz.
                 </p>
             </div>
         </section>
@@ -252,7 +580,7 @@
                 <h2>Co je statický web a proč je jiný?</h2>
                 <p>
                     <strong>Statický web</strong> se skládá z pevných HTML, CSS a JavaScript souborů.
-                    Server je při každém požadavku pouze odešle prohlížeči – žádné PHP, žádná databáze,
+                    Server je při každém požadavku pouze odešle prohlížeči. Žádné PHP, žádná databáze,
                     žádné generování stránky za běhu.
                 </p>
                 <p>
@@ -278,13 +606,13 @@
                     <p>
                         Statický web se průměrně načítá za <span class="stat-highlight">0.5–1.5 s (LCP)</span>.
                         WordPress bez optimalizace? <span class="stat-bad">2.5–5 sekund</span>.
-                        Protože server jen odesílá připravené soubory – neztrácí čas
+                        Protože server jen odesílá připravené soubory a neztrácí čas
                         databázovými dotazy ani sestavováním stránky v PHP.
                     </p>
                     <ul>
                         <li>Lighthouse Performance skóre 95–100 bez speciální optimalizace</li>
                         <li>Core Web Vitals (LCP, CLS, INP) snadno v zelených hodnotách</li>
-                        <li>Google zohledňuje rychlost jako ranking faktor – rychlejší web = lepší pozice</li>
+                        <li>Google zohledňuje rychlost jako ranking faktor, rychlejší web = lepší pozice</li>
                         <li>Konverze: každá sekunda zpoždění snižuje konverze o 7 % (zdroj: Google)</li>
                     </ul>
                 </div>
@@ -293,12 +621,13 @@
                     <div class="advantage-number" aria-hidden="true">2</div>
                     <h3>Maximální bezpečnost – žádná databáze, žádné PHP</h3>
                     <p>
-                        WordPress je terčem <strong>90 % útoků na webové stránky</strong>.
-                        Důvod: 55 000+ pluginů, PHP backend a MySQL databáze – každý prvek je potenciální
-                        zranitelnost. SQL injection, XSS útoky, brute force na admin panel.
+                        WordPress patří mezi nejčastější cíle útoků na webové stránky.
+                        Důvod je jednoduchý: jeho popularita a obrovský ekosystém pluginů.
+                        Více než 55 000 pluginů znamená tisíce potenciálních zranitelností,
+                        pokud nejsou pravidelně aktualizovány.
                     </p>
                     <p>
-                        Statický web tato rizika fyzicky neobsahuje. Není co hacknout – žádná databáze,
+                        Statický web tato rizika fyzicky neobsahuje. Není co hacknout: žádná databáze,
                         žádný admin panel, žádné PHP. Útočník dostane pouze HTML soubor.
                     </p>
                     <ul>
@@ -314,18 +643,19 @@
                     <h3>Hosting zcela zdarma</h3>
                     <p>
                         Statický web lze nasadit na <strong>Netlify, GitHub Pages nebo Cloudflare Pages</strong>
-                        zcela bezplatně – s vlastní doménou a HTTPS v ceně. Platíte pouze za doménu
+                        zcela bezplatně, s vlastní doménou a HTTPS v ceně. Platíte pouze za doménu
                         (200–400 Kč/rok).
                     </p>
                     <p>
-                        WordPress vyžaduje placený hosting s PHP a MySQL – 1 200–2 500 Kč ročně.
+                        WordPress vyžaduje placený hosting s PHP a MySQL, ročně 1 200–2 500 Kč.
                         Za 5 let je to <strong>úspora 6 000–12 500 Kč</strong> pouze na hostingu.
                     </p>
                     <ul>
                         <li>Netlify: 100 GB dat/měsíc zdarma, formuláře v ceně</li>
                         <li>GitHub Pages: neomezená šířka pásma pro veřejné repozitáře</li>
                         <li>Cloudflare Pages: globální CDN, neomezená šířka pásma</li>
-                        <li><a href="/blog/jak-neplatit-za-hosting.html" style="color: var(--color-accent-gold);">Jak nastavit hosting zdarma →</a></li>
+                        <li><a href="/blog/jak-neplatit-za-hosting.html" style="color: var(--color-accent-gold);">Jak
+                                nastavit hosting statického webu zdarma →</a></li>
                     </ul>
                 </div>
 
@@ -339,7 +669,7 @@
                         může web shodit.
                     </p>
                     <p>
-                        Statický web se neaktualizuje – neexistují pluginy ani jádro. Web funguje
+                        Statický web se neaktualizuje. Neexistují pluginy ani jádro. Web funguje
                         přesně tak, jak byl naprogramován, bez zásahu do nekonečna.
                     </p>
                     <ul>
@@ -356,13 +686,13 @@
                     <p>
                         Rychlý web = lepší SEO. Google explicitně zahrnuje <strong>Core Web Vitals</strong>
                         (LCP, CLS, INP) do hodnocení výsledků vyhledávání od roku 2021.
-                        Statické weby tyto metriky splňují přirozeně – bez speciální cache ani CDN konfigurace.
+                        Statické weby tyto metriky splňují přirozeně, bez speciální cache ani CDN konfigurace.
                     </p>
                     <ul>
                         <li>Lighthouse SEO skóre 95–100 standardně</li>
                         <li>Perfektní sémantická HTML struktura (žádný bloat z WordPress)</li>
                         <li>Čisté URL bez zbytečných parametrů</li>
-                        <li>Snadná implementace structured data (JSON-LD) pro AEO/GEO</li>
+                        <li>Snadná implementace structured data (JSON-LD) pro AEO/GEO – <a href="/blog/jak-optimalizovat-web-pro-ai.html" style="color: var(--color-accent-gold);">kompletní průvodce AEO a GEO optimalizací →</a></li>
                     </ul>
                 </div>
 
@@ -375,8 +705,8 @@
                         každý WordPress uživatel.
                     </p>
                     <p>
-                        Statický web nemá co selhat. Soubory jsou distribuovány přes CDN (Content Delivery Network)
-                        – když jeden server vypadne, ostatní přeberou zátěž. Netlify a Cloudflare Pages
+                        Statický web nemá co selhat. Soubory jsou distribuovány přes CDN (Content Delivery Network),
+                        takže když jeden server vypadne, ostatní přeberou zátěž. Netlify a Cloudflare Pages
                         garantují <strong>99.99 % uptime</strong>.
                     </p>
                     <ul>
@@ -392,11 +722,11 @@
                     <h3>Čistý kód bez zbytečného bloatu</h3>
                     <p>
                         WordPress generuje HTML obohacené o desítky CSS a JavaScript souborů
-                        z témat a pluginů – z toho většina je pro konkrétní stránku zbytečná.
+                        z témat a pluginů, z toho většina je pro konkrétní stránku zbytečná.
                         Průměrná WordPress stránka přenese 2–5 MB dat navíc oproti optimálnímu stavu.
                     </p>
                     <p>
-                        Statický web obsahuje <strong>přesně to, co potřebuje</strong> – žádný bloat,
+                        Statický web obsahuje <strong>přesně to, co potřebuje</strong>. Žádný bloat,
                         žádné nepoužívané CSS třídy, žádné duplicitní JavaScript knihovny.
                         Výsledkem je minimální velikost stránky a maximální rychlost.
                     </p>
@@ -483,7 +813,8 @@
                     <div class="info-box-title">Kdy je WordPress lepší volbou?</div>
                     <p style="margin: 0; font-size: 16px; color: var(--color-text-secondary);">
                         WordPress dává smysl pro: <strong>e-shopy s WooCommerce</strong> (stovky až tisíce produktů),
-                        <strong>velké blogy</strong> s tisíci článků a více autory, <strong>portály s uživatelskými účty</strong>
+                        <strong>velké blogy</strong> s tisíci článků a více autory, <strong>portály s uživatelskými
+                            účty</strong>
                         nebo <strong>weby s komplexní administrací</strong> pro netechnické klienty.
                         Pro firemní prezentaci, portfolio nebo landing page je WordPress zbytečný nadměrný nástroj.
                     </p>
@@ -491,9 +822,9 @@
 
                 <h2>Jak statický web vypadá v praxi?</h2>
                 <p>
-                    Všechny weby v mém portfoliu jsou statické – PrahaMalíř, Lucie Kubiková, Caffé Limone,
-                    AstroFlora, Pro Váš Klid a Péče o hroby. Každý dosahuje Lighthouse skóre 99–100
-                    ve všech kategoriích.
+                    Většina projektů v mém portfoliu je postavená jako statický web, a v praxi se ukazuje, že pro menší
+                    firmy (například restaurace, řemeslníky nebo lokální služby) je to často jednodušší a spolehlivější řešení
+                    než klasický WordPress.
                 </p>
                 <p>
                     Kontaktní formuláře řeším přes Formspree (ověřeno v praxi), galerie fotek přes
@@ -510,50 +841,87 @@
                     <details class="faq-item">
                         <summary class="faq-question">
                             <span>Co je statický web?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Statický web je web tvořený čistými HTML, CSS a JavaScript soubory bez serveru, databáze ani PHP. Každá stránka je pevný soubor, který server jen odešle prohlížeči. WordPress naopak generuje stránky dynamicky při každém požadavku – přistupuje k databázi, spouští PHP. Proto jsou statické weby <strong>rychlejší, bezpečnější a levnější</strong> na provoz.</p>
+                            <p>Statický web je web tvořený čistými HTML, CSS a JavaScript soubory bez serveru, databáze
+                                ani PHP. Každá stránka je pevný soubor, který server jen odešle prohlížeči. WordPress
+                                naopak generuje stránky dynamicky při každém požadavku: přistupuje k databázi, spouští
+                                PHP. Proto jsou statické weby <strong>rychlejší, bezpečnější a levnější</strong> na
+                                provoz.</p>
                         </div>
                     </details>
 
                     <details class="faq-item">
                         <summary class="faq-question">
                             <span>Je statický web vhodný pro moji firmu?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Statický web je ideální pro firemní prezentace, portfolia, landing pages, restaurace, salony, řemeslníky a většinu malých a středních firem. Kontaktní formulář, galerie fotek, blog – to vše lze snadno realizovat. Nedoporučuji pouze pro <strong>e-shopy s tisíci produkty</strong> nebo weby s komplexní správou obsahu více autory.</p>
+                            <p>Statický web je ideální pro firemní prezentace, portfolia, landing pages, restaurace,
+                                salony, řemeslníky a většinu malých a středních firem. Kontaktní formulář, galerie
+                                fotek nebo blog, to vše lze snadno realizovat. Nedoporučuji pouze pro <strong>e-shopy s
+                                    tisíci produkty</strong> nebo weby s komplexní správou obsahu více autory.</p>
                         </div>
                     </details>
 
                     <details class="faq-item">
                         <summary class="faq-question">
                             <span>Jak rychle se načítá statický web oproti WordPress?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Statický web se průměrně načítá za <strong>0.5–1.5 sekundy (LCP)</strong>. WordPress bez optimalizace 2.5–5 sekund, s optimalizací (cache, CDN) 1–2 sekundy. Moje projekty dosahují <strong>Lighthouse Performance 99–100/100</strong>. Google zahrnuje Core Web Vitals do hodnocení ve vyhledávání – rychlý web = lepší pozice.</p>
+                            <p>Statický web se průměrně načítá za <strong>0.5–1.5 sekundy (LCP)</strong>. WordPress bez
+                                optimalizace 2.5–5 sekund, s optimalizací (cache, CDN) 1–2 sekundy. Moje projekty
+                                dosahují <strong>Lighthouse Performance 99–100/100</strong>. Google zahrnuje Core Web
+                                Vitals do hodnocení ve vyhledávání. Rychlý web = lepší pozice.</p>
                         </div>
                     </details>
 
                     <details class="faq-item">
                         <summary class="faq-question">
                             <span>Jak probíhá aktualizace obsahu na statickém webu?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Obsah se aktualizuje přímou úpravou HTML souborů. Je to manuálnější než WordPress admin panel, ale pro weby, kde se mění obsah jednou za čas (nový projekt, aktualizace cen), zcela dostačující. Změny nahrané na GitHub se automaticky nasadí na Netlify <strong>do 30 sekund</strong>. Pro klienty, kteří potřebují častěji měnit obsah sami, integruji Netlify CMS.</p>
+                            <p>Obsah se aktualizuje přímou úpravou HTML souborů. Je to manuálnější než WordPress admin
+                                panel, ale pro weby, kde se mění obsah jednou za čas (nový projekt, aktualizace cen),
+                                zcela dostačující. Změny nahrané na GitHub se automaticky nasadí na Netlify <strong>do
+                                    30 sekund</strong>. Pro klienty, kteří potřebují častěji měnit obsah sami, integruji
+                                Netlify CMS.</p>
                         </div>
                     </details>
 
                     <details class="faq-item">
                         <summary class="faq-question">
                             <span>Mohu mít na statickém webu blog?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
                         </summary>
                         <div class="faq-answer">
-                            <p><strong>Ano.</strong> Blog na statickém webu je tvořen jednotlivými HTML soubory (jeden soubor = jeden článek). Právě tyto blogové články jsou příkladem – každý je statická HTML stránka, dosahuje Lighthouse 100 a je plně optimalizovaný pro AEO/GEO. Pro desítky až stovky článků je to výborné řešení bez databáze a bez bezpečnostních rizik.</p>
+                            <p><strong>Ano.</strong> Blog na statickém webu je tvořen jednotlivými HTML soubory (jeden
+                                soubor = jeden článek). Právě tyto blogové články jsou příkladem, každý je statická
+                                HTML stránka, dosahuje Lighthouse 100 a je plně optimalizovaný pro AEO/GEO. Pro desítky
+                                až stovky článků je to výborné řešení bez databáze a bez bezpečnostních rizik.</p>
                         </div>
                     </details>
                 </section>
@@ -563,11 +931,13 @@
                     <p>Postavím vám <strong>rychlý, bezpečný statický web</strong> s Lighthouse 99–100,
                         nasazený na Netlify s hostingem zdarma. Konzultace je bezplatná a nezávazná.</p>
                     <a href="/#contact" class="btn-hero btn-ripple">Nezávazná konzultace zdarma</a>
-                    <p style="margin-top: 12px; font-size: 14px; color: var(--color-text-muted);">Odpovím do 24 hodin · Mělník a celá ČR · Od 6 000 Kč</p>
+                    <p style="margin-top: 12px; font-size: 14px; color: var(--color-text-muted);">Odpovím do 24 hodin ·
+                        Mělník a celá ČR · Od 6 000 Kč</p>
                 </aside>
 
                 <div class="article-author-box" role="complementary" aria-label="O autorce">
-                    <img src="../images/zaneta_portret.webp" alt="Žaneta Janáčová – webdesignérka z Mělníka" width="72" height="72" loading="lazy">
+                    <img src="../images/zaneta_portret.webp" alt="Žaneta Janáčová – webdesignérka z Mělníka" width="72"
+                        height="72" loading="lazy">
                     <div>
                         <h3>Žaneta Janáčová</h3>
                         <p style="color: var(--color-text-secondary);">
@@ -575,7 +945,8 @@
                             Každý projekt, který tvořím, dosahuje Lighthouse 99–100/100 a je nasazen
                             na Netlify s hostingem zdarma. Přes 6 realizovaných projektů,
                             9 certifikátů, akreditovaný kurz MŠMT.
-                            <a href="/" style="color: var(--color-accent-gold); text-decoration: none;">→ zjanacova.cz</a>
+                            <a href="/" style="color: var(--color-accent-gold); text-decoration: none;">→
+                                zjanacova.cz</a>
                         </p>
                     </div>
                 </div>
@@ -587,7 +958,8 @@
     <footer>
         <div class="container">
             <div class="footer-logo">
-                <img src="../images/signature.png" alt="Žaneta Janáčová – tvorba webů Mělník" width="200" height="60" loading="lazy">
+                <img src="../images/signature.png" alt="Žaneta Janáčová – tvorba webů Mělník" width="200" height="60"
+                    loading="lazy">
                 <p>Tvorba webů Mělník | Žaneta Janáčová</p>
             </div>
             <nav class="footer-nav" aria-label="Patičková navigace">
@@ -599,7 +971,9 @@
                 <a href="/#contact">Kontakt</a>
                 <a href="/privacy.html">Ochrana údajů</a>
             </nav>
-            <div class="footer-bottom"><p>&copy; 2026 Žaneta Janáčová</p></div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Žaneta Janáčová</p>
+            </div>
         </div>
     </footer>
 
@@ -618,4 +992,5 @@
 
     <script src="../script.js"></script>
 </body>
+
 </html>

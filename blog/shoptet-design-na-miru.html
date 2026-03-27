@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shoptet design na míru: Jak upravit e-shop přes CSS a kdy to svěřit odborníkovi | Žaneta Janáčová</title>
+    <meta name="description"
+        content="Shoptet šablona vypadá jako u stovky jiných e-shopů. CSS úpravy to změní – ale jen když víte, co děláte. Průvodce vlastním designem Shoptet e-shopu.">
+    <link rel="canonical" href="https://zjanacova.cz/blog/shoptet-design-na-miru.html">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Žaneta Janáčová">
+    <meta name="geo.region" content="CZ-ST">
+    <meta name="geo.placename" content="Mělník, Česká republika">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://zjanacova.cz/blog/shoptet-design-na-miru.html">
+    <meta property="og:title" content="Shoptet design na míru: Jak upravit e-shop přes CSS">
+    <meta property="og:description"
+        content="Shoptet šablona vypadá jako u stovky jiných e-shopů. CSS úpravy to změní – ale jen když víte, co děláte.">
+    <meta property="og:image" content="https://zjanacova.cz/images/ogpicture.png">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Žaneta Janáčová – Webdesign">
+    <meta property="article:published_time" content="2026-03-23T10:00:00+01:00">
+    <meta property="article:modified_time" content="2026-03-23T10:00:00+01:00">
+    <meta property="article:author" content="Žaneta Janáčová">
+    <meta property="article:section" content="E-shop">
+    <meta property="article:tag" content="Shoptet, Shoptet CSS, Shoptet design, Shoptet úpravy, e-shop na míru">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shoptet design na míru: Jak upravit e-shop přes CSS">
+    <meta name="twitter:description"
+        content="Shoptet šablona vypadá jako u stovky jiných e-shopů. CSS úpravy to změní – průvodce vlastním designem.">
+    <meta name="twitter:image" content="https://zjanacova.cz/images/ogpicture.png">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="preload" href="../style.css" as="style">
+    <link rel="preload" as="font" href="/fonts/playfair-display-v40-latin-regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="/fonts/inter-v20-latin-regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Shoptet design na míru: Jak upravit e-shop přes CSS a kdy to svěřit odborníkovi",
+        "description": "Shoptet šablona vypadá jako u stovky jiných e-shopů. CSS úpravy dokážou váš e-shop vizuálně odlišit – ale jen pokud víte, co děláte. Průvodce vlastním designem Shoptet e-shopu.",
+        "image": "https://zjanacova.cz/images/ogpicture.png",
+        "datePublished": "2026-03-23",
+        "dateModified": "2026-03-23",
+        "inLanguage": "cs",
+        "keywords": "Shoptet CSS, Shoptet design na míru, Shoptet úpravy vzhledu, Shoptet šablona, e-shop na míru, Shoptet webdesign",
+        "author": {
+            "@type": "Person",
+            "@id": "https://zjanacova.cz/#person",
+            "name": "Žaneta Janáčová",
+            "url": "https://zjanacova.cz"
+        },
+        "publisher": {
+            "@id": "https://zjanacova.cz/#business",
+            "name": "Žaneta Janáčová – Webdesign",
+            "logo": {"@type": "ImageObject", "url": "https://zjanacova.cz/images/signature.webp"}
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://zjanacova.cz/blog/shoptet-design-na-miru.html"
+        },
+        "about": [
+            {"@type": "SoftwareApplication", "name": "Shoptet"},
+            {"@type": "Thing", "name": "CSS"},
+            {"@type": "Thing", "name": "E-shop design"},
+            {"@type": "Thing", "name": "Webdesign"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Lze na Shoptetu udělat vlastní design?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ano, Shoptet umožňuje vkládat vlastní CSS kód do každé šablony. Lze změnit barvy, fonty, rozložení sekcí, styl tlačítek, hlavičku, patičku i produktové karty. Výsledek závisí na zvoleném plánu a šabloně. Některé šablony CSS úpravám odolávají víc než jiné."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Kolik stojí úprava Shoptet designu přes CSS?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Záleží na rozsahu změn. Základní úprava barev a fontů (brand kit) se pohybuje od 3 000 Kč. Komplexní restyling celého e-shopu včetně hlavičky, patičky, produktových karet a responzivity vychází na 8 000–20 000 Kč. Oproti výměně šablony nebo migraci na jinou platformu je to výrazně levnější a rychlejší."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Co CSS na Shoptetu změnit nedokáže?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CSS ovlivňuje pouze vizuální vrstvu. Nemůže měnit strukturu stránek, přidávat nové funkce (např. konfigurátor produktů), upravovat logiku košíku ani měnit URL strukturu. Pro tyto změny by bylo potřeba vlastní Shoptet doplněk nebo migrace na jinou platformu."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Přepíše Shoptet moje CSS úpravy při aktualizaci šablony?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pokud vkládáte CSS přes pole 'Vlastní CSS' v administraci Shoptetu, aktualizace šablony vaše úpravy nepřepíše. Problém nastává, pokud byly změny prováděny přímo v souborech šablony. Ty aktualizace přepsat může. Správná cesta je vždy vlastní CSS pole nebo doplňkový soubor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Jak dlouho trvá úprava Shoptet designu?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Základní brand úprava (barvy, fonty, tlačítka) trvá 1–3 dny. Kompletní restyling e-shopu včetně všech stránek a mobilní verze počítejte na 1–2 týdny. Záleží na složitosti šablony a rozsahu požadavků."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Úvod", "item": "https://zjanacova.cz/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zjanacova.cz/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Shoptet design na míru", "item": "https://zjanacova.cz/blog/shoptet-design-na-miru.html"}
+        ]
+    }
+    </script>
+
+    <style>
+        .blog-hero { padding: 140px 0 60px; background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%); position: relative; overflow: hidden; }
+        .blog-hero::before { content: ''; position: absolute; top: 20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(147, 112, 219, 0.10) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+        .blog-breadcrumb { font-size: 14px; color: var(--color-text-muted); margin-bottom: 24px; }
+        .blog-breadcrumb a { color: var(--color-text-muted); text-decoration: none; transition: color var(--transition); }
+        .blog-breadcrumb a:hover { color: var(--color-accent-gold); }
+        .blog-breadcrumb span { margin: 0 8px; opacity: 0.5; }
+        .blog-hero-title { font-family: var(--font-heading); font-size: clamp(28px, 5vw, 52px); line-height: 1.2; color: var(--color-text-primary); margin-bottom: 20px; }
+        .blog-hero-meta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 14px; color: var(--color-text-muted); margin-bottom: 28px; }
+        .blog-hero-meta a { color: var(--color-accent-gold); text-decoration: none; }
+        .blog-tag { display: inline-block; background: rgba(168, 124, 82, 0.15); color: var(--color-accent-gold); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+        .article-body { max-width: 760px; margin: 0 auto; padding: 60px 0 80px; }
+        .article-body h2 { font-family: var(--font-heading); font-size: clamp(22px, 3.5vw, 32px); color: var(--color-text-primary); margin: 56px 0 20px; line-height: 1.3; scroll-margin-top: 100px; }
+        .article-body h3 { font-family: var(--font-heading); font-size: clamp(18px, 2.5vw, 24px); color: var(--color-text-primary); margin: 36px 0 14px; line-height: 1.4; }
+        .article-body p { font-size: 17px; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 20px; }
+        .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 24px; }
+        .article-body > ul { list-style: none; padding-left: 0; }
+        .article-body > ul > li { display: flex; gap: 10px; align-items: baseline; }
+        .article-body > ul > li::before { content: '▸'; color: var(--color-accent-gold); font-size: 12px; flex-shrink: 0; position: relative; top: -1px; }
+        .article-body li { font-size: 17px; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 8px; }
+        .article-body strong { color: var(--color-text-primary); }
+        .article-body code { background: rgba(255,255,255,0.07); padding: 2px 7px; border-radius: 4px; font-size: 15px; font-family: monospace; color: var(--color-accent-gold); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 15px; }
+        .comparison-table th { background: var(--color-bg-card); color: var(--color-text-primary); padding: 14px 16px; text-align: left; border-bottom: 2px solid var(--color-accent-gold); font-weight: 600; }
+        .comparison-table td { padding: 12px 16px; color: var(--color-text-secondary); border-bottom: 1px solid var(--color-border); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .yes { color: #22c55e; font-weight: 600; }
+        .comparison-table .no { color: #ef4444; }
+        .comparison-table .ok { color: #f59e0b; font-weight: 500; }
+        .info-box { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+        .info-box-title { font-weight: 700; color: var(--color-accent-gold); font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .article-faq { margin-top: 60px; padding-top: 48px; border-top: 1px solid var(--color-border); }
+        .article-faq h2 { margin-top: 0; }
+        .article-faq details.faq-item { border: 1px solid var(--color-border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+        .article-faq details.faq-item summary.faq-question { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; cursor: pointer; font-weight: 600; color: var(--color-text-primary); background: var(--color-bg-card); }
+        .article-faq details.faq-item summary.faq-question::-webkit-details-marker { display: none; }
+        .article-faq details.faq-item[open] summary.faq-question { border-bottom: 1px solid var(--color-border); }
+        .article-faq details.faq-item .faq-answer { padding: 18px 22px; }
+        .article-faq details.faq-item .faq-answer p { margin: 0; font-size: 16px; }
+        .article-cta { background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-secondary) 100%); border: 1px solid var(--color-border); border-radius: 16px; padding: 40px; text-align: center; margin-top: 60px; }
+        .article-cta h2 { margin-top: 0; font-size: clamp(20px, 3vw, 28px); }
+        .article-author-box { display: flex; align-items: center; gap: 20px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; margin-top: 60px; }
+        .article-author-box img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+        .article-author-box h3 { margin: 0 0 6px; font-size: 18px; }
+        .can-do-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
+        .can-do-card { background: var(--color-bg-card); border-radius: 12px; padding: 22px 24px; }
+        .can-do-card.green { border: 1px solid rgba(34, 197, 94, 0.3); }
+        .can-do-card.red { border: 1px solid rgba(239, 68, 68, 0.3); }
+        .can-do-card h3 { font-family: var(--font-heading); font-size: 16px; margin: 0 0 14px; }
+        .can-do-card.green h3 { color: #22c55e; }
+        .can-do-card.red h3 { color: #ef4444; }
+        .can-do-card ul { list-style: none; padding-left: 0; margin: 0; }
+        .can-do-card ul li { font-size: 15px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 6px; display: flex; gap: 8px; align-items: baseline; }
+        .can-do-card.green ul li::before { content: '✓'; color: #22c55e; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+        .can-do-card.red ul li::before { content: '✕'; color: #ef4444; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+        .process-steps { margin: 28px 0; }
+        .process-step { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 24px; }
+        .process-step-number { width: 40px; height: 40px; border-radius: 50%; background: rgba(168, 124, 82, 0.15); border: 1px solid var(--color-accent-gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--color-accent-gold); flex-shrink: 0; }
+        .process-step-content h3 { font-family: var(--font-heading); font-size: 18px; color: var(--color-text-primary); margin: 0 0 6px; }
+        .process-step-content p { font-size: 16px; color: var(--color-text-secondary); line-height: 1.6; margin: 0; }
+        .price-boxes { display: flex; gap: 16px; margin: 28px 0; flex-wrap: wrap; }
+        .price-box { flex: 1; min-width: 180px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 22px 20px; text-align: center; }
+        .price-box .price-amount { font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--color-accent-gold); display: block; margin-bottom: 4px; }
+        .price-box .price-label { font-size: 13px; color: var(--color-text-muted); line-height: 1.4; }
+        .diy-vs-pro { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
+        .diy-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; }
+        .diy-card h3 { font-family: var(--font-heading); font-size: 17px; color: var(--color-text-primary); margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--color-border); }
+        .diy-card ul { list-style: none; padding-left: 0; margin: 0; }
+        .diy-card ul li { font-size: 15px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 8px; display: flex; gap: 8px; align-items: baseline; }
+        .diy-card ul li::before { content: '–'; color: var(--color-text-muted); flex-shrink: 0; }
+        @media (max-width: 768px) { .blog-hero { padding: 110px 0 48px; } .can-do-grid { grid-template-columns: 1fr; } .diy-vs-pro { grid-template-columns: 1fr; } .price-boxes { flex-direction: column; } .comparison-table { font-size: 13px; } .comparison-table th, .comparison-table td { padding: 10px 12px; } .article-author-box { flex-direction: column; text-align: center; } .process-step { flex-direction: column; gap: 12px; } }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+    <div class="loader" id="loader"><div class="spinner"></div></div>
+
+    <header role="banner">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Žaneta Janáčová – Úvodní stránka">
+                <img src="../images/signature.webp" alt="Žaneta Janáčová – tvorba webů Mělník" width="150" height="50">
+            </a>
+            <nav aria-label="Hlavní navigace">
+                <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="/">Domů</a></li>
+                    <li><a href="/projects.html">Portfolio</a></li>
+                    <li><a href="/cenik.html">Ceník</a></li>
+                    <li><a href="/vzdelani.html">Vzdělání</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/#contact" class="btn-primary btn-ripple">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section class="blog-hero" aria-labelledby="article-title">
+            <div class="container">
+                <nav class="blog-breadcrumb" aria-label="Drobečková navigace">
+                    <a href="/">Domů</a><span aria-hidden="true">›</span>
+                    <a href="/blog/">Blog</a><span aria-hidden="true">›</span>
+                    <span aria-current="page">Shoptet design na míru</span>
+                </nav>
+                <div class="blog-tag" style="margin-bottom: 16px;">Shoptet & E-shop</div>
+                <h1 id="article-title" class="blog-hero-title">
+                    Shoptet design na míru:<br>
+                    <span style="color: var(--color-accent-gold);">Jak upravit e-shop přes CSS (2026)</span>
+                </h1>
+                <div class="blog-hero-meta">
+                    <span>Autor: <a href="/" rel="author">Žaneta Janáčová</a></span>
+                    <span>·</span>
+                    <time datetime="2026-03-23">23. března 2026</time>
+                    <span>·</span>
+                    <span>8 min čtení</span>
+                </div>
+                <p style="font-size: 18px; color: var(--color-text-secondary); max-width: 700px; line-height: 1.7;">
+                    Vybrali jste si Shoptet, spustili e-shop. Najednou zjistíte, že vypadá skoro
+                    stejně jako desítky jiných. Šablona dělá svou práci, ale není to váš brand.
+                    <strong>CSS úpravy to změní.</strong> Ale jen pokud víte, co děláte.
+                </p>
+            </div>
+        </section>
+
+        <article class="container">
+            <div class="article-body">
+
+                <h2>Proč Shoptet šablona nestačí</h2>
+                <p>
+                    Shoptet je skvělá platforma pro české e-shopy. Má solidní zázemí, pravidelné aktualizace,
+                    propojení s dopravci, platebními branami a českou podporou. Pro spuštění e-shopu
+                    je to rozumná volba, zvláště pro živnostníky a menší firmy.
+                </p>
+                <p>
+                    Jenže každý plán Shoptetu přichází s omezenou sadou šablon. A ty šablony používají
+                    tisíce dalších e-shopů. Zákazník, který nakupuje online pravidelně, je pozná na první
+                    pohled. Výsledek? Váš e-shop <strong>nevypadá jako váš brand, vypadá jako Shoptet</strong>.
+                </p>
+                <p>
+                    Právě tady vstupuje do hry vlastní CSS. Shoptet umožňuje vkládat vlastní styly
+                    přes administraci a výsledek může být radikálně jiný než výchozí šablona.
+                    Beze změny platformy, bez migrace dat, bez ztráty SEO pozic.
+                </p>
+
+                <div class="info-box" role="note" aria-label="Klíčová informace">
+                    <div class="info-box-title">CSS mění vizuál, ne funkce</div>
+                    <p style="margin: 0; font-size: 16px; color: var(--color-text-secondary);">
+                        CSS (Cascading Style Sheets) je jazyk, který říká prohlížeči, jak má web vypadat.
+                        Barvy, fonty, rozestupy, zaoblení, stín, animace. Neovlivňuje logiku košíku,
+                        platby ani správu produktů. Tu obsluhuje Shoptet. Design je ale to první,
+                        co zákazník vidí. A první dojem rozhoduje.
+                    </p>
+                </div>
+
+                <h2>Co přes CSS na Shoptetu změnit lze – a co ne</h2>
+
+                <div class="can-do-grid" aria-label="Co CSS na Shoptetu změní a co ne">
+                    <div class="can-do-card green">
+                        <h3>Co CSS změní</h3>
+                        <ul>
+                            <li>Barvy celého e-shopu (brand palette)</li>
+                            <li>Fonty a typografie (velikost, řez, řádkování)</li>
+                            <li>Design tlačítek a formulářů</li>
+                            <li>Hlavička a patička (layout, logo, menu)</li>
+                            <li>Produktové karty (stín, hover efekty, odznak)</li>
+                            <li>Stránka produktu (pořadí a styl prvků)</li>
+                            <li>Bannery a promo sekce na úvodní stránce</li>
+                            <li>Mobilní verze a responzivní chování</li>
+                            <li>Animace a přechody (transitions)</li>
+                            <li>Skrytí nebo vizuální potlačení nepotřebných prvků</li>
+                        </ul>
+                    </div>
+                    <div class="can-do-card red">
+                        <h3>Co CSS nezmění</h3>
+                        <ul>
+                            <li>Strukturu stránek (pořadí bloků v HTML)</li>
+                            <li>Nové funkce (konfigurátor, porovnání produktů)</li>
+                            <li>Logiku košíku nebo objednávkového procesu</li>
+                            <li>URL strukturu a přesměrování</li>
+                            <li>Výkon a rychlost načítání (to řeší šablona a hosting)</li>
+                            <li>Správu produktů, kategorií nebo zákazníků</li>
+                            <li>Napojení na dopravce nebo platební brány</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Jak se CSS do Shoptetu vkládá</h2>
+                <p>
+                    Shoptet nabízí v administraci pole <strong>Vlastní CSS</strong>, kam lze vložit
+                    libovolný CSS kód. Ten se načte na každé stránce e-shopu a přepíše styly výchozí
+                    šablony. Díky tomu jsou úpravy <strong>bezpečné vůči aktualizacím</strong>.
+                    Když Shoptet aktualizuje šablonu, vaše CSS zůstane nedotčené.
+                </p>
+                <p>
+                    Cesta v administraci je zpravidla:
+                    <strong>Vzhled → Šablony → Editovat šablonu → Vlastní CSS</strong>.
+                    Přesné umístění se může lišit podle verze šablony a plánu Shoptetu.
+                </p>
+
+                <div class="info-box" role="note" aria-label="Praktická rada">
+                    <div class="info-box-title">Proč needitovat přímo soubory šablony</div>
+                    <p style="margin: 0; font-size: 16px; color: var(--color-text-secondary);">
+                        Někteří vývojáři zasahují přímo do souborů šablony (<code>.less</code> nebo
+                        <code>.css</code> souborů). To funguje, ale při každé aktualizaci šablony
+                        Shoptetem o změny přijdete. Správná cesta je vždy pole Vlastní CSS nebo
+                        samostatný soubor nahraný přes FTP, na který šablona odkazuje.
+                    </p>
+                </div>
+
+                <h2>Co konkrétně CSS úprava změní na vašem e-shopu</h2>
+                <p>
+                    Abstrakt nestačí. Tady jsou konkrétní příklady toho, co se po profesionální
+                    CSS úpravě na Shoptet e-shopu změní:
+                </p>
+
+                <h3>Brand identita místo generické šablony</h3>
+                <p>
+                    Výchozí Shoptet šablona má svou vlastní barevnou paletu, výchozí font (zpravidla
+                    systémový) a zaoblení prvků, které nikomu nepatří. Po CSS úpravě váš e-shop
+                    používá <strong>vaše firemní barvy, vaše písmo a váš vizuální styl</strong>.
+                    Zákazník, který zná váš Instagram nebo firemní web, e-shop okamžitě pozná jako váš.
+                </p>
+
+                <h3>Produktové karty, které prodávají</h3>
+                <p>
+                    Výchozí produktové karty na Shoptetu jsou funkční, ale vizuálně průměrné.
+                    CSS umožní přidat jemný stín, zaoblit rohy, zvýraznit hover efekt (co se stane,
+                    když zákazník najedede myší), změnit polohu ceny nebo odznaku „Novinka" a
+                    upravit font a velikost názvu produktu. Malé změny, ale <strong>prodejní dopad
+                    je měřitelný</strong>.
+                </p>
+
+                <h3>Mobilní verze na míru</h3>
+                <p>
+                    Přes 60 % nákupů dnes probíhá na mobilu. Výchozí responsivní chování Shoptet
+                    šablony je přijatelné, ale ne optimální. CSS media queries dovolí přesně řídit,
+                    jak se e-shop chová na různých velikostech obrazovky, od kompaktního menu
+                    v hlavičce po správné zobrazení produktových fotek na malém displeji.
+                </p>
+
+                <h3>Hlavička a patička jako součást brandu</h3>
+                <p>
+                    Hlavička je první věc, kterou zákazník vidí. Výchozí Shoptet hlavičky jsou
+                    navrženy univerzálně. Fungují pro všechny, ale nevynikají pro nikoho.
+                    CSS úprava umožní změnit výšku, pozadí, styl navigace, umístění vyhledávání
+                    a košíku, nebo přidat barevný pruh s akční nabídkou.
+                </p>
+
+                <h2>DIY vs. profesionální úprava – v čem je rozdíl</h2>
+                <p>
+                    Technicky může CSS do Shoptetu vložit kdokoliv. Stačí otevřít
+                    pole Vlastní CSS, napsat pár řádků a uložit. Proč tedy vůbec
+                    platit za profesionála?
+                </p>
+
+                <div class="diy-vs-pro" aria-label="Srovnání DIY vs. profesionální úprava">
+                    <div class="diy-card">
+                        <h3>DIY (sami nebo ChatGPT)</h3>
+                        <ul>
+                            <li>Výsledek závisí na vašich znalostech CSS</li>
+                            <li>Generované kódy z AI často kolidují se Shoptet šablonou</li>
+                            <li>Změna se rozbije na mobilu, i když na desktopu funguje</li>
+                            <li>Přidání jedné věci může rozhodit jinou sekci</li>
+                            <li>Bez znalosti specifik šablony hledáte správné selektory hodiny</li>
+                            <li>Po aktualizaci šablony nevíte, co se rozbilo a proč</li>
+                        </ul>
+                    </div>
+                    <div class="diy-card">
+                        <h3>Profesionální CSS úprava</h3>
+                        <ul>
+                            <li>Kód je psaný přesně pro vaši šablonu a verzi Shoptetu</li>
+                            <li>Testováno na desktopu, tabletu i mobilu</li>
+                            <li>Změny jsou strukturované a komentované, snadno se upraví</li>
+                            <li>Nekoliduje s budoucími aktualizacemi šablony</li>
+                            <li>Výsledek odpovídá vaší brand identitě, ne náhodě</li>
+                            <li>Rychlejší – co vám zabere dny, profesionál vyřeší za hodiny</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Kolik CSS úprava Shoptet e-shopu stojí</h2>
+                <p>
+                    Záleží na rozsahu. Orientační přehled:
+                </p>
+
+                <div class="price-boxes" aria-label="Přehled cen CSS úprav Shoptetu">
+                    <div class="price-box">
+                        <span class="price-amount">od 3 000 Kč</span>
+                        <span class="price-label">Brand kit<br>(barvy, fonty, tlačítka)</span>
+                    </div>
+                    <div class="price-box">
+                        <span class="price-amount">od 6 000 Kč</span>
+                        <span class="price-label">Střední restyling<br>(hlavička, patička, produkty)</span>
+                    </div>
+                    <div class="price-box">
+                        <span class="price-amount">od 10 000 Kč</span>
+                        <span class="price-label">Kompletní restyling<br>(celý e-shop + mobil)</span>
+                    </div>
+                </div>
+
+                <p>
+                    Ve srovnání s migrací na jinou platformu nebo vývojem e-shopu na míru
+                    je to <strong>výrazně levnější a rychlejší cesta</strong>, jak získat
+                    e-shop, který vypadá jako váš.
+                </p>
+
+                <h2>Jak spolupráce probíhá</h2>
+
+                <div class="process-steps" aria-label="Postup spolupráce">
+                    <div class="process-step">
+                        <div class="process-step-number">1</div>
+                        <div class="process-step-content">
+                            <h3>Konzultace a analýza</h3>
+                            <p>Podíváme se na váš e-shop, šablonu, brand manuál nebo inspiraci. Ujasníme, co chcete změnit a co musí zůstat. Konzultace je zdarma.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">2</div>
+                        <div class="process-step-content">
+                            <h3>Nabídka a náhled</h3>
+                            <p>Pošlu nezávaznou nabídku s rozsahem prací a cenou. U větších projektů připravím vizuální náhled před samotným kódováním.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">3</div>
+                        <div class="process-step-content">
+                            <h3>CSS úprava a testování</h3>
+                            <p>Kód píšu a zároveň testuji na desktopu, tabletu i mobilu. Pracuji buď na testovacím prostředí, nebo přímo v administraci, záleží na rozsahu.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">4</div>
+                        <div class="process-step-content">
+                            <h3>Předání a zpětná vazba</h3>
+                            <p>Po dokončení dostanete e-shop ke kontrole. Případné drobné korekce jsou součástí ceny. Předám vám i CSS soubor pro případ budoucích úprav.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Pro koho to má smysl</h2>
+                <p>
+                    CSS restyling Shoptet e-shopu je ideální řešení, pokud:
+                </p>
+                <ul>
+                    <li>Shoptet máte a jste s ním spokojeni funkčně, ale vizuálně vám nesedí</li>
+                    <li>Váš e-shop vypadá „jako ze šablony" a chcete se odlišit od konkurence</li>
+                    <li>Provozujete zavedený e-shop a migrace na jinou platformu by znamenala ztrátu dat a SEO</li>
+                    <li>Máte brand manuál nebo alespoň jasnou představu o barvách a stylu</li>
+                    <li>Nechcete platit za vývoj celého e-shopu od nuly, ale základní šablona vám nestačí</li>
+                </ul>
+
+                <div class="info-box" role="note" aria-label="Zkušenost z praxe">
+                    <div class="info-box-title">Z praxe</div>
+                    <p style="margin: 0; font-size: 16px; color: var(--color-text-secondary);">
+                        Nejčastěji se na mě obrací majitelé e-shopů, kteří Shoptet spustili sami
+                        ze šablony a po půl roce chtějí vypadat profesionálněji, aniž by
+                        měnili platformu nebo přepisovali celý e-shop. CSS restyling jim dá
+                        výsledek za zlomek ceny a ve zlomku času oproti jiným cestám.
+                    </p>
+                </div>
+
+                <section class="article-faq" aria-labelledby="faq-heading">
+                    <h2 id="faq-heading">Časté otázky</h2>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Lze na Shoptetu udělat vlastní design?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Ano, Shoptet umožňuje vkládat vlastní CSS kód do každé šablony. Lze změnit barvy, fonty, rozložení sekcí, styl tlačítek, hlavičku, patičku i produktové karty. Výsledek závisí na zvoleném plánu a šabloně.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Kolik stojí úprava Shoptet designu přes CSS?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Záleží na rozsahu změn. Základní úprava barev a fontů (brand kit) začíná od <strong>3 000 Kč</strong>. Kompletní restyling celého e-shopu včetně mobilní verze vychází na 10 000–20 000 Kč. Oproti výměně platformy nebo vývoji e-shopu na míru je to výrazně rychlejší a levnější.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Co CSS na Shoptetu změnit nedokáže?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>CSS ovlivňuje pouze vizuální vrstvu. Nemůže měnit strukturu stránek, přidávat nové funkce, upravovat logiku košíku ani měnit URL strukturu. Pro tyto změny by bylo potřeba vlastní Shoptet doplněk nebo migrace na jinou platformu.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Přepíše Shoptet moje CSS úpravy při aktualizaci šablony?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Pokud vkládáte CSS přes pole <strong>Vlastní CSS</strong> v administraci Shoptetu, aktualizace šablony vaše úpravy nepřepíše. Problém nastává, pokud byly změny prováděny přímo v souborech šablony. Ty aktualizace přepsat může.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Jak dlouho trvá úprava Shoptet designu?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Základní brand úprava (barvy, fonty, tlačítka) trvá <strong>1–3 dny</strong>. Kompletní restyling e-shopu včetně všech stránek a mobilní verze počítejte na 1–2 týdny. Záleží na složitosti šablony a rozsahu požadavků.</p>
+                        </div>
+                    </details>
+                </section>
+
+                <aside class="article-cta" aria-label="Výzva k akci">
+                    <h2>Váš Shoptet e-shop si zaslouží vlastní tvář</h2>
+                    <p>Pošlete mi odkaz na váš e-shop a řekněte mi, co vám vadí nebo co by mohlo
+                        vypadat lépe. Obratem pošlu nezávaznou nabídku na CSS restyling.
+                        <strong>Konzultace je zdarma.</strong></p>
+                    <a href="/#contact" class="btn-hero btn-ripple">Chci e-shop na míru</a>
+                    <p style="margin-top: 12px; font-size: 14px; color: var(--color-text-muted);">Odpovím do 24 hodin · Specializuji se na Shoptet CSS úpravy</p>
+                </aside>
+
+                <div class="article-author-box" role="complementary" aria-label="O autorce">
+                    <img src="../images/zaneta_portret.webp" alt="Žaneta Janáčová – webdesignérka z Mělníka" width="72" height="72" loading="lazy">
+                    <div>
+                        <h3>Žaneta Janáčová</h3>
+                        <p style="color: var(--color-text-secondary);">
+                            Webdesignérka z Mělníka. Vedle statických webů se specializuji na
+                            CSS úpravy Shoptet e-shopů, od jednoduchého brand kitu po kompletní
+                            restyling. Ukázky práce najdete v
+                            <a href="/projects.html" style="color: var(--color-accent-gold); text-decoration: none;">portfoliu</a>,
+                            orientační ceny na
+                            <a href="/cenik.html" style="color: var(--color-accent-gold); text-decoration: none;">ceníku</a>.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../images/signature.webp" alt="Žaneta Janáčová – tvorba webů Mělník" width="200" height="60" loading="lazy">
+                <p>Tvorba webů Mělník | Žaneta Janáčová</p>
+            </div>
+            <nav class="footer-nav" aria-label="Patičková navigace">
+                <a href="/">Domů</a>
+                <a href="/projects.html">Portfolio</a>
+                <a href="/cenik.html">Ceník</a>
+                <a href="/vzdelani.html">Vzdělání</a>
+                <a href="/blog/">Blog</a>
+                <a href="/#contact">Kontakt</a>
+                <a href="/privacy.html">Ochrana údajů</a>
+            </nav>
+            <div class="footer-bottom"><p>&copy; 2026 Žaneta Janáčová</p></div>
+        </div>
+    </footer>
+
+    <div id="cookie-consent" class="cookie-consent" role="dialog" aria-labelledby="cookie-title" style="display: none;">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p id="cookie-title"><strong>Cookies</strong></p>
+                <p>Používám cookies pro analytiku webu. <a href="/privacy.html" class="cookie-link">Více info</a></p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="btn-primary btn-ripple">Přijmout</button>
+                <button id="cookie-decline" class="btn-secondary">Odmítnout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.min.js" defer></script>
+</body>
+</html>

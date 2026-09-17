@@ -4344,3 +4344,62 @@ details.faq-item[open] .faq-answer {
 .typing-text {
     color: var(--color-accent-gold);
 }
+
+/* ===== KDE PUSOBIM (homepage) ===== */
+.regions {
+    background: var(--color-bg-secondary);
+    padding: var(--space-section-small) 0;
+}
+.regions .section-header {
+    margin-bottom: 36px;
+}
+.regions-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto 28px;
+    padding: 0;
+}
+.regions-list li {
+    padding: 10px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-bg-card);
+    color: var(--color-text-secondary);
+    font-size: 15px;
+    transition: border-color var(--transition), color var(--transition);
+}
+.regions-list li:hover {
+    border-color: var(--color-accent-gold);
+    color: var(--color-text-primary);
+}
+.regions-list li strong {
+    color: var(--color-accent-gold);
+    font-weight: 600;
+}
+.regions-list li.regions-online {
+    border-style: dashed;
+    background: transparent;
+    color: var(--color-text-muted);
+}
+.regions-note {
+    text-align: center;
+    font-size: 16px;
+    color: var(--color-text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+}
+.regions-note a {
+    color: var(--color-accent-gold);
+    text-decoration: none;
+    transition: var(--transition);
+}
+.regions-note a:hover {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+@media (max-width: 480px) {
+    .regions-list li { padding: 8px 14px; font-size: 14px; }
+}

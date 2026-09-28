@@ -88,6 +88,20 @@
                     "description": "Web o 5+ podstránkách, kompletní SEO, Google Business Profil, pokročilé animace",
                     "price": "17000",
                     "priceCurrency": "CZK"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Samospráva webu s AI",
+                    "description": "Web předaný do vlastní správy: návod na míru, sada hotových promptů a mantinely pro úpravy webu pomocí AI bez programování",
+                    "price": "2900",
+                    "priceCurrency": "CZK"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Servisní balíček",
+                    "description": "Roční péče o web: drobné úpravy, hlídání provozu a bezpečnosti, AI záchrana při vlastní správě",
+                    "price": "2400",
+                    "priceCurrency": "CZK"
                 }
             ]
         }
@@ -169,6 +183,14 @@
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Ano, pracuji online po celé České republice. Klientům z Mělníka a okolí (Neratovice, Kralupy nad Vltavou, Litoměřice, Praha sever) se mohu setkat i osobně. Ostatní projekty řeším online přes video hovor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Můžu si web spravovat sám pomocí AI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ano. Nabízím modul Samospráva webu s AI (od 2 900 Kč), kde vám web předám do vlastní správy: dostanete čistý okomentovaný web, návod na míru a sadu hotových promptů pro AI, se kterými zvládnete běžné úpravy sami bez programování. Součástí je zaškolení a mantinely, čeho se nedotýkat. Pro klid navíc nabízím roční servisní balíček od 2 400 Kč včetně AI záchrany, když si při vlastní správě nebudete vědět rady."
                 }
             }
         ]
@@ -521,6 +543,29 @@
                                 <span class="module-name">Admin panel (editace obsahu bez programování)</span>
                                 <span class="module-price">+ 5 000 Kč</span>
                             </label>
+
+                            <label class="module-item has-tooltip">
+                                <input type="checkbox" data-price="2900" data-name="Samospráva webu s AI">
+                                <span class="module-checkbox"></span>
+                                <span class="module-name">
+                                    Samospráva webu s AI
+                                    <button type="button" class="tooltip-trigger"
+                                        aria-label="Více informací o samosprávě webu s AI">?</button>
+                                </span>
+                                <span class="module-price">+ 2 900 Kč</span>
+                                <div class="tooltip-content">
+                                    <strong>Pro ty, kdo si chtějí web spravovat sami:</strong>
+                                    <p>Předám vám čistý, přehledně okomentovaný web a naučím vás upravovat ho pomocí AI, bez programování a bez placení za každou drobnost.</p>
+                                    <strong>Co je v ceně:</strong>
+                                    <ul>
+                                        <li><strong>Návod na míru:</strong> psaný přímo pro váš web, ne obecná příručka.</li>
+                                        <li><strong>Sada hotových promptů:</strong> „přidat článek", „změnit ceny", „přidat sekci" a další, stačí zkopírovat.</li>
+                                        <li><strong>Mantinely:</strong> jasně řeknu, co si měnit můžete a čeho se nedotýkat, ať web nerozbijete.</li>
+                                        <li><strong>Zaškolení:</strong> společný videohovor, kde si to nanečisto vyzkoušíme.</li>
+                                    </ul>
+                                    <p><em>Nejste u mě zamčení. A když si přesto nebudete vědět rady, jsem tu.</em></p>
+                                </div>
+                            </label>
                         </div>
 
 
@@ -653,6 +698,33 @@
                             <div>
                                 <strong>Správa webu / technická podpora</strong>
                                 <span>600 Kč/hod</span>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <polyline points="9 12 11 14 15 10"></polyline>
+                            </svg>
+                            <div>
+                                <strong>Servisní balíček (roční péče o web)</strong>
+                                <span>od 2 400 Kč/rok
+                                    <button type="button" class="tooltip-trigger"
+                                        aria-label="Více informací o servisním balíčku">?</button>
+                                </span>
+
+                                <div class="tooltip-content">
+                                    <strong>Klid na celý rok:</strong>
+                                    <ul>
+                                        <li><strong>Drobné úpravy:</strong> pár zásahů ročně v ceně (texty, ceny, fotky).</li>
+                                        <li><strong>Hlídání provozu:</strong> zkontroluji, že web běží, je zabezpečený a rychlý.</li>
+                                        <li><strong>AI záchrana:</strong> když si web spravujete sami a něco se rozbije, spravím to.</li>
+                                        <li><strong>Přednost:</strong> jako klient se servisem jste na řadě první.</li>
+                                    </ul>
+                                    <p><em>Předvídatelná roční cena místo účtování po hodinách.</em></p>
+                                </div>
                             </div>
                         </div>
 
@@ -941,9 +1013,10 @@
                             </svg>
                         </summary>
                         <div class="faq-answer">
-                            <p>Standardní weby jsou statické – pro úpravy mě můžete kontaktovat (600 Kč/hod). Pokud
-                                potřebujete obsah měnit často sami, nabízím <strong>modul Admin panel</strong>, kde
-                                měníte texty přes jednoduché rozhraní bez znalosti programování.</p>
+                            <p>Máte tři možnosti, podle toho, jak moc chcete web řešit sami:</p>
+                            <p><strong>1. Necháte to na mně.</strong> Statické weby upravuji za vás, stačí napsat (600&nbsp;Kč/hod). Nejjednodušší varianta, o nic se nestaráte.</p>
+                            <p><strong>2. Admin panel.</strong> Pokud měníte obsah často, přidám <strong>klikací rozhraní</strong>, kde texty upravujete sami bez programování.</p>
+                            <p><strong>3. Samospráva s AI.</strong> Weby dnes zvládne upravovat i AI. Předám vám návod přímo pro váš web a <strong>sadu hotových promptů</strong>, se kterými si běžné úpravy zvládnete sami. Přiznávám to na rovinu: nejste u mě zamčení, a když si přesto nebudete vědět rady, jsem tu.</p>
                         </div>
                     </details>
 
@@ -1033,6 +1106,7 @@
                                     <option value="profi">Profi (17 000 Kč)</option>
                                     <option value="vlastni">Vlastní konfigurace (skládačka)</option>
                                     <option value="shoptet">Shoptet styling</option>
+                                    <option value="sprava">Samospráva s AI / servisní balíček</option>
                                     <option value="jine">Něco jiného</option>
                                 </select>
                             </div>

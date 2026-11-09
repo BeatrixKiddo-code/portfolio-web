@@ -46,12 +46,28 @@
   window.addEventListener('resize', updateBounds, { passive: true });
   new ResizeObserver(updateBounds).observe(reveal);
   fine.addEventListener('change', () => { hide(); revealBounds = null; });
-  toggle.addEventListener('click', () => {
-    const pinned = reveal.classList.toggle('is-pinned');
+  function pin(pinned) {
+    reveal.classList.toggle('is-pinned', pinned);
     toggle.setAttribute('aria-pressed', String(pinned));
     toggle.innerHTML = pinned ? 'Vrátit strukturu <span aria-hidden="true">−</span>' : 'Odhalit celý web <span aria-hidden="true">+</span>';
     hide();
-  });
+  }
+  // Visitors who never move the pointer over the wireframe still get to see the finished site.
+  let autoStart = 0, autoPin = 0;
+  function cancelAuto() { clearTimeout(autoStart); clearTimeout(autoPin); autoStart = autoPin = 0; }
+  toggle.addEventListener('click', () => { cancelAuto(); pin(!reveal.classList.contains('is-pinned')); });
+  reveal.addEventListener('pointerenter', cancelAuto);
+  autoStart = setTimeout(() => {
+    autoStart = 0;
+    if (!fine.matches || reveal.classList.contains('is-pinned')) return;
+    if (reduce.matches) { pin(true); return; }
+    const box = reveal.getBoundingClientRect();
+    state.x = state.tx = box.width * .5;
+    state.y = state.ty = box.height * .5;
+    state.tr = Math.hypot(box.width, box.height) * 1.3;
+    schedule();
+    autoPin = setTimeout(() => { autoPin = 0; pin(true); }, 1400);
+  }, 2400);
 
   // Pointer-driven 3D tilt of the hero screen. Decorative: fine pointers only, off for reduced motion.
   const tilt = { rx: 0, ry: 0, trx: 0, try: 0, frame: 0 };

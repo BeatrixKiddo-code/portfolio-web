@@ -1,9 +1,4 @@
-
 User-agent: *
 Allow: /
 
-Disallow: /thank-you.html
-
 Sitemap: https://zjanacova.cz/sitemap.xml
-
-

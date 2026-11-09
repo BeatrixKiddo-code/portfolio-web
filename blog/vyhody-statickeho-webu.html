@@ -1,998 +1,224 @@
 <!DOCTYPE html>
-<html lang="cs">
-
-<head>
+<html lang="cs"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Moderní statický web: 7 výhod oproti WordPress a CMS (2026) | Žaneta Janáčová</title>
     <meta name="description"
-        content="Statický web vs WordPress – porovnání výkonu, bezpečnosti, ceny a správy. Proč přechod na statický HTML/CSS/JS web přinese rychlost načítání pod 1 sekundu, hosting zdarma a nulovou údržbu.">
+        content="Co může statický web zjednodušit při načítání, správě, hostingu a předání a které povinnosti vám zůstanou. Srovnání s redakčními platformami.">
     <link rel="canonical" href="https://zjanacova.cz/blog/vyhody-statickeho-webu.html">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Žaneta Janáčová">
     <meta name="geo.region" content="CZ-ST">
     <meta name="geo.placename" content="Mělník, Česká republika">
     <link rel="sitemap" type="application/xml" href="../sitemap.xml">
-
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://zjanacova.cz/blog/vyhody-statickeho-webu.html">
-    <meta property="og:title" content="Moderní statický web: 7 výhod oproti WordPress (2026)">
+    <meta property="og:title" content="Sedm výhod statického webu a kdy je využijete">
     <meta property="og:description"
-        content="Rychlost pod 1 s, hosting zdarma, nulová údržba, maximální bezpečnost. 7 důvodů, proč přejít z WordPress na statický HTML/CSS/JS web.">
+        content="Co může statický web zjednodušit při načítání, správě, hostingu a předání a které povinnosti vám zůstanou. Srovnání s redakčními platformami.">
     <meta property="og:image" content="https://zjanacova.cz/images/ogpicture.png">
     <meta property="og:locale" content="cs_CZ">
     <meta property="og:site_name" content="Žaneta Janáčová – Webdesign">
     <meta property="article:published_time" content="2026-02-25T10:00:00+01:00">
-    <meta property="article:modified_time" content="2026-02-25T10:00:00+01:00">
+    <meta property="article:modified_time" content="2026-10-26">
     <meta property="article:author" content="Žaneta Janáčová">
     <meta property="article:section" content="Webdesign">
     <meta property="article:tag"
         content="statický web, WordPress alternativa, výhody statického webu, rychlost webu, hosting zdarma">
-
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Moderní statický web: 7 výhod oproti WordPress (2026)">
+    <meta name="twitter:title" content="Sedm výhod statického webu a kdy je využijete">
     <meta name="twitter:description"
-        content="Rychlost, bezpečnost, hosting zdarma a nulová údržba. Proč statický web poráží WordPress pro firemní prezentace.">
+        content="Co může statický web zjednodušit při načítání, správě, hostingu a předání a které povinnosti vám zůstanou. Srovnání s redakčními platformami.">
     <meta name="twitter:image" content="https://zjanacova.cz/images/ogpicture.png">
-
-    <link rel="icon" type="image/png" href="../images/favicon.png">
-    <link rel="preload" href="../style.css" as="style">
-    <link rel="preload" as="font" href="/fonts/playfair-display-v40-latin-regular.woff2" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="/fonts/inter-v20-latin-regular.woff2" type="font/woff2" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="../style.css">
-
+    <link rel="icon" type="image/png" href="/images/favicon.png">
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Moderní statický web: 7 výhod oproti WordPress a CMS (2026)",
-        "description": "Komplexní srovnání statického webu a WordPressu. Výhody statického webu: rychlost načítání pod 1 sekundu, hosting zdarma na Netlify, maximální bezpečnost bez databáze, nulová údržba, Lighthouse 100.",
-        "image": "https://zjanacova.cz/images/ogpicture.png",
-        "datePublished": "2026-02-25",
-        "dateModified": "2026-02-25",
-        "inLanguage": "cs",
-        "keywords": "výhody statického webu, statický web vs WordPress, moderní statický web, rychlost webu, hosting zdarma, bezpečnost webu, nulová údržba",
-        "author": {
-            "@type": "Person",
-            "@id": "https://zjanacova.cz/#person",
-            "name": "Žaneta Janáčová",
-            "url": "https://zjanacova.cz"
-        },
-        "publisher": {
-            "@id": "https://zjanacova.cz/#business",
-            "name": "Žaneta Janáčová – Webdesign",
-            "logo": {"@type": "ImageObject", "url": "https://zjanacova.cz/images/signature.webp"}
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://zjanacova.cz/blog/vyhody-statickeho-webu.html"
-        },
-        "about": [
-            {"@type": "Thing", "name": "Statické webové stránky"},
-            {"@type": "SoftwareApplication", "name": "WordPress"},
-            {"@type": "Thing", "name": "Webový výkon"},
-            {"@type": "Thing", "name": "Webová bezpečnost"}
-        ]
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sedm výhod statického webu a kdy je využijete",
+  "description": "Co může statický web zjednodušit při načítání, správě, hostingu a předání a které povinnosti vám zůstanou. Srovnání s redakčními platformami.",
+  "image": "https://zjanacova.cz/images/ogpicture.png",
+  "datePublished": "2026-02-25",
+  "dateModified": "2026-10-26",
+  "inLanguage": "cs",
+  "keywords": "výhody statického webu, statický web vs WordPress, moderní statický web, rychlost webu, hosting zdarma, bezpečnost webu, nulová údržba",
+  "author": {
+    "@type": "Person",
+    "@id": "https://zjanacova.cz/#person",
+    "name": "Žaneta Janáčová",
+    "url": "https://zjanacova.cz"
+  },
+  "publisher": {
+    "@id": "https://zjanacova.cz/#business",
+    "name": "Žaneta Janáčová – Webdesign",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zjanacova.cz/images/signature.webp"
     }
-    </script>
-
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://zjanacova.cz/blog/vyhody-statickeho-webu.html"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Statické webové stránky"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "WordPress"
+    },
+    {
+      "@type": "Thing",
+      "name": "Webový výkon"
+    },
+    {
+      "@type": "Thing",
+      "name": "Webová bezpečnost"
+    }
+  ]
+}
+</script>
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Co je statický web?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Statický web je web tvořený čistými HTML, CSS a JavaScript soubory bez serveru, databáze ani serverového jazyka (PHP, Python). Každá stránka je pevný soubor, který server pouze odešle prohlížeči. Naopak WordPress generuje stránky dynamicky při každém požadavku – přistupuje k databázi, spouští PHP a sestavuje HTML. Proto jsou statické weby rychlejší, bezpečnější a levnější na provoz."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Je statický web vhodný pro moji firmu?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Statický web je ideální pro: firemní prezentace, portfolia, landing pages, restaurace, salony, řemeslníky a většinu malých a středních firem. Pokud nepotřebujete e-shop s tisíci produkty, diskuzní fórum nebo systém pro tisíce uživatelů, statický web je lepší volba než WordPress. Kontaktní formulář, galerie fotek, blog – to vše lze na statickém webu snadno realizovat."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Jak rychle se načítá statický web oproti WordPress?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Statický web se průměrně načítá za 0.5–1.5 sekundy (LCP). WordPress bez optimalizace načítá průměrně 2.5–5 sekund, s optimalizací (cache, CDN) 1–2 sekundy. Statické weby dosahují Lighthouse Performance skóre 95–100 bez speciální optimalizace. Google zahrnuje rychlost načítání (Core Web Vitals) do hodnocení ve výsledcích vyhledávání."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Jak probíhá aktualizace obsahu na statickém webu?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Obsah statického webu se aktualizuje přímou úpravou HTML souborů a nahráním změn na server (nebo do Git repozitáře). Je to manuálnější než WordPress admin panel, ale pro firemní weby, kde se obsah mění jednou za čas (aktualizace cen, nový projekt v portfoliu), je to naprosto dostačující. Změny na GitHub se automaticky nasazují na Netlify do 30 sekund."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Mohu mít na statickém webu blog?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ano. Blog na statickém webu je tvořen jednotlivými HTML soubory (jeden soubor = jeden článek). Pro malé a střední blogy (desítky až stovky článků) je to výborné řešení – bez databáze, bez pluginů, bez bezpečnostních rizik. Každý blogový článek se načte okamžitě a má perfektní Lighthouse skóre."
-                }
-            }
-        ]
+      "@type": "Question",
+      "name": "Co je statický web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Je to web, jehož stránky se doručují jako předem připravené soubory. Mohou obsahovat JavaScript a interakce a mohou se napojovat na další služby. Při běžném doručení těchto stránek ale nemusí běžet redakční aplikace, která HTML teprve sestaví z databáze."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Je statický web vhodný pro moji firmu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Může být, pokud odpovídá potřebným funkcím a máte vyřešený způsob úprav obsahu. Často se zvažuje u prezentací, portfolií nebo menších obsahových webů. K rozhodnutí je důležitější váš pracovní postup a požadavky návštěvníků než samotný obor nebo velikost firmy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak rychle se statický web načítá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pevnou dobu nelze slíbit podle technologie. Výsledek ovlivňují média, skripty, hosting, zařízení i připojení návštěvníka. Připravené soubory mohou provoz zjednodušit, ale výkon je potřeba změřit a případně upravit u konkrétního webu; dobře optimalizovaný WordPress může být také rychlý."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak se upravuje obsah statického webu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Podle domluveného řešení přímo v souborech, přes generátor nebo redakční rozhraní. Potřebujete vědět, kdo změny připravuje, jak se publikují a kde je záloha. Pokud chcete pravidelně editovat sami, musí se s tím počítat už v zadání."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Může být na statickém webu blog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano, články se mohou doručovat jako samostatné HTML stránky, jak je tomu i u tohoto blogu. Pro pravidelné publikování lze připravit generátor nebo vhodné redakční rozhraní. Je potřeba vyřešit práci s články, médii, odkazy a případným vyhledáváním; velikost blogu sama o sobě neurčuje vhodnost řešení."
+      }
     }
-    </script>
-
+  ]
+}
+</script>
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Úvod", "item": "https://zjanacova.cz/"},
-            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zjanacova.cz/blog/"},
-            {"@type": "ListItem", "position": 3, "name": "Výhody statického webu", "item": "https://zjanacova.cz/blog/vyhody-statickeho-webu.html"}
-        ]
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Úvod",
+      "item": "https://zjanacova.cz/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://zjanacova.cz/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sedm výhod statického webu a kdy je využijete",
+      "item": "https://zjanacova.cz/blog/vyhody-statickeho-webu.html"
     }
-    </script>
+  ]
+}
+</script>
 
-    <style>
-        .blog-hero {
-            padding: 140px 0 60px;
-            background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .blog-hero::before {
-            content: '';
-            position: absolute;
-            top: 20%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(147, 112, 219, 0.10) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(60px);
-            pointer-events: none;
-        }
-
-        .blog-breadcrumb {
-            font-size: 14px;
-            color: var(--color-text-muted);
-            margin-bottom: 24px;
-        }
-
-        .blog-breadcrumb a {
-            color: var(--color-text-muted);
-            text-decoration: none;
-            transition: color var(--transition);
-        }
-
-        .blog-breadcrumb a:hover {
-            color: var(--color-accent-gold);
-        }
-
-        .blog-breadcrumb span {
-            margin: 0 8px;
-            opacity: 0.5;
-        }
-
-        .blog-hero-title {
-            font-family: var(--font-heading);
-            font-size: clamp(28px, 5vw, 52px);
-            line-height: 1.2;
-            color: var(--color-text-primary);
-            margin-bottom: 20px;
-        }
-
-        .blog-hero-meta {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 14px;
-            color: var(--color-text-muted);
-            margin-bottom: 28px;
-        }
-
-        .blog-hero-meta a {
-            color: var(--color-accent-gold);
-            text-decoration: none;
-        }
-
-        .blog-tag {
-            display: inline-block;
-            background: rgba(168, 124, 82, 0.15);
-            color: var(--color-accent-gold);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .article-body {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 60px 0 80px;
-        }
-
-        .article-body h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(22px, 3.5vw, 32px);
-            color: var(--color-text-primary);
-            margin: 56px 0 20px;
-            line-height: 1.3;
-            scroll-margin-top: 100px;
-        }
-
-        .article-body h3 {
-            font-family: var(--font-heading);
-            font-size: clamp(18px, 2.5vw, 24px);
-            color: var(--color-text-primary);
-            margin: 36px 0 14px;
-            line-height: 1.4;
-        }
-
-        .article-body p {
-            font-size: 17px;
-            color: var(--color-text-secondary);
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .article-body ul,
-        .article-body ol {
-            padding-left: 24px;
-            margin-bottom: 24px;
-        }
-
-        .article-body li {
-            font-size: 17px;
-            color: var(--color-text-secondary);
-            line-height: 1.7;
-            margin-bottom: 8px;
-        }
-
-        .article-body strong {
-            color: var(--color-text-primary);
-        }
-
-        .advantage-card {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .advantage-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--color-accent-gold);
-        }
-
-        .advantage-number {
-            font-size: 48px;
-            font-weight: 700;
-            color: rgba(168, 124, 82, 0.15);
-            position: absolute;
-            top: 16px;
-            right: 24px;
-            line-height: 1;
-            font-family: var(--font-heading);
-            pointer-events: none;
-        }
-
-        .advantage-card h3 {
-            margin: 0 0 12px;
-            font-size: clamp(18px, 2.5vw, 22px);
-            color: var(--color-text-primary);
-            padding-right: 40px;
-        }
-
-        .advantage-card p {
-            margin: 0;
-            font-size: 16px;
-            color: var(--color-text-secondary);
-            line-height: 1.7;
-        }
-
-        .advantage-card ul {
-            margin: 12px 0 0;
-            padding-left: 20px;
-        }
-
-        .advantage-card li {
-            font-size: 15px;
-            color: var(--color-text-secondary);
-            line-height: 1.6;
-            margin-bottom: 6px;
-        }
-
-        .stat-highlight {
-            display: inline-block;
-            background: rgba(34, 197, 94, 0.1);
-            color: #22c55e;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 15px;
-        }
-
-        .stat-bad {
-            display: inline-block;
-            background: rgba(239, 68, 68, 0.1);
-            color: #ef4444;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 15px;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 28px 0;
-            font-size: 15px;
-        }
-
-        .comparison-table th {
-            background: var(--color-bg-card);
-            color: var(--color-text-primary);
-            padding: 14px 16px;
-            text-align: left;
-            border-bottom: 2px solid var(--color-accent-gold);
-            font-weight: 600;
-        }
-
-        .comparison-table td {
-            padding: 12px 16px;
-            color: var(--color-text-secondary);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table .yes {
-            color: #22c55e;
-            font-weight: 600;
-        }
-
-        .comparison-table .no {
-            color: #ef4444;
-        }
-
-        .comparison-table .ok {
-            color: #f59e0b;
-            font-weight: 500;
-        }
-
-        .info-box {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            padding: 24px 28px;
-            margin: 32px 0;
-        }
-
-        .info-box-title {
-            font-weight: 700;
-            color: var(--color-accent-gold);
-            font-size: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
-        }
-
-        .article-faq {
-            margin-top: 60px;
-            padding-top: 48px;
-            border-top: 1px solid var(--color-border);
-        }
-
-        .article-faq h2 {
-            margin-top: 0;
-        }
-
-        .article-faq details.faq-item {
-            border: 1px solid var(--color-border);
-            border-radius: 10px;
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
-
-        .article-faq details.faq-item summary.faq-question {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 22px;
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--color-text-primary);
-            background: var(--color-bg-card);
-        }
-
-        .article-faq details.faq-item summary.faq-question::-webkit-details-marker {
-            display: none;
-        }
-
-        .article-faq details.faq-item[open] summary.faq-question {
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .article-faq details.faq-item .faq-answer {
-            padding: 18px 22px;
-        }
-
-        .article-faq details.faq-item .faq-answer p {
-            margin: 0;
-            font-size: 16px;
-        }
-
-        .article-cta {
-            background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-secondary) 100%);
-            border: 1px solid var(--color-border);
-            border-radius: 16px;
-            padding: 40px;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .article-cta h2 {
-            margin-top: 0;
-            font-size: clamp(20px, 3vw, 28px);
-        }
-
-        .article-author-box {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            padding: 24px;
-            margin-top: 60px;
-        }
-
-        .article-author-box img {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        .article-author-box h3 {
-            margin: 0 0 6px;
-            font-size: 18px;
-        }
-
-        @media (max-width: 768px) {
-            .blog-hero {
-                padding: 110px 0 48px;
-            }
-
-            .advantage-card {
-                padding: 24px 20px;
-            }
-
-            .advantage-number {
-                font-size: 36px;
-                top: 12px;
-                right: 16px;
-            }
-
-            .comparison-table {
-                font-size: 13px;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 10px 12px;
-            }
-
-            .article-author-box {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+<meta name="theme-color" content="#131416">
+<link rel="stylesheet" href="/assets/redesign/style.css">
+<link rel="stylesheet" href="/assets/redesign/pages.css">
+<link rel="stylesheet" href="/assets/redesign/blog.css">
+<script src="/assets/redesign/site.js" defer></script>
+<script src="/assets/redesign/blog.js" defer></script>
 </head>
-
-<body>
-    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
-    <div class="loader" id="loader">
-        <div class="spinner"></div>
-    </div>
-
-    <header role="banner">
-        <div class="container">
-            <a href="/" class="logo" aria-label="Žaneta Janáčová – Úvodní stránka">
-                <img src="../images/signature.webp" alt="Žaneta Janáčová – tvorba webů Mělník" width="150" height="50">
-            </a>
-            <nav aria-label="Hlavní navigace">
-                <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-menu">
-                    <span></span><span></span><span></span>
-                </button>
-                <ul id="nav-menu" class="nav-menu">
-                    <li><a href="/">Domů</a></li>
-                    <li><a href="/projects.html">Portfolio</a></li>
-                    <li><a href="/cenik.html">Ceník</a></li>
-                    <li><a href="/vzdelani.html">Vzdělání</a></li>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/audit-webu-zdarma.html">Audit zdarma</a></li>
-                    <li><a href="/#contact" class="btn-primary btn-ripple">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main id="main-content">
-
-        <section class="blog-hero" aria-labelledby="article-title">
-            <div class="container">
-                <nav class="blog-breadcrumb" aria-label="Drobečková navigace">
+<body class="subpage article-page">
+<a class="skip-link" href="#main-content">Přeskočit na obsah</a>
+<header class="site-header"><div class="shell header-inner">
+<a href="/" class="brand" aria-label="Žaneta Janáčová, úvod"><span class="brand-symbol" aria-hidden="true">ž.</span><span>Žaneta Janáčová<span class="brand-role">Návrh a tvorba webů</span></span></a>
+<button class="menu-button" aria-controls="main-nav" aria-expanded="false" type="button"><span>Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+<nav id="main-nav" class="main-nav" aria-label="Hlavní navigace"><a href="/projects.html">Portfolio</a><a href="/cenik.html">Ceník</a><a href="/#about">O mně</a><a href="/vzdelani.html">Vzdělání</a><a href="/blog/">Zápisky</a><a class="nav-contact" href="/#contact">Proberme váš projekt <span aria-hidden="true">↗</span></a></nav>
+</div></header>
+<main id="main-content" class="page-main article-page">
+      <div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+      <section class="blog-hero page-intro" aria-labelledby="article-title">
+            <div class="shell">
+                <nav class="blog-breadcrumb page-kicker" aria-label="Drobečková navigace">
                     <a href="/">Domů</a><span aria-hidden="true">›</span>
                     <a href="/blog/">Blog</a><span aria-hidden="true">›</span>
-                    <span aria-current="page">Výhody statického webu</span>
+                    <span aria-current="page">Sedm výhod statického webu a kdy je využijete</span>
                 </nav>
-                <div class="blog-tag" style="margin-bottom: 16px;">Technologie</div>
-                <h1 id="article-title" class="blog-hero-title">
-                    Moderní statický web:<br>
-                    <span style="color: var(--color-accent-gold);">7 výhod oproti WordPress a CMS (2026)</span>
-                </h1>
+                
+                <h1 id="article-title" class="blog-hero-title page-title">Sedm výhod statického webu a kdy je využijete</h1>
                 <div class="blog-hero-meta">
                     <span>Autor: <a href="/" rel="author">Žaneta Janáčová</a></span>
                     <span>·</span>
                     <time datetime="2026-02-25">25. února 2026</time>
                     <span>·</span>
-                    <span>7 min čtení</span>
-                </div>
-                <p style="font-size: 18px; color: var(--color-text-secondary); max-width: 700px; line-height: 1.7;">
-                    WordPress dnes pohání více než 40 % webů na internetu. Pro mnoho firemních prezentací je ale
-                    paradoxně zbytečně složitým řešením. Každá stránka se při načtení skládá z databáze,
-                    PHP skriptů, témat a pluginů, což může zpomalovat web a zvyšovat nároky na hosting i údržbu.<br>
-
-                    <strong>Moderní statický web</strong> funguje jinak. Je tvořen pouze HTML, CSS a JavaScript
-                    soubory bez databáze a bez backendu. Díky tomu může být výrazně rychlejší, bezpečnější
-                    a často i levnější na provoz.
-                </p>
+                    <span>9 min čtení</span>
+                <span class="article-topic">Technologie</span><span>Aktualizováno <time datetime="2026-10-26">26. října 2026</time></span></div>
+                <p>Statický web může menší firmě dobře sloužit, pokud potřebuje představit nabídku a průběžně ji udržovat aktuální bez složitého redakčního provozu. Jeho výhody ale záleží na konkrétním návrhu, způsobu úprav a používaných službách, proto je popisuji i s podmínkami, za kterých dávají smysl.</p>
             </div>
         </section>
+      <div class="shell article-layout"><aside class="article-sidebar"><details class="article-toc" data-article-toc><summary>Obsah článku <span aria-hidden="true">+</span></summary><nav aria-label="Obsah článku"><a href="#cast-co-je-staticky-web-a-proc-je-jiny">Jak statický web funguje a kde se používá</a><a href="#cast-7-vyhod-moderniho-statickeho-webu">Sedm oblastí, ve kterých se může provoz zjednodušit</a><a href="#cast-velke-srovnani-staticky-web-vs-wordpress-vs-wix-vs-webflow">Jak se liší statický web a redakční platformy</a><a href="#cast-jak-staticky-web-vypada-v-praxi">Co při návrhu statického webu řeším v praxi</a><a href="#faq-heading">Časté otázky</a></nav></details><a class="article-back" href="/blog/">Všechny články <span aria-hidden="true">↗</span></a></aside><article class="article-body" data-reading-body>
+<h2 id="cast-co-je-staticky-web-a-proc-je-jiny">Jak statický web funguje a kde se používá</h2>
+<p>Statický web doručuje návštěvníkovi připravené soubory, nejčastěji HTML, CSS, JavaScript a média. Neznamená to, že musí být vizuálně jednoduchý nebo bez interakcí. Rozdíl je v tom, že pro doručení dané stránky nemusí při každé návštěvě běžet redakční aplikace, která ji sestaví z databáze.</p>
+<p>Také web vytvořený WordPressem se může díky cache doručovat jako předem připravená odpověď. <a href="https://developer.wordpress.org/advanced-administration/performance/optimization/">Oficiální dokumentace WordPressu</a> popisuje cache i další možnosti optimalizace. Srovnání proto nemá stát na představě, že každý WordPress je pomalý a každý HTML web rychlý.</p>
+<div class="info-box"><div class="info-box-title">Kdy o statickém řešení uvažuji</div><p>Hodí se například pro prezentaci služeb, portfolio, menší obsahový web nebo stránku ke kampani. Nejdřív ale zjišťuji, jak často se mění obsah, kdo ho upravuje a které funkce mají zůstat součástí webu. Název oboru sám o sobě neříká, jaké řešení potřebujete.</p></div>
 
-        <article class="container">
-            <div class="article-body">
+<h2 id="cast-7-vyhod-moderniho-statickeho-webu">Sedm oblastí, ve kterých se může provoz zjednodušit</h2>
+<div class="advantage-card"><span class="advantage-number" aria-hidden="true">1</span><h3>Můžete ovlivnit množství práce při načítání</h3><p>U předem připravené stránky nemusí server při běžné návštěvě sestavovat HTML přes redakční systém. To může pomoci s rychlou odpovědí, ale celý web dál ovlivňují obrázky, fonty, skripty, zařízení návštěvníka i připojení. Velké video nebo několik externích nástrojů může zpomalit i jednoduchou HTML stránku.</p><p>Proto výkon měřím na konkrétním návrhu a kontroluji i jeho používání na mobilu. <a href="https://developers.google.com/search/docs/appearance/core-web-vitals">Core Web Vitals</a> sledují načítání, odezvu a vizuální stabilitu; samotné skóre jednoho laboratorního testu nevypovídá o každé návštěvě. Stejně tak může být rychlý dobře připravený WordPress s cache.</p><ul><li>Optimalizujte média podle velikosti, ve které se skutečně zobrazují.</li><li>Přidávejte skripty podle potřeb webu a ověřujte jejich dopad.</li><li>Výsledky testů posuzujte spolu s reálným ovládáním a dostupnými provozními daty.</li></ul></div><div class="advantage-card"><span class="advantage-number" aria-hidden="true">2</span><h3>Odpadnou rizika části redakční instalace</h3><p>Pokud veřejný web nepoužívá WordPress, jeho administraci ani databázi, nemusíte na něm udržovat právě tyto části systému. To snižuje počet míst, která potřebují správu. Neznamená to ale, že web nemůže být napadený nebo změněný: stále existuje účet u hostingu, registrátor domény, způsob publikování a případné externí skripty.</p><p>Zabezpečení proto řeším přes přístupy, oprávnění, zálohy a připojené služby. Také <a href="https://developer.wordpress.org/advanced-administration/security/hardening/">oficiální bezpečnostní příručka WordPressu</a> popisuje bezpečnost jako snižování rizika, nikoli jeho úplné odstranění.</p><ul><li>Zapněte vícefaktorové přihlášení tam, kde ho služba nabízí.</li><li>Předávejte pouze potřebná oprávnění a udržujte přehled o přístupech.</li><li>Neukládejte neveřejné klíče ani hesla do souborů, které se odesílají návštěvníkovi.</li><li>Kontrolujte služby, které přijímají údaje z formulářů nebo jiných částí webu.</li></ul></div><div class="advantage-card"><span class="advantage-number" aria-hidden="true">3</span><h3>Pro malý provoz může stačit bezplatný tarif</h3><p>Některé služby pro statické stránky umožňují provoz bez hostingového paušálu. Vždy ověřuji jejich limity, povolené použití a způsob účtování. Například <a href="https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/credit-based-pricing-plans/">Netlify má pro nové účty kreditové plány</a>; podmínky staršího účtu nemusejí platit pro nový projekt.</p><p>Vedle hostingu počítejte s doménou a případným e-mailem, formulářem nebo jinými službami. Rozpočet má vycházet z toho, co budete používat, a měl by obsahovat i variantu, kdy bezplatný plán přestane stačit.</p><ul><li>Zjistěte, kdo dostává upozornění na spotřebu nebo blížící se limity.</li><li>Do srovnání zahrňte služby, které už máte v současném balíčku.</li><li>Podmínky různých služeb shrnuji v článku <a href="/blog/jak-neplatit-za-hosting.html">o hostingu statického webu zdarma</a>.</li></ul></div><div class="advantage-card"><span class="advantage-number" aria-hidden="true">4</span><h3>Technická péče může mít menší rozsah</h3><p>Jednoduchý statický web nemusí mít jádro CMS ani sadu pluginů, které je třeba aktualizovat. Tím odpadá část pravidelné správy. Jestli však projekt používá knihovny, sestavovací nástroje nebo redakční rozhraní, potřebují odpovídající péči také; záleží na konkrétním provedení.</p><p>Průběžně kontrolujete i obsah, dostupnost kontaktů, formuláře, odkazy a podmínky hostingu. U firemního webu je důležité, aby zůstala aktuální nabídka a aby se lidé opravdu dovolali nebo odeslali zprávu. To žádná technologie neudělá sama.</p><ul><li>Dohodněte, kdo hlídá funkčnost a kdo provádí potřebné změny.</li><li>Uchovávejte zdrojové soubory a možnost návratu k ověřené verzi.</li><li>Po změnách připojených služeb zkontrolujte jejich vliv na web.</li></ul></div><div class="advantage-card"><span class="advantage-number" aria-hidden="true">5</span><h3>Máte přímou kontrolu nad strukturou stránek</h3><p>V souborech můžete určit titulky, nadpisy, odkazy, hlavní adresy i strukturovaná data bez závislosti na konkrétním pluginu. Tuto možnost je ale potřeba dobře využít. Statická stránka nemá automaticky správnou sémantiku ani obsah, který odpovídá otázkám návštěvníků.</p><p>Pro vyhledávání řeším především dostupnost obsahu, srozumitelnou strukturu a informace, které mají pro čtenáře hodnotu. <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Google u generativního vyhledávání navazuje na základní pravidla SEO</a>; samotná technologie nebo přidání schématu nezaručuje citaci ani lepší pozici. Další souvislosti popisuji v článku <a href="/blog/jak-optimalizovat-web-pro-ai.html">o webu a vyhledávání s AI</a>.</p><ul><li>Titulky a popisy mají odpovídat tomu, co na stránce opravdu najdete.</li><li>Odkazy a navigace musí zpřístupnit důležité podstránky.</li><li>Strukturovaná data mají souhlasit s viditelným obsahem.</li></ul></div><div class="advantage-card"><span class="advantage-number" aria-hidden="true">6</span><h3>Při doručování obsahu potřebujete méně součástí</h3><p>Pokud se stránka pouze doručuje jako připravený soubor, nečeká při této návštěvě na odpověď redakční databáze ani na sestavení HTML aplikací. Díky tomu odpadá část možných provozních chyb. Další služby, které web používá, ale zůstávají samostatnými místy, jejichž stav může ovlivnit konkrétní funkci.</p><p>Dostupnost pořád závisí na hostingu, DNS, platnosti domény, nastavení HTTPS a dalších okolnostech. CDN může pomoci s doručováním, ale bezplatný plán sám o sobě neznamená smluvně zaručenou dostupnost. Pokud na webu stojí podstatná část provozu firmy, řešte podporu a požadované záruky přímo při výběru služby.</p><ul><li>Ověřte, kam se obrátíte při výpadku a co zahrnuje podpora tarifu.</li><li>Sledujte dostupnost důležitých stránek i odesílání formuláře.</li><li>Mějte připravenou zálohu a přehled o účtech potřebných pro obnovu provozu.</li></ul></div><div class="advantage-card"><span class="advantage-number" aria-hidden="true">7</span><h3>Můžete předat a přesunout běžné webové soubory</h3><p>HTML, CSS, JavaScript a obrázky nejsou vázané na jedno konkrétní redakční prostředí. Pokud máte kompletní zdrojové soubory a přehled o jejich závislostech, lze pro ně vybrat jiný kompatibilní hosting. Přesun je přesto potřeba naplánovat a ověřit; přesměrování, formulář nebo sestavování se mohou u poskytovatelů nastavovat jinak.</p><p>Tahle možnost má hodnotu i při změně dodavatele. Součástí předání by měly být zdroje, potřebné podklady, přístupy a informace o použitých službách i licencích. Samotný ZIP bez vysvětlení nemusí stačit člověku, který má web později spravovat.</p><ul><li>Ověřte, co dostanete při předání a jak se web publikuje.</li><li>Zaznamenejte služby, které nejsou součástí stažených souborů.</li><li>Dohodněte také odpovědnost za další úpravy a technickou péči.</li></ul></div>
 
-                <h2>Co je statický web a proč je jiný?</h2>
-                <p>
-                    <strong>Statický web</strong> se skládá z pevných HTML, CSS a JavaScript souborů.
-                    Server je při každém požadavku pouze odešle prohlížeči. Žádné PHP, žádná databáze,
-                    žádné generování stránky za běhu.
-                </p>
-                <p>
-                    <strong>WordPress</strong> naopak při každém zobrazení stránky: připojí se k databázi MySQL,
-                    spustí PHP, načte témata a pluginy, sestaví HTML a teprve pak odešle odpověď.
-                    To trvá déle a vyžaduje dražší hosting.
-                </p>
+<h2 id="cast-velke-srovnani-staticky-web-vs-wordpress-vs-wix-vs-webflow">Jak se liší statický web a redakční platformy</h2>
+<p>Platformy níže srovnávám podle způsobu práce, nikoli podle neověřených průměrných rychlostí nebo skóre. Náklady závisejí na konkrétním tarifu, doplňcích a potřebném rozsahu služeb; všechny weby navíc vyžadují aktuální obsah a člověka, který má přehled o jejich provozu.</p><div class="article-table-scroll" tabindex="0" role="region" aria-label="Srovnávací tabulka, na menší obrazovce posouvatelná"><table><thead><tr><th scope="col">Oblast</th><th scope="col">Statický web</th><th scope="col">WordPress</th><th scope="col">Wix / Squarespace</th><th scope="col">Webflow</th></tr></thead><tbody><tr><td>Úpravy obsahu</td><td>Soubory nebo domluvené redakční rozhraní</td><td>Redakční systém</td><td>Editor platformy</td><td>Vizuální editor a případně CMS</td></tr><tr><td>Hosting</td><td>Výběr kompatibilního poskytovatele</td><td>Podle vlastního nebo spravovaného řešení</td><td>Součást prostředí poskytovatele</td><td>Hosting platformy nebo vhodný export</td></tr><tr><td>Provozní rozpočet</td><td>Doména, hosting, správa a navázané služby</td><td>Doména, hosting, správa a případné licence</td><td>Podle tarifu a doplňků</td><td>Podle tarifu a způsobu provozu</td></tr><tr><td>Technická péče</td><td>Podle kódu, účtů a připojených služeb</td><td>Také jádro, šablony a pluginy</td><td>Platformu spravuje poskytovatel; vlastní úpravy a účty řešíte dál</td><td>Platformu spravuje poskytovatel; vlastní úpravy a účty řešíte dál</td></tr><tr><td>Výkon</td><td>Je potřeba měřit konkrétní web</td><td>Je potřeba měřit konkrétní web</td><td>Je potřeba měřit konkrétní web</td><td>Je potřeba měřit konkrétní web</td></tr><tr><td>Způsob předání</td><td>Zdroje a přehled závislostí</td><td>Instalace, data, účty a licence</td><td>Přístupy a možnosti exportu obsahu</td><td>Přístupy, data a možnosti exportu</td></tr><tr><td>Přesun jinam</td><td>Ověření hostingu a navázaných funkcí</td><td>Migrace instalace nebo změna řešení</td><td>Podle možností konkrétní platformy</td><td>Export má stanovené podmínky a omezení</td></tr><tr><td>Kdo rozhoduje o vhodnosti</td><td>Potřeby obsahu, funkcí a správy</td><td>Potřeby obsahu, funkcí a správy</td><td>Potřeby obsahu, funkcí a správy</td><td>Potřeby obsahu, funkcí a správy</td></tr></tbody></table></div><p>U přenositelnosti je důležité rozlišovat export obsahu a kompletní funkční web. <a href="https://support.wix.com/en/article/exporting-or-embedding-your-wix-site-elsewhere">Wix uvádí provoz na své infrastruktuře</a>, <a href="https://support.squarespace.com/hc/en-us/articles/206566687-Export-your-site-content">Squarespace popisuje omezený export části obsahu</a> a <a href="https://help.webflow.com/hc/en-us/articles/33961386739347-How-do-I-export-my-Webflow-site-code">Webflow umožňuje export kódu za určitých podmínek</a>, který nepřenese všechny služby. Tyto podmínky proto ověřuji u konkrétního projektu, místo obecného tvrzení, že lze nebo nelze cokoli přestěhovat.</p><div class="info-box"><div class="info-box-title">Kdy může být redakční systém pohodlnější</div><p>Pokud často publikujete, potřebujete více redakčních rolí nebo používáte specifické funkce, může vám vyhovovat WordPress či jiný redakční systém. Rozhoduje i zavedený pracovní postup a dostupná podpora. Funkční řešení není potřeba opouštět jen kvůli jeho názvu.</p></div>
 
-                <div class="info-box" role="note" aria-label="Pro koho je statický web vhodný">
-                    <div class="info-box-title">Pro koho je statický web ideální?</div>
-                    <p style="margin: 0; font-size: 16px; color: var(--color-text-secondary);">
-                        Firemní prezentace, portfolia, landing pages, restaurace, kosmetické salony, řemeslníci,
-                        lékaři, advokáti, realitní kanceláře, event agentury. Obecně: každý, kdo
-                        <strong>nepotřebuje e-shop s tisíci produkty</strong> ani komplexní uživatelský systém.
-                    </p>
-                </div>
+<h2 id="cast-jak-staticky-web-vypada-v-praxi">Co při návrhu statického webu řeším v praxi</h2>
+<p>Vedle vzhledu se potřebuji domluvit na obsahu a na tom, co má člověk po návštěvě webu udělat. U nabídky služeb to může být telefonát nebo poptávka, u portfolia prohlédnutí konkrétní práce. Podle toho navrhuji strukturu a vybírám funkce, místo přidávání prvků pouze proto, že je technologie dovoluje.</p><p>U formuláře určíme službu pro odesílání a příjem zpráv a otestujeme chování při úspěchu i chybě. Fotografie připravím v přiměřené velikosti a efekty posuzuji podle toho, zda pomáhají s orientací nebo podporují obsah. Součástí předání má být i způsob dalších změn, nikoli pouze veřejná adresa hotového webu.</p><p>V <a href="/projects.html">portfoliu projektů</a> si můžete prohlédnout, jak se návrh mění podle konkrétní značky a jejího obsahu. O vhodné technologii se rozhodujeme společně s tím, jak má web fungovat a kdo se o něj bude starat.</p>
 
-                <h2>7 výhod moderního statického webu</h2>
+<section class="article-faq" aria-labelledby="faq-heading"><h2 id="faq-heading">Časté otázky</h2><details class="faq-item"><summary class="faq-question"><span>Co je statický web?</span></summary><div class="faq-answer"><p>Je to web, jehož stránky se doručují jako předem připravené soubory. Mohou obsahovat JavaScript a interakce a mohou se napojovat na další služby. Při běžném doručení těchto stránek ale nemusí běžet redakční aplikace, která HTML teprve sestaví z databáze.</p></div></details><details class="faq-item"><summary class="faq-question"><span>Je statický web vhodný pro moji firmu?</span></summary><div class="faq-answer"><p>Může být, pokud odpovídá potřebným funkcím a máte vyřešený způsob úprav obsahu. Často se zvažuje u prezentací, portfolií nebo menších obsahových webů. K rozhodnutí je důležitější váš pracovní postup a požadavky návštěvníků než samotný obor nebo velikost firmy.</p></div></details><details class="faq-item"><summary class="faq-question"><span>Jak rychle se statický web načítá?</span></summary><div class="faq-answer"><p>Pevnou dobu nelze slíbit podle technologie. Výsledek ovlivňují média, skripty, hosting, zařízení i připojení návštěvníka. Připravené soubory mohou provoz zjednodušit, ale výkon je potřeba změřit a případně upravit u konkrétního webu; dobře optimalizovaný WordPress může být také rychlý.</p></div></details><details class="faq-item"><summary class="faq-question"><span>Jak se upravuje obsah statického webu?</span></summary><div class="faq-answer"><p>Podle domluveného řešení přímo v souborech, přes generátor nebo redakční rozhraní. Potřebujete vědět, kdo změny připravuje, jak se publikují a kde je záloha. Pokud chcete pravidelně editovat sami, musí se s tím počítat už v zadání.</p></div></details><details class="faq-item"><summary class="faq-question"><span>Může být na statickém webu blog?</span></summary><div class="faq-answer"><p>Ano, články se mohou doručovat jako samostatné HTML stránky, jak je tomu i u tohoto blogu. Pro pravidelné publikování lze připravit generátor nebo vhodné redakční rozhraní. Je potřeba vyřešit práci s články, médii, odkazy a případným vyhledáváním; velikost blogu sama o sobě neurčuje vhodnost řešení.</p></div></details></section>
 
-                <div class="advantage-card">
-                    <div class="advantage-number" aria-hidden="true">1</div>
-                    <h3>Extrémní rychlost načítání</h3>
-                    <p>
-                        Statický web se průměrně načítá za <span class="stat-highlight">0.5–1.5 s (LCP)</span>.
-                        WordPress bez optimalizace? <span class="stat-bad">2.5–5 sekund</span>.
-                        Protože server jen odesílá připravené soubory a neztrácí čas
-                        databázovými dotazy ani sestavováním stránky v PHP.
-                    </p>
-                    <ul>
-                        <li>Lighthouse Performance skóre 95–100 bez speciální optimalizace</li>
-                        <li>Core Web Vitals (LCP, CLS, INP) snadno v zelených hodnotách</li>
-                        <li>Google zohledňuje rychlost jako ranking faktor, rychlejší web = lepší pozice</li>
-                        <li>Konverze: každá sekunda zpoždění snižuje konverze o 7 % (zdroj: Google)</li>
-                    </ul>
-                </div>
+<div class="article-cta"><h2 id="cast-chcete-moderni-staticky-web">Navrhneme web podle obsahu a způsobu jeho používání</h2><p>Napište mi, co na webu potřebujete představit a jak často ho budete měnit. Podle těchto informací můžeme posoudit statické řešení i způsob, jakým budete web dál spravovat.</p><a href="/#contact" class="button button-primary">Probrat nový web</a></div>
 
-                <div class="advantage-card">
-                    <div class="advantage-number" aria-hidden="true">2</div>
-                    <h3>Maximální bezpečnost – žádná databáze, žádné PHP</h3>
-                    <p>
-                        WordPress patří mezi nejčastější cíle útoků na webové stránky.
-                        Důvod je jednoduchý: jeho popularita a obrovský ekosystém pluginů.
-                        Více než 55 000 pluginů znamená tisíce potenciálních zranitelností,
-                        pokud nejsou pravidelně aktualizovány.
-                    </p>
-                    <p>
-                        Statický web tato rizika fyzicky neobsahuje. Není co hacknout: žádná databáze,
-                        žádný admin panel, žádné PHP. Útočník dostane pouze HTML soubor.
-                    </p>
-                    <ul>
-                        <li>Nulové riziko SQL injection (žádná databáze)</li>
-                        <li>Žádný WordPress admin panel jako vstupní bod</li>
-                        <li>Žádné bezpečnostní záplaty pluginů k hlídání</li>
-                        <li>Automatické HTTPS přes Let's Encrypt na Netlify/GitHub Pages</li>
-                    </ul>
-                </div>
-
-                <div class="advantage-card">
-                    <div class="advantage-number" aria-hidden="true">3</div>
-                    <h3>Hosting zcela zdarma</h3>
-                    <p>
-                        Statický web lze nasadit na <strong>Netlify, GitHub Pages nebo Cloudflare Pages</strong>
-                        zcela bezplatně, s vlastní doménou a HTTPS v ceně. Platíte pouze za doménu
-                        (200–400 Kč/rok).
-                    </p>
-                    <p>
-                        WordPress vyžaduje placený hosting s PHP a MySQL, ročně 1 200–2 500 Kč.
-                        Za 5 let je to <strong>úspora 6 000–12 500 Kč</strong> pouze na hostingu.
-                    </p>
-                    <ul>
-                        <li>Netlify: 100 GB dat/měsíc zdarma, formuláře v ceně</li>
-                        <li>GitHub Pages: neomezená šířka pásma pro veřejné repozitáře</li>
-                        <li>Cloudflare Pages: globální CDN, neomezená šířka pásma</li>
-                        <li><a href="/blog/jak-neplatit-za-hosting.html" style="color: var(--color-accent-gold);">Jak
-                                nastavit hosting statického webu zdarma →</a></li>
-                    </ul>
-                </div>
-
-                <div class="advantage-card">
-                    <div class="advantage-number" aria-hidden="true">4</div>
-                    <h3>Nulová údržba – žádné aktualizace pluginů</h3>
-                    <p>
-                        WordPress vyžaduje pravidelnou aktualizaci jádra, témat a pluginů.
-                        Průměrný WordPress web má <strong>15–20 aktivních pluginů</strong>, každý
-                        vydává aktualizace každých pár týdnů. Jedna špatně provedená aktualizace
-                        může web shodit.
-                    </p>
-                    <p>
-                        Statický web se neaktualizuje. Neexistují pluginy ani jádro. Web funguje
-                        přesně tak, jak byl naprogramován, bez zásahu do nekonečna.
-                    </p>
-                    <ul>
-                        <li>Žádné pluginy = žádné konflikty, žádné výpadky po aktualizacích</li>
-                        <li>Žádné bezpečnostní záplaty k hlídání</li>
-                        <li>Nulové náklady na správu a údržbu</li>
-                        <li>Web funguje identicky za 1 rok i za 10 let</li>
-                    </ul>
-                </div>
-
-                <div class="advantage-card">
-                    <div class="advantage-number" aria-hidden="true">5</div>
-                    <h3>Vynikající SEO výsledky</h3>
-                    <p>
-                        Rychlý web = lepší SEO. Google explicitně zahrnuje <strong>Core Web Vitals</strong>
-                        (LCP, CLS, INP) do hodnocení výsledků vyhledávání od roku 2021.
-                        Statické weby tyto metriky splňují přirozeně, bez speciální cache ani CDN konfigurace.
-                    </p>
-                    <ul>
-                        <li>Lighthouse SEO skóre 95–100 standardně</li>
-                        <li>Perfektní sémantická HTML struktura (žádný bloat z WordPress)</li>
-                        <li>Čisté URL bez zbytečných parametrů</li>
-                        <li>Snadná implementace structured data (JSON-LD) pro AEO/GEO – <a href="/blog/jak-optimalizovat-web-pro-ai.html" style="color: var(--color-accent-gold);">kompletní průvodce AEO a GEO optimalizací →</a></li>
-                    </ul>
-                </div>
-
-                <div class="advantage-card">
-                    <div class="advantage-number" aria-hidden="true">6</div>
-                    <h3>Maximální spolehlivost – žádné výpadky databáze</h3>
-                    <p>
-                        WordPress web může selhat z mnoha důvodů: přetížená databáze, chyba PHP,
-                        konflikty pluginů, výpadek hostingového serveru. „White screen of death" zná
-                        každý WordPress uživatel.
-                    </p>
-                    <p>
-                        Statický web nemá co selhat. Soubory jsou distribuovány přes CDN (Content Delivery Network),
-                        takže když jeden server vypadne, ostatní přeberou zátěž. Netlify a Cloudflare Pages
-                        garantují <strong>99.99 % uptime</strong>.
-                    </p>
-                    <ul>
-                        <li>Žádné chyby databáze, žádné PHP fatální chyby</li>
-                        <li>Globální CDN distribuce souborů</li>
-                        <li>99.99 % uptime bez drahých uptime monitorovacích pluginů</li>
-                        <li>Web funguje i při přetížení (soubory se jen odešlou)</li>
-                    </ul>
-                </div>
-
-                <div class="advantage-card">
-                    <div class="advantage-number" aria-hidden="true">7</div>
-                    <h3>Čistý kód bez zbytečného bloatu</h3>
-                    <p>
-                        WordPress generuje HTML obohacené o desítky CSS a JavaScript souborů
-                        z témat a pluginů, z toho většina je pro konkrétní stránku zbytečná.
-                        Průměrná WordPress stránka přenese 2–5 MB dat navíc oproti optimálnímu stavu.
-                    </p>
-                    <p>
-                        Statický web obsahuje <strong>přesně to, co potřebuje</strong>. Žádný bloat,
-                        žádné nepoužívané CSS třídy, žádné duplicitní JavaScript knihovny.
-                        Výsledkem je minimální velikost stránky a maximální rychlost.
-                    </p>
-                    <ul>
-                        <li>Průměrná velikost stránky 150–400 KB (vs 1–5 MB u WordPress)</li>
-                        <li>Plná kontrola nad každým řádkem kódu</li>
-                        <li>Žádné nechtěné funkce z pluginů třetích stran</li>
-                        <li>Snadné ladění výkonu bez pluginů</li>
-                    </ul>
-                </div>
-
-                <h2>Velké srovnání: Statický web vs WordPress vs Wix vs Webflow</h2>
-                <table class="comparison-table" role="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Kritérium</th>
-                            <th scope="col">Statický web</th>
-                            <th scope="col">WordPress</th>
-                            <th scope="col">Wix / Squarespace</th>
-                            <th scope="col">Webflow</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Hosting (měsíčně)</td>
-                            <td class="yes">0 Kč</td>
-                            <td class="no">100–200 Kč</td>
-                            <td class="no">400–900 Kč</td>
-                            <td class="no">800–1 600 Kč</td>
-                        </tr>
-                        <tr>
-                            <td>Rychlost (LCP)</td>
-                            <td class="yes">0.5–1.5 s</td>
-                            <td class="ok">1.5–4 s</td>
-                            <td class="ok">2–5 s</td>
-                            <td class="ok">1–3 s</td>
-                        </tr>
-                        <tr>
-                            <td>Lighthouse Performance</td>
-                            <td class="yes">95–100</td>
-                            <td class="ok">50–80</td>
-                            <td class="no">40–65</td>
-                            <td class="ok">70–90</td>
-                        </tr>
-                        <tr>
-                            <td>Bezpečnost</td>
-                            <td class="yes">Maximální</td>
-                            <td class="no">Riziko hacknutí</td>
-                            <td class="ok">Střední</td>
-                            <td class="ok">Střední</td>
-                        </tr>
-                        <tr>
-                            <td>Údržba</td>
-                            <td class="yes">Nulová</td>
-                            <td class="no">Pravidelná</td>
-                            <td class="ok">Minimální</td>
-                            <td class="ok">Minimální</td>
-                        </tr>
-                        <tr>
-                            <td>Vlastní kód</td>
-                            <td class="yes">Plná kontrola</td>
-                            <td class="ok">Omezená</td>
-                            <td class="no">Velmi omezená</td>
-                            <td class="ok">Střední</td>
-                        </tr>
-                        <tr>
-                            <td>Přesun webu</td>
-                            <td class="yes">Jednoduché</td>
-                            <td class="ok">Složitější</td>
-                            <td class="no">Nelze exportovat</td>
-                            <td class="ok">Částečně</td>
-                        </tr>
-                        <tr>
-                            <td>Závislost na platformě</td>
-                            <td class="yes">Žádná</td>
-                            <td class="ok">Nízká</td>
-                            <td class="no">Vysoká (lock-in)</td>
-                            <td class="no">Vysoká</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="info-box" role="note" aria-label="Kdy zvolit WordPress">
-                    <div class="info-box-title">Kdy je WordPress lepší volbou?</div>
-                    <p style="margin: 0; font-size: 16px; color: var(--color-text-secondary);">
-                        WordPress dává smysl pro: <strong>e-shopy s WooCommerce</strong> (stovky až tisíce produktů),
-                        <strong>velké blogy</strong> s tisíci článků a více autory, <strong>portály s uživatelskými
-                            účty</strong>
-                        nebo <strong>weby s komplexní administrací</strong> pro netechnické klienty.
-                        Pro firemní prezentaci, portfolio nebo landing page je WordPress zbytečný nadměrný nástroj.
-                    </p>
-                </div>
-
-                <h2>Jak statický web vypadá v praxi?</h2>
-                <p>
-                    Většina projektů v mém portfoliu je postavená jako statický web, a v praxi se ukazuje, že pro menší
-                    firmy (například restaurace, řemeslníky nebo lokální služby) je to často jednodušší a spolehlivější řešení
-                    než klasický WordPress.
-                </p>
-                <p>
-                    Kontaktní formuláře řeším přes Formspree (ověřeno v praxi), galerie fotek přes
-                    optimalizované WebP obrázky, animace přes čistý CSS a minimální JavaScript.
-                    Výsledek: web, který se načítá za méně než 1 sekundu a stojí klienta pouze doménu.
-                </p>
-                <p>
-                    <a href="/projects.html" style="color: var(--color-accent-gold);">Zobrazit portfolio projektů →</a>
-                </p>
-
-                <section class="article-faq" aria-labelledby="faq-heading">
-                    <h2 id="faq-heading">Časté otázky o statickém webu</h2>
-
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            <span>Co je statický web?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </summary>
-                        <div class="faq-answer">
-                            <p>Statický web je web tvořený čistými HTML, CSS a JavaScript soubory bez serveru, databáze
-                                ani PHP. Každá stránka je pevný soubor, který server jen odešle prohlížeči. WordPress
-                                naopak generuje stránky dynamicky při každém požadavku: přistupuje k databázi, spouští
-                                PHP. Proto jsou statické weby <strong>rychlejší, bezpečnější a levnější</strong> na
-                                provoz.</p>
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            <span>Je statický web vhodný pro moji firmu?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </summary>
-                        <div class="faq-answer">
-                            <p>Statický web je ideální pro firemní prezentace, portfolia, landing pages, restaurace,
-                                salony, řemeslníky a většinu malých a středních firem. Kontaktní formulář, galerie
-                                fotek nebo blog, to vše lze snadno realizovat. Nedoporučuji pouze pro <strong>e-shopy s
-                                    tisíci produkty</strong> nebo weby s komplexní správou obsahu více autory.</p>
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            <span>Jak rychle se načítá statický web oproti WordPress?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </summary>
-                        <div class="faq-answer">
-                            <p>Statický web se průměrně načítá za <strong>0.5–1.5 sekundy (LCP)</strong>. WordPress bez
-                                optimalizace 2.5–5 sekund, s optimalizací (cache, CDN) 1–2 sekundy. Moje projekty
-                                dosahují <strong>Lighthouse Performance 99–100/100</strong>. Google zahrnuje Core Web
-                                Vitals do hodnocení ve vyhledávání. Rychlý web = lepší pozice.</p>
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            <span>Jak probíhá aktualizace obsahu na statickém webu?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </summary>
-                        <div class="faq-answer">
-                            <p>Obsah se aktualizuje přímou úpravou HTML souborů. Je to manuálnější než WordPress admin
-                                panel, ale pro weby, kde se mění obsah jednou za čas (nový projekt, aktualizace cen),
-                                zcela dostačující. Změny nahrané na GitHub se automaticky nasadí na Netlify <strong>do
-                                    30 sekund</strong>. Pro klienty, kteří potřebují častěji měnit obsah sami, integruji
-                                Netlify CMS.</p>
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            <span>Mohu mít na statickém webu blog?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </summary>
-                        <div class="faq-answer">
-                            <p><strong>Ano.</strong> Blog na statickém webu je tvořen jednotlivými HTML soubory (jeden
-                                soubor = jeden článek). Právě tyto blogové články jsou příkladem, každý je statická
-                                HTML stránka, dosahuje Lighthouse 100 a je plně optimalizovaný pro AEO/GEO. Pro desítky
-                                až stovky článků je to výborné řešení bez databáze a bez bezpečnostních rizik.</p>
-                        </div>
-                    </details>
-                </section>
-
-                <aside class="article-cta" aria-label="Výzva k akci">
-                    <h2>Chcete moderní statický web?</h2>
-                    <p>Postavím vám <strong>rychlý, bezpečný statický web</strong> s Lighthouse 99–100,
-                        nasazený na Netlify s hostingem zdarma. Konzultace je bezplatná a nezávazná.</p>
-                    <a href="/#contact" class="btn-hero btn-ripple">Nezávazná konzultace zdarma</a>
-                    <p style="margin-top: 12px; font-size: 14px; color: var(--color-text-muted);">Odpovím do 24 hodin ·
-                        Mělník a celá ČR · Od 6 000 Kč</p>
-                </aside>
-
-                <div class="article-author-box" role="complementary" aria-label="O autorce">
+<div class="article-author-box" role="complementary" aria-label="O autorce">
                     <img src="../images/zaneta_portret.webp" alt="Žaneta Janáčová – webdesignérka z Mělníka" width="72"
                         height="72" loading="lazy">
                     <div>
                         <h3>Žaneta Janáčová</h3>
-                        <p style="color: var(--color-text-secondary);">
-                            Webdesignérka z Mělníka specializovaná na moderní statické weby.
-                            Každý projekt, který tvořím, dosahuje Lighthouse 99–100/100 a je nasazen
-                            na Netlify s hostingem zdarma. Přes 6 realizovaných projektů,
-                            9 certifikátů, akreditovaný kurz MŠMT.
-                            <a href="/" style="color: var(--color-accent-gold); text-decoration: none;">→
-                                zjanacova.cz</a>
-                        </p>
+                        <p>Jsem webdesignérka z Mělníka a navrhuji weby pro menší firmy a podnikatele. Zajímá mě, co má web říkat, jak má působit a jak se bude používat po spuštění. Více najdete na <a href="/">úvodní stránce</a>.</p>
                     </div>
                 </div>
-
-            </div>
-        </article>
+</article></div>
     </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-logo">
-                <img src="../images/signature.webp" alt="Žaneta Janáčová – tvorba webů Mělník" width="200" height="60"
-                    loading="lazy">
-                <p>Tvorba webů Mělník | Žaneta Janáčová</p>
-            </div>
-            <nav class="footer-nav" aria-label="Patičková navigace">
-                <a href="/">Domů</a>
-                <a href="/projects.html">Portfolio</a>
-                <a href="/cenik.html">Ceník</a>
-                <a href="/vzdelani.html">Vzdělání</a>
-                <a href="/blog/">Blog</a>
-                <a href="/audit-webu-zdarma.html">Audit zdarma</a>
-                <a href="/#contact">Kontakt</a>
-                <a href="/privacy.html">Ochrana údajů</a>
-            </nav>
-            <div class="footer-bottom">
-                <p class="footer-legal">Žaneta Janáčová, IČO 08347531, sídlo Skuhrov 81, 277 31 Velký Borek. Fyzická osoba zapsaná v živnostenském rejstříku od 17. 7. 2019. Nejsem plátce DPH.</p>
-                <p>&copy; 2026 Žaneta Janáčová</p>
-            </div>
-        </div>
-    </footer>
-
-    <div id="cookie-consent" class="cookie-consent" role="dialog" aria-labelledby="cookie-title" style="display: none;">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                <p id="cookie-title"><strong>Cookies</strong></p>
-                <p>Používám cookies pro analytiku webu. <a href="/privacy.html" class="cookie-link">Více info</a></p>
-            </div>
-            <div class="cookie-buttons">
-                <button id="cookie-accept" class="btn-primary btn-ripple">Přijmout</button>
-                <button id="cookie-decline" class="btn-secondary">Odmítnout</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="../script.min.js" defer></script>
-</body>
-
-</html>
+<footer class="site-footer"><div class="shell"><div class="footer-top"><a class="brand" href="/"><span class="brand-symbol" aria-hidden="true">ž.</span><span>Žaneta Janáčová<span class="brand-role">Návrh a tvorba webů</span></span></a><nav aria-label="Další odkazy"><a href="/projects.html">Portfolio</a><a href="/cenik.html">Ceník</a><a href="/vzdelani.html">Vzdělání</a><a href="/blog/">Zápisky</a><a href="/audit-webu-zdarma.html">Audit webu</a></nav><a class="back-top" href="#main-content">Zpět nahoru ↑</a></div><div class="footer-bottom"><p>© <span data-year>2026</span> Žaneta Janáčová</p><p>IČO 08347531 · Skuhrov 81, Velký Borek · Nejsem plátce DPH</p><a href="/privacy.html">Ochrana osobních údajů</a><button type="button" class="consent-settings" data-consent-settings hidden>Nastavení cookies</button></div></div></footer>
+<aside class="consent-panel" data-consent-panel aria-labelledby="consent-title" hidden><div><h2 id="consent-title">Nastavení analytických cookies</h2><p>Se souhlasem používám Google Analytics k měření návštěvnosti. <a href="/privacy.html">Informace o zpracování údajů</a></p></div><div class="consent-actions"><button type="button" data-consent="declined">Odmítnout</button><button type="button" data-consent="accepted">Povolit analytiku</button></div></aside>
+</body></html>

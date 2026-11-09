@@ -4,14 +4,14 @@
   const toggle = document.querySelector('.reveal-toggle');
   const fine = matchMedia('(hover: hover) and (pointer: fine)');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  const state = { x: 0, y: 0, tx: 0, ty: 0, radius: 0, tr: 0, cx: 0, cy: 0, inside: false, frame: 0 };
+  const state = { x: 0, y: 0, tx: 0, ty: 0, radius: 0, tr: 0, cx: 0, cy: 0, inside: false, frame: 0, ease: .14 };
   let revealBounds = null;
   const schedule = () => { if (!state.frame) state.frame = requestAnimationFrame(tick); };
   function tick() {
     state.frame = 0;
     state.x += (state.tx - state.x) * (reduce.matches ? 1 : .1);
     state.y += (state.ty - state.y) * (reduce.matches ? 1 : .1);
-    state.radius += (state.tr - state.radius) * (reduce.matches ? 1 : .14);
+    state.radius += (state.tr - state.radius) * (reduce.matches ? 1 : state.ease);
     reveal.style.setProperty('--reveal-x', state.x.toFixed(2) + 'px');
     reveal.style.setProperty('--reveal-y', state.y.toFixed(2) + 'px');
     reveal.style.setProperty('--reveal-radius', state.radius.toFixed(2) + 'px');
@@ -28,6 +28,7 @@
     target(event.clientX, event.clientY);
     if (!state.inside && state.radius < .5) { state.x = state.tx; state.y = state.ty; }
     state.inside = true;
+    state.ease = .14;
     state.tr = Math.min(300, Math.max(140, reveal.clientWidth * .27));
     schedule();
   }
@@ -65,9 +66,10 @@
     state.x = state.tx = box.width * .5;
     state.y = state.ty = box.height * .5;
     state.tr = Math.hypot(box.width, box.height) * 1.3;
+    state.ease = .022;
     schedule();
-    autoPin = setTimeout(() => { autoPin = 0; pin(true); }, 1400);
-  }, 2400);
+    autoPin = setTimeout(() => { autoPin = 0; state.ease = .14; pin(true); }, 4200);
+  }, 9000);
 
   // Pointer-driven 3D tilt of the hero screen. Decorative: fine pointers only, off for reduced motion.
   const tilt = { rx: 0, ry: 0, trx: 0, try: 0, frame: 0 };
